@@ -18,7 +18,7 @@ const SOURCE_CONFIG = [
     icon: '<i class="fa-solid fa-flag"></i>',
     label: "Project",
     color: "#FDE74C",
-    textColor: "#8a7600",
+    textColor: "#7a6800",
   },
   {
     fullType: "Academic",

@@ -2,6 +2,16 @@ import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
 import { basePath } from "./basePath.js";
 import { legendGridSize, renderSwatchLegend } from "./mapLegend.js";
+import {
+  binLabels,
+  binColors,
+  decline,
+  noChange,
+  historicalOpacityFloor,
+  ink,
+  appendNoDataPattern,
+  formatChange,
+} from "./tokens.js";
 
 /**
  * D3 Map for Total Score
@@ -159,26 +169,23 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
   const previousYear = latestYear - 1;
 
   // Category colors
-  const categoryColors = {
-    "Off track": "#FDE74C",
-    "Catching up": "#afb6b5ff",
-    "On track": "#4ed0bfff",
-    Leading: "#007162ff",
-  };
+  const categoryColors = Object.fromEntries(
+    binLabels.map((label, i) => [label, binColors[i]]),
+  );
 
   // Historical mode: Simple colors + opacity for magnitude
   const changeColors = {
-    positive: "#007162ff", // Green for improvements
-    negative: "#FDE74C", // Yellow for declines
-    zero: "#555555", // Gray for no change
+    positive: categoryColors["Leading"], // Total colour for improvements
+    negative: decline,
+    zero: noChange,
   };
 
   // Opacity scale based on absolute change magnitude
-  // 0 change → 0 opacity, 20+ change → 1 opacity
+  // 0 change → floor opacity, 10+ change → 1 opacity
   const opacityScale = d3
     .scaleSymlog()
     .domain([0, 10])
-    .range([0.2, 1])
+    .range([historicalOpacityFloor, 1])
     .clamp(true);
 
   let worldWithData, legendData;
@@ -220,15 +227,10 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
     });
 
     legendData = [
-      { label: "Decrease", color: changeColors.negative },
-      { label: "No change", color: "#55555520", strokeWidth: 1 },
-      { label: "Increase", color: changeColors.positive },
-      {
-        label: "Not enough data",
-        color: "url(#ned-hatch)",
-        stroke: "#ddd",
-        strokeWidth: 0.5,
-      },
+      { label: "▼ Decrease", color: changeColors.negative },
+      { label: "No change", color: `${noChange}20` },
+      { label: "▲ Increase", color: changeColors.positive },
+      { label: "Not enough data", color: "url(#ned-hatch)" },
     ];
   } else {
     // Latest mode: show current categories
@@ -251,12 +253,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
       // { label: "Catching up", color: categoryColors["Catching up"] },
       // { label: "On track", color: categoryColors["On track"] },
       // { label: "Leading", color: categoryColors["Leading"] },
-      {
-        label: "Not enough data",
-        color: "url(#ned-hatch)",
-        stroke: "#ddd",
-        strokeWidth: 0.5,
-      },
+      { label: "Not enough data", color: "url(#ned-hatch)" },
     ];
   }
 
@@ -364,25 +361,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
 
   // Pattern for "not enough data" countries
   const defs = svg.append("defs");
-  const nedPattern = defs
-    .append("pattern")
-    .attr("id", "ned-hatch")
-    .attr("patternUnits", "userSpaceOnUse")
-    .attr("width", 4.2425)
-    .attr("height", 4.2425)
-    .attr("patternTransform", "rotate(-45)");
-  nedPattern
-    .append("rect")
-    .attr("width", 4.2425)
-    .attr("height", 4.2425)
-    .attr("fill", "#fff");
-  nedPattern
-    .append("rect")
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("width", 1.5)
-    .attr("height", 4.2425)
-    .attr("fill", "#ddd");
+  appendNoDataPattern(defs, "ned-hatch");
 
   // Projection
   const marginTop = 40;
@@ -577,15 +556,10 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
       let tooltipHTML;
       if (mode === "historical") {
         const change = d.properties.change;
-        const changeSign = change > 0 ? "+" : "";
-        let changeColor;
-        if (change > 0) changeColor = changeColors.positive;
-        else if (change < 0) changeColor = changeColors.negative;
-        else changeColor = changeColors.zero;
 
         tooltipHTML = `
-          <strong style="font-size: 28px; font-weight: bold; color: ${changeColor}; margin-bottom: 8px;">
-          ${changeSign}${Math.round(change)}
+          <strong style="font-size: 28px; font-weight: bold; color: ${ink}; margin-bottom: 8px;">
+          ${formatChange(change)}
           </strong><strong>${fullData.properties.NAME_ENGL}</strong><br>
           <span style="font-size: 11px; color: #000;">Change in total Internet <br>Accountability Score (2024→2025)</span><br>          
           ${sparklineHTML}
@@ -596,19 +570,14 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
             ? "Not enough data"
             : fullData.properties.group_value;
 
-        const categoryColor =
-          fullData.properties.group_value === "NA"
-            ? "#ccc"
-            : categoryColors[fullData.properties.group_value] || "#ccc";
-
         const totalScore =
           fullData.properties["Total score"] || fullData.properties.total || 0;
 
         tooltipHTML = `
-          <strong style="font-size: 12px; font-weight: regular; color: ${categoryColor}; margin-bottom: 0px;">
+          <strong style="font-size: 12px; font-weight: regular; color: ${ink}; margin-bottom: 0px;">
           Internet Accountability Score (IAS)
           </strong><br>
-          <strong style="font-size: 42px; font-weight: bold; color: ${categoryColor}; margin-top: 0px; margin-bottom: 8px;">
+          <strong style="font-size: 42px; font-weight: bold; color: ${ink}; margin-top: 0px; margin-bottom: 8px;">
             ${Math.round(totalScore)}
           </strong>
           <strong>${fullData.properties.NAME_ENGL}</strong> (${categoryDisplay})<br>

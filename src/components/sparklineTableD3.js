@@ -2,6 +2,7 @@ import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
 import { wrapText } from "./wrapText.js";
 import { basePath } from "./basePath.js";
+import { binLabels, binColors } from "./tokens.js";
 
 /**
  * Sparkline - single inline trend line for one country + one metric
@@ -11,12 +12,9 @@ import { basePath } from "./basePath.js";
  * @param {Array} yearDomain - [minYear, maxYear] for fixed x-axis
  * @param {Object} options
  */
-const categoryColors = {
-  "Off track": "#FDE74C",
-  "Catching up": "#afb6b5ff",
-  "On track": "#4ed0bfff",
-  Leading: "#007162ff",
-};
+const categoryColors = Object.fromEntries(
+  binLabels.map((label, i) => [label, binColors[i]]),
+);
 
 export function sparkline(
   data,

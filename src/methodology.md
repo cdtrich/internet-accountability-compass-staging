@@ -96,7 +96,7 @@ Global Digital Compact</a> and the <a href="https://digital-strategy.ec.europa.e
   </li>
   <li><b>Catching Up</b> (64-50): Early efforts visible, though progress remains limited or uneven.
   </li>
-  <li><b>Off Course</b> (49-0): Divergence from international norms or significant implementation gaps, reliable data might be missing.
+  <li><b>Off track</b> (49-0): Divergence from international norms or significant implementation gaps, reliable data might be missing.
   </li>
 </ol>
   <p>These categories are derived through comparative analysis and qualitative interpretation of underlying data across multiple indicators.

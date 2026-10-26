@@ -2,6 +2,15 @@ import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
 import { basePath } from "./basePath.js";
 import { legendGridSize, renderSwatchLegend } from "./mapLegend.js";
+import {
+  noData,
+  decline,
+  noChange,
+  historicalOpacityFloor,
+  ink,
+  swatchOutline,
+  formatChange,
+} from "./tokens.js";
 
 /**
  * D3 Map for Commitment-level data
@@ -135,7 +144,7 @@ export function mapCommitmentD3(
         .attr("text-anchor", "middle")
         .style("font-size", "10px")
         .style("font-weight", "bold")
-        .attr("fill", color)
+        .attr("fill", ink)
         .text(`${Math.round(d.value)}`);
 
       // Year label below (only first and last)
@@ -168,14 +177,14 @@ export function mapCommitmentD3(
   const opacityScale = d3
     .scaleLinear()
     .domain([0, 20])
-    .range([0.2, 1])
+    .range([historicalOpacityFloor, 1])
     .clamp(true);
 
   // Change colors for historical mode
   const changeColors = {
     positive: pillarColor, // Pillar color for improvements
-    negative: "#FDE74C", // Yellow for declines
-    zero: "#555555", // Gray for no change
+    negative: decline,
+    zero: noChange,
   };
 
   let worldWithData;
@@ -224,12 +233,12 @@ export function mapCommitmentD3(
     });
 
     legendData = [
-      { label: "Decrease", color: changeColors.negative },
-      { label: "No change", color: "#55555520", strokeWidth: 1 },
-      { label: "Increase", color: changeColors.positive },
+      { label: "▼ Decrease", color: changeColors.negative },
+      { label: "No change", color: `${noChange}20` },
+      { label: "▲ Increase", color: changeColors.positive },
       {
         label: "Not enough data",
-        color: "#ddd",
+        color: noData,
         pattern: "url(#white-diagonal-lines-commitment)",
       },
     ];
@@ -348,14 +357,14 @@ export function mapCommitmentD3(
     .attr("fill", (d) => {
       if (mode === "historical") {
         if (d.properties.change === null || d.properties.change === undefined)
-          return d.properties.value !== undefined ? "#ddd" : "#fff";
+          return d.properties.value !== undefined ? noData : "#fff";
         const change = d.properties.change;
         if (change > 0) return changeColors.positive;
         if (change < 0) return changeColors.negative;
         return changeColors.zero;
       } else {
         if (d.properties.value !== undefined && isNaN(d.properties.value))
-          return "#ddd";
+          return noData;
         if (d.properties.value === undefined) return "#fff";
         return colorScale(d.properties.value);
       }
@@ -480,9 +489,8 @@ export function mapCommitmentD3(
       if (mode === "historical") {
         if (hasData) {
           const change = d.properties.change;
-          const changeSign = change > 0 ? "+" : "";
-          tooltipContent = `<strong style="font-size: 20px; color: ${sparklineColor};">
-            ${changeSign}${Math.round(change)}
+          tooltipContent = `<strong style="font-size: 20px; color: ${ink};">
+            ${formatChange(change)}
           </strong><br>
           <strong>${d.properties.NAME_ENGL}</strong><br>
           <span style="font-size: 11px; color: #000;">Change in <br>${d.properties.commitment_txt_cardinal} score <br>(2024→2025)</span><br>
@@ -492,7 +500,7 @@ export function mapCommitmentD3(
         }
       } else {
         tooltipContent = hasData
-          ? `<strong style="font-size: 42px; font-weight: bold; color: ${colorScale(d.properties.value)}; margin-top: 0px; margin-bottom: 8px;">
+          ? `<strong style="font-size: 42px; font-weight: bold; color: ${ink}; margin-top: 0px; margin-bottom: 8px;">
           ${Math.round(d.properties.value)}</strong> <strong>${d.properties.NAME_ENGL}</strong> (${d.properties.group_value})<br>
           ${partialNote}
           `
@@ -669,8 +677,8 @@ export function mapCommitmentD3(
       .attr("width", legendWidth)
       .attr("height", legendHeight)
       .attr("fill", `url(#${gradientId})`)
-      .attr("stroke", "#ccc")
-      .attr("stroke-width", 1);
+      .attr("stroke", swatchOutline.stroke)
+      .attr("stroke-width", swatchOutline.strokeWidth);
 
     // Legend labels
     legend

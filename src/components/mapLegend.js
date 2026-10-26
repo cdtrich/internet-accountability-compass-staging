@@ -3,6 +3,8 @@
 // grid that wraps to two columns once there are enough items to benefit from
 // it, so the legend stays compact and centered under the map on narrow charts.
 
+import { swatchOutline } from "./tokens.js";
+
 const SWATCH_SIZE = 18;
 const ROW_HEIGHT = 25;
 const COLUMN_WIDTH = 150;
@@ -25,7 +27,8 @@ export function legendGridSize(itemCount) {
 // Renders a grid of swatch + label entries into `legendGroup`, starting at
 // its origin (0, 0) — the caller positions/centers the group itself. Items
 // may carry a `pattern` (a fill URL) layered over the base color swatch, used
-// for the hatched "not enough data" / "partial data" entries.
+// for the hatched "not enough data" / "partial data" entries. Swatches get a
+// hairline dark outline unless the item sets its own stroke.
 export function renderSwatchLegend(legendGroup, items) {
   const columns = columnCount(items.length);
 
@@ -47,8 +50,8 @@ export function renderSwatchLegend(legendGroup, items) {
     .attr("width", SWATCH_SIZE)
     .attr("height", SWATCH_SIZE)
     .attr("fill", (d) => d.color)
-    .attr("stroke", (d) => d.stroke || "none")
-    .attr("stroke-width", (d) => d.strokeWidth || 0);
+    .attr("stroke", (d) => d.stroke || swatchOutline.stroke)
+    .attr("stroke-width", (d) => d.strokeWidth || swatchOutline.strokeWidth);
 
   entries
     .filter((d) => d.pattern)

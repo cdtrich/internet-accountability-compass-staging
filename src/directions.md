@@ -25,6 +25,7 @@
 
 ```js
 import colorScales from "./components/scales.js";
+import { decline, noChange as noChangeColor, ink } from "./components/tokens.js";
 import { onlyUnique } from "./components/onlyUnique.js";
 import { customLegend, viewofCustomLegend } from "./components/customLegend.js";
 import { sidebar } from "./components/sidebar.js";
@@ -52,7 +53,7 @@ import { modeToggle } from "./components/modeToggle.js";
     <p>To interpret this progress, the Compass uses four categories to describe each country's current trajectory:
     </p>
       <ol>
-        <li><b>Off Track:</b> The country's current efforts diverge from international principles and commitments. A strategic shift is needed to align with shared goals.</li>
+        <li><b>Off track:</b> The country's current efforts diverge from international principles and commitments. A strategic shift is needed to align with shared goals.</li>
         <li><b>Catching Up:</b> The country has taken steps to align with global objectives; foundations are forming, but progress is still limited or uneven.
         </li>
         <li><b>On Track:</b> The country's policies and actions are aligned with global objectives, showing steady and measurable advancement.
@@ -236,9 +237,9 @@ if (mapMode === "latest") {
   const pillarColor = fillScale.getColor(selectedPillar, 100);
 
   statsData = [
-    { label: "Decrease", count: decreases, color: "#FDE74C" },
-    { label: "No change", count: noChange, color: "#afb6b5" },
-    { label: "Increase", count: increases, color: pillarColor },
+    { label: "▼ Decrease", count: decreases, color: decline },
+    { label: "No change", count: noChange, color: noChangeColor },
+    { label: "▲ Increase", count: increases, color: pillarColor },
   ];
 }
 ```
@@ -261,9 +262,9 @@ const commitments = [
 <div class="grid keystats-grid ${mapMode === 'latest' ? 'grid-cols-4' : 'grid-cols-3'}">
   ${statsData.map((stat) => html`
   <div class="card key">
-    <span class="very-big" style="color: ${stat.color};">${stat.count}</span
-    ><span style="color: ${stat.color};">countries</span>
-    <h2>${stat.label}</h2>
+    <span class="very-big" style="color: ${ink};">${stat.count}</span
+    ><span style="color: ${ink};">countries</span>
+    <h2><span style="display: inline-block; width: 0.8em; height: 0.8em; margin-right: 0.35em; vertical-align: -0.05em; background: ${stat.color}; border: 0.5px solid ${ink};"></span>${stat.label}</h2>
   </div>
   `)}
 </div>

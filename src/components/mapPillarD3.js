@@ -2,6 +2,14 @@ import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
 import { basePath } from "./basePath.js";
 import { legendGridSize, renderSwatchLegend } from "./mapLegend.js";
+import {
+  noData,
+  decline,
+  noChange,
+  historicalOpacityFloor,
+  ink,
+  formatChange,
+} from "./tokens.js";
 
 /**
  * D3 Map with Zoom/Pan
@@ -130,7 +138,7 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
         .attr("text-anchor", "middle")
         .style("font-size", "10px")
         .style("font-weight", "bold")
-        .attr("fill", dotColor)
+        .attr("fill", ink)
         .text(`${Math.round(d.value)}`);
 
       // Year label below (only first and last)
@@ -163,15 +171,15 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
   const opacityScale = d3
     .scaleSymlog()
     .domain([0, 10])
-    .range([0.2, 1])
+    .range([historicalOpacityFloor, 1])
     .clamp(true);
 
   // Change colors for historical mode
   const pillarColor = fillScale.getColor(selectedPillar);
   const changeColors = {
     positive: pillarColor, // Pillar color for improvements
-    negative: "#FDE74C", // Yellow for declines
-    zero: "#555555", // Gray for no change
+    negative: decline,
+    zero: noChange,
   };
 
   let worldWithData, legendData;
@@ -213,9 +221,9 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
     });
 
     legendData = [
-      { label: "Decrease", color: changeColors.negative },
-      { label: "No change", color: "#55555520", strokeWidth: 1 },
-      { label: "Increase", color: changeColors.positive },
+      { label: "▼ Decrease", color: changeColors.negative },
+      { label: "No change", color: `${noChange}20` },
+      { label: "▲ Increase", color: changeColors.positive },
     ];
   } else {
     // Latest mode: show current categories
@@ -260,7 +268,7 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
     ...legendData,
     {
       label: "Not enough data",
-      color: "#ddd",
+      color: noData,
       pattern: "url(#white-diagonal-lines-map-ned)",
     },
     {
@@ -366,14 +374,14 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
     .attr("fill", (d) => {
       if (mode === "historical") {
         if (d.properties.change === null || d.properties.change === undefined)
-          return d.properties.value !== undefined ? "#ddd" : "#fff";
+          return d.properties.value !== undefined ? noData : "#fff";
         const change = d.properties.change;
         if (change > 0) return changeColors.positive;
         if (change < 0) return changeColors.negative;
         return changeColors.zero;
       } else {
         if (d.properties.value !== undefined && isNaN(d.properties.value))
-          return "#ddd";
+          return noData;
         if (d.properties.value === undefined) return "#fff";
         return fillScale.getOrdinalCategoryScale(d.properties.pillar_txt)(
           d.properties.group_value,
@@ -504,9 +512,8 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
       if (mode === "historical") {
         if (hasData) {
           const change = d.properties.change;
-          const changeSign = change > 0 ? "+" : "";
-          tooltipContent = `<strong style="font-size: 20px; color: ${categoryColor};">
-            ${changeSign}${Math.round(change)}
+          tooltipContent = `<strong style="font-size: 20px; color: ${ink};">
+            ${formatChange(change)}
           </strong><br>
           <strong>${d.properties.NAME_ENGL}</strong><br>
           <span style="font-size: 11px; color: #000;">Change in <br>${d.properties.pillar_txt} score <br>(2024→2025)</span><br>
@@ -516,7 +523,7 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
         }
       } else {
         tooltipContent = hasData
-          ? `<strong style="font-size: 42px; font-weight: bold; color: ${categoryColor}; margin-top: 0px; margin-bottom: 8px;">
+          ? `<strong style="font-size: 42px; font-weight: bold; color: ${ink}; margin-top: 0px; margin-bottom: 8px;">
           ${Math.round(d.properties.value)}</strong> <strong>${d.properties.NAME_ENGL}</strong> (${d.properties.group_value})<br>
           ${partialNote}`
           : `<strong>${d.properties.NAME_ENGL}</strong><br><span style="font-size: 11px; color: #666;">Not enough data</span>`;

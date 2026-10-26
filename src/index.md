@@ -18,6 +18,7 @@
 
 ```js
 import colorScales from "./components/scales.js";
+import { bins, decline, noChange as noChangeColor, ink } from "./components/tokens.js";
 import { mapTotalD3 } from "./components/mapTotalD3.js";
 import { sidebar } from "./components/sidebar.js";
 import { featuredPreview } from "./components/featuredPreview.js";
@@ -161,9 +162,9 @@ if (mapMode === "latest") {
   const totalColor = fillScale.getColor("Total score", 100);
 
   statsData = [
-    { label: "Decrease", count: decreases, color: "#FDE74C" },
-    { label: "No change", count: noChange, color: "#afb6b5" },
-    { label: "Increase", count: increases, color: "#007162ff" },
+    { label: "▼ Decrease", count: decreases, color: decline },
+    { label: "No change", count: noChange, color: noChangeColor },
+    { label: "▲ Increase", count: increases, color: bins.leading },
   ];
 }
 ```
@@ -177,9 +178,9 @@ if (mapMode === "latest") {
   >
     ${statsData.map((stat) => html`
     <div class="card key">
-      <span class="very-big" style="color: ${stat.color};">${stat.count}</span
-      ><span style="color: ${stat.color};">countries</span>
-      <h2>${stat.label}</h2>
+      <span class="very-big" style="color: ${ink};">${stat.count}</span
+      ><span style="color: ${ink};">countries</span>
+      <h2><span style="display: inline-block; width: 0.8em; height: 0.8em; margin-right: 0.35em; vertical-align: -0.05em; background: ${stat.color}; border: 0.5px solid ${ink};"></span>${stat.label}</h2>
     </div>
     `)}
   </div>
