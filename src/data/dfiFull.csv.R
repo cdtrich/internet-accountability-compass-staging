@@ -1,34 +1,87 @@
+# dfiFull: long table, one row per country x indicator x year -----------------
+# Source: Internet Accountability Index workbook V3.0 (sheets 2020-2026,
+# header in rows 1-3, data from row 4). Output: CSV on stdout.
+# Output columns and order are unchanged from the previous version.
+
 library(dplyr)
 library(tidyr)
 library(readr)
 library(readxl)
 library(stringr)
-library(googlesheets4)
 library(purrr)
+library(here)
+
+# CONFIG ----------------------------------------------------------------------
+
+# "xlsx"   = committed workbook in src/data (reproducible, no network)
+# "gsheet" = live Google Sheet (previous behaviour; needs googlesheets4)
+DFI_SOURCE <- "xlsx"
+DFI_XLSX <- here("src", "data", "Internet-Accountability-Index-V3.0.xlsx")
+DFI_SHEET_ID <- "15_2sax_UIxuyDnvFvwQD3ZKi-h5IyzDxZCxXwwR-9xA"
+
+if (DFI_SOURCE == "gsheet") {
+    library(googlesheets4)
+    gs4_deauth() # public/link-shareable sheet
+}
+
+# READ HELPERS ----------------------------------------------------------------
+
+# everything as text, "NA" and empty cells -> NA; converted to numeric later
+read_dfi <- function(sheet, skip = 0) {
+    if (DFI_SOURCE == "xlsx") {
+        read_excel(
+            DFI_XLSX,
+            sheet = sheet, skip = skip,
+            col_types = "text", na = c("", "NA")
+        )
+    } else {
+        googlesheets4::read_sheet(
+            DFI_SHEET_ID,
+            sheet = sheet, skip = skip,
+            col_types = "c", na = c("", "NA")
+        )
+    }
+}
+
+# all four-digit sheet names = data years (no hardcoded year vector)
+dfi_years <- function() {
+    sheets <- if (DFI_SOURCE == "xlsx") {
+        excel_sheets(DFI_XLSX)
+    } else {
+        googlesheets4::sheet_names(DFI_SHEET_ID)
+    }
+    sort(sheets[str_detect(sheets, "^\\d{4}$")])
+}
+
+# stop early if the sheet layout is not the one this script was written for
+check_schema <- function(df, sheet) {
+    needed <- c("Countries", "ISO3_CODE", "Total Index Score")
+    n_ind <- sum(str_detect(names(df), "^Indicator \\d+-\\d+"))
+    n_tot <- sum(str_detect(names(df), "^Total\\.\\.\\."))
+    if (!all(needed %in% names(df)) || n_ind != 12 || n_tot != 4) {
+        stop(sprintf(
+            "Sheet %s: unexpected layout (%d indicator cols, %d Total cols, missing: %s)",
+            sheet, n_ind, n_tot, paste(setdiff(needed, names(df)), collapse = ", ")
+        ))
+    }
+    invisible(df)
+}
+
+years <- dfi_years()
+stopifnot(length(years) >= 1)
+latest_sheet <- max(years)
 
 # READ ALL DATA FILES ---------------------------------------------------------
-
-# Skip authentication for public/link-shareable sheets
-gs4_deauth() # 2026-06-01
-
-# Your Google Sheet ID (extracted from URL)
-sheet_id <- "15_2sax_UIxuyDnvFvwQD3ZKi-h5IyzDxZCxXwwR-9xA"
-
-# Define years to process
-years <- c("2020", "2021", "2022", "2023", "2024", "2025")
 
 # Function to read and process a single year
 read_year <- function(year_sheet) {
     # Read the data
-    df <- read_sheet(
-        sheet_id,
-        sheet = year_sheet,
-        skip = 2,
-        col_types = "c" # Read everything as character first, then convert
-    )
+    df_raw <- read_dfi(year_sheet, skip = 2)
+    check_schema(df_raw, year_sheet)
 
-    # Read indicators (just once from 2025 sheet since they're the same)
-    # We'll do this outside the function
+    df <- df_raw %>%
+        # the workbook has formatted-but-empty rows below the data
+        filter(!is.na(Countries), !is.na(ISO3_CODE))
 
     df_long <- df %>%
         select(Countries:`Total Index Score`, -contains("Total...")) %>%
@@ -63,24 +116,22 @@ read_year <- function(year_sheet) {
             commitment_num = as.numeric(str_sub(commitment_num, 1, 2))
         ) %>%
         # detect not enough data comments
+        # (sheet says "not enough data"; match case-insensitively, keep the
+        # label as the front end has always received it)
         mutate(
-            note = ifelse(
-                `Total Index Score` == "Not enough data",
+            note = if_else(
+                str_to_lower(str_trim(`Total Index Score`)) == "not enough data",
                 "Not enough data",
-                NA
+                NA_character_
             ),
-            `Total Index Score` = ifelse(
-                `Total Index Score` == "Not enough data",
-                NA,
-                as.numeric(`Total Index Score`)
-            ),
+            `Total Index Score` = suppressWarnings(as.numeric(`Total Index Score`)),
             # slice groups
             group = cut(`Total Index Score`,
-                breaks = c(-Inf, 50, 65, 79, Inf),
+                breaks = c(-Inf, 50, 65, 80, Inf), right = FALSE, # bands per methodology.md: 0-49 / 50-64 / 65-79 / 80-100
                 labels = c("Off track", "Catching up", "On track", "Leading")
             ),
             group_value = cut(value,
-                breaks = c(-Inf, 50, 65, 79, Inf),
+                breaks = c(-Inf, 50, 65, 80, Inf), right = FALSE, # bands per methodology.md: 0-49 / 50-64 / 65-79 / 80-100
                 labels = c("Off track", "Catching up", "On track", "Leading")
             ),
             # Add year column
@@ -90,26 +141,33 @@ read_year <- function(year_sheet) {
     return(df_long)
 }
 
-# Read indicators and cardinals from 2025 sheet (structure should be same across years)
-indicators <- read_sheet(
-    sheet_id,
-    sheet = "2025",
-    col_types = "c" # Read everything as character first, then convert
-) %>%
+# Read indicators and cardinals from the LATEST sheet
+# (V3.0: identical headers on all sheets, indicator set applies to every year)
+indicators <- read_dfi(latest_sheet) %>%
     slice(1) %>%
     select(3:5, 7:9, 11:13, 15:17) %>%
     pivot_longer(1:12) %>%
     pull(value)
 
-cardinals <- read_sheet(
-    sheet_id,
-    sheet = "2025", na = "NA"
-) %>%
+cardinals <- read_dfi(latest_sheet) %>%
     names() %>%
     tibble() %>%
     rename(name = 1) %>%
     filter(!str_detect(name, "\\.")) %>%
     pull()
+
+stopifnot(length(indicators) == 12, !anyNA(indicators), length(cardinals) == 4)
+
+# the labels come from the latest sheet; flag it if older sheets disagree
+indicators_by_year <- map(years, function(y) {
+    read_dfi(y) %>%
+        slice(1) %>%
+        select(3:5, 7:9, 11:13, 15:17) %>%
+        unlist(use.names = FALSE)
+})
+if (!all(map_lgl(indicators_by_year, ~ identical(.x, indicators)))) {
+    warning("Indicator names differ between year sheets; labels use sheet ", latest_sheet)
+}
 
 # Process all years and combine
 df_all_years <- map_dfr(years, read_year)
@@ -125,6 +183,9 @@ df_rename <- df_all_years %>%
         NAME_ENGL = Countries,
         total = `Total Index Score`,
     )
+
+# jitter is random: fix the seed so the same input gives the same CSV
+set.seed(2026)
 
 dfi_clean <- df_rename %>%
     # drop values without total
