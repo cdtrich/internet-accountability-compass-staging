@@ -1,9 +1,6 @@
+import { basePath } from "./basePath.js";
+
 export function sidebar() {
-  const basePath = window.location.pathname.includes(
-    "/internet-accountability-compass",
-  )
-    ? "/internet-accountability-compass"
-    : "";
   const isMobile = window.innerWidth <= 768;
 
   const container = document.createElement("div");
