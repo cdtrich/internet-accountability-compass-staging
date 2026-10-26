@@ -1,3 +1,7 @@
+// Staging builds are detected by the repo name inside BASE_PATH
+// (".../internet-accountability-compass-staging/"). Live never matches.
+const staging = (process.env.BASE_PATH ?? "").includes("staging");
+
 // See https://observablehq.com/framework/config for documentation.
 export default {
   // The project’s title; used in the sidebar and webpage titles.
@@ -29,6 +33,8 @@ export default {
   // typographer: false, // smart quotes and other typographic improvements
   // cleanUrls: true, // drop .html from URLs
 
-  // Add a robots meta tag to prevent search engines from indexing the site if BASE_PATH is set
-  head: process.env.BASE_PATH ? '<meta name="robots" content="noindex">' : "",
+  // Staging only: hide from search engines and show a "STAGING" label
+  head: staging
+    ? `<meta name="robots" content="noindex"><style>body::after{content:"STAGING";position:fixed;right:8px;bottom:8px;z-index:2147483647;background:#f61067;color:#fff;font:700 11px/1 sans-serif;letter-spacing:.08em;padding:4px 8px;border-radius:3px;pointer-events:none}</style>`
+    : "",
 };

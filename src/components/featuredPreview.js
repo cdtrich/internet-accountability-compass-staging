@@ -1,10 +1,6 @@
-export function featuredPreview() {
-  const basePath = window.location.pathname.includes(
-    "/internet-accountability-compass",
-  )
-    ? "/internet-accountability-compass"
-    : "";
+import { basePath } from "./basePath.js";
 
+export function featuredPreview() {
   const posts = [
     {
       title: "Charting a Way for Stronger Internet Accountability",
