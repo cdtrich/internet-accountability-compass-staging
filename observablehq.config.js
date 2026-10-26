@@ -2,7 +2,7 @@
 export default {
   // The project’s title; used in the sidebar and webpage titles.
   title: "Internet Accountability Compass",
-  base: "/internet-accountability-compass/",
+  base: process.env.BASE_PATH ?? "/internet-accountability-compass/",
   root: "src",
 
   assets: [
@@ -28,4 +28,7 @@ export default {
   // linkify: true, // convert URLs in Markdown to links
   // typographer: false, // smart quotes and other typographic improvements
   // cleanUrls: true, // drop .html from URLs
+
+  // Add a robots meta tag to prevent search engines from indexing the site if BASE_PATH is set
+  head: process.env.BASE_PATH ? '<meta name="robots" content="noindex">' : "",
 };
