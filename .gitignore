@@ -1,2 +1,5 @@
 admin/
 node_modules/
+
+dist/
+_serve/
