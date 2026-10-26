@@ -1,0 +1,743 @@
+
+> build
+> observable build
+
+load /1countryPageTemplate in 620ms
+load /countries in 109ms
+load /directions in 128ms
+load /index in 97ms
+load /methodology in 78ms
+load /perspectives in 106ms
+load /resources in 77ms
+load /AFG/index in 129ms
+load /AGO/index in 108ms
+load /ALB/index in 380ms
+load /AND/index in 372ms
+load /ARE/index in 329ms
+load /ARG/index in 425ms
+load /ARM/index in 394ms
+load /ATG/index in 362ms
+load /AUS/index in 328ms
+load /AUT/index in 367ms
+load /AZE/index in 371ms
+load /BDI/index in 323ms
+load /BEL/index in 349ms
+load /BEN/index in 376ms
+load /BFA/index in 320ms
+load /BGD/index in 351ms
+load /BGR/index in 404ms
+load /BHR/index in 333ms
+load /BHS/index in 352ms
+load /BIH/index in 348ms
+load /BLR/index in 257ms
+load /BLZ/index in 349ms
+load /BOL/index in 317ms
+load /BRA/index in 337ms
+load /BRB/index in 352ms
+load /BRN/index in 318ms
+load /BTN/index in 355ms
+load /BWA/index in 346ms
+load /CAF/index in 407ms
+load /CAN/index in 381ms
+load /CHE/index in 339ms
+load /CHL/index in 321ms
+load /CHN/index in 346ms
+load /CIV/index in 331ms
+load /CMR/index in 328ms
+load /COD/index in 339ms
+load /COG/index in 329ms
+load /COL/index in 309ms
+load /COM/index in 337ms
+load /CPV/index in 330ms
+load /CRI/index in 282ms
+load /CUB/index in 376ms
+load /CYP/index in 384ms
+load /CZE/index in 310ms
+load /data/data-README in 270ms
+load /DEU/index in 353ms
+load /DJI/index in 314ms
+load /DMA/index in 362ms
+load /DNK/index in 347ms
+load /DOM/index in 343ms
+load /DZA/index in 337ms
+load /ECU/index in 359ms
+load /EGY/index in 326ms
+load /ERI/index in 331ms
+load /ESP/index in 348ms
+load /EST/index in 358ms
+load /ETH/index in 338ms
+load /FIN/index in 337ms
+load /FJI/index in 314ms
+load /FRA/index in 331ms
+load /FSM/index in 339ms
+load /GAB/index in 300ms
+load /GBR/index in 344ms
+load /GEO/index in 326ms
+load /GHA/index in 304ms
+load /GIN/index in 330ms
+load /GMB/index in 319ms
+load /GNB/index in 294ms
+load /GNQ/index in 341ms
+load /GRC/index in 170ms
+load /GRD/index in 112ms
+load /GTM/index in 98ms
+load /GUY/index in 94ms
+load /HND/index in 97ms
+load /HRV/index in 97ms
+load /HTI/index in 95ms
+load /HUN/index in 94ms
+load /IDN/index in 94ms
+load /IND/index in 94ms
+load /IRL/index in 94ms
+load /IRN/index in 95ms
+load /IRQ/index in 94ms
+load /ISL/index in 113ms
+load /ISR/index in 195ms
+load /ITA/index in 118ms
+load /JAM/index in 107ms
+load /JOR/index in 96ms
+load /JPN/index in 96ms
+load /KAZ/index in 96ms
+load /KEN/index in 95ms
+load /KGZ/index in 95ms
+load /KHM/index in 93ms
+load /KIR/index in 98ms
+load /KNA/index in 106ms
+load /KOR/index in 94ms
+load /KWT/index in 96ms
+load /LAO/index in 94ms
+load /LBN/index in 96ms
+load /LBR/index in 97ms
+load /LBY/index in 98ms
+load /LCA/index in 101ms
+load /LIE/index in 100ms
+load /LKA/index in 96ms
+load /LSO/index in 98ms
+load /LTU/index in 101ms
+load /LUX/index in 118ms
+load /LVA/index in 110ms
+load /MAR/index in 97ms
+load /MCO/index in 97ms
+load /MDA/index in 95ms
+load /MDG/index in 95ms
+load /MDV/index in 96ms
+load /MEX/index in 116ms
+load /MHL/index in 321ms
+load /MKD/index in 337ms
+load /MLI/index in 294ms
+load /MLT/index in 333ms
+load /MMR/index in 332ms
+load /MNE/index in 349ms
+load /MNG/index in 322ms
+load /MOZ/index in 372ms
+load /MRT/index in 375ms
+load /MUS/index in 441ms
+load /MWI/index in 342ms
+load /MYS/index in 328ms
+load /NAM/index in 310ms
+load /NER/index in 334ms
+load /NGA/index in 265ms
+load /NIC/index in 334ms
+load /NLD/index in 309ms
+load /NOR/index in 192ms
+load /NPL/index in 108ms
+load /NRU/index in 99ms
+load /NZL/index in 102ms
+load /OMN/index in 110ms
+load /PAK/index in 220ms
+load /PAN/index in 129ms
+load /PER/index in 160ms
+load /PHL/index in 167ms
+load /PLW/index in 122ms
+load /PNG/index in 139ms
+load /POL/index in 124ms
+load /PRK/index in 102ms
+load /PRT/index in 94ms
+load /PRY/index in 98ms
+load /QAT/index in 114ms
+load /ROU/index in 96ms
+load /RUS/index in 94ms
+load /RWA/index in 99ms
+load /SAU/index in 101ms
+load /SDN/index in 93ms
+load /SEN/index in 92ms
+load /SGP/index in 94ms
+load /SLB/index in 97ms
+load /SLE/index in 98ms
+load /SLV/index in 97ms
+load /SMR/index in 121ms
+load /SOM/index in 282ms
+load /SRB/index in 304ms
+load /SSD/index in 330ms
+load /STP/index in 276ms
+load /SUR/index in 322ms
+load /SVK/index in 345ms
+load /SVN/index in 255ms
+load /SWE/index in 150ms
+load /SWZ/index in 321ms
+load /SYC/index in 338ms
+load /SYR/index in 315ms
+load /TCD/index in 342ms
+load /TGO/index in 346ms
+load /THA/index in 310ms
+load /TJK/index in 321ms
+load /TKM/index in 337ms
+load /TLS/index in 323ms
+load /TON/index in 371ms
+load /TTO/index in 323ms
+load /TUN/index in 346ms
+load /TUR/index in 347ms
+load /TUV/index in 333ms
+load /TZA/index in 291ms
+load /UGA/index in 348ms
+load /UKR/index in 353ms
+load /URY/index in 356ms
+load /USA/index in 327ms
+load /UZB/index in 346ms
+load /VCT/index in 339ms
+load /VEN/index in 120ms
+load /VNM/index in 92ms
+load /VUT/index in 95ms
+load /WSM/index in 92ms
+load /XKX/index in 93ms
+load /YEM/index in 99ms
+load /ZAF/index in 96ms
+load /ZMB/index in 95ms
+load /ZWE/index in 123ms
+built 202 pages in src
+bundle /_observablehq/client.js → src/.observablehq/cache/_observablehq/client.js
+bundle /_observablehq/runtime.js → src/.observablehq/cache/_observablehq/runtime.js
+bundle /_observablehq/stdlib.js → src/.observablehq/cache/_observablehq/stdlib.js
+bundle /_observablehq/stdlib/inputs.js → src/.observablehq/cache/_observablehq/stdlib/inputs.js
+build /_observablehq/theme-air.css → dist/_observablehq/theme-air.aad62322.css
+build src/style.css → dist/_import/style.59eb95fc.css
+build /_observablehq/stdlib/inputs.css → dist/_observablehq/stdlib/inputs.ea9fd553.css
+copy src/style.css → dist/_file/style.acd7c9ec.css
+copy src/modeToggle.css → dist/_file/modeToggle.ad3d6df9.css
+copy src/sidebar.css → dist/_file/sidebar.389079a3.css
+copy src/data/dfiFull.csv → load /data/dfiFull.csv → [fresh] success 1.8 MB in 4ms
+dist/_file/data/dfiFull.70297b4b.csv
+copy src/data/dfiCardinal.csv → load /data/dfiCardinal.csv → [fresh] success 477 kB in 0ms
+dist/_file/data/dfiCardinal.47a2a211.csv
+copy src/custom-legend.css → dist/_file/custom-legend.af01acc3.css
+copy src/data/sources.csv → load /data/sources.csv → [fresh] success 138 kB in 0ms
+dist/_file/data/sources.9a6ffa49.csv
+copy src/data/CNTR_RG_20M_2024_4326.json → dist/_file/data/CNTR_RG_20M_2024_4326.b5dd6f6b.json
+copy src/data/COAS_RG_20M_2016_4326.json → dist/_file/data/COAS_RG_20M_2016_4326.4cea764a.json
+copy src/data/CNTR_RG_60M_2024_4326.json → dist/_file/data/CNTR_RG_60M_2024_4326.21027f91.json
+copy src/data/COAS_RG_60M_2016_4326.json → dist/_file/data/COAS_RG_60M_2016_4326.b7f65278.json
+alias /_observablehq/client.js → /_observablehq/client.d0526745.js
+alias /_observablehq/runtime.js → /_observablehq/runtime.e080113b.js
+alias /_observablehq/stdlib.js → /_observablehq/stdlib.73a8ec5a.js
+alias /_npm/d3@7.9.0/_esm.js → /_npm/d3@7.9.0/e324157d.js
+alias /_npm/htl@0.3.1/_esm.js → /_npm/htl@0.3.1/72f4716c.js
+alias /_npm/d3-array@3.2.4/_esm.js → /_npm/d3-array@3.2.4/e93ca09f.js
+alias /_npm/d3-axis@3.0.0/_esm.js → /_npm/d3-axis@3.0.0/0f2de24d.js
+alias /_npm/d3-brush@3.0.0/_esm.js → /_npm/d3-brush@3.0.0/65eb105b.js
+alias /_npm/d3-chord@3.0.1/_esm.js → /_npm/d3-chord@3.0.1/7ef8fb2e.js
+alias /_npm/d3-color@3.1.0/_esm.js → /_npm/d3-color@3.1.0/aeb57b94.js
+alias /_npm/d3-contour@4.0.2/_esm.js → /_npm/d3-contour@4.0.2/1d2aed74.js
+alias /_npm/d3-delaunay@6.0.4/_esm.js → /_npm/d3-delaunay@6.0.4/5ced1d52.js
+alias /_npm/d3-dispatch@3.0.1/_esm.js → /_npm/d3-dispatch@3.0.1/9ba9c7f3.js
+alias /_npm/d3-drag@3.0.0/_esm.js → /_npm/d3-drag@3.0.0/4202580c.js
+alias /_npm/d3-dsv@3.0.1/_esm.js → /_npm/d3-dsv@3.0.1/9cffc2bd.js
+alias /_npm/d3-ease@3.0.1/_esm.js → /_npm/d3-ease@3.0.1/cdd7e898.js
+alias /_npm/d3-fetch@3.0.1/_esm.js → /_npm/d3-fetch@3.0.1/b4e2ad9a.js
+alias /_npm/d3-force@3.0.0/_esm.js → /_npm/d3-force@3.0.0/5e804d15.js
+alias /_npm/d3-format@3.1.2/_esm.js → /_npm/d3-format@3.1.2/3785bf2d.js
+alias /_npm/d3-geo@3.1.1/_esm.js → /_npm/d3-geo@3.1.1/40599fb3.js
+alias /_npm/d3-hierarchy@3.1.2/_esm.js → /_npm/d3-hierarchy@3.1.2/e49e792c.js
+alias /_npm/d3-interpolate@3.0.1/_esm.js → /_npm/d3-interpolate@3.0.1/8d1e5425.js
+alias /_npm/d3-path@3.1.0/_esm.js → /_npm/d3-path@3.1.0/20d3f133.js
+alias /_npm/d3-polygon@3.0.1/_esm.js → /_npm/d3-polygon@3.0.1/7553081f.js
+alias /_npm/d3-quadtree@3.0.1/_esm.js → /_npm/d3-quadtree@3.0.1/0dfd751c.js
+alias /_npm/d3-random@3.0.1/_esm.js → /_npm/d3-random@3.0.1/3c90ee06.js
+alias /_npm/d3-scale@4.0.2/_esm.js → /_npm/d3-scale@4.0.2/720b7f0a.js
+alias /_npm/d3-scale-chromatic@3.1.0/_esm.js → /_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js
+alias /_npm/d3-selection@3.0.0/_esm.js → /_npm/d3-selection@3.0.0/4d94e5b7.js
+alias /_npm/d3-shape@3.2.0/_esm.js → /_npm/d3-shape@3.2.0/6d3a6726.js
+alias /_npm/d3-time@3.1.0/_esm.js → /_npm/d3-time@3.1.0/9f03c579.js
+alias /_npm/d3-time-format@4.1.0/_esm.js → /_npm/d3-time-format@4.1.0/07c9626f.js
+alias /_npm/d3-timer@3.0.1/_esm.js → /_npm/d3-timer@3.0.1/b58a267d.js
+alias /_npm/d3-transition@3.0.1/_esm.js → /_npm/d3-transition@3.0.1/004da2ac.js
+alias /_npm/d3-zoom@3.0.0/_esm.js → /_npm/d3-zoom@3.0.0/b5786b3f.js
+alias /_npm/internmap@2.0.3/_esm.js → /_npm/internmap@2.0.3/e08981d9.js
+alias /_npm/delaunator@5.0.1/_esm.js → /_npm/delaunator@5.0.1/02d43215.js
+alias /_npm/robust-predicates@3.0.2/_esm.js → /_npm/robust-predicates@3.0.2/aa00730b.js
+alias /_observablehq/stdlib/inputs.js → /_observablehq/stdlib/inputs.4ef1d259.js
+alias /_npm/topojson-client@3.1.0/_esm.js → /_npm/topojson-client@3.1.0/edd9ee95.js
+alias /_npm/isoformat@0.2.1/_esm.js → /_npm/isoformat@0.2.1/18cbf477.js
+build /_observablehq/client.js → dist/_observablehq/client.d0526745.js
+build /_observablehq/runtime.js → dist/_observablehq/runtime.e080113b.js
+build /_observablehq/stdlib.js → dist/_observablehq/stdlib.73a8ec5a.js
+build /_npm/d3@7.9.0/_esm.js → dist/_npm/d3@7.9.0/e324157d.js
+build /_npm/htl@0.3.1/_esm.js → dist/_npm/htl@0.3.1/72f4716c.js
+build /_npm/d3-array@3.2.4/_esm.js → dist/_npm/d3-array@3.2.4/e93ca09f.js
+build /_npm/d3-axis@3.0.0/_esm.js → dist/_npm/d3-axis@3.0.0/0f2de24d.js
+build /_npm/d3-brush@3.0.0/_esm.js → dist/_npm/d3-brush@3.0.0/65eb105b.js
+build /_npm/d3-chord@3.0.1/_esm.js → dist/_npm/d3-chord@3.0.1/7ef8fb2e.js
+build /_npm/d3-color@3.1.0/_esm.js → dist/_npm/d3-color@3.1.0/aeb57b94.js
+build /_npm/d3-contour@4.0.2/_esm.js → dist/_npm/d3-contour@4.0.2/1d2aed74.js
+build /_npm/d3-delaunay@6.0.4/_esm.js → dist/_npm/d3-delaunay@6.0.4/5ced1d52.js
+build /_npm/d3-dispatch@3.0.1/_esm.js → dist/_npm/d3-dispatch@3.0.1/9ba9c7f3.js
+build /_npm/d3-drag@3.0.0/_esm.js → dist/_npm/d3-drag@3.0.0/4202580c.js
+build /_npm/d3-dsv@3.0.1/_esm.js → dist/_npm/d3-dsv@3.0.1/9cffc2bd.js
+build /_npm/d3-ease@3.0.1/_esm.js → dist/_npm/d3-ease@3.0.1/cdd7e898.js
+build /_npm/d3-fetch@3.0.1/_esm.js → dist/_npm/d3-fetch@3.0.1/b4e2ad9a.js
+build /_npm/d3-force@3.0.0/_esm.js → dist/_npm/d3-force@3.0.0/5e804d15.js
+build /_npm/d3-format@3.1.2/_esm.js → dist/_npm/d3-format@3.1.2/3785bf2d.js
+build /_npm/d3-geo@3.1.1/_esm.js → dist/_npm/d3-geo@3.1.1/40599fb3.js
+build /_npm/d3-hierarchy@3.1.2/_esm.js → dist/_npm/d3-hierarchy@3.1.2/e49e792c.js
+build /_npm/d3-interpolate@3.0.1/_esm.js → dist/_npm/d3-interpolate@3.0.1/8d1e5425.js
+build /_npm/d3-path@3.1.0/_esm.js → dist/_npm/d3-path@3.1.0/20d3f133.js
+build /_npm/d3-polygon@3.0.1/_esm.js → dist/_npm/d3-polygon@3.0.1/7553081f.js
+build /_npm/d3-quadtree@3.0.1/_esm.js → dist/_npm/d3-quadtree@3.0.1/0dfd751c.js
+build /_npm/d3-random@3.0.1/_esm.js → dist/_npm/d3-random@3.0.1/3c90ee06.js
+build /_npm/d3-scale@4.0.2/_esm.js → dist/_npm/d3-scale@4.0.2/720b7f0a.js
+build /_npm/d3-scale-chromatic@3.1.0/_esm.js → dist/_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js
+build /_npm/d3-selection@3.0.0/_esm.js → dist/_npm/d3-selection@3.0.0/4d94e5b7.js
+build /_npm/d3-shape@3.2.0/_esm.js → dist/_npm/d3-shape@3.2.0/6d3a6726.js
+build /_npm/d3-time@3.1.0/_esm.js → dist/_npm/d3-time@3.1.0/9f03c579.js
+build /_npm/d3-time-format@4.1.0/_esm.js → dist/_npm/d3-time-format@4.1.0/07c9626f.js
+build /_npm/d3-timer@3.0.1/_esm.js → dist/_npm/d3-timer@3.0.1/b58a267d.js
+build /_npm/d3-transition@3.0.1/_esm.js → dist/_npm/d3-transition@3.0.1/004da2ac.js
+build /_npm/d3-zoom@3.0.0/_esm.js → dist/_npm/d3-zoom@3.0.0/b5786b3f.js
+build /_npm/internmap@2.0.3/_esm.js → dist/_npm/internmap@2.0.3/e08981d9.js
+build /_npm/delaunator@5.0.1/_esm.js → dist/_npm/delaunator@5.0.1/02d43215.js
+build /_npm/robust-predicates@3.0.2/_esm.js → dist/_npm/robust-predicates@3.0.2/aa00730b.js
+build /_observablehq/stdlib/inputs.js → dist/_observablehq/stdlib/inputs.4ef1d259.js
+build /_npm/topojson-client@3.1.0/_esm.js → dist/_npm/topojson-client@3.1.0/edd9ee95.js
+build /_npm/isoformat@0.2.1/_esm.js → dist/_npm/isoformat@0.2.1/18cbf477.js
+copy src/components/scales.js → dist/_import/components/scales.3650d4d9.js
+copy src/components/polarD3.js → dist/_import/components/polarD3.bf86ead2.js
+copy src/components/heatmapD3.js → dist/_import/components/heatmapD3.a98f19b1.js
+copy src/components/sidebar.js → dist/_import/components/sidebar.167238a6.js
+copy src/components/sparklineTableD3.js → dist/_import/components/sparklineTableD3.a6abcbc7.js
+copy src/components/modeToggle.js → dist/_import/components/modeToggle.d0a665e8.js
+copy src/components/wrapText.js → dist/_import/components/wrapText.b40b5f45.js
+copy src/components/basePath.js → dist/_import/components/basePath.81b98f2e.js
+copy src/components/onlyUnique.js → dist/_import/components/onlyUnique.413399e1.js
+copy src/components/customLegend.js → dist/_import/components/customLegend.193a7f5b.js
+copy src/components/pillarRenderer.js → dist/_import/components/pillarRenderer.0a379d87.js
+copy src/components/sources.js → dist/_import/components/sources.9693ff97.js
+copy src/components/sourcesLegend.js → dist/_import/components/sourcesLegend.ad96eefe.js
+copy src/components/mapPillarD3.js → dist/_import/components/mapPillarD3.4e6d3caf.js
+copy src/components/mapCommitmentD3.js → dist/_import/components/mapCommitmentD3.893e6f75.js
+copy src/components/pillarText.js → dist/_import/components/pillarText.76e27a65.js
+copy src/components/mapLegend.js → dist/_import/components/mapLegend.721562ac.js
+copy src/components/mapTotalD3.js → dist/_import/components/mapTotalD3.e03a5c21.js
+copy src/components/featuredPreview.js → dist/_import/components/featuredPreview.1f066cf3.js
+copy src/components/mapSourcesD3.js → dist/_import/components/mapSourcesD3.dc8f0463.js
+copy src/components/straightPlotD3.js → dist/_import/components/straightPlotD3.3bf6693f.js
+copy src/components/polarCountryD3.js → dist/_import/components/polarCountryD3.b399b92a.js
+copy src/components/pillarTextShort.js → dist/_import/components/pillarTextShort.97999ff3.js
+copy src/components/pillarSparklineD3.js → dist/_import/components/pillarSparklineD3.9492ebf3.js
+copy src/components/indicatorHistorical.js → dist/_import/components/indicatorHistorical.b3a6bca4.js
+render /1countryPageTemplate → dist/1countryPageTemplate.html
+render /countries → dist/countries.html
+render /directions → dist/directions.html
+render /index → dist/index.html
+render /methodology → dist/methodology.html
+render /perspectives → dist/perspectives.html
+render /resources → dist/resources.html
+render /AFG/index → dist/AFG/index.html
+render /AGO/index → dist/AGO/index.html
+render /ALB/index → dist/ALB/index.html
+render /AND/index → dist/AND/index.html
+render /ARE/index → dist/ARE/index.html
+render /ARG/index → dist/ARG/index.html
+render /ARM/index → dist/ARM/index.html
+render /ATG/index → dist/ATG/index.html
+render /AUS/index → dist/AUS/index.html
+render /AUT/index → dist/AUT/index.html
+render /AZE/index → dist/AZE/index.html
+render /BDI/index → dist/BDI/index.html
+render /BEL/index → dist/BEL/index.html
+render /BEN/index → dist/BEN/index.html
+render /BFA/index → dist/BFA/index.html
+render /BGD/index → dist/BGD/index.html
+render /BGR/index → dist/BGR/index.html
+render /BHR/index → dist/BHR/index.html
+render /BHS/index → dist/BHS/index.html
+render /BIH/index → dist/BIH/index.html
+render /BLR/index → dist/BLR/index.html
+render /BLZ/index → dist/BLZ/index.html
+render /BOL/index → dist/BOL/index.html
+render /BRA/index → dist/BRA/index.html
+render /BRB/index → dist/BRB/index.html
+render /BRN/index → dist/BRN/index.html
+render /BTN/index → dist/BTN/index.html
+render /BWA/index → dist/BWA/index.html
+render /CAF/index → dist/CAF/index.html
+render /CAN/index → dist/CAN/index.html
+render /CHE/index → dist/CHE/index.html
+render /CHL/index → dist/CHL/index.html
+render /CHN/index → dist/CHN/index.html
+render /CIV/index → dist/CIV/index.html
+render /CMR/index → dist/CMR/index.html
+render /COD/index → dist/COD/index.html
+render /COG/index → dist/COG/index.html
+render /COL/index → dist/COL/index.html
+render /COM/index → dist/COM/index.html
+render /CPV/index → dist/CPV/index.html
+render /CRI/index → dist/CRI/index.html
+render /CUB/index → dist/CUB/index.html
+render /CYP/index → dist/CYP/index.html
+render /CZE/index → dist/CZE/index.html
+render /data/data-README → dist/data/data-README.html
+render /DEU/index → dist/DEU/index.html
+render /DJI/index → dist/DJI/index.html
+render /DMA/index → dist/DMA/index.html
+render /DNK/index → dist/DNK/index.html
+render /DOM/index → dist/DOM/index.html
+render /DZA/index → dist/DZA/index.html
+render /ECU/index → dist/ECU/index.html
+render /EGY/index → dist/EGY/index.html
+render /ERI/index → dist/ERI/index.html
+render /ESP/index → dist/ESP/index.html
+render /EST/index → dist/EST/index.html
+render /ETH/index → dist/ETH/index.html
+render /FIN/index → dist/FIN/index.html
+render /FJI/index → dist/FJI/index.html
+render /FRA/index → dist/FRA/index.html
+render /FSM/index → dist/FSM/index.html
+render /GAB/index → dist/GAB/index.html
+render /GBR/index → dist/GBR/index.html
+render /GEO/index → dist/GEO/index.html
+render /GHA/index → dist/GHA/index.html
+render /GIN/index → dist/GIN/index.html
+render /GMB/index → dist/GMB/index.html
+render /GNB/index → dist/GNB/index.html
+render /GNQ/index → dist/GNQ/index.html
+render /GRC/index → dist/GRC/index.html
+render /GRD/index → dist/GRD/index.html
+render /GTM/index → dist/GTM/index.html
+render /GUY/index → dist/GUY/index.html
+render /HND/index → dist/HND/index.html
+render /HRV/index → dist/HRV/index.html
+render /HTI/index → dist/HTI/index.html
+render /HUN/index → dist/HUN/index.html
+render /IDN/index → dist/IDN/index.html
+render /IND/index → dist/IND/index.html
+render /IRL/index → dist/IRL/index.html
+render /IRN/index → dist/IRN/index.html
+render /IRQ/index → dist/IRQ/index.html
+render /ISL/index → dist/ISL/index.html
+render /ISR/index → dist/ISR/index.html
+render /ITA/index → dist/ITA/index.html
+render /JAM/index → dist/JAM/index.html
+render /JOR/index → dist/JOR/index.html
+render /JPN/index → dist/JPN/index.html
+render /KAZ/index → dist/KAZ/index.html
+render /KEN/index → dist/KEN/index.html
+render /KGZ/index → dist/KGZ/index.html
+render /KHM/index → dist/KHM/index.html
+render /KIR/index → dist/KIR/index.html
+render /KNA/index → dist/KNA/index.html
+render /KOR/index → dist/KOR/index.html
+render /KWT/index → dist/KWT/index.html
+render /LAO/index → dist/LAO/index.html
+render /LBN/index → dist/LBN/index.html
+render /LBR/index → dist/LBR/index.html
+render /LBY/index → dist/LBY/index.html
+render /LCA/index → dist/LCA/index.html
+render /LIE/index → dist/LIE/index.html
+render /LKA/index → dist/LKA/index.html
+render /LSO/index → dist/LSO/index.html
+render /LTU/index → dist/LTU/index.html
+render /LUX/index → dist/LUX/index.html
+render /LVA/index → dist/LVA/index.html
+render /MAR/index → dist/MAR/index.html
+render /MCO/index → dist/MCO/index.html
+render /MDA/index → dist/MDA/index.html
+render /MDG/index → dist/MDG/index.html
+render /MDV/index → dist/MDV/index.html
+render /MEX/index → dist/MEX/index.html
+render /MHL/index → dist/MHL/index.html
+render /MKD/index → dist/MKD/index.html
+render /MLI/index → dist/MLI/index.html
+render /MLT/index → dist/MLT/index.html
+render /MMR/index → dist/MMR/index.html
+render /MNE/index → dist/MNE/index.html
+render /MNG/index → dist/MNG/index.html
+render /MOZ/index → dist/MOZ/index.html
+render /MRT/index → dist/MRT/index.html
+render /MUS/index → dist/MUS/index.html
+render /MWI/index → dist/MWI/index.html
+render /MYS/index → dist/MYS/index.html
+render /NAM/index → dist/NAM/index.html
+render /NER/index → dist/NER/index.html
+render /NGA/index → dist/NGA/index.html
+render /NIC/index → dist/NIC/index.html
+render /NLD/index → dist/NLD/index.html
+render /NOR/index → dist/NOR/index.html
+render /NPL/index → dist/NPL/index.html
+render /NRU/index → dist/NRU/index.html
+render /NZL/index → dist/NZL/index.html
+render /OMN/index → dist/OMN/index.html
+render /PAK/index → dist/PAK/index.html
+render /PAN/index → dist/PAN/index.html
+render /PER/index → dist/PER/index.html
+render /PHL/index → dist/PHL/index.html
+render /PLW/index → dist/PLW/index.html
+render /PNG/index → dist/PNG/index.html
+render /POL/index → dist/POL/index.html
+render /PRK/index → dist/PRK/index.html
+render /PRT/index → dist/PRT/index.html
+render /PRY/index → dist/PRY/index.html
+render /QAT/index → dist/QAT/index.html
+render /ROU/index → dist/ROU/index.html
+render /RUS/index → dist/RUS/index.html
+render /RWA/index → dist/RWA/index.html
+render /SAU/index → dist/SAU/index.html
+render /SDN/index → dist/SDN/index.html
+render /SEN/index → dist/SEN/index.html
+render /SGP/index → dist/SGP/index.html
+render /SLB/index → dist/SLB/index.html
+render /SLE/index → dist/SLE/index.html
+render /SLV/index → dist/SLV/index.html
+render /SMR/index → dist/SMR/index.html
+render /SOM/index → dist/SOM/index.html
+render /SRB/index → dist/SRB/index.html
+render /SSD/index → dist/SSD/index.html
+render /STP/index → dist/STP/index.html
+render /SUR/index → dist/SUR/index.html
+render /SVK/index → dist/SVK/index.html
+render /SVN/index → dist/SVN/index.html
+render /SWE/index → dist/SWE/index.html
+render /SWZ/index → dist/SWZ/index.html
+render /SYC/index → dist/SYC/index.html
+render /SYR/index → dist/SYR/index.html
+render /TCD/index → dist/TCD/index.html
+render /TGO/index → dist/TGO/index.html
+render /THA/index → dist/THA/index.html
+render /TJK/index → dist/TJK/index.html
+render /TKM/index → dist/TKM/index.html
+render /TLS/index → dist/TLS/index.html
+render /TON/index → dist/TON/index.html
+render /TTO/index → dist/TTO/index.html
+render /TUN/index → dist/TUN/index.html
+render /TUR/index → dist/TUR/index.html
+render /TUV/index → dist/TUV/index.html
+render /TZA/index → dist/TZA/index.html
+render /UGA/index → dist/UGA/index.html
+render /UKR/index → dist/UKR/index.html
+render /URY/index → dist/URY/index.html
+render /USA/index → dist/USA/index.html
+render /UZB/index → dist/UZB/index.html
+render /VCT/index → dist/VCT/index.html
+render /VEN/index → dist/VEN/index.html
+render /VNM/index → dist/VNM/index.html
+render /VUT/index → dist/VUT/index.html
+render /WSM/index → dist/WSM/index.html
+render /XKX/index → dist/XKX/index.html
+render /YEM/index → dist/YEM/index.html
+render /ZAF/index → dist/ZAF/index.html
+render /ZMB/index → dist/ZMB/index.html
+render /ZWE/index → dist/ZWE/index.html
+
+┌ (202 pages)                     Page      Imports        Files
+├── AFG/index                    30 kB       422 kB     2.500 MB
+├── AGO/index                    30 kB       422 kB     2.500 MB
+├── ALB/index                    30 kB       422 kB     2.500 MB
+├── AND/index                    30 kB       422 kB     2.500 MB
+├── ARE/index                    30 kB       422 kB     2.500 MB
+├── ARG/index                    30 kB       422 kB     2.500 MB
+├── ARM/index                    30 kB       422 kB     2.500 MB
+├── ATG/index                    30 kB       422 kB     2.500 MB
+├── AUS/index                    30 kB       422 kB     2.500 MB
+├── AUT/index                    30 kB       422 kB     2.500 MB
+├── AZE/index                    30 kB       422 kB     2.500 MB
+├── BDI/index                    30 kB       422 kB     2.500 MB
+├── BEL/index                    30 kB       422 kB     2.500 MB
+├── BEN/index                    30 kB       422 kB     2.500 MB
+├── BFA/index                    30 kB       422 kB     2.500 MB
+├── BGD/index                    30 kB       422 kB     2.500 MB
+├── BGR/index                    30 kB       422 kB     2.500 MB
+├── BHR/index                    30 kB       422 kB     2.500 MB
+├── BHS/index                    30 kB       422 kB     2.500 MB
+├── BIH/index                    30 kB       422 kB     2.500 MB
+├── BLR/index                    30 kB       422 kB     2.500 MB
+├── BLZ/index                    30 kB       422 kB     2.500 MB
+├── BOL/index                    30 kB       422 kB     2.500 MB
+├── BRA/index                    30 kB       422 kB     2.500 MB
+├── BRB/index                    30 kB       422 kB     2.500 MB
+├── BRN/index                    30 kB       422 kB     2.500 MB
+├── BTN/index                    30 kB       422 kB     2.500 MB
+├── BWA/index                    30 kB       422 kB     2.500 MB
+├── CAF/index                    30 kB       422 kB     2.500 MB
+├── CAN/index                    30 kB       422 kB     2.500 MB
+├── CHE/index                    30 kB       422 kB     2.500 MB
+├── CHL/index                    30 kB       422 kB     2.500 MB
+├── CHN/index                    30 kB       422 kB     2.500 MB
+├── CIV/index                    30 kB       422 kB     2.500 MB
+├── CMR/index                    30 kB       422 kB     2.500 MB
+├── COD/index                    30 kB       422 kB     2.500 MB
+├── COG/index                    30 kB       422 kB     2.500 MB
+├── COL/index                    30 kB       422 kB     2.500 MB
+├── COM/index                    30 kB       422 kB     2.500 MB
+├── CPV/index                    30 kB       422 kB     2.500 MB
+├── CRI/index                    30 kB       422 kB     2.500 MB
+├── CUB/index                    30 kB       422 kB     2.500 MB
+├── CYP/index                    30 kB       422 kB     2.500 MB
+├── CZE/index                    30 kB       422 kB     2.500 MB
+├── DEU/index                    30 kB       422 kB     2.500 MB
+├── DJI/index                    30 kB       422 kB     2.500 MB
+├── DMA/index                    30 kB       422 kB     2.500 MB
+├── DNK/index                    30 kB       422 kB     2.500 MB
+├── DOM/index                    30 kB       422 kB     2.500 MB
+├── DZA/index                    30 kB       422 kB     2.500 MB
+├── ECU/index                    30 kB       422 kB     2.500 MB
+├── EGY/index                    30 kB       422 kB     2.500 MB
+├── ERI/index                    30 kB       422 kB     2.500 MB
+├── ESP/index                    30 kB       422 kB     2.500 MB
+├── EST/index                    30 kB       422 kB     2.500 MB
+├── ETH/index                    30 kB       422 kB     2.500 MB
+├── FIN/index                    30 kB       422 kB     2.500 MB
+├── FJI/index                    30 kB       422 kB     2.500 MB
+├── FRA/index                    30 kB       422 kB     2.500 MB
+├── FSM/index                    30 kB       422 kB     2.500 MB
+├── GAB/index                    30 kB       422 kB     2.500 MB
+├── GBR/index                    30 kB       422 kB     2.500 MB
+├── GEO/index                    30 kB       422 kB     2.500 MB
+├── GHA/index                    30 kB       422 kB     2.500 MB
+├── GIN/index                    30 kB       422 kB     2.500 MB
+├── GMB/index                    30 kB       422 kB     2.500 MB
+├── GNB/index                    30 kB       422 kB     2.500 MB
+├── GNQ/index                    30 kB       422 kB     2.500 MB
+├── GRC/index                    30 kB       422 kB     2.500 MB
+├── GRD/index                    30 kB       422 kB     2.500 MB
+├── GTM/index                    30 kB       422 kB     2.500 MB
+├── GUY/index                    30 kB       422 kB     2.500 MB
+├── HND/index                    30 kB       422 kB     2.500 MB
+├── HRV/index                    30 kB       422 kB     2.500 MB
+├── HTI/index                    30 kB       422 kB     2.500 MB
+├── HUN/index                    30 kB       422 kB     2.500 MB
+├── IDN/index                    30 kB       422 kB     2.500 MB
+├── IND/index                    30 kB       422 kB     2.500 MB
+├── IRL/index                    30 kB       422 kB     2.500 MB
+├── IRN/index                    30 kB       422 kB     2.500 MB
+├── IRQ/index                    30 kB       422 kB     2.500 MB
+├── ISL/index                    30 kB       422 kB     2.500 MB
+├── ISR/index                    30 kB       422 kB     2.500 MB
+├── ITA/index                    30 kB       422 kB     2.500 MB
+├── JAM/index                    30 kB       422 kB     2.500 MB
+├── JOR/index                    30 kB       422 kB     2.500 MB
+├── JPN/index                    30 kB       422 kB     2.500 MB
+├── KAZ/index                    30 kB       422 kB     2.500 MB
+├── KEN/index                    30 kB       422 kB     2.500 MB
+├── KGZ/index                    30 kB       422 kB     2.500 MB
+├── KHM/index                    30 kB       422 kB     2.500 MB
+├── KIR/index                    30 kB       422 kB     2.500 MB
+├── KNA/index                    30 kB       422 kB     2.500 MB
+├── KOR/index                    30 kB       422 kB     2.500 MB
+├── KWT/index                    30 kB       422 kB     2.500 MB
+├── LAO/index                    30 kB       422 kB     2.500 MB
+├── LBN/index                    30 kB       422 kB     2.500 MB
+├── LBR/index                    30 kB       422 kB     2.500 MB
+├── LBY/index                    30 kB       422 kB     2.500 MB
+├── LCA/index                    30 kB       422 kB     2.500 MB
+├── LIE/index                    30 kB       422 kB     2.500 MB
+├── LKA/index                    30 kB       422 kB     2.500 MB
+├── LSO/index                    30 kB       422 kB     2.500 MB
+├── LTU/index                    30 kB       422 kB     2.500 MB
+├── LUX/index                    30 kB       422 kB     2.500 MB
+├── LVA/index                    30 kB       422 kB     2.500 MB
+├── MAR/index                    30 kB       422 kB     2.500 MB
+├── MCO/index                    30 kB       422 kB     2.500 MB
+├── MDA/index                    30 kB       422 kB     2.500 MB
+├── MDG/index                    30 kB       422 kB     2.500 MB
+├── MDV/index                    30 kB       422 kB     2.500 MB
+├── MEX/index                    30 kB       422 kB     2.500 MB
+├── MHL/index                    30 kB       422 kB     2.500 MB
+├── MKD/index                    30 kB       422 kB     2.500 MB
+├── MLI/index                    30 kB       422 kB     2.500 MB
+├── MLT/index                    30 kB       422 kB     2.500 MB
+├── MMR/index                    30 kB       422 kB     2.500 MB
+├── MNE/index                    30 kB       422 kB     2.500 MB
+├── MNG/index                    30 kB       422 kB     2.500 MB
+├── MOZ/index                    30 kB       422 kB     2.500 MB
+├── MRT/index                    30 kB       422 kB     2.500 MB
+├── MUS/index                    30 kB       422 kB     2.500 MB
+├── MWI/index                    30 kB       422 kB     2.500 MB
+├── MYS/index                    30 kB       422 kB     2.500 MB
+├── NAM/index                    30 kB       422 kB     2.500 MB
+├── NER/index                    30 kB       422 kB     2.500 MB
+├── NGA/index                    30 kB       422 kB     2.500 MB
+├── NIC/index                    30 kB       422 kB     2.500 MB
+├── NLD/index                    30 kB       422 kB     2.500 MB
+├── NOR/index                    30 kB       422 kB     2.500 MB
+├── NPL/index                    30 kB       422 kB     2.500 MB
+├── NRU/index                    30 kB       422 kB     2.500 MB
+├── NZL/index                    30 kB       422 kB     2.500 MB
+├── OMN/index                    30 kB       422 kB     2.500 MB
+├── PAK/index                    30 kB       422 kB     2.500 MB
+├── PAN/index                    30 kB       422 kB     2.500 MB
+├── PER/index                    30 kB       422 kB     2.500 MB
+├── PHL/index                    30 kB       422 kB     2.500 MB
+├── PLW/index                    30 kB       422 kB     2.500 MB
+├── PNG/index                    30 kB       422 kB     2.500 MB
+├── POL/index                    30 kB       422 kB     2.500 MB
+├── PRK/index                    30 kB       422 kB     2.500 MB
+├── PRT/index                    30 kB       422 kB     2.500 MB
+├── PRY/index                    30 kB       422 kB     2.500 MB
+├── QAT/index                    30 kB       422 kB     2.500 MB
+├── ROU/index                    30 kB       422 kB     2.500 MB
+├── RUS/index                    30 kB       422 kB     2.500 MB
+├── RWA/index                    30 kB       422 kB     2.500 MB
+├── SAU/index                    30 kB       422 kB     2.500 MB
+├── SDN/index                    30 kB       422 kB     2.500 MB
+├── SEN/index                    30 kB       422 kB     2.500 MB
+├── SGP/index                    30 kB       422 kB     2.500 MB
+├── SLB/index                    30 kB       422 kB     2.500 MB
+├── SLE/index                    30 kB       422 kB     2.500 MB
+├── SLV/index                    30 kB       422 kB     2.500 MB
+├── SMR/index                    30 kB       422 kB     2.500 MB
+├── SOM/index                    30 kB       422 kB     2.500 MB
+├── SRB/index                    30 kB       422 kB     2.500 MB
+├── SSD/index                    30 kB       422 kB     2.500 MB
+├── STP/index                    30 kB       422 kB     2.500 MB
+├── SUR/index                    30 kB       422 kB     2.500 MB
+├── SVK/index                    30 kB       422 kB     2.500 MB
+├── SVN/index                    30 kB       422 kB     2.500 MB
+├── SWE/index                    30 kB       422 kB     2.500 MB
+├── SWZ/index                    30 kB       422 kB     2.500 MB
+├── SYC/index                    30 kB       422 kB     2.500 MB
+├── SYR/index                    30 kB       422 kB     2.500 MB
+├── TCD/index                    30 kB       422 kB     2.500 MB
+├── TGO/index                    30 kB       422 kB     2.500 MB
+├── THA/index                    30 kB       422 kB     2.500 MB
+├── TJK/index                    30 kB       422 kB     2.500 MB
+├── TKM/index                    30 kB       422 kB     2.500 MB
+├── TLS/index                    30 kB       422 kB     2.500 MB
+├── TON/index                    30 kB       422 kB     2.500 MB
+├── TTO/index                    30 kB       422 kB     2.500 MB
+├── TUN/index                    30 kB       422 kB     2.500 MB
+├── TUR/index                    30 kB       422 kB     2.500 MB
+├── TUV/index                    30 kB       422 kB     2.500 MB
+├── TZA/index                    30 kB       422 kB     2.500 MB
+├── UGA/index                    30 kB       422 kB     2.500 MB
+├── UKR/index                    30 kB       422 kB     2.500 MB
+├── URY/index                    30 kB       422 kB     2.500 MB
+├── USA/index                    30 kB       422 kB     2.500 MB
+├── UZB/index                    30 kB       422 kB     2.500 MB
+├── VCT/index                    30 kB       422 kB     2.500 MB
+├── VEN/index                    30 kB       422 kB     2.500 MB
+├── VNM/index                    30 kB       422 kB     2.500 MB
+├── VUT/index                    30 kB       422 kB     2.500 MB
+├── WSM/index                    30 kB       422 kB     2.500 MB
+├── XKX/index                    30 kB       422 kB     2.500 MB
+├── YEM/index                    30 kB       422 kB     2.500 MB
+├── ZAF/index                    30 kB       422 kB     2.500 MB
+├── ZMB/index                    30 kB       422 kB     2.500 MB
+├── ZWE/index                    30 kB       422 kB     2.500 MB
+├── data/data-README              5 kB        51 kB        35 kB
+├── 1countryPageTemplate         27 kB       371 kB        24 kB
+├── countries                    14 kB       420 kB     2.371 MB
+├── directions                   23 kB       483 kB     3.437 MB
+├── index                        23 kB       421 kB     3.293 MB
+├── methodology                  12 kB        55 kB        92 kB
+├── perspectives                 47 kB        55 kB        92 kB
+└── resources                    12 kB       396 kB       656 kB
+
+5 links validated
