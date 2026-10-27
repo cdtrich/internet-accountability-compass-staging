@@ -1,5 +1,25 @@
 # Changelog: v3
 
+## 2026-10-27 — Fix previous value of 0 treated as missing
+
+**What changed**: mapPillarD3.js, mapCommitmentD3.js and mapTotalD3.js
+computed the year-over-year change only if `prevValue && …`, so a previous
+score of 0 was treated as missing ("Not enough data"). Replaced with
+`prevValue != null && prevValue !== "NA" && current.value !== "NA" &&
+!isNaN(prevValue)`.
+
+**Effect (2025→2026, cached loader output)**: 24 country/measure pairs
+change classification, none in the Total score:
+- Responsibility and sustainability (pillar): AND, GNQ, MCO, SMR → No change
+- Global Internet Shutdowns: MMR → No change
+- Global E-Waste Monitor: NOR → No change
+- Global Index on Responsible AI: SSD → Increase (0 → 4)
+- INDIGO: DZA, AND, AZE, BTN, BIH, GNQ, IRQ, KIR, LBN, MCO, SMR, SRB, SOM,
+  SYR, STP, TKM, UZB → No change
+
+**Verify**: `npm run build`; directions → Historical → Responsibility and
+sustainability: Andorra / Monaco / San Marino show No change, not hatched.
+
 ## 2026-10-27 — Shared historical opacity scale
 
 **What changed**

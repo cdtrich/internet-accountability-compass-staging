@@ -201,7 +201,11 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
     const changesData = latestData.map((current) => {
       const prevValue = previousMap.get(current.ISO3_CODE);
       const change =
-        prevValue && current.value !== "NA" && prevValue !== "NA"
+        // explicit check: a previous value of 0 is a real score, not missing
+        prevValue != null &&
+        prevValue !== "NA" &&
+        current.value !== "NA" &&
+        !isNaN(prevValue)
           ? current.value - prevValue
           : null;
 
