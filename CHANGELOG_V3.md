@@ -43,7 +43,13 @@ sustainability: Andorra / Monaco / San Marino show No change, not hatched.
 ~90% of non-zero commitment changes below saturation (measured 2025→2026).
 
 **Verify**: `npm run build`; directions → Historical: legend shows the
-stepped key; key is 240px wide (pillar legend block 340px), fits at 393px.
+stepped key and fits at 393px.
+
+- Follow-up: the key overlapped ("Decrease" ran into the first swatch)
+  because style.css forces all svg text to 16px Nunito Sans, overriding the
+  12px set in the legend code. Columns resized for 16px (label 104px, cells
+  70px; key 314px, legend block 354px, fits at 393px and 361px). Last step
+  relabelled "≤ −10" / "≥ +10" instead of "−10+" / "+10+".
 
 ## 2026-10-27 — Commitment map uses continuous bin ramp
 

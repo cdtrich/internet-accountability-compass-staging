@@ -74,20 +74,23 @@ export function renderSwatchLegend(legendGroup, items) {
 // Stepped key for historical (year-over-year) mode: one row per direction,
 // each with swatches at fixed |change| steps drawn at the map's real
 // fill-opacity, followed by the regular swatch grid for the other entries.
-const CHANGE_STEPS = [1, 5, 10]; // last step is labelled "10+"
-const STEP_LABEL_WIDTH = 84;
-const STEP_CELL_WIDTH = 52;
+const CHANGE_STEPS = [1, 5, 10]; // last step means "10 or more"
+// Sized for the site's legend text: style.css forces svg text to 16px
+// Nunito Sans, overriding the font-size set here
+const STEP_LABEL_WIDTH = 104;
+const STEP_CELL_WIDTH = 70;
 
 // Builds the two key rows from the map's change colours and opacity function
 export function changeKeyRows(decreaseColor, increaseColor, opacity) {
-  const steps = (sign) =>
+  const last = CHANGE_STEPS.length - 1;
+  const steps = (sign, atLeast) =>
     CHANGE_STEPS.map((v, i) => ({
-      label: `${sign}${v}${i === CHANGE_STEPS.length - 1 ? "+" : ""}`,
+      label: i === last ? `${atLeast} ${sign}${v}` : `${sign}${v}`,
       opacity: opacity(v),
     }));
   return [
-    { label: "▼ Decrease", color: decreaseColor, steps: steps("−") },
-    { label: "▲ Increase", color: increaseColor, steps: steps("+") },
+    { label: "▼ Decrease", color: decreaseColor, steps: steps("−", "≤") },
+    { label: "▲ Increase", color: increaseColor, steps: steps("+", "≥") },
   ];
 }
 
