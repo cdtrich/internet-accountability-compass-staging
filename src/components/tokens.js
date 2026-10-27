@@ -19,6 +19,15 @@ export const binColors = [
   bins.leading,
 ];
 
+// Score band thresholds (lower bound of each band above Off track):
+// 0-49 / 50-64 / 65-79 / 80-100 on the 0-100 score scale.
+// Mirrors cut() breaks in dfiFull.csv.R:131-138 and
+// dfiCardinal.csv.R:133. If one changes, change both.
+export const bandBreaks = [50, 65, 80];
+
+// Band midpoints, used as colour stops for the continuous bin ramp
+export const bandMidpoints = [24.5, 57, 72, 90];
+
 // Not enough data: neutral grey under a white hatch, never a bin colour
 export const noData = "#dddddd";
 export const noDataHatch = "#ffffff";
@@ -71,6 +80,8 @@ export const tokens = {
   bins,
   binLabels,
   binColors,
+  bandBreaks,
+  bandMidpoints,
   noData,
   noDataHatch,
   decline,

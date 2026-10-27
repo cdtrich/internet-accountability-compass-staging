@@ -1,5 +1,5 @@
 import * as d3 from "npm:d3";
-import { binLabels, binColors, noData } from "./tokens.js";
+import { binLabels, binColors, bandMidpoints, noData } from "./tokens.js";
 
 const colorScales = () => {
   // Discrete (Categorical) Color Scale
@@ -41,6 +41,16 @@ const colorScales = () => {
   const getOrdinalCategoryScale = (_category) =>
     d3.scaleOrdinal().domain(binLabels).range(binColors).unknown(noData);
 
+  // Continuous version of the bin ramp for 0-100 scores: the bin colours sit
+  // at the band midpoints and blend in Lab space between them
+  const getContinuousBinScale = () =>
+    d3
+      .scaleLinear()
+      .domain(bandMidpoints)
+      .range(binColors)
+      .interpolate(d3.interpolateLab)
+      .clamp(true);
+
   // Function to get the correct color
   const getColor = (category, value) => {
     if (value !== undefined) {
@@ -53,6 +63,7 @@ const colorScales = () => {
     getColor,
     getSequentialScale,
     getOrdinalCategoryScale,
+    getContinuousBinScale,
   };
 };
 

@@ -9,6 +9,7 @@ import {
   historicalOpacityFloor,
   ink,
   swatchOutline,
+  bandBreaks,
   formatChange,
 } from "./tokens.js";
 
@@ -322,11 +323,9 @@ export function mapCommitmentD3(
 
   const path = d3.geoPath(projection);
 
-  // Color scale - gradient from light to pillar color
-  const colorScale = d3
-    .scaleSequential()
-    .domain([0, 100])
-    .interpolator(d3.interpolate("#f0f0f0", pillarColor));
+  // Color scale (latest mode) - continuous version of the bin ramp, so the
+  // commitment map reads in the same colours as the binned pillar map
+  const colorScale = fillScale.getContinuousBinScale();
 
   // Zoom behavior - only zoom with Ctrl/Cmd + scroll
   const zoom = d3
@@ -617,7 +616,7 @@ export function mapCommitmentD3(
     .text("⌂");
 
   // Legend
-  const legendWidth = 200;
+  const legendWidth = 240; // room for the 80 / 100 tick labels
   const legendHeight = 15;
 
   // Legend — centered in the reserved area below the map (20px gap above);
@@ -658,8 +657,9 @@ export function mapCommitmentD3(
       .attr("fill", "#ffffff80")
       .attr("rx", 4);
 
-    // Create gradient
-    const gradientId = `gradient-${selectedPillar.replace(/\s+/g, "-")}`;
+    // Create gradient — sampled from the same continuous bin scale as the
+    // fill (11 stops, so the Lab interpolation between bins shows)
+    const gradientId = "commitment-bin-gradient";
     const gradient = svg
       .append("defs")
       .append("linearGradient")
@@ -667,11 +667,12 @@ export function mapCommitmentD3(
       .attr("x1", "0%")
       .attr("x2", "100%");
 
-    gradient.append("stop").attr("offset", "0%").attr("stop-color", "#f0f0f0");
     gradient
-      .append("stop")
-      .attr("offset", "100%")
-      .attr("stop-color", pillarColor);
+      .selectAll("stop")
+      .data(d3.range(0, 101, 10))
+      .join("stop")
+      .attr("offset", (v) => `${v}%`)
+      .attr("stop-color", (v) => colorScale(v));
 
     // Gradient rect
     legend
@@ -682,21 +683,31 @@ export function mapCommitmentD3(
       .attr("stroke", swatchOutline.stroke)
       .attr("stroke-width", swatchOutline.strokeWidth);
 
-    // Legend labels
-    legend
-      .append("text")
-      .attr("x", 0)
-      .attr("y", legendHeight + 15)
-      .attr("font-size", 12)
-      .text("0");
+    // Ticks and labels at the scale ends and the band thresholds
+    const legendX = d3.scaleLinear().domain([0, 100]).range([0, legendWidth]);
+    const legendTicks = legend
+      .selectAll(".legend-tick")
+      .data([0, ...bandBreaks, 100])
+      .join("g")
+      .attr("class", "legend-tick")
+      .attr("transform", (v) => `translate(${legendX(v)}, 0)`);
 
-    legend
+    legendTicks
+      .append("line")
+      .attr("y1", legendHeight)
+      .attr("y2", legendHeight + 4)
+      .attr("stroke", ink)
+      .attr("stroke-width", swatchOutline.strokeWidth);
+
+    legendTicks
       .append("text")
-      .attr("x", legendWidth)
-      .attr("y", legendHeight + 15)
-      .attr("text-anchor", "end")
+      .attr("y", legendHeight + 16)
+      .attr("text-anchor", (v) =>
+        v === 0 ? "start" : v === 100 ? "end" : "middle",
+      )
       .attr("font-size", 12)
-      .text("100");
+      .attr("fill", ink)
+      .text((v) => v);
 
     legend
       .append("text")
@@ -705,6 +716,7 @@ export function mapCommitmentD3(
       .attr("text-anchor", "middle")
       .attr("font-size", 12)
       .attr("font-weight", "bold")
+      .attr("fill", ink)
       .text("Score");
 
     const nedLegendLatest = legend

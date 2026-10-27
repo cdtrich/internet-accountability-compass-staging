@@ -1,5 +1,29 @@
 # Changelog: v3
 
+## 2026-10-27 — Commitment map uses continuous bin ramp
+
+**What changed**
+
+- tokens.js: `bandBreaks = [50, 65, 80]` (mirrors the R `cut()` breaks in
+  dfiFull.csv.R / dfiCardinal.csv.R; R still computes `group_value`) and
+  `bandMidpoints = [24.5, 57, 72, 90]`.
+- scales.js: new `getContinuousBinScale()`: linear scale, bin colours at the
+  band midpoints, `d3.interpolateLab`, clamped. `getSequentialScale` kept
+  (still used via `getColor(x, 100)`).
+- mapCommitmentD3.js, latest mode only: fill uses the continuous bin ramp
+  instead of `#f0f0f0 → pillar colour`. Legend gradient sampled from the same
+  scale at 11 stops; tick marks + labels at 0 / 50 / 65 / 80 / 100 in `ink`; legend bar 200 → 240px so the 80 / 100 labels do not collide.
+  NaN (`#ddd` + hatch), undefined (`#fff`) and historical mode unchanged.
+  Pillar colour remains for sparkline strokes, zoom buttons and historical
+  "increase".
+
+**Why**: the commitment map now speaks the same colour language as the
+binned pillar map, so a country's colour is comparable across both.
+
+**Verify**: `npm run build`; on directions, pick a pillar and a commitment in
+latest mode and compare a country's colour on the pillar map vs the
+commitment map; legend shows 0/50/65/80/100.
+
 ## 2026-10-26 — Colour tokens + contrast fixes
 
 **What changed**
