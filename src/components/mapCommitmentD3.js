@@ -234,7 +234,7 @@ export function mapCommitmentD3(
 
     legendData = [
       { label: "▼ Decrease", color: changeColors.negative },
-      { label: "No change", color: `${noChange}20` },
+      { label: "No change", color: changeColors.zero },
       { label: "▲ Increase", color: changeColors.positive },
       {
         label: "Not enough data",
@@ -375,6 +375,8 @@ export function mapCommitmentD3(
         d.properties.change !== null &&
         d.properties.change !== undefined
       ) {
+        // No change is shown in the opaque noChange colour, not faded
+        if (d.properties.change === 0) return 1;
         return opacityScale(Math.abs(d.properties.change));
       }
       return 1;

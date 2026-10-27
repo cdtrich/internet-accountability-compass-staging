@@ -228,7 +228,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
 
     legendData = [
       { label: "▼ Decrease", color: changeColors.negative },
-      { label: "No change", color: `${noChange}20` },
+      { label: "No change", color: changeColors.zero },
       { label: "▲ Increase", color: changeColors.positive },
       { label: "Not enough data", color: "url(#ned-hatch)" },
     ];
@@ -448,6 +448,8 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
     })
     .attr("fill-opacity", (d) => {
       if (mode === "historical") {
+        // No change is shown in the opaque noChange colour, not faded
+        if (d.properties.change === 0) return 1;
         return opacityScale(Math.abs(d.properties.change));
       }
       return 1;

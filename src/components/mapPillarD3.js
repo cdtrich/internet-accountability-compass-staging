@@ -222,7 +222,7 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
 
     legendData = [
       { label: "▼ Decrease", color: changeColors.negative },
-      { label: "No change", color: `${noChange}20` },
+      { label: "No change", color: changeColors.zero },
       { label: "▲ Increase", color: changeColors.positive },
     ];
   } else {
@@ -394,6 +394,8 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
         d.properties.change !== null &&
         d.properties.change !== undefined
       ) {
+        // No change is shown in the opaque noChange colour, not faded
+        if (d.properties.change === 0) return 1;
         return opacityScale(Math.abs(d.properties.change));
       }
       return 1;

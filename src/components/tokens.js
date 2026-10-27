@@ -49,7 +49,7 @@ export function appendNoDataPattern(defs, id = "iac-nodata") {
 
 // Historical (year-over-year) mode; "increase" is the pillar colour
 export const decline = "#C2410C";
-export const noChange = "#555555";
+export const noChange = "#BDBDBD"; // opaque neutral, drawn at full opacity
 export const historicalOpacityFloor = 0.35;
 
 // Text on or next to data colours (never use bin colours as text)

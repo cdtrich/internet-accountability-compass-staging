@@ -32,6 +32,11 @@
 - Prose: "Off Course" (methodology.md) and "Off Track" (directions.md) →
   "Off track".
 
+- Follow-up: `noChange` is now `#BDBDBD` (opaque neutral, was `#555555`).
+  In mapPillarD3, mapCommitmentD3 and mapTotalD3, countries with change 0
+  draw at fill-opacity 1 (others keep the opacity scale), and the "No change"
+  legend swatch uses the same colour at full opacity (no more `…20` alpha hex).
+
 **Why**: yellow text failed contrast; Catching up (grey) was close to the
 no-data grey; decline yellow clashed with the Off track bin.
 
