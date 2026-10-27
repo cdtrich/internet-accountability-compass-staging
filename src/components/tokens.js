@@ -60,6 +60,8 @@ export function appendNoDataPattern(defs, id = "iac-nodata") {
 export const decline = "#C2410C";
 export const noChange = "#BDBDBD"; // opaque neutral, drawn at full opacity
 export const historicalOpacityFloor = 0.35;
+// |change| at which the shared historical opacity scale saturates
+export const changeDomainMax = 20;
 
 // Text on or next to data colours (never use bin colours as text)
 export const ink = "#222";
@@ -87,6 +89,7 @@ export const tokens = {
   decline,
   noChange,
   historicalOpacityFloor,
+  changeDomainMax,
   ink,
   inkMuted,
   swatchOutline,

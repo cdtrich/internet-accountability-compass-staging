@@ -1,12 +1,17 @@
 import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
 import { basePath } from "./basePath.js";
-import { legendGridSize, renderSwatchLegend } from "./mapLegend.js";
+import {
+  legendGridSize,
+  renderSwatchLegend,
+  changeKeyRows,
+  changeKeySize,
+  renderChangeKey,
+} from "./mapLegend.js";
 import {
   noData,
   decline,
   noChange,
-  historicalOpacityFloor,
   ink,
   formatChange,
 } from "./tokens.js";
@@ -167,13 +172,6 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
   const latestYear = d3.max(data, (d) => d.year);
   const previousYear = latestYear - 1;
 
-  // Opacity scale for historical mode
-  const opacityScale = d3
-    .scaleSymlog()
-    .domain([0, 10])
-    .range([historicalOpacityFloor, 1])
-    .clamp(true);
-
   // Change colors for historical mode
   const pillarColor = fillScale.getColor(selectedPillar);
   const changeColors = {
@@ -183,6 +181,8 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
   };
 
   let worldWithData, legendData;
+  // Historical mode only: stepped Decrease/Increase key above the swatch grid
+  let changeKey = null;
 
   if (mode === "historical") {
     // Historical mode: show year-over-year change
@@ -220,11 +220,12 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
         : feature;
     });
 
-    legendData = [
-      { label: "▼ Decrease", color: changeColors.negative },
-      { label: "No change", color: changeColors.zero },
-      { label: "▲ Increase", color: changeColors.positive },
-    ];
+    changeKey = changeKeyRows(
+      changeColors.negative,
+      changeColors.positive,
+      fillScale.changeOpacity,
+    );
+    legendData = [{ label: "No change", color: changeColors.zero }];
   } else {
     // Latest mode: show current categories
     const filteredData = data.filter(
@@ -281,7 +282,9 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
   // Reserve space below the map for the legend — sized to its actual content
   // height (plus a small gap above and margin below) so it always has room
   // and never overlaps or overflows, regardless of the map's aspect ratio
-  const legendGrid = legendGridSize(legendData.length);
+  const legendGrid = changeKey
+    ? changeKeySize(changeKey, legendData.length)
+    : legendGridSize(legendData.length);
   const legendContentHeight = legendGrid.height + 40;
   const legendAreaHeight = legendContentHeight + 40;
   const totalHeight = height + legendAreaHeight;
@@ -394,9 +397,7 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
         d.properties.change !== null &&
         d.properties.change !== undefined
       ) {
-        // No change is shown in the opaque noChange colour, not faded
-        if (d.properties.change === 0) return 1;
-        return opacityScale(Math.abs(d.properties.change));
+        return fillScale.changeOpacity(d.properties.change);
       }
       return 1;
     })
@@ -660,7 +661,8 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
     .attr("fill", "#ffffff80")
     .attr("rx", 4);
 
-  renderSwatchLegend(legend, legendData);
+  if (changeKey) renderChangeKey(legend, changeKey, legendData);
+  else renderSwatchLegend(legend, legendData);
 
   // Scroll hint overlay - small box at bottom
   const overlayDiv = document.createElement("div");

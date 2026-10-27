@@ -1,5 +1,30 @@
 # Changelog: v3
 
+## 2026-10-27 — Shared historical opacity scale
+
+**What changed**
+
+- tokens.js: `changeDomainMax = 20`.
+- scales.js: `changeOpacity(change)`: `d3.scaleSymlog().domain([0, 20])
+  .range([0.35, 1]).clamp(true)` on |change|; change 0 → 1 (no-change is the
+  opaque grey). Values: |1| 0.50, |2| 0.58, |5| 0.73, |7| 0.79, |10| 0.86,
+  |15| 0.94, |20|+ 1.00.
+- mapPillarD3.js (was symlog 0–10) and mapCommitmentD3.js (was linear 0–20)
+  drop their local `opacityScale` and use `changeOpacity()`, so the same
+  change looks the same on both maps.
+- mapLegend.js: new stepped change key (`changeKeyRows` / `changeKeySize` /
+  `renderChangeKey`): ▼ Decrease and ▲ Increase rows with swatches at
+  |change| 1 / 5 / 10+ drawn at the real opacity, signed labels in `ink`;
+  No change / Not enough data / Partial data stay as regular swatches below.
+  Used by both maps' historical legends. mapTotalD3 unchanged.
+
+**Why**: the two maps used different opacity functions (a change of 5 was
+0.84 on the pillar map, 0.51 on the commitment map); the domain of 20 keeps
+~90% of non-zero commitment changes below saturation (measured 2025→2026).
+
+**Verify**: `npm run build`; directions → Historical: legend shows the
+stepped key; key is 240px wide (pillar legend block 340px), fits at 393px.
+
 ## 2026-10-27 — Commitment map uses continuous bin ramp
 
 **What changed**

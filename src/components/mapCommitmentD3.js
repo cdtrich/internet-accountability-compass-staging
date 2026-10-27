@@ -1,12 +1,11 @@
 import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
 import { basePath } from "./basePath.js";
-import { legendGridSize, renderSwatchLegend } from "./mapLegend.js";
+import { changeKeyRows, changeKeySize, renderChangeKey } from "./mapLegend.js";
 import {
   noData,
   decline,
   noChange,
-  historicalOpacityFloor,
   ink,
   swatchOutline,
   bandBreaks,
@@ -174,13 +173,6 @@ export function mapCommitmentD3(
   const latestYear = d3.max(data, (d) => d.year);
   const previousYear = latestYear - 1;
 
-  // Opacity scale for historical mode
-  const opacityScale = d3
-    .scaleLinear()
-    .domain([0, 20])
-    .range([historicalOpacityFloor, 1])
-    .clamp(true);
-
   // Change colors for historical mode
   const changeColors = {
     positive: pillarColor, // Pillar color for improvements
@@ -189,9 +181,10 @@ export function mapCommitmentD3(
   };
 
   let worldWithData;
-  // Historical mode uses a discrete swatch legend (set below); latest mode
-  // uses a gradient bar legend instead, so legendData stays undefined for it
-  let legendData;
+  // Historical mode uses a stepped change key plus a small swatch grid (set
+  // below); latest mode uses a gradient bar legend instead, so both stay
+  // undefined for it
+  let legendData, changeKey;
 
   if (mode === "historical") {
     // Historical mode: show year-over-year change
@@ -233,10 +226,13 @@ export function mapCommitmentD3(
         : feature;
     });
 
+    changeKey = changeKeyRows(
+      changeColors.negative,
+      changeColors.positive,
+      fillScale.changeOpacity,
+    );
     legendData = [
-      { label: "▼ Decrease", color: changeColors.negative },
       { label: "No change", color: changeColors.zero },
-      { label: "▲ Increase", color: changeColors.positive },
       {
         label: "Not enough data",
         color: noData,
@@ -271,10 +267,10 @@ export function mapCommitmentD3(
   }
 
   // Reserve space below the map for the legend — sized to whichever legend
-  // layout this mode uses (historical: swatch grid; latest: gradient bar) so
+  // layout this mode uses (historical: change key; latest: gradient bar) so
   // it always has room regardless of mode or the map's aspect ratio
   const legendGrid =
-    mode === "historical" ? legendGridSize(legendData.length) : null;
+    mode === "historical" ? changeKeySize(changeKey, legendData.length) : null;
   const legendContentHeight =
     mode === "historical" ? legendGrid.height + 40 : 115;
   const legendAreaHeight = legendContentHeight + 40;
@@ -374,9 +370,7 @@ export function mapCommitmentD3(
         d.properties.change !== null &&
         d.properties.change !== undefined
       ) {
-        // No change is shown in the opaque noChange colour, not faded
-        if (d.properties.change === 0) return 1;
-        return opacityScale(Math.abs(d.properties.change));
+        return fillScale.changeOpacity(d.properties.change);
       }
       return 1;
     })
@@ -633,7 +627,7 @@ export function mapCommitmentD3(
     );
 
   if (mode === "historical") {
-    // Historical mode: swatch grid legend (centered, wraps to two columns)
+    // Historical mode: stepped change key + swatch grid (centered)
     const legendBg = legend
       .append("rect")
       .attr("class", "legend-background")
@@ -644,7 +638,7 @@ export function mapCommitmentD3(
       .attr("fill", "#ffffff80")
       .attr("rx", 4);
 
-    renderSwatchLegend(legend, legendData);
+    renderChangeKey(legend, changeKey, legendData);
   } else {
     // Latest mode: gradient legend
     const legendBg = legend

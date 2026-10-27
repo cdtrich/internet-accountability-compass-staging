@@ -3,7 +3,7 @@
 // grid that wraps to two columns once there are enough items to benefit from
 // it, so the legend stays compact and centered under the map on narrow charts.
 
-import { swatchOutline } from "./tokens.js";
+import { swatchOutline, ink } from "./tokens.js";
 
 const SWATCH_SIZE = 18;
 const ROW_HEIGHT = 25;
@@ -69,4 +69,92 @@ export function renderSwatchLegend(legendGroup, items) {
     .text((d) => d.label);
 
   return legendGridSize(items.length);
+}
+
+// Stepped key for historical (year-over-year) mode: one row per direction,
+// each with swatches at fixed |change| steps drawn at the map's real
+// fill-opacity, followed by the regular swatch grid for the other entries.
+const CHANGE_STEPS = [1, 5, 10]; // last step is labelled "10+"
+const STEP_LABEL_WIDTH = 84;
+const STEP_CELL_WIDTH = 52;
+
+// Builds the two key rows from the map's change colours and opacity function
+export function changeKeyRows(decreaseColor, increaseColor, opacity) {
+  const steps = (sign) =>
+    CHANGE_STEPS.map((v, i) => ({
+      label: `${sign}${v}${i === CHANGE_STEPS.length - 1 ? "+" : ""}`,
+      opacity: opacity(v),
+    }));
+  return [
+    { label: "▼ Decrease", color: decreaseColor, steps: steps("−") },
+    { label: "▲ Increase", color: increaseColor, steps: steps("+") },
+  ];
+}
+
+// Pure size calculation, same role as legendGridSize()
+export function changeKeySize(rows, extraCount) {
+  const extra = legendGridSize(extraCount);
+  return {
+    width: Math.max(
+      STEP_LABEL_WIDTH + CHANGE_STEPS.length * STEP_CELL_WIDTH,
+      extra.width,
+    ),
+    height: rows.length * ROW_HEIGHT + extra.height,
+  };
+}
+
+export function renderChangeKey(legendGroup, rows, extraItems) {
+  const keyRows = legendGroup
+    .selectAll(".change-key-row")
+    .data(rows)
+    .join("g")
+    .attr("class", "change-key-row")
+    .style("pointer-events", "none")
+    .style("user-select", "none")
+    .attr("transform", (_d, i) => `translate(0, ${i * ROW_HEIGHT})`);
+
+  keyRows
+    .append("text")
+    .attr("y", SWATCH_SIZE / 2)
+    .attr("dominant-baseline", "middle")
+    .attr("font-size", 12)
+    .attr("fill", ink)
+    .text((d) => d.label);
+
+  const cells = keyRows
+    .selectAll(".change-key-step")
+    .data((d) => d.steps.map((s) => ({ ...s, color: d.color })))
+    .join("g")
+    .attr("class", "change-key-step")
+    .attr(
+      "transform",
+      (_d, i) => `translate(${STEP_LABEL_WIDTH + i * STEP_CELL_WIDTH}, 0)`,
+    );
+
+  cells
+    .append("rect")
+    .attr("width", SWATCH_SIZE)
+    .attr("height", SWATCH_SIZE)
+    .attr("fill", (d) => d.color)
+    .attr("fill-opacity", (d) => d.opacity)
+    .attr("stroke", swatchOutline.stroke)
+    .attr("stroke-width", swatchOutline.strokeWidth);
+
+  cells
+    .append("text")
+    .attr("x", SWATCH_SIZE + 4)
+    .attr("y", SWATCH_SIZE / 2)
+    .attr("dominant-baseline", "middle")
+    .attr("font-size", 12)
+    .attr("fill", ink)
+    .text((d) => d.label);
+
+  renderSwatchLegend(
+    legendGroup
+      .append("g")
+      .attr("transform", `translate(0, ${rows.length * ROW_HEIGHT})`),
+    extraItems,
+  );
+
+  return changeKeySize(rows, extraItems.length);
 }

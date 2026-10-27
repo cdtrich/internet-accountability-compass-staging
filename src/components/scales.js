@@ -1,5 +1,12 @@
 import * as d3 from "npm:d3";
-import { binLabels, binColors, bandMidpoints, noData } from "./tokens.js";
+import {
+  binLabels,
+  binColors,
+  bandMidpoints,
+  noData,
+  historicalOpacityFloor,
+  changeDomainMax,
+} from "./tokens.js";
 
 const colorScales = () => {
   // Discrete (Categorical) Color Scale
@@ -51,6 +58,17 @@ const colorScales = () => {
       .interpolate(d3.interpolateLab)
       .clamp(true);
 
+  // Shared fill-opacity for historical (year-over-year) maps: symlog on
+  // |change| from the floor up to changeDomainMax. No change (0) stays fully
+  // opaque, since it is drawn in its own neutral colour rather than faded.
+  const changeOpacityScale = d3
+    .scaleSymlog()
+    .domain([0, changeDomainMax])
+    .range([historicalOpacityFloor, 1])
+    .clamp(true);
+  const changeOpacity = (change) =>
+    change === 0 ? 1 : changeOpacityScale(Math.abs(change));
+
   // Function to get the correct color
   const getColor = (category, value) => {
     if (value !== undefined) {
@@ -64,6 +82,7 @@ const colorScales = () => {
     getSequentialScale,
     getOrdinalCategoryScale,
     getContinuousBinScale,
+    changeOpacity,
   };
 };
 
