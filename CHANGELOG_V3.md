@@ -1,5 +1,36 @@
 # Changelog: v3
 
+## 2026-10-28 — Polar bars (radial variant C)
+
+**What changed**
+
+- New `src/components/polarBarsD3.js` with `polarBarsD3` (small multiples,
+  successor of polarD3) and `polarCountryBarsD3` (single country, successor
+  of polarCountryD3). polarD3.js and polarCountryD3.js are unchanged, so
+  switching back is a one-line import change (the old import is kept as a
+  comment next to the new one).
+- Marks = variant C from the radial prototype (audit/radial/report.md): a
+  0.25-opacity sector per indicator centred on its cardinal angle, plus a
+  full-opacity arc cap at the value; total score as an outline ring.
+- Radius scale domain [-25, 100]: score 0 sits at 20% of the radius and the
+  white centre disc ends at 0. Rings 20–100 keep their values.
+- Static render (no entry animation). Hover: one delegated listener per SVG;
+  the hovered indicator is set as `data-active` on the SVG and CSS dims the
+  others (linked across all countries in the multiples). On touch, the
+  tooltip stays until the next tap outside a mark.
+- Multiples legend: pillar sectors centred like the country sectors; tick
+  labels 0 and 100 only (intermediate ticks overlapped at 16px). No opacity
+  transition in the multiples: with ~1,850 marks it delayed dimming by
+  ~450 ms (headless Chrome), ~50–80 ms without.
+- polarCountryBarsD3 takes `(data, country, { width })`, matching the
+  template's call. The old `polarCountryD3(data, country, isMobile,
+  options)` received `{width}` as `isMobile` and always rendered at 400px.
+- countries.md and 1countryPageTemplate.md import the new functions.
+
+**Verify**: `npm run dev` → /countries (multiples, hover dims one indicator
+across all countries) and a country page (single chart). To switch back,
+swap the commented import line and the function name at the call site.
+
 ## 2026-10-27 — Fix previous value of 0 treated as missing
 
 **What changed**: mapPillarD3.js, mapCommitmentD3.js and mapTotalD3.js

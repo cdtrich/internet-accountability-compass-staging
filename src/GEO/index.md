@@ -26,7 +26,8 @@ theme: air
 
 ```js
 import { straightPlotD3 } from "../components/straightPlotD3.js";
-import { polarCountryD3 } from "../components/polarCountryD3.js";
+// v3 polar bars; to switch back: import { polarCountryD3 } from "../components/polarCountryD3.js";
+import { polarCountryBarsD3 } from "../components/polarBarsD3.js";
 import { sources } from "../components/sources.js";
 import { onlyUnique } from "../components/onlyUnique.js";
 import { sidebar } from "../components/sidebar.js";
@@ -166,7 +167,7 @@ var commitmentUnique = commitments.filter(onlyUnique);
     </div>
 
   <div class="card grid-col-2">
-        ${resize((width) => polarCountryD3(dfiFull, country, {width}))}
+        ${resize((width) => polarCountryBarsD3(dfiFull, country, {width}))}
     </div>
 
 </div>

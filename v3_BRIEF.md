@@ -163,3 +163,88 @@ comparison against the current site.
 - The data update is validated, with a change report
 - A before/after performance report is in /audit/
 - Nothing requires a change to the WordPress page or the embed code
+
+## Additions (28 Oct 2026)
+
+### Framework decision (goal 3)
+
+- [ ] Record the decision to stay on Observable Framework in /audit/framework-decision.md:
+      constraints (static GH Pages, R loaders, ~190 generated pages, iframe), what a
+      migration would cost, and which problems are fixed inside Framework (items below).
+      Revisit only if post-fix measurements still miss targets.
+- [ ] Phase 2: mark "stay" as the working decision. Phase 6: mark "not planned".
+
+### Navigation / sidebar
+
+- [ ] Active state on country pages: pages live at /<ISO3>/, not /countries/.
+      highlightCurrentPage() in sidebar.js tests startsWith("/countries"). Also match
+      /^\/[A-Z]{3}(\/|$)/ as "Countries". Do not move pages (URLs would change).
+- [ ] Sidebar without reload flash: move it into static HTML (config `header`, active
+      state computed from `path` at build; verify function support in Framework 1.13).
+      Remove sidebar() calls from the country template and the six top-level pages.
+      Replace the Font Awesome CDN with inline SVG icons. Replace the JS isMobile
+      branch with CSS media queries.
+      Done when: the sidebar is in view-source, with no flash or layout shift on
+      navigation, standalone and in the iframe.
+      RISK: regenerates all country pages. Staging first; rollback = git revert.
+      NOTE: truly persistent mounting needs SPA routing, which Framework lacks.
+
+### Visual language
+
+- [ ] CSS cleanup: remove the copied Framework defaults (#observablehq-\* blocks) from
+      style.css and sidebar.css. They are dead where sidebar/toc/footer are off, or they
+      duplicate Framework's own stylesheet. Keep only our overrides, on design tokens.
+      Find unused rules with the DevTools Coverage tab per page type, or PurgeCSS via npx.
+      Before/after screenshots per page type; rollback = git revert.
+- [ ] Radial redesign: make each country read as a data-driven shape.
+      Prototype on branch proto/radial (new files only), then port the winner to
+      polarCountryD3.js and polarD3.js:
+      A 30° arc cap instead of the dot (stems stay)
+      B full 30° wedge replacing halo, stem and dot (rose chart)
+      C low-opacity wedge + full-opacity arc cap
+      Test variables: linear vs sqrt radius (B/C); hairline white stroke between
+      wedges; total-score disc becomes an outline ring.
+      Judge at ~150px in the multiples with a high, a low and a partial-data country:
+      is the shape recognisable, and is a single value still readable at full size?
+      Check the legend and ring labels if the radial scale changes.
+      Side effects: hover target = whole wedge; 1 path per indicator instead of 4 elements.
+      Porting regenerates nothing by itself (components only), but check country pages.
+- [ ] Font loading: audit the three Google Font families loaded per page
+      (render-blocking); reduce to what is used.
+
+### Animation / performance (DEFERRED: not in the current round)
+
+- [ ] Sequence after the radial redesign: it replaces the elements the hover bug
+      lives on in polarD3.js and polarCountryD3.js.
+- [ ] Quick fix if the redesign slips: named transitions ("hover") in the hover
+      handlers; verify hovering no longer freezes the entry animation.
+- [ ] Countries multiples: no per-element entry animation. Dim/highlight via a CSS
+      class on the container instead of d3 transitions over every mark. One
+      delegated listener per chart, not per target.
+- [ ] Country subpages: at most one short entry animation (<=600 ms) on the main polar
+      chart, started on scroll-into-view. Remove staggered delays in straightPlotD3,
+      pillarTrendsD3 (1500 ms + stagger) and the other charts. For wedges, a CSS
+      transform scale from the centre is cheap and compositor-friendly.
+- [ ] Respect prefers-reduced-motion everywhere.
+- [ ] Measure against the Phase 0 baseline (Lighthouse: TBT, long frames, LCP),
+      standalone and in the iframe; log the delta.
+
+### Onboarding
+
+- [ ] Landing tutorial as an overlay (1. total map, 2. subpages). Positioned relative
+      to the frame; works at short iframe heights; localStorage wrapped in try/catch
+      (may be blocked in a cross-origin iframe); "don't show again" plus a visible "?"
+      button to reopen. Build last, since it points at the final UI.
+
+### Dropped
+
+- Google Sheet as a data source (not needed).
+
+### Suggested order
+
+1. Sidebar active-state fix (small, isolated)
+2. CSS cleanup
+3. Radial prototype, decision, then port
+4. Static sidebar (one regeneration of the country pages, combined with any template changes)
+5. Animation and performance pass
+6. Tutorial
