@@ -13,12 +13,6 @@ theme: air
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../modeToggle.css">
 <!-- <link rel="stylesheet" href="../toggleSwitch.css"> -->
-<!-- sidebar -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-<link rel="stylesheet" href="../sidebar.css" />
 <link rel="stylesheet" href="../custom-legend.css" />
 </head>
 
@@ -30,7 +24,6 @@ import { straightPlotD3 } from "../components/straightPlotD3.js";
 import { polarCountryBarsD3 } from "../components/polarBarsD3.js";
 import { sources } from "../components/sources.js";
 import { onlyUnique } from "../components/onlyUnique.js";
-import { sidebar } from "../components/sidebar.js";
 import { pillarTextShort } from "../components/pillarTextShort.js";
 import { viewofSourcesLegend } from "../components/sourcesLegend.js";
 import { pillarSparklineD3 } from "../components/pillarSparklineD3.js";
@@ -503,8 +496,3 @@ sources(sourcesFiltered);
 
 <div id="sources-section"></div>
 
-<!-- sidebar -->
-
-<div>
-    ${sidebar()}
-</div>
