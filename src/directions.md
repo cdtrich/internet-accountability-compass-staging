@@ -6,12 +6,6 @@
 <link rel="stylesheet" href="style.css">
 <!-- <link rel="stylesheet" href="./toggleSwitch.css"> -->
 <link rel="stylesheet" href="./modeToggle.css">
-<!-- sidebar -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-<link rel="stylesheet" href="./sidebar.css" />
 <link rel="stylesheet" href="./custom-legend.css" />
 </head>
 
@@ -28,7 +22,6 @@ import colorScales from "./components/scales.js";
 import { decline, noChange as noChangeColor, ink } from "./components/tokens.js";
 import { onlyUnique } from "./components/onlyUnique.js";
 import { customLegend, viewofCustomLegend } from "./components/customLegend.js";
-import { sidebar } from "./components/sidebar.js";
 import { renderPillarContent } from "./components/pillarRenderer.js";
 import { sources } from "./components/sources.js";
 import { viewofSourcesLegend } from "./components/sourcesLegend.js";
@@ -372,7 +365,3 @@ sources(sourcesDataFiltered);
   <div id="sources-section"></div>
 </div>
 
-<!-- sidebar -->
-<div>
-    ${sidebar()}
-</div>

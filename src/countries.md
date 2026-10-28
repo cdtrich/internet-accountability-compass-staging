@@ -9,12 +9,6 @@ title: "Coutry overview"
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="./modeToggle.css">
-<!-- sidebar -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-<link rel="stylesheet" href="./sidebar.css" />
 </head>
 
 <!-- back to root button -->
@@ -30,7 +24,6 @@ import { colorScales } from "./components/scales.js";
 // v3 polar bars; to switch back: import { polarD3 } from "./components/polarD3.js";
 import { polarBarsD3 } from "./components/polarBarsD3.js";
 import { heatmap } from "./components/heatmapD3.js";
-import { sidebar } from "./components/sidebar.js";
 import { sparklineTableD3 } from "./components/sparklineTableD3.js";
 // import { toggleSwitch } from "./components/toggleSwitch.js";
 import { modeToggle } from "./components/modeToggle.js";
@@ -181,8 +174,3 @@ const chartView =
   ${chartView}
 </div>
 
-<!-- sidebar -->
-
-<div>
-    ${sidebar()}
-</div>

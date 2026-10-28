@@ -6,12 +6,6 @@
 <link rel="stylesheet" href="style.css">
 <!-- <link rel="stylesheet" href="./toggleSwitch.css"> -->
 <link rel="stylesheet" href="./modeToggle.css">
-<!-- sidebar -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="sidebar.css" />
 </head>
 
 <!-- import components -->
@@ -20,7 +14,6 @@
 import colorScales from "./components/scales.js";
 import { bins, decline, noChange as noChangeColor, ink } from "./components/tokens.js";
 import { mapTotalD3 } from "./components/mapTotalD3.js";
-import { sidebar } from "./components/sidebar.js";
 import { featuredPreview } from "./components/featuredPreview.js";
 // import { toggleSwitch } from "./components/toggleSwitch.js";
 import { modeToggle } from "./components/modeToggle.js";
@@ -364,9 +357,3 @@ const uniqueCommitments = [
 ];
 const uniquePillars = [...new Set(dfiCardinal.map((item) => item.pillar_txt))];
 ```
-
-<!-- sidebar -->
-<!--  -->
-<div>
-    ${sidebar()}
-</div>

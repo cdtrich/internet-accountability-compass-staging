@@ -1,3 +1,5 @@
+import { navHtml } from "./nav-html.js";
+
 // Staging builds are detected by the repo name inside BASE_PATH
 // (".../internet-accountability-compass-staging/"). Live never matches.
 const staging = (process.env.BASE_PATH ?? "").includes("staging");
@@ -23,6 +25,12 @@ export default {
 
   // Some additional configuration options and their defaults:
   // header: "Internet Accountability Compass", // what to show in the header (HTML)
+  // Static sidebar, rendered at build time with the active entry from `path`
+  // ("/index", "/countries", "/BEL/index"). base is "" on purpose: Framework
+  // treats root-relative paths in header/head as relative to src/ and rewrites
+  // them per page ("../countries"), so they work under any base path. A
+  // base-prefixed href would become "../internet-accountability-compass/…".
+  header: ({ path }) => navHtml({ path, base: "" }),
   footer: false, // what to show in the footer (HTML)
   sidebar: false, // whether to show the sidebar
   toc: false, // whether to show the table of contents
@@ -33,8 +41,11 @@ export default {
   // typographer: false, // smart quotes and other typographic improvements
   // cleanUrls: true, // drop .html from URLs
 
-  // Staging only: hide from search engines and show a "STAGING" label
-  head: staging
+  // Sidebar stylesheet on every page (root-relative, see header); staging
+  // only: hide from search engines and show a "STAGING" label
+  head:
+    '<link rel="stylesheet" href="/sidebar.css">' +
+    (staging
     ? `<meta name="robots" content="noindex"><style>body::after{content:"STAGING";position:fixed;right:8px;bottom:8px;z-index:2147483647;background:#f61067;color:#fff;font:700 11px/1 sans-serif;letter-spacing:.08em;padding:4px 8px;border-radius:3px;pointer-events:none}</style>`
-    : "",
+    : ""),
 };

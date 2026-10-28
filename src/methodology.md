@@ -4,12 +4,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<!-- sidebar -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="sidebar.css" />
 </head>
 
 <!-- back to root button -->
@@ -21,7 +15,6 @@
 <!-- import components -->
 
 ```js
-import { sidebar } from "./components/sidebar.js";
 ```
 
 <!-- hero -->
@@ -126,8 +119,3 @@ Global Digital Compact</a> and the <a href="https://digital-strategy.ec.europa.e
 
 </div>
 
-<!-- sidebar -->
-
-<div>
-    ${sidebar()}
-</div>

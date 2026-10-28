@@ -1,5 +1,51 @@
 # Changelog: v3
 
+## 2026-10-28 — Static sidebar (IN PROGRESS: country pages not yet regenerated)
+
+**What changed**
+
+- New `nav-html.js` (repo root): sidebar markup built at build time, active
+  entry from Framework's `path`, inline SVG icons, one small drawer-toggle
+  script; mobile layout via CSS media queries instead of the JS `isMobile`
+  branch. `src/sidebar.css` replaced to match.
+- `observablehq.config.js`: `header: ({ path }) => navHtml({ path, base: "" })`
+  and `<link rel="stylesheet" href="/sidebar.css">` added to the global head
+  (staging noindex/label unchanged). Framework 1.13.3 supports a function
+  `header` (`pageFragment()` in dist/config.js; called with
+  `{ title, data, path }` in dist/markdown.js). Logged `path` values:
+  `"/index"`, `"/countries"`, `"/BEL/index"`.
+- **Deviation from the task spec:** `base` is `""`, not the BASE_PATH value.
+  Framework runs header/head HTML through `rewriteHtmlPaths()`, which treats
+  any scheme-less href as a path under src/ and makes it relative to the page.
+  With the base passed, /BEL/ got `href="../internet-accountability-compass/countries"`
+  (→ `/internet-accountability-compass/internet-accountability-compass/countries`
+  in production) and `sidebar.css` resolved to a missing file (sha of empty
+  content). Root-relative `/countries` becomes `../countries`, which works
+  under any base, and `sidebar.css` is fingerprinted (`_file/sidebar.css?sha=…`).
+- Removed from `1countryPageTemplate.md`, index, countries, directions,
+  resources, perspectives, methodology: the `sidebar` import, the
+  `${sidebar()}` block and its comment, the Font Awesome link, the per-page
+  sidebar.css link. No other `<link>` touched.
+- `src/components/sidebar.js` is kept until the 194 country pages are
+  regenerated (they still import it).
+
+**Known differences (visual decision to approve)**
+
+- Icons are new original line icons (Methodology is a sliders icon, was a
+  wrench), not Font Awesome solids.
+- Sidebar text colour #999 → #666 for contrast (sidebar only, via
+  `--sidebar-text-color`).
+- "Map" links to `<base>/` instead of `<base>/index`.
+
+**Still depends on Font Awesome (will lose its icons once FA is gone)**
+
+- `src/components/sourcesLegend.js`: four legend icons on /resources.
+- `src/perspectives.md`: the mobile "Contents" ToC toggle icon.
+
+**Verify (so far, dev server)**: view-source of /, /countries, /BEL/ has one
+`<nav class="sidebar"` with `aria-current="page"` on Map / Countries /
+Countries; each top-level page marks its own entry.
+
 ## 2026-10-28 — Sidebar: Countries active on /<ISO3>/ pages
 
 **What changed**: `highlightCurrentPage()` in `src/components/sidebar.js`

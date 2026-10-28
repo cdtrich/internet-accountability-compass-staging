@@ -1,4 +1,8 @@
+/* Sidebar + mobile drawer. Markup is built at build time by nav-html.js.
+   Layout switching is CSS only (breakpoint 768px, same as style.css). */
+
 :root {
+  /* legacy variables kept: other stylesheets may use them (remove in the CSS cleanup step) */
   --sidebar-width: 100px;
   --sidebar-width-collapsed: 50px;
   --sidebar-height: 500px;
@@ -11,8 +15,17 @@
     avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
     sans-serif;
   --hover-color: #000;
+  /* new: #666 on white is ~5.7:1 (AA); the old #999 was ~2.85:1 */
+  --sidebar-text-color: #666;
 }
 
+/* Framework's header wrapper now only holds fixed-position nav: it must take no space */
+#observablehq-center #observablehq-header {
+  margin: 0;
+  max-width: none;
+}
+
+/* ─── DESKTOP ──────────────────────────────────────────────────── */
 .sidebar {
   position: fixed;
   top: 50%;
@@ -26,45 +39,34 @@
   z-index: 1000;
   border-radius: 0 10px 10px 0;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-  opacity: 1;
-}
-
-/* Collapsed state with reduced opacity */
-.sidebar.collapsed {
-  width: var(--sidebar-width-collapsed);
-  opacity: 0.5;
-}
-
-/* Override opacity when hovering */
-.sidebar:hover {
-  opacity: 1;
 }
 
 .sidebar-content {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 0px 0;
   width: 100%;
 }
 
+/* Scrolls instead of clipping in short iframes; auto margins share free
+   space when it exists and collapse to 0 when it doesn't. */
 .sidebar-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   list-style-type: none;
   padding: 0;
   margin: 20px 0 0 0;
   width: 100%;
   height: calc(100% - 20px);
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .sidebar-menu li {
   width: 100%;
   text-align: center;
   flex-shrink: 0;
+  margin-block: auto;
 }
 
 .sidebar-menu a {
@@ -72,7 +74,7 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--sidebar-text-color);
   padding: 10px;
   transition: color var(--transition-speed);
   width: 100%;
@@ -80,69 +82,54 @@
 }
 
 .sidebar-menu a:hover,
-.sidebar-menu a.active {
+.sidebar-menu a.active,
+.sidebar-menu a[aria-current="page"] {
   color: var(--hover-color);
   font-weight: 700;
 }
 
-.sidebar-menu a:hover {
-  color: var(--hover-color);
+.sidebar-menu a:focus-visible,
+.mobile-hamburger:focus-visible {
+  outline: 2px solid var(--hover-color);
+  outline-offset: -2px;
 }
 
-.sidebar-menu i {
-  font-size: 1.8rem;
+.sidebar-menu svg,
+.mobile-hamburger svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar-menu svg {
   margin-bottom: 5px;
-}
-
-.collapsed .sidebar-menu i {
-  padding: 0;
-  margin: 0 auto;
 }
 
 .sidebar-menu span {
   font-size: 0.8rem;
-  opacity: 1;
-  transition: opacity var(--transition-speed);
   max-width: 100%;
 }
 
-.collapsed .sidebar-menu span {
-  visibility: hidden;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  :root {
-    --sidebar-width: 120px;
-    --sidebar-width-collapsed: 60px;
-  }
-
-  .sidebar-menu i {
-    font-size: 1.5rem;
-  }
-
-  .sidebar-menu span {
-    font-size: 0.7rem;
-  }
-}
-
-/* Adjust to screen size */
+/* Responsive adjustments (desktop range) */
 @media (min-height: 1200px) {
   .sidebar {
     height: 66.67vh;
   }
 }
 
+/* style.css pads content by calc(100vw / 12 + 1rem) in this range: keep in step */
 @media (max-width: 1200px) {
   .sidebar {
     width: calc(100vw / 12);
   }
-
-  .sidebar.collapsed {
-    width: var(--sidebar-width-collapsed);
-  }
 }
 
+/* Very short frames: icons only (labels stay in the accessibility tree + title) */
 @media (max-height: 600px) {
   .sidebar-menu span {
     opacity: 0;
@@ -152,23 +139,7 @@
   }
 }
 
-
-/* For touch devices, ensure the sidebar is visible when touched */
-/* @media (hover: none) {
-  .sidebar.collapsed:active {
-    width: var(--sidebar-width);
-    opacity: 1;
-  }
-
-  .sidebar.collapsed:active .sidebar-menu span {
-    opacity: 1;
-    width: auto;
-    height: auto;
-    overflow: visible;
-  }
-} */
-
-/* ─── BACKDROP (shared, hidden by default) ─────────────────────── */
+/* ─── BACKDROP + TOP BAR (hidden above 768px) ──────────────────── */
 .sidebar-backdrop {
   display: none;
   position: fixed;
@@ -180,9 +151,8 @@
   display: block;
 }
 
-/* ─── MOBILE TOP BAR + HAMBURGER ───────────────────────────────── */
 .mobile-top-bar {
-  display: none; /* shown only on mobile via media query */
+  display: none;
 }
 
 .mobile-hamburger {
@@ -190,20 +160,31 @@
   border: none;
   cursor: pointer;
   padding: 10px 12px;
-  color: var(--text-color);
-  font-size: 1.4rem;
+  color: var(--sidebar-text-color);
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.mobile-hamburger svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.mobile-hamburger .icon-close {
+  display: none;
+}
+.mobile-hamburger[aria-expanded="true"] .icon-bars {
+  display: none;
+}
+.mobile-hamburger[aria-expanded="true"] .icon-close {
+  display: block;
+}
 
-/* ─── MOBILE OVERRIDES (≤768px) ────────────────────────────────── */
+/* ─── MOBILE (≤768px): keep this block last ────────────────────── */
 @media (max-width: 768px) {
-  /* Top bar */
   .mobile-top-bar {
     display: flex;
-    position: fixed !important;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -215,36 +196,35 @@
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
   }
 
-  /* Sidebar: full-height overlay, slides in from left */
-  .sidebar,
-  .sidebar.mobile-hidden {
+  /* Full-height overlay (top/bottom, not 100vh: inside the iframe it fills the frame).
+     visibility:hidden keeps the closed drawer's links out of the tab order. */
+  .sidebar {
     top: 0;
+    bottom: 0;
     left: -220px;
     width: 200px;
-    height: 100vh;
-    border-radius: 0 10px 10px 0;
+    height: auto;
     transform: none;
-    opacity: 1;
-    transition: left 0.25s ease;
     z-index: 1002;
+    visibility: hidden;
+    transition: left 0.25s ease, visibility 0s linear 0.25s;
   }
-
   .sidebar.mobile-open {
     left: 0;
+    visibility: visible;
+    transition: left 0.25s ease, visibility 0s;
   }
 
-  /* Nav list: vertical, left-aligned, below top bar */
   .sidebar-menu {
     align-items: flex-start;
     margin-top: 56px;
+    height: calc(100% - 56px);
     overflow-y: auto;
   }
-
   .sidebar-menu li {
-    width: 100%;
     text-align: left;
+    margin-block: 0;
   }
-
   .sidebar-menu a {
     flex-direction: row;
     gap: 14px;
@@ -252,24 +232,23 @@
     justify-content: flex-start;
     min-height: 48px;
   }
-
-  .sidebar-menu i {
-    font-size: 1.3rem;
+  .sidebar-menu svg {
+    width: 1.4rem;
+    height: 1.4rem;
     margin-bottom: 0;
-    width: 22px;
-    flex-shrink: 0;
   }
-
   .sidebar-menu span {
     font-size: 1rem;
-    visibility: visible;
     opacity: 1;
+    width: auto;
+    height: auto;
+    overflow: visible;
   }
+}
 
-  /* Suppress desktop collapsed-state overrides on mobile */
-  .sidebar.collapsed,
-  .collapsed .sidebar-menu span,
-  .collapsed .sidebar-menu i {
-    all: unset;
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .sidebar-menu a {
+    transition: none;
   }
 }
