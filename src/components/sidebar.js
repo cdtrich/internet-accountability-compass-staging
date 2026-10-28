@@ -59,7 +59,9 @@ export function sidebar() {
       if (
         (href === "/index" &&
           (currentPath === "/" || currentPath === "/index")) ||
-        (href === "/countries" && currentPath.startsWith("/countries")) ||
+        (href === "/countries" &&
+          (currentPath.startsWith("/countries") ||
+            /^\/[A-Z]{3}(\/|$)/.test(currentPath))) ||
         (href === "/directions" && currentPath.startsWith("/directions")) ||
         (href === "/resources" && currentPath.startsWith("/resources")) ||
         (href === "/perspectives" && currentPath.startsWith("/perspectives")) ||

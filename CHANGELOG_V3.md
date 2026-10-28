@@ -1,5 +1,17 @@
 # Changelog: v3
 
+## 2026-10-28 — Sidebar: Countries active on /<ISO3>/ pages
+
+**What changed**: `highlightCurrentPage()` in `src/components/sidebar.js`
+also marks "Countries" active when the path matches `/^\/[A-Z]{3}(\/|$)/`.
+**Why**: country pages live at `/<ISO3>/`, not under `/countries`, so no
+entry was highlighted on them. Pages were not moved (URLs unchanged); no
+regeneration needed.
+**Verify**: `npm run dev` → /BEL/, /AFG/, /USA/ each have exactly one
+`.sidebar-menu a.active` (Countries); /, /countries, /directions,
+/resources, /perspectives, /methodology highlight their own entry; /blog
+highlights nothing.
+
 ## 2026-10-28 — Polar bars (radial variant C)
 
 **What changed**
