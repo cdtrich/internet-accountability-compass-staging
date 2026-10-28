@@ -1,6 +1,6 @@
 # Changelog: v3
 
-## 2026-10-28 — Static sidebar (IN PROGRESS: country pages not yet regenerated)
+## 2026-10-28 — Static sidebar (country pages regenerated; checks pending)
 
 **What changed**
 
@@ -26,8 +26,8 @@
   resources, perspectives, methodology: the `sidebar` import, the
   `${sidebar()}` block and its comment, the Font Awesome link, the per-page
   sidebar.css link. No other `<link>` touched.
-- `src/components/sidebar.js` is kept until the 194 country pages are
-  regenerated (they still import it).
+- `src/components/sidebar.js` deleted after the 194 country pages were
+  regenerated (no importers left).
 
 **Known differences (visual decision to approve)**
 
