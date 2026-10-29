@@ -11,7 +11,36 @@ to `.sources-legend-icon svg` in `src/custom-legend.css` (1.5em, as before).
 **Verify**: /resources → legend shows magnifier, open book, flag,
 mortarboard; white on the selected item, item colour otherwise.
 
-## 2026-10-28 — Static sidebar (Lighthouse and screenshots pending)
+## 2026-10-29 — Sidebar CSS fix + before/after measurements
+
+**What changed** (src/sidebar.css, commit dbebba2): country pages set
+`theme:` in front matter, so they load Framework's layout.css, which turned
+the now non-empty `#observablehq-header` into a fixed 60 px bar with a grey
+bottom border and pushed `main` down by ~75 px. The wrapper is now static,
+0 px tall, no padding or border, and `main` gets back its 1rem top margin.
+Sidebar labels were theme teal because Framework's `a[href]` outranked
+`.sidebar-menu a`; the selector is now `.sidebar-menu a[href]` (desktop and
+mobile), so `--sidebar-text-color` (#666) applies.
+**Verify**: /AFG/ `main` starts at 48 px (as before the sidebar change),
+/ at 16 px; inactive sidebar links compute to rgb(102, 102, 102).
+
+**Measurements** (full report: audit/sidebar/report.md; local before/after
+builds, Lighthouse 13.4.1, 3 runs, medians):
+
+- Requests −3 and transfer −166 KB per page (Font Awesome CSS 19 KB +
+  woff2 147 KB + sidebar.js 1 KB); one render-blocking stylesheet fewer.
+- Accessibility (desktop): home 63 → 81, AFG 68 → 87. Only
+  `color-contrast` on the sidebar labels changed.
+- CLS, LCP, TBT: no change attributable to the sidebar. AFG desktop CLS is
+  0.780 in both builds; home desktop TBT medians over 5 interleaved runs are
+  152 vs 146 ms; run-to-run TBT spread on this machine is 0–1,680 ms.
+- Staging (pre-fix) vs Phase 0 baseline: TBT on mobile is ≈1.9 s vs
+  0.5–0.75 s. Not from the sidebar (local A/B shows no TBT change); flagged
+  for the performance pass.
+- Screenshots before/after (home, AFG, drawer open; standalone and in the
+  iframe, plus a 300 px frame): audit/sidebar/screens/.
+
+## 2026-10-28 — Static sidebar
 
 **What changed**
 
@@ -52,8 +81,8 @@ mortarboard; white on the selected item, item colour otherwise.
 
 - ~~`src/components/sourcesLegend.js`: four legend icons on /resources.~~
   Replaced with inline SVG (2026-10-29 entry).
-- `src/perspectives.md`: the mobile "Contents" ToC toggle icon (still open;
-  the button keeps its "Contents" label).
+- `src/perspectives.md`: the mobile "Contents" ToC toggle icon (being
+  replaced with an inline SVG separately).
 
 **Verify**
 

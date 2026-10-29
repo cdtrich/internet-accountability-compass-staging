@@ -1,0 +1,134 @@
+[
+ {
+  "env": "before",
+  "pg": "/",
+  "w": 1400,
+  "h": 880,
+  "requests": 65,
+  "transferredKB": 2132,
+  "cls": {},
+  "finishMs": 1896,
+  "fa": 2
+ },
+ {
+  "env": "before",
+  "pg": "/",
+  "w": 393,
+  "h": 852,
+  "requests": 64,
+  "transferredKB": 2131,
+  "cls": {},
+  "finishMs": 766,
+  "fa": 2
+ },
+ {
+  "env": "before",
+  "pg": "/AFG/",
+  "w": 1400,
+  "h": 880,
+  "requests": 68,
+  "transferredKB": 1769,
+  "cls": {},
+  "finishMs": 1103,
+  "fa": 2
+ },
+ {
+  "env": "before",
+  "pg": "/AFG/",
+  "w": 393,
+  "h": 852,
+  "requests": 68,
+  "transferredKB": 1769,
+  "cls": {},
+  "finishMs": 2605,
+  "fa": 2
+ },
+ {
+  "env": "after",
+  "pg": "/",
+  "w": 1400,
+  "h": 880,
+  "requests": 64,
+  "transferredKB": 2067,
+  "cls": 0.0422,
+  "finishMs": 3981,
+  "fa": 0
+ },
+ {
+  "env": "after",
+  "pg": "/",
+  "w": 393,
+  "h": 852,
+  "requests": 64,
+  "transferredKB": 2066,
+  "cls": 0.012,
+  "finishMs": 1652,
+  "fa": 0
+ },
+ {
+  "env": "after",
+  "pg": "/AFG/",
+  "w": 1400,
+  "h": 880,
+  "requests": 65,
+  "transferredKB": 1602,
+  "cls": 0.4248,
+  "finishMs": 1038,
+  "fa": 0
+ },
+ {
+  "env": "after",
+  "pg": "/AFG/",
+  "w": 393,
+  "h": 852,
+  "requests": 65,
+  "transferredKB": 1603,
+  "cls": 0.1133,
+  "finishMs": 1171,
+  "fa": 0
+ },
+ {
+  "env": "staging",
+  "pg": "/",
+  "w": 1400,
+  "h": 880,
+  "requests": 61,
+  "transferredKB": 2003,
+  "cls": null,
+  "finishMs": 1976,
+  "fa": 0
+ },
+ {
+  "env": "staging",
+  "pg": "/",
+  "w": 393,
+  "h": 852,
+  "requests": 61,
+  "transferredKB": 2001,
+  "cls": null,
+  "finishMs": 1835,
+  "fa": 0
+ },
+ {
+  "env": "staging",
+  "pg": "/AFG/",
+  "w": 1400,
+  "h": 880,
+  "requests": 65,
+  "transferredKB": 1628,
+  "cls": null,
+  "finishMs": 1306,
+  "fa": 0
+ },
+ {
+  "env": "staging",
+  "pg": "/AFG/",
+  "w": 393,
+  "h": 852,
+  "requests": 65,
+  "transferredKB": 1628,
+  "cls": null,
+  "finishMs": 1639,
+  "fa": 0
+ }
+]
