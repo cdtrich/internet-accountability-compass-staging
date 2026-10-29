@@ -20,9 +20,25 @@
 }
 
 /* Framework's header wrapper now only holds fixed-position nav: it must take no space */
+/* Pages with `theme:` in front matter (the country pages) load Framework's
+   layout.css, which turns a non-empty header into a fixed 2.2rem bar with a
+   border and pushes main down: undo all of it. Static positioning also avoids
+   a stacking context that would cap the nav's z-index at 2. */
 #observablehq-center #observablehq-header {
+  position: static;
+  display: block;
+  height: 0;
   margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
   max-width: none;
+}
+#observablehq-center #observablehq-header ~ #observablehq-main {
+  margin-top: 1rem;
+}
+html:root:has(#observablehq-header) {
+  scroll-padding-top: 2.5rem;
 }
 
 /* ─── DESKTOP ──────────────────────────────────────────────────── */
@@ -69,7 +85,8 @@
   margin-block: auto;
 }
 
-.sidebar-menu a {
+/* a[href] (not a) so this outranks Framework's a[href] link colour */
+.sidebar-menu a[href] {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -225,7 +242,7 @@
     text-align: left;
     margin-block: 0;
   }
-  .sidebar-menu a {
+  .sidebar-menu a[href] {
     flex-direction: row;
     gap: 14px;
     padding: 14px 20px;
