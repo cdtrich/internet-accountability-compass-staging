@@ -1,6 +1,17 @@
 # Changelog: v3
 
-## 2026-10-28 — Static sidebar (country pages regenerated; checks pending)
+## 2026-10-29 — Sources legend: inline SVG icons
+
+**What changed**: the four Font Awesome icons in
+`src/components/sourcesLegend.js` (Analysis, Source, Project, Academic) are
+now inline line icons in the nav's style (24×24, stroke `currentColor`), so
+they follow the legend's selected/unselected text colour. Icon sizing moved
+to `.sources-legend-icon svg` in `src/custom-legend.css` (1.5em, as before).
+**Why**: Font Awesome is no longer loaded (static sidebar, below).
+**Verify**: /resources → legend shows magnifier, open book, flag,
+mortarboard; white on the selected item, item colour otherwise.
+
+## 2026-10-28 — Static sidebar (Lighthouse and screenshots pending)
 
 **What changed**
 
@@ -39,12 +50,31 @@
 
 **Still depends on Font Awesome (will lose its icons once FA is gone)**
 
-- `src/components/sourcesLegend.js`: four legend icons on /resources.
-- `src/perspectives.md`: the mobile "Contents" ToC toggle icon.
+- ~~`src/components/sourcesLegend.js`: four legend icons on /resources.~~
+  Replaced with inline SVG (2026-10-29 entry).
+- `src/perspectives.md`: the mobile "Contents" ToC toggle icon (still open;
+  the button keeps its "Contents" label).
 
-**Verify (so far, dev server)**: view-source of /, /countries, /BEL/ has one
-`<nav class="sidebar"` with `aria-current="page"` on Map / Countries /
-Countries; each top-level page marks its own entry.
+**Verify**
+
+- `npm run build` (45 s, 1,221 links validated; before: 5, the nav links were
+  JS-generated): `dist/index.html`, `dist/countries.html`,
+  `dist/BEL/index.html` each have one `<nav class="sidebar"` and exactly one
+  `aria-current="page"` (Map / Countries / Countries). Every built page has
+  the nav; no `font-awesome` or `cdnjs` anywhere in dist.
+- Built site served under `/internet-accountability-compass/`, inside the
+  production iframe markup (DevTools protocol, headless Chrome):
+  - 1200×300, 900×auto (frame collapses to 150 px) and 375×300: menu
+    scrolls (`overflow-y: auto`), last link reachable, no clipping.
+  - 375×667 on / and /BEL/: drawer opens via the button and closes via
+    backdrop, link click and Escape (focus returns to the button); closed
+    drawer has 0 tabbable links (6 when open); widening the frame to 900 px
+    with the drawer open hides the backdrop and top bar.
+  - No horizontal scroll at 800×600, 1200×300, 1200×800, or on / at 375.
+- Pre-existing, not from this change: /BEL/ at 375 px scrolls horizontally
+  (391 > 360 px) because `.chart-breakout { width: 100vw }`
+  (style.css:1714) includes the 15 px classic scrollbar. Overlay-scrollbar
+  phones are likely unaffected. Left for the CSS cleanup.
 
 ## 2026-10-28 — Sidebar: Countries active on /<ISO3>/ pages
 

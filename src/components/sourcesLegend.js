@@ -1,28 +1,32 @@
+// Inline line icons (same style as the nav in nav-html.js), coloured via currentColor
+const svgIcon = (inner) =>
+  `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${inner}</svg>`;
+
 const SOURCE_CONFIG = [
   {
     fullType: "Analysis",
-    icon: '<i class="fa-solid fa-magnifying-glass"></i>',
+    icon: svgIcon('<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/>'),
     label: "Analysis",
     color: "#007162",
     textColor: "#007162",
   },
   {
     fullType: "Source",
-    icon: '<i class="fa-solid fa-book-open"></i>',
+    icon: svgIcon('<path d="M12 6.5C10 5 7 4.5 3 5v13c4-.5 7 0 9 1.5M12 6.5C14 5 17 4.5 21 5v13c-4-.5-7 0-9 1.5M12 6.5v13"/>'),
     label: "Source",
     color: "#4ed0bf",
     textColor: "#007162",
   },
   {
     fullType: "Project",
-    icon: '<i class="fa-solid fa-flag"></i>',
+    icon: svgIcon('<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>'),
     label: "Project",
     color: "#FDE74C",
     textColor: "#7a6800",
   },
   {
     fullType: "Academic",
-    icon: '<i class="fa-solid fa-graduation-cap"></i>',
+    icon: svgIcon('<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/>'),
     label: "Academic",
     color: "#555555",
     textColor: "#555555",

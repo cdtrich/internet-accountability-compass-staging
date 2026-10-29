@@ -52,8 +52,18 @@
 }
 
 .sources-legend-icon {
-  font-size: 1.5em;
-  line-height: 1.2;
+  display: flex;
+  line-height: 0;
+}
+
+.sources-legend-icon svg {
+  width: 1.5em;
+  height: 1.5em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .sources-legend-label {
