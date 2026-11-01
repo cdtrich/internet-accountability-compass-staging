@@ -10,7 +10,9 @@
    #observablehq-* carry a one-line comment.
    Removed 2026-11-01 (CSS cleanup, see CHANGELOG_V3.md): Framework copies
    that no page can use (sidebar, TOC, footer, search, draft, code-block copy
-   button, syntax highlighting, notes, Plot class) and our TOC overrides.
+   button, syntax highlighting, notes, Plot class, unused utility and grid
+   helpers), our TOC overrides, and unused rules of ours (hero image, country
+   button, back-to-root, scroll arrow, toggle switch, ...).
    Framework original: node_modules/@observablehq/framework/dist/style/
    (1.13.3). This file before the cleanup: git show eadd799:src/style.css
    ───────────────────────────────────────────────────────────── */
