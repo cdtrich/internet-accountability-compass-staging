@@ -70,6 +70,12 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
   nav-html.js, dist/). `--font-very-big` stays (`.very-big` is live on index and
   directions), and so does `--font-small`. On country pages, theme-air still defines
   its own `--font-big` and `.big`.
+- **Unused Framework grid helpers:** `.grid-cols-2`, `.grid-colspan-2/3/4`,
+  `.grid-rowspan-2/3/4`. Only `.grid`, `.grid-cols-3` and `.grid-cols-4` are used.
+  `grep -rn "grid-col\|grid-row" src dist` finds no template that builds these names
+  (the keystats grid picks `'grid-cols-4'`/`'grid-cols-3'` as literals; `grid-col-1/2`
+  in the country template is a different, unstyled class). `.grid`, `.grid-cols-3/4`
+  and their three `@container` wrappers are unchanged.
 
 ## 2026-10-29 — Sources legend: inline SVG icons
 
