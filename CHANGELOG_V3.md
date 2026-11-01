@@ -37,6 +37,21 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
 - **(iii) Our own overrides for the removed TOC:** `.observablehq-secondary-link-highlight`
   and `.observablehq-secondary-link-active a` (white background/text, `!important`).
   They target Framework's TOC, which is off. The perspectives page uses its own `.blog-toc`.
+- **Header comment** in style.css (what the file is, what was removed, where
+  the original lives) and a one-line note on each kept `#observablehq-*` rule.
+  Comments only.
+- **Unused rules of ours** (no class/id hit in src/, nav-html.js or dist/; markup only
+  inside HTML comments where noted): `#hero-image` (commented out in countries and
+  directions), `heading-center` (a type selector, missing its dot), `.blog-divider`,
+  `#countryButton` (5 rules), `.card .key` and its copy in `@media (max-width: 640px)`,
+  `.back-to-root*` (6 rules, incl. `.back-to-root .arrow`; commented out in countries,
+  directions, methodology; no standalone `.arrow` rule existed), `.img-col`.
+  Known defects removed with them: `.blog-divider { margin: 3redm 0 }` (typo,
+  ignored by browsers) and `.card .key { border: solid 1px var (--theme-foreground-faintest) }`.
+  **A border on the key-stat cards was intended but never rendered:** the value
+  was invalid (`var (`), and the selector never matched (the markup is
+  `class="card key"`, one element, not a `.key` inside a `.card`). If the
+  border is wanted, add `.card.key { border: … }` as a deliberate visual change.
 
 ## 2026-10-29 — Sources legend: inline SVG icons
 
