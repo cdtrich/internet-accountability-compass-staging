@@ -1,5 +1,32 @@
 # Changelog: v3
 
+## 2026-11-01 — CSS cleanup: dead Framework copies and unused rules in style.css
+
+Branch `feature/css-cleanup`. Evidence and method: audit/css-cleanup/step0-report.md.
+style.css lines 635-2153 were a copy of an older Framework release's default
+CSS. Top-level pages load no Framework CSS, so that copy is their only source of
+those defaults. Country pages (`theme: air`) also get Framework 1.13.3's own.
+Only rules that no live page can use are removed. One commit per group, so each
+can be reverted alone. Original text: Framework's
+`node_modules/@observablehq/framework/dist/style/` (global, layout, grid, note,
+card, inspector, plot), and this file before the cleanup: `git show eadd799:src/style.css`.
+
+Usage evidence is static: the import graph from the live pages, a class-context
+scan of src/ (all .md/.js incl. unreachable and rollback modules), nav-html.js,
+all 203 built pages and the compiled components in dist/, and greps of dist/.
+
+- **(i) Bucket 1b, Framework features no live page uses.** Code-block wrapper and copy
+  button (`.observablehq-pre-*`, `@keyframes observablehq-pre-copied`),
+  syntax highlighting (pure `.hljs-*` rules; `.hljs-*` selectors stripped from
+  the 7 inspector rules they shared with `.observablehq--*`, which stay), notes
+  (`.note/.tip/.warning/.caution`), `.plot-d6a7b5`. No live page has a `<pre>`
+  (no fenced code is displayed; ` ```html ` fences are evaluated cells) and no
+  component creates one. No `hljs`, note/tip markup or `plot-d6a7b5` in src/ or
+  dist/ (Plot is not bundled at all). **Internal page affected:**
+  src/prototypes/radial has a `<pre>` and loads only the config bundle, so its
+  code block loses this styling (see the Step 3 diff). Country pages still get
+  all of it from theme-air.
+
 ## 2026-10-29 — Sources legend: inline SVG icons
 
 **What changed**: the four Font Awesome icons in
