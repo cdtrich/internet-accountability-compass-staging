@@ -34,6 +34,9 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
   these elements. Framework's client only queries them, never creates them. Split,
   not deleted whole: `@media print` keeps `#observablehq-center { padding-left }`, and
   `#observablehq-main, #observablehq-header { margin; max-width }` keeps its two live selectors.
+- **(iii) Our own overrides for the removed TOC:** `.observablehq-secondary-link-highlight`
+  and `.observablehq-secondary-link-active a` (white background/text, `!important`).
+  They target Framework's TOC, which is off. The perspectives page uses its own `.blog-toc`.
 
 ## 2026-10-29 — Sources legend: inline SVG icons
 

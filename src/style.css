@@ -372,15 +372,6 @@ a.observablehq-header-anchor {
   /* color: var(--theme-foreground) !important; */
 }
 
-/* toc */
-.observablehq-secondary-link-highlight {
-  background-color: #fff !important;
-}
-
-.observablehq-secondary-link-active a {
-  color: #fff !important;
-}
-
 /* country page button */
 #countryButton {
   width: 100%;
