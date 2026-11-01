@@ -22,6 +22,10 @@ components in src/components/.
   or touching .github/workflows/.
 - Log changes in CHANGELOG_V3.md.
 
+## Traps and tooling
+
+@DEV_NOTES.md
+
 ## Plan
 
 @v3_BRIEF.md
