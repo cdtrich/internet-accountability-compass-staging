@@ -52,6 +52,8 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
   was invalid (`var (`), and the selector never matched (the markup is
   `class="card key"`, one element, not a `.key` inside a `.card`). If the
   border is wanted, add `.card.key { border: … }` as a deliberate visual change.
+- **Scroll-down arrow:** `.down-arrow`, `.down-arrow:after`, `@keyframes jumpInfinite`.
+  No markup uses `.down-arrow`, and `grep -rn jumpInfinite src dist` finds only these rules.
 
 ## 2026-10-29 — Sources legend: inline SVG icons
 
