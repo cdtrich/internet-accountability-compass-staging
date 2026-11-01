@@ -26,6 +26,14 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
   src/prototypes/radial has a `<pre>` and loads only the config bundle, so its
   code block loses this styling (see the Step 3 diff). Country pages still get
   all of it from theme-air.
+- **(ii) Bucket 1a, layout features switched off in the config.** Sidebar, TOC, footer,
+  search, `.observablehq-link*`, `.observablehq-secondary-link*`,
+  `.observablehq--draft`, and their breakpoints (5 `@media` blocks that held
+  only these rules). The config and all 203 pages set sidebar/toc/footer/pager to
+  false/null, none sets `draft` or `search`, and none of the 203 built pages contains
+  these elements. Framework's client only queries them, never creates them. Split,
+  not deleted whole: `@media print` keeps `#observablehq-center { padding-left }`, and
+  `#observablehq-main, #observablehq-header { margin; max-width }` keeps its two live selectors.
 
 ## 2026-10-29 — Sources legend: inline SVG icons
 
