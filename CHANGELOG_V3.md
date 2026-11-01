@@ -63,6 +63,13 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
   (`_npm`, `_observablehq`) uses `.slider`, `.round` or `.switch`, so the global
   selectors styled nothing else. **src/toggleSwitch.css stays as the recovery copy** of
   these rules (linked nowhere today).
+- **Framework utility classes:** `.big` (two copies, plus its entry in the
+  `@media (max-width: 640px)` font-size list), `.small`, `.red`, `.yellow`,
+  `.green`, `.blue`, `.muted`. No markup uses them; `.big` only appears inside an
+  HTML comment in index.md. `--font-big` went with `.big`, its only user (grep of src/,
+  nav-html.js, dist/). `--font-very-big` stays (`.very-big` is live on index and
+  directions), and so does `--font-small`. On country pages, theme-air still defines
+  its own `--font-big` and `.big`.
 
 ## 2026-10-29 — Sources legend: inline SVG icons
 

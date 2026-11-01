@@ -90,8 +90,7 @@ h1,
   .body-text > p,
   .body-text > ol,
   #pillar-content,
-  .keystats,
-  .big {
+  .keystats {
     margin-left: 12%;
     padding-right: 10%;
   }
@@ -819,36 +818,11 @@ a[href].observablehq-header-anchor {
   color: inherit;
 }
 :root {
-  --font-big: 900 32px/1 var(--sans-serif);
   --font-very-big: 900 48px/1 var(--sans-serif);
   --font-small: 14px var(--sans-serif);
 }
-.big {
-  font: var(--font-big);
-}
 .very-big {
   font: var(--font-very-big);
-}
-.big {
-  font: var(--font-big);
-}
-.small {
-  font: var(--font-small);
-}
-.red {
-  color: var(--theme-red);
-}
-.yellow {
-  color: var(--theme-yellow);
-}
-.green {
-  color: var(--theme-green);
-}
-.blue {
-  color: var(--theme-blue);
-}
-.muted {
-  color: var(--theme-foreground-muted);
 }
 :root {
   --theme-caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M5 7L8.125 9.5L11.25 7' stroke='black' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
