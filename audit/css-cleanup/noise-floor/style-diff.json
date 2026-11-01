@@ -1,0 +1,119 @@
+{
+ "AUS_1200x800": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "AUS_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "MHL_1200x800": {
+  "elementsA": 1630,
+  "elementsB": 1630,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "MHL_375x667": {
+  "elementsA": 1630,
+  "elementsB": 1630,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "home_1200x800": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "home_375x667": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "iframe_AUS_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "iframe_home_375x667": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "methodology_1200x800": {
+  "elementsA": 121,
+  "elementsB": 121,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "methodology_375x667": {
+  "elementsA": 121,
+  "elementsB": 121,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "perspectives_1200x800": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "perspectives_375x667": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ },
+ "perspectives_768x1024": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changes": [],
+  "changedProperties": 0
+ }
+}

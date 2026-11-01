@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>IAC single frame (local)</title>
+<!-- Same as tools/iframe-single.html, but the frame src comes from ?src= -->
+<style>
+  body { margin: 16px; }
+  .box { border: 2px dashed #999; display: inline-block; }
+</style>
+<div class="box" id="box">
+  <iframe width="100%" height="100%" frameborder="0"></iframe>
+</div>
+<script>
+  const p = new URLSearchParams(location.search);
+  const b = document.getElementById("box");
+  b.style.width = (p.get("w") || 1400) + "px";
+  b.style.height = (p.get("h") || 880) + "px";
+  document.querySelector("iframe").src = p.get("src");
+</script>

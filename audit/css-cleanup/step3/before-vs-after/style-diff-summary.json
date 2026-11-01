@@ -1,0 +1,628 @@
+{
+ "AFG_1200x800": {
+  "elementsA": 1707,
+  "elementsB": 1707,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1707,
+  "changedProperties": 1707,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1707,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1707
+    }
+   }
+  }
+ },
+ "AFG_375x667": {
+  "elementsA": 1707,
+  "elementsB": 1707,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1707,
+  "changedProperties": 1707,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1707,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1707
+    }
+   }
+  }
+ },
+ "AUS_1200x800": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1778,
+  "changedProperties": 1778,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1778,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1778
+    }
+   }
+  }
+ },
+ "AUS_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1778,
+  "changedProperties": 1778,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1778,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1778
+    }
+   }
+  }
+ },
+ "BRA_1200x800": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1778,
+  "changedProperties": 1778,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1778,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1778
+    }
+   }
+  }
+ },
+ "BRA_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1778,
+  "changedProperties": 1778,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1778,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1778
+    }
+   }
+  }
+ },
+ "DNK_1200x800": {
+  "elementsA": 1719,
+  "elementsB": 1719,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1719,
+  "changedProperties": 1719,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1719,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1719
+    }
+   }
+  }
+ },
+ "DNK_375x667": {
+  "elementsA": 1719,
+  "elementsB": 1719,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1719,
+  "changedProperties": 1719,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1719,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1719
+    }
+   }
+  }
+ },
+ "MHL_1200x800": {
+  "elementsA": 1630,
+  "elementsB": 1630,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1630,
+  "changedProperties": 1630,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1630,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1630
+    }
+   }
+  }
+ },
+ "MHL_375x667": {
+  "elementsA": 1630,
+  "elementsB": 1630,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1630,
+  "changedProperties": 1630,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1630,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1630
+    }
+   }
+  }
+ },
+ "countries_1200x800": {
+  "elementsA": 8317,
+  "elementsB": 8317,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 8317,
+  "changedProperties": 8317,
+  "byProperty": {
+   "--font-big": {
+    "elements": 8317,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 8317
+    }
+   }
+  }
+ },
+ "countries_375x667": {
+  "elementsA": 8317,
+  "elementsB": 8317,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 8317,
+  "changedProperties": 8317,
+  "byProperty": {
+   "--font-big": {
+    "elements": 8317,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 8317
+    }
+   }
+  }
+ },
+ "directions_1200x800": {
+  "elementsA": 2877,
+  "elementsB": 2877,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 2877,
+  "changedProperties": 2877,
+  "byProperty": {
+   "--font-big": {
+    "elements": 2877,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 2877
+    }
+   }
+  }
+ },
+ "directions_375x667": {
+  "elementsA": 2877,
+  "elementsB": 2877,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 2877,
+  "changedProperties": 2877,
+  "byProperty": {
+   "--font-big": {
+    "elements": 2877,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 2877
+    }
+   }
+  }
+ },
+ "home_1200x800": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 543,
+  "changedProperties": 546,
+  "byProperty": {
+   "--font-big": {
+    "elements": 543,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 543
+    }
+   },
+   "--font-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 3
+    }
+   }
+  }
+ },
+ "home_375x667": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 543,
+  "changedProperties": 546,
+  "byProperty": {
+   "--font-big": {
+    "elements": 543,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 543
+    }
+   },
+   "--font-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 3
+    }
+   }
+  }
+ },
+ "iframe_AUS_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 1778,
+  "changedProperties": 1778,
+  "byProperty": {
+   "--font-big": {
+    "elements": 1778,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 700 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 1778
+    }
+   }
+  }
+ },
+ "iframe_home_375x667": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 543,
+  "changedProperties": 546,
+  "byProperty": {
+   "--font-big": {
+    "elements": 543,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 543
+    }
+   },
+   "--font-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 3
+    }
+   }
+  }
+ },
+ "methodology_1200x800": {
+  "elementsA": 121,
+  "elementsB": 121,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 121,
+  "changedProperties": 121,
+  "byProperty": {
+   "--font-big": {
+    "elements": 121,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 121
+    }
+   }
+  }
+ },
+ "methodology_375x667": {
+  "elementsA": 121,
+  "elementsB": 121,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 121,
+  "changedProperties": 121,
+  "byProperty": {
+   "--font-big": {
+    "elements": 121,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 121
+    }
+   }
+  }
+ },
+ "perspectives_1200x800": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 226,
+  "changedProperties": 229,
+  "byProperty": {
+   "--font-big": {
+    "elements": 226,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 226
+    }
+   },
+   "--font-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 3
+    }
+   }
+  }
+ },
+ "perspectives_375x667": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 229,
+  "changedProperties": 232,
+  "byProperty": {
+   "--font-big": {
+    "elements": 229,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 229
+    }
+   },
+   "--font-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 3
+    }
+   }
+  }
+ },
+ "perspectives_768x1024": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 229,
+  "changedProperties": 232,
+  "byProperty": {
+   "--font-big": {
+    "elements": 229,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 229
+    }
+   },
+   "--font-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 3
+    }
+   }
+  }
+ },
+ "print_home_1200x800": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 543,
+  "changedProperties": 546,
+  "byProperty": {
+   "--font-big": {
+    "elements": 543,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 543
+    }
+   },
+   "--font-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 3
+    }
+   }
+  }
+ },
+ "prototype_1200x800": {
+  "elementsA": 7528,
+  "elementsB": 7528,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 7528,
+  "changedProperties": 7734,
+  "byProperty": {
+   "--font-big": {
+    "elements": 7528,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 7528
+    }
+   },
+   "block-size": {
+    "elements": 37,
+    "values": {
+     "14422.2px -> 14500.2px": 3,
+     "10547px -> 10624.9px": 1,
+     "237.844px -> 315.812px": 1,
+     "174.344px -> 252.312px": 2,
+     "20.5938px -> 36.1875px": 5,
+     "15.5938px -> 31.1875px": 25
+    }
+   },
+   "height": {
+    "elements": 37,
+    "values": {
+     "14422.2px -> 14500.2px": 3,
+     "10547px -> 10624.9px": 1,
+     "237.844px -> 315.812px": 1,
+     "174.344px -> 252.312px": 2,
+     "20.5938px -> 36.1875px": 5,
+     "15.5938px -> 31.1875px": 25
+    }
+   },
+   "perspective-origin": {
+    "elements": 43,
+    "values": {
+     "592.5px 7211.09px -> 592.5px 7250.08px": 3,
+     "592.5px 5273.47px -> 592.5px 5312.45px": 1,
+     "592.5px 118.922px -> 592.5px 157.906px": 1,
+     "320px 87.1719px -> 320px 126.156px": 2,
+     "55.8438px 17.8438px -> 55.2344px 17.8438px": 2,
+     "78.7812px 17.8438px -> 77.75px 17.8438px": 2,
+     "105.484px 17.8438px -> 107.125px 17.8438px": 2,
+     "320px 10.2969px -> 320px 18.0938px": 5,
+     "31.9688px 10.2969px -> 31.9688px 18.0938px": 5,
+     "47.9062px 10.2969px -> 47.9062px 18.0938px": 5,
+     "55.8438px 10.2969px -> 55.2344px 18.0938px": 5,
+     "78.7812px 10.2969px -> 77.75px 18.0938px": 5,
+     "105.484px 10.2969px -> 107.125px 18.0938px": 5
+    }
+   },
+   "transform-origin": {
+    "elements": 43,
+    "values": {
+     "592.5px 7211.1px -> 592.5px 7250.09px": 3,
+     "592.5px 5273.48px -> 592.5px 5312.46px": 1,
+     "592.5px 118.922px -> 592.5px 157.906px": 1,
+     "320px 87.1719px -> 320px 126.156px": 2,
+     "55.8438px 17.8438px -> 55.2344px 17.8438px": 2,
+     "78.7891px 17.8438px -> 77.7578px 17.8438px": 2,
+     "105.492px 17.8438px -> 107.133px 17.8438px": 2,
+     "320px 10.2969px -> 320px 18.0938px": 5,
+     "31.9688px 10.2969px -> 31.9688px 18.0938px": 5,
+     "47.9062px 10.2969px -> 47.9062px 18.0938px": 5,
+     "55.8438px 10.2969px -> 55.2344px 18.0938px": 5,
+     "78.7891px 10.2969px -> 77.7578px 18.0938px": 5,
+     "105.492px 10.2969px -> 107.133px 18.0938px": 5
+    }
+   },
+   "inline-size": {
+    "elements": 21,
+    "values": {
+     "91.6875px -> 90.4688px": 7,
+     "137.578px -> 135.516px": 7,
+     "190.984px -> 194.266px": 7
+    }
+   },
+   "width": {
+    "elements": 21,
+    "values": {
+     "91.6875px -> 90.4688px": 7,
+     "137.578px -> 135.516px": 7,
+     "190.984px -> 194.266px": 7
+    }
+   },
+   "bottom": {
+    "elements": 1,
+    "values": {
+     "-13640.2px -> -13718.2px": 1
+    }
+   },
+   "inset-block-end": {
+    "elements": 1,
+    "values": {
+     "-13640.2px -> -13718.2px": 1
+    }
+   },
+   "inset-block-start": {
+    "elements": 1,
+    "values": {
+     "14422.2px -> 14500.2px": 1
+    }
+   },
+   "top": {
+    "elements": 1,
+    "values": {
+     "14422.2px -> 14500.2px": 1
+    }
+   }
+  }
+ },
+ "prototype_375x667": {
+  "elementsA": 7528,
+  "elementsB": 7528,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 7528,
+  "changedProperties": 7592,
+  "byProperty": {
+   "--font-big": {
+    "elements": 7528,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 7528
+    }
+   },
+   "inline-size": {
+    "elements": 16,
+    "values": {
+     "339.094px -> 346.641px": 9,
+     "33.1562px -> 40.7031px": 7
+    }
+   },
+   "perspective-origin": {
+    "elements": 16,
+    "values": {
+     "169.547px 282.094px -> 173.312px 282.094px": 2,
+     "169.547px 33.4375px -> 173.312px 33.4375px": 1,
+     "26.5781px 33.4375px -> 30.3438px 33.4375px": 1,
+     "169.547px 41.4844px -> 173.312px 41.4844px": 5,
+     "26.5781px 41.4844px -> 30.3438px 41.4844px": 5,
+     "169.547px 41.2344px -> 173.312px 41.2344px": 1,
+     "26.5781px 41.2344px -> 30.3438px 41.2344px": 1
+    }
+   },
+   "transform-origin": {
+    "elements": 16,
+    "values": {
+     "169.547px 282.094px -> 173.32px 282.094px": 2,
+     "169.547px 33.4375px -> 173.32px 33.4375px": 1,
+     "26.5781px 33.4375px -> 30.3516px 33.4375px": 1,
+     "169.547px 41.4844px -> 173.32px 41.4844px": 5,
+     "26.5781px 41.4844px -> 30.3516px 41.4844px": 5,
+     "169.547px 41.2344px -> 173.32px 41.2344px": 1,
+     "26.5781px 41.2344px -> 30.3516px 41.2344px": 1
+    }
+   },
+   "width": {
+    "elements": 16,
+    "values": {
+     "339.094px -> 346.641px": 9,
+     "33.1562px -> 40.7031px": 7
+    }
+   }
+  }
+ },
+ "resources_1200x800": {
+  "elementsA": 5287,
+  "elementsB": 5287,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 5287,
+  "changedProperties": 5287,
+  "byProperty": {
+   "--font-big": {
+    "elements": 5287,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 5287
+    }
+   }
+  }
+ },
+ "resources_375x667": {
+  "elementsA": 5287,
+  "elementsB": 5287,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 5287,
+  "changedProperties": 5287,
+  "byProperty": {
+   "--font-big": {
+    "elements": 5287,
+    "values": {
+     "900 32px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> null": 5287
+    }
+   }
+  }
+ }
+}

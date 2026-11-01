@@ -1,0 +1,4 @@
+# Screenshots stay local (tens of MB); SHA-256 manifests are committed instead.
+*.png
+# Raw Lighthouse JSON (MBs); ranges are in the reports.
+lighthouse-before/

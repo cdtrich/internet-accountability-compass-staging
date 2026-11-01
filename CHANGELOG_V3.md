@@ -22,10 +22,13 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
   (`.note/.tip/.warning/.caution`), `.plot-d6a7b5`. No live page has a `<pre>`
   (no fenced code is displayed; ` ```html ` fences are evaluated cells) and no
   component creates one. No `hljs`, note/tip markup or `plot-d6a7b5` in src/ or
-  dist/ (Plot is not bundled at all). **Internal page affected:**
-  src/prototypes/radial has a `<pre>` and loads only the config bundle, so its
-  code block loses this styling (see the Step 3 diff). Country pages still get
-  all of it from theme-air.
+  dist/ (Plot is not bundled at all). Country pages still get all of it from
+  theme-air. Internal page src/prototypes/radial: its `<pre id="radial-metrics">`
+  is built at runtime by a cell, so Framework's copy-button code (which wraps
+  `<pre>` present at load) never wrapped it. No pre-container, copy button or hljs
+  styling applied before either, and the Step 3 computed-style diff shows no change
+  beyond the page's own run-to-run noise. (Step 0 counted it as a static `<pre>`:
+  the grep had matched the cell's source text.)
 - **(ii) Bucket 1a, layout features switched off in the config.** Sidebar, TOC, footer,
   search, `.observablehq-link*`, `.observablehq-secondary-link*`,
   `.observablehq--draft`, and their breakpoints (5 `@media` blocks that held
@@ -76,6 +79,25 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
   (the keystats grid picks `'grid-cols-4'`/`'grid-cols-3'` as literals; `grid-col-1/2`
   in the country template is a different, unstyled class). `.grid`, `.grid-cols-3/4`
   and their three `@container` wrappers are unchanged.
+
+**Verification** (audit/css-cleanup/step3-report.md; measured):
+- style.css: 2,264 → 1,329 lines, 363 → 204 rules. Each commit was checked with a
+  semantic rule diff: exactly the planned selectors removed, nothing else changed.
+- Build passes (1,221 links). Of 283 dist/ files, only the two style.css files
+  differ. HTML, JS, data and country pages are unchanged (after normalising the hash).
+- Pixel diff: 39/39 captures identical (home, methodology, perspectives, AUS,
+  MHL; 1200×800, 375×667, perspectives 768×1024; iframe home/AUS 375×667).
+  Noise floor before vs before: 0 differences.
+- Computed styles of every element, 28 cases (also countries, directions,
+  resources, prototype, AFG, DNK, BRA, home in print): the only change is the
+  unused custom property `--font-big`. The prototype also shows its own
+  run-to-run noise (a timing table).
+- CSS gzip -9: top-level pages −5,940 B (two copies of style.css; −27 % of
+  their own CSS), country pages −2,802 B (−14 %). Raw: −36,429 / −19,718 B.
+- Lighthouse (mobile, 5 runs each): before and after ranges overlap completely
+  (home LCP 2.8-12.5 vs 2.8-13.3 s). No measurable effect, none expected.
+- **Verify**: `git diff eadd799 HEAD -- src/style.css`; rebuild and open home,
+  /AUS/, /perspectives at desktop and phone width: nothing should look different.
 
 ## 2026-10-29 — Sources legend: inline SVG icons
 
