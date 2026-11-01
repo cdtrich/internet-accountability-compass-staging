@@ -1,3 +1,19 @@
+/* ─────────────────────────────────────────────────────────────
+   style.css: the site's main stylesheet.
+   Loaded on every page. Top-level pages load no Framework theme, so this
+   file is their only base CSS; they get it twice (config `style` bundle +
+   the page's own <link>). Country pages (`theme: air`) load Framework's
+   theme-air first, then this file once.
+   Contents: our rules, then (from "default legend styles" on) a copy of an
+   older Framework release's default CSS (global, layout, grid, card,
+   inspector), which top-level pages need. Kept Framework rules that target
+   #observablehq-* carry a one-line comment.
+   Removed 2026-11-01 (CSS cleanup, see CHANGELOG_V3.md): Framework copies
+   that no page can use (sidebar, TOC, footer, search, draft, code-block copy
+   button, syntax highlighting, notes, Plot class) and our TOC overrides.
+   Framework original: node_modules/@observablehq/framework/dist/style/
+   (1.13.3). This file before the cleanup: git show eadd799:src/style.css
+   ───────────────────────────────────────────────────────────── */
 :root {
   --monospace: Menlo, Consolas, monospace;
   --monospace-font: 14px/1.5 var(--monospace);
@@ -623,6 +639,9 @@ g[aria-label="tip"] {
 }
 
 /* default legend styles */
+/* From here: copy of an older Framework release's default CSS (with our
+   edits mixed in). Do not delete blocks just because country pages also get
+   them from theme-air: top-level pages get them only from here. */
 :root {
   --monospace: Menlo, Consolas, monospace;
   --monospace-font: 14px/1.5 var(--monospace);
@@ -1026,16 +1045,19 @@ a[href].observablehq-header-anchor {
   --theme-toggle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m10.5,11 2.5-3-2.5-3 M6,8h7' fill='none' stroke='black' stroke-width='2'/%3E%3Crect x='2' y='2' fill='currentColor' height='12' rx='0.5' width='2'/%3E%3C/svg%3E");
   --theme-magnifier: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-width='2' fill='none' d='M15,15L10.5,10.5a3,3 0 1,0 -6 -6a3,3 0 1,0 6 6'%3E%3C/path%3E%3C/svg%3E");
 }
+/* Ours (Framework has no max-width here): centre the page column at 1152px */
 #observablehq-main,
 #observablehq-header {
   margin: 1rem auto;
   max-width: 1152px;
 }
+/* Framework copy (layout.css): only source on top-level pages */
 #observablehq-main {
   min-height: calc(100vh - 20rem);
   position: relative;
   z-index: 0;
 }
+/* Ours: no loaded stylesheet sets a background here (1.13.3), so currently a no-op; removal candidate */
 #observablehq-center {
   background: none !important;
 }
@@ -1073,7 +1095,7 @@ a[href].observablehq-header-anchor {
    takes its place, so content needs top clearance, not left.
    ───────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  /* Push content below the fixed top bar */
+  /* Push content below the fixed top bar (ours) */
   #observablehq-center {
     padding-top: 48px;
   }
@@ -1208,10 +1230,13 @@ a[href].observablehq-header-anchor {
 }
 
 @media print {
+  /* Framework copy (layout.css print rule; its sidebar/footer part removed 2026-11-01) */
   #observablehq-center {
     padding-left: 1em !important;
   }
 }
+/* Framework copy (older release): grid container queries resolve against
+   #observablehq-center here; Framework 1.13.3 sets this on #observablehq-main */
 #observablehq-center {
   container-type: inline-size;
 }
@@ -1307,6 +1332,8 @@ a[href].observablehq-header-anchor {
 .card h3 ~ p {
   margin-top: 1rem;
 }
+/* Framework copy (inspector.css): cell blocks, loading indicator, value/error
+   inspector. Created at runtime on every page; only source on top-level pages. */
 .observablehq--block:empty {
   margin: 0;
 }
