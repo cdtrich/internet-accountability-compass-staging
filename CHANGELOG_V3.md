@@ -54,6 +54,15 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
   border is wanted, add `.card.key { border: … }` as a deliberate visual change.
 - **Scroll-down arrow:** `.down-arrow`, `.down-arrow:after`, `@keyframes jumpInfinite`.
   No markup uses `.down-arrow`, and `grep -rn jumpInfinite src dist` finds only these rules.
+- **Toggle switch:** `.toggle-switch-container`, `.toggle-label`,
+  `.toggle-label-active`, `.switch`, `.switch input`, `.slider`, `.slider:before`,
+  `input:checked + .slider` (+ `:before`), `.slider.round` (+ `:before`). Only
+  src/components/toggleSwitch.js uses these classes. Every import of it is commented out,
+  and it is not built into dist/. The live latest/historical toggle is modeToggle.js
+  (other classes). No dist stylesheet (incl. Framework's Inputs CSS) or dist JS
+  (`_npm`, `_observablehq`) uses `.slider`, `.round` or `.switch`, so the global
+  selectors styled nothing else. **src/toggleSwitch.css stays as the recovery copy** of
+  these rules (linked nowhere today).
 
 ## 2026-10-29 — Sources legend: inline SVG icons
 
