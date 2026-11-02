@@ -74,13 +74,15 @@ export function navHtml({ path, base = "" }) {
 
   const links = ITEMS.map((item) => {
     const active = isActive(item, cur);
-    return `<li><a href="${b}${item.path}" title="${item.label}"${
+    // data-tour: onboarding tour anchor (src/components/tour.js)
+    const tour = item.id === "countries" ? ' data-tour="nav-countries"' : "";
+    return `<li><a href="${b}${item.path}" title="${item.label}"${tour}${
       active ? ' class="active" aria-current="page"' : ""
     }>${svg(ICONS[item.id])}<span>${item.label}</span></a></li>`;
   }).join("");
 
-  return `<nav class="sidebar" id="sidebar" aria-label="Main navigation"><div class="sidebar-content"><ul class="sidebar-menu">${links}</ul></div></nav>
-<div class="mobile-top-bar"><button class="mobile-hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation">${svg(ICONS.bars, "icon-bars")}${svg(ICONS.close, "icon-close")}</button></div>
+  return `<nav class="sidebar" id="sidebar" aria-label="Main navigation" data-tour="nav"><div class="sidebar-content"><ul class="sidebar-menu">${links}</ul></div></nav>
+<div class="mobile-top-bar"><button class="mobile-hamburger" type="button" data-tour="menu-button" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation">${svg(ICONS.bars, "icon-bars")}${svg(ICONS.close, "icon-close")}</button></div>
 <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
 <script>${TOGGLE_SCRIPT}</script>`;
 }

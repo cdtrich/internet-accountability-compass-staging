@@ -679,6 +679,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
   const controlsGroup = svg
     .append("g")
     .attr("class", "zoom-controls")
+    .attr("data-tour", "zoom") // onboarding tour anchor (tour.js)
     .attr("transform", `translate(${width / 8}, ${height - 130})`);
 
   const zoomInButton = controlsGroup
@@ -759,6 +760,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
   const legend = svg
     .append("g")
     .attr("class", "map-legend")
+    .attr("data-tour", "legend") // onboarding tour anchor (tour.js)
     .attr(
       "transform",
       `translate(${(width - legendBlockWidth) / 2 + 20}, ${height + 40})`,
@@ -808,6 +810,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
 
   const container = document.createElement("div");
   container.style.position = "relative";
+  container.dataset.tour = "map"; // onboarding tour anchor (tour.js)
   container.appendChild(svg.node());
   container.appendChild(overlayDiv);
 
