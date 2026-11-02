@@ -1,0 +1,148 @@
+/* Onboarding tour (src/components/tour.js). Loaded by tour.js on first use
+   only, never with the page. Colours come from the theme variables; the
+   shadow matches .sidebar (sidebar.css). */
+
+/* Above the sidebar (1000-1002), the mobile top bar (1001) and the "?" (1003) */
+.iac-tour {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  font-family: var(--sans-serif);
+  color: var(--theme-foreground);
+}
+
+/* The ring's own shadow is the dim layer: one element, no extra overlay */
+.iac-tour-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border: 2px solid var(--theme-background);
+  outline: 2px solid var(--theme-foreground);
+  border-radius: 8px;
+  box-shadow: 0 0 0 max(100vw, 100vh)
+    color-mix(in srgb, var(--theme-foreground) 55%, transparent);
+  pointer-events: none;
+}
+.iac-tour-ring-none {
+  border: 0;
+  outline: 0;
+}
+
+.iac-tour-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: min(360px, calc(100% - 16px));
+  max-height: calc(100% - 16px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 14px 16px 12px;
+  background: var(--theme-background);
+  border-radius: 10px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+.iac-tour-changing .iac-tour-card {
+  opacity: 0;
+  transition: none;
+}
+
+/* .iac-tour prefix: outranks style.css element rules (h2 margins/padding at
+   <=640px, p widths) */
+.iac-tour .iac-tour-count,
+.iac-tour .iac-tour-title,
+.iac-tour .iac-tour-body {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  font-family: var(--sans-serif);
+}
+.iac-tour .iac-tour-count {
+  font-size: 0.8rem;
+  color: var(--theme-foreground-muted);
+}
+.iac-tour .iac-tour-title {
+  margin: 2px 0 6px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--theme-foreground);
+}
+/* Focus lands on the title (tabindex="-1", not in the tab order) so screen
+   readers start there; it is not a control, so no focus ring. Chrome would
+   otherwise draw one on every auto-start (programmatic focus after load). */
+.iac-tour .iac-tour-title:focus {
+  outline: none;
+}
+.iac-tour .iac-tour-body {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.iac-tour-optout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.iac-tour-optout[hidden] {
+  display: none;
+}
+.iac-tour-optout input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--theme-foreground);
+}
+
+.iac-tour-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.iac-tour-actions button {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 4px;
+  font: 600 0.9rem var(--sans-serif);
+  cursor: pointer;
+}
+.iac-tour-actions button[hidden] {
+  display: none;
+}
+.iac-tour .iac-tour-skip {
+  margin-right: auto;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--theme-foreground-muted);
+  text-decoration: underline;
+}
+.iac-tour .iac-tour-back {
+  border: 1px solid var(--theme-foreground-faint);
+  background: var(--theme-background);
+  color: var(--theme-foreground);
+}
+.iac-tour .iac-tour-next {
+  border: 1px solid var(--theme-foreground);
+  background: var(--theme-foreground);
+  color: var(--theme-background);
+}
+.iac-tour button:focus-visible,
+.iac-tour-optout input:focus-visible {
+  outline: 2px solid var(--theme-foreground);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iac-tour,
+  .iac-tour * {
+    transition: none !important;
+  }
+}

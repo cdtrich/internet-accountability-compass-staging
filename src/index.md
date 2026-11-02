@@ -8,6 +8,47 @@
 <link rel="stylesheet" href="./modeToggle.css">
 </head>
 
+<!-- onboarding tour: "?" button (fixed, so no layout shift; the tour cell
+     below moves it next to the nav); tour.js and tour.css load lazily -->
+<style>
+.tour-launch {
+  position: fixed;
+  right: 16px;
+  bottom: 40px; /* clear of the staging label */
+  z-index: 1003;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: var(--sidebar-color);
+  color: var(--sidebar-text-color);
+  font: 700 1.25rem/1 var(--sans-serif);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.tour-launch:hover {
+  color: var(--hover-color);
+}
+.tour-launch:focus-visible {
+  outline: 2px solid var(--hover-color);
+  outline-offset: 2px;
+}
+/* in the mobile top bar (48px, sidebar.css) */
+@media (max-width: 768px) {
+  .tour-launch {
+    top: 2px;
+    bottom: auto;
+    right: 8px;
+    box-shadow: none;
+  }
+}
+</style>
+<div class="tour-mount"><button type="button" class="tour-launch" aria-label="Show the tour" title="How to use this site">?</button></div>
+
 <!-- import components -->
 
 ```js
@@ -17,6 +58,37 @@ import { mapTotalD3 } from "./components/mapTotalD3.js";
 import { featuredPreview } from "./components/featuredPreview.js";
 // import { toggleSwitch } from "./components/toggleSwitch.js";
 import { modeToggle } from "./components/modeToggle.js";
+```
+
+<!-- onboarding tour: lazy-loaded after `load` + idle; never for automated runs
+     (navigator.webdriver, Lighthouse) or with ?tour=0; ?tour=1 forces it.
+     Storage rules and the TOUR_ENABLED switch live in components/tour.js -->
+
+```js
+{
+  const button = document.querySelector(".tour-launch");
+  // #observablehq-main is a stacking context (z-index: 0) under the mobile top
+  // bar; next to the nav the button can sit on top of it (and is early in the
+  // tab order). Fixed position, so the move shifts nothing.
+  document.getElementById("observablehq-header")?.append(button);
+  const css = FileAttachment("./tour.css").href;
+  const load = () => import("./components/tour.js");
+  button.addEventListener("click", () =>
+    load().then((m) => m.openTour({ css, opener: button })),
+  );
+  const q = new URLSearchParams(location.search).get("tour");
+  const automated =
+    navigator.webdriver || /Chrome-Lighthouse/.test(navigator.userAgent);
+  if (q === "1" || (q !== "0" && !automated)) {
+    const idle = window.requestIdleCallback || ((f) => setTimeout(f, 200));
+    const start = () =>
+      idle(() => load().then((m) => m.startTour({ css, opener: button })), {
+        timeout: 4000,
+      });
+    if (document.readyState === "complete") start();
+    else addEventListener("load", start, { once: true });
+  }
+}
 ```
 
 <!-- hero -->
