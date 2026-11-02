@@ -1,0 +1,28 @@
+{
+ "loadEventEndMs": 901,
+ "tour": [
+  {
+   "file": "tour.be27f1c8.js",
+   "startMs": 3100
+  },
+  {
+   "file": "tour.9021e806.css",
+   "startMs": 3112
+  }
+ ],
+ "allAfterLoad": true,
+ "initialHtml": {
+  "tourJsReferences": [
+   "const load = () => import(\"./_import/components/tour.be27f1c8.js\");"
+  ],
+  "modulepreloadForTour": false,
+  "linkToTourCss": false,
+  "registerFileTourCss": true,
+  "helpButton": true,
+  "dataTour": [
+   "data-tour=\"nav\"",
+   "data-tour=\"nav-countries\"",
+   "data-tour=\"menu-button\""
+  ]
+ }
+}

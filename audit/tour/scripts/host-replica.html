@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress host replica (ESTIMATE)</title>
+<!--
+  Replica of the GIFI page that embeds the site, rebuilt from its HTML and CSS
+  (fetched 2 Nov 2026 with curl; a headless browser is blocked by the host).
+  What is copied verbatim: the embed markup and the inline rules for
+  .embedded-iframe-container (height: 100vh; overflow: hidden) and its iframe.
+  What is an ESTIMATE: the 117px above the frame. The theme's header is
+  position: absolute (Header--mobile), so the only block above the frame is the
+  breadcrumb bar: padding-top 85px + padding-bottom 11px + one line of
+  .small text (14px x 1.5 = 21px). A wrapping breadcrumb on phones makes it taller.
+  Usage: host-replica.html?src=<site url>[&scroll=bottom]
+-->
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; }
+  .bar { background: #000; color: #fff; padding: 85px 12px 11px; font-size: 14px; line-height: 21px; }
+  .bar p { margin: 0; }
+  .embedded-iframe-container { width: 100%; height: 100vh; margin: 0; padding: 0; overflow: hidden; }
+  .embedded-iframe-container iframe { width: 100%; height: 100%; border: none; }
+  footer { height: 900px; background: #222; }
+</style>
+<div class="bar"><p>Home » GIFI – Global initiative on the future of the Internet » Internet Accountability Compass</p></div>
+<div class="embedded-iframe-container">
+  <iframe width="100%" height="100%" frameborder="0"></iframe>
+</div>
+<footer></footer>
+<script>
+  const p = new URLSearchParams(location.search);
+  document.querySelector("iframe").src = p.get("src");
+  // Visitor already scrolled the host down (to the footer) before the tour starts
+  if (p.get("scroll") === "bottom") scrollTo(0, document.documentElement.scrollHeight);
+</script>

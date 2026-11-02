@@ -1,0 +1,9 @@
+1200x800: elements 527/528, differing boxes 3, scrollHeight 3942/3942, CLS parent 0.0000, tour off 0.0619, tour forced open 0.0619
+  only in parent: [] only in tour: ["STYLE. 0,0,0x0"]
+  shifts tour off: [[0.0619,"#text|#text|#text"]]
+  shifts tour forced: [[0.0619,"#text|#text|#text"]]
+375x667: elements 527/528, differing boxes 3, scrollHeight 6442/6442, CLS parent 0.0038, tour off 0.0038, tour forced open 0.0038
+  only in parent: ["DIV.blog-img-wrap blog-img-wrap--tile 16,2768,306x162","IMG. 16,2768,306x162","P.blog-preview-title 16,2941,306x37","SPAN.blog-date 16,2984,306x19"] only in tour: ["STYLE. 0,0,0x0","DIV.blog-img-wrap blog-img-wrap--tile 16,2768,306x0","IMG. 16,2768,306x0","P.blog-preview-title 16,2779,306x37","SPAN.blog-date 16,2822,306x19"]
+  shifts parent: [[0.0038,"#text"]]
+  shifts tour off: [[0.0038,"#text"]]
+  shifts tour forced: [[0.0038,"#text"]]

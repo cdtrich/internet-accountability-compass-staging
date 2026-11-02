@@ -1,0 +1,19 @@
+PASS webdriver=true: no auto-start, tour.js/css not fetched  {"open":false,"fetched":[]}
+PASS ?tour=0: no auto-start  {}
+PASS Finish -> done; no auto-start on reload or in a new tab  {"opened":true,"label":"Finish","done":"done","skipped":null,"again":false,"newTab":false,"errors":["Failed to load resource: net::ERR_CONNECTION_TIMED_OUT","Failed to load resource: net::ERR_CONNECTION_TIMED_OUT","Failed to load resource: net::ERR_CONNECTION_TIMED_OUT"]}
+PASS Skip -> skipped for this session only  {"done":null,"skipped":"1","focus":"tour-launch","again":false,"nextSession":true,"errors":[]}
+PASS Esc closes, = Skip, focus on ?, inert removed  {"done":null,"skipped":"1","focus":"tour-launch","inert":false}
+PASS Don't show again + Skip -> done  {"done":"done","skipped":null}
+PASS version bump: iac:tour:v0=done does not suppress v1  {}
+PASS storage throwing: no auto-start, ? works, opt-out hidden, no errors  {"auto":false,"opened":true,"optoutHidden":true,"closed":true,"reopened":true,"errors":[]}
+PASS keyboard: Tab trap, focus visible, Enter/Space, title focused per step, Esc -> ?  {"start":"card:iac-tour-title","fwd":["card:checkbox","card:iac-tour-skip","card:iac-tour-next","card:checkbox","card:iac-tour-skip","card:iac-tour-next"],"back":["card:iac-tour-skip","card:checkbox","card:iac-tour-next","card:iac-tour-skip","card:checkbox","card:iac-tour-next"],"focusVisible":true,"afterEnter":"Step 2 of 4","focusAfterStep":"card:iac-tour-title","afterSpace":"Step 1 of 4","end":"tour-launch","endRing":true}
+PASS reduced motion off: opacity fade on the card only, <=200ms  {"nonZeroTransitions":["iac-tour-card:opacity 0.15s"],"runningAnimations":1}
+PASS reduced motion on: no transitions  {"nonZeroTransitions":[],"runningAnimations":0}
+Error [TypeError]: Cannot read properties of null (reading 'textContent')
+    at evaluate (evaluate at check (C:\Users\dietr\Documents\cd_trich\freelance_old\EUI\2026_IAC\audit\tour\scripts\tour-behaviour.cjs:118:27), <anonymous>:3:185)
+    at #evaluate (file:///C:/Users/dietr/AppData/Local/npm-cache/_npx/5390d7d89c0de19d/node_modules/puppeteer-core/lib/puppeteer/cdp/ExecutionContext.js:402:19)
+    at async ExecutionContext.evaluate (file:///C:/Users/dietr/AppData/Local/npm-cache/_npx/5390d7d89c0de19d/node_modules/puppeteer-core/lib/puppeteer/cdp/ExecutionContext.js:288:16)
+    at async IsolatedWorld.evaluate (file:///C:/Users/dietr/AppData/Local/npm-cache/_npx/5390d7d89c0de19d/node_modules/puppeteer-core/lib/puppeteer/cdp/IsolatedWorld.js:104:16)
+    at async CdpFrame.evaluate (file:///C:/Users/dietr/AppData/Local/npm-cache/_npx/5390d7d89c0de19d/node_modules/puppeteer-core/lib/puppeteer/api/Frame.js:364:20)
+    at async CdpPage.evaluate (file:///C:/Users/dietr/AppData/Local/npm-cache/_npx/5390d7d89c0de19d/node_modules/puppeteer-core/lib/puppeteer/api/Page.js:832:20)
+    at async C:\Users\dietr\Documents\cd_trich\freelance_old\EUI\2026_IAC\audit\tour\scripts\tour-behaviour.cjs:138:126

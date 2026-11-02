@@ -1,5 +1,45 @@
 # Changelog: v3
 
+## 2026-11-02 — Onboarding tour on the landing page
+
+Branch `feature/tour`. Report and evidence: audit/tour/report.md.
+
+**What changed**
+- New `src/components/tour.js` (vanilla, no dependency) and `src/tour.css`: a
+  first-visit spotlight tour on the landing page only. Ring around the live UI +
+  one card; 4 steps on desktop (legend, zoom controls, nav, Countries link), 3 at
+  ≤768px (legend, map, hamburger). All copy in `COPY.en` at the top of tour.js.
+- `src/index.md`: a "?" button (fixed; bottom-right on desktop, in the mobile top bar
+  at ≤768px) and a cell that imports tour.js after `load` + idle. Not for automated
+  runs (`navigator.webdriver`, Lighthouse UA) or with `?tour=0`; `?tour=1` forces it.
+- `src/components/mapTotalD3.js`, `nav-html.js`: `data-tour` attributes only
+  (map container, legend, zoom controls; nav, Countries link, hamburger). The nav
+  attributes are on every page via the config header: no country-page regeneration.
+
+**Behaviour**: Finish or "Don't show again" → localStorage `iac:tour:v1 = done`
+(bump the version to show it again); Skip/Esc → sessionStorage `iac:tour:skipped`.
+Auto-start only if neither is set and localStorage works
+(`AUTOSTART_WITHOUT_STORAGE = false`). While open: `inert` page, Tab trap, Esc,
+focus back to "?", every `focus()` with `preventScroll`; scrolls only its own
+document (`window.scrollTo`, never `scrollIntoView`, which scrolled the host page in a test).
+
+**Why**: v3_BRIEF.md, "Onboarding".
+
+**Size**: tour.js + tour.css 8,104 B gzip, requested only after `load`; index.html
++1,129 B gzip. One Lighthouse mobile run, home `?tour=1`: LCP 12.43 s / TBT 1,619 ms /
+CLS 0 vs parent 12.78 s / 1,613 ms / 0 (within noise).
+
+**Open (proposals in the report, not applied)**: in the WordPress embed the frame's
+bottom ~117px start below the visitor's window (estimate from the host CSS), so the
+desktop "?" is not visible until the host page scrolls (A: put it top-right), and a
+bottom-docked card can be cut on small phones (B: `DOCK = "top"`). There is no
+visibility gate before auto-start (C: IntersectionObserver, a new mechanism).
+
+**Verify**: open `/` in a fresh profile → tour after load; Finish, reload → no tour;
+"?" reopens it. `/?tour=0` → no tour. Phone width → 3 steps, "?" in the top bar.
+
+**Rollback**: `TOUR_ENABLED = false` in tour.js, or revert the branch commits.
+
 ## 2026-11-01 — CSS cleanup: dead Framework copies and unused rules in style.css
 
 Branch `feature/css-cleanup`. Evidence and method: audit/css-cleanup/step0-report.md.
