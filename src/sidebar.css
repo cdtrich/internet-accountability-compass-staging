@@ -98,11 +98,6 @@ html:root:has(#observablehq-header) {
   box-sizing: border-box;
 }
 
-/* Preserves the current focus underline, which today comes from style.css load order (Framework copy a[href]:focus); intentional for now, keeping it is a visual-pass decision (see CHANGELOG_V3.md). */
-.sidebar-menu a[href]:focus {
-  text-decoration: underline;
-}
-
 .sidebar-menu a:hover,
 .sidebar-menu a.active,
 .sidebar-menu a[aria-current="page"] {
