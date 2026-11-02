@@ -1,0 +1,286 @@
+{
+ "top-level (index)": {
+  "before": {
+   "styleCss": {
+    "raw": 86387,
+    "gz9": 19654,
+    "gz6": 19788
+   },
+   "styleCopies": 2,
+   "allLocalCss": {
+    "raw": 93728,
+    "gz9": 22355,
+    "gz6": 22491
+   },
+   "files": [
+    {
+     "file": "_import/style.59eb95fc.css",
+     "raw": 34893,
+     "gz9": 8304,
+     "gz6": 8341
+    },
+    {
+     "file": "_file/sidebar.9e25e420.css",
+     "raw": 6439,
+     "gz9": 2288,
+     "gz6": 2290
+    },
+    {
+     "file": "_file/style.acd7c9ec.css",
+     "raw": 51494,
+     "gz9": 11350,
+     "gz6": 11447
+    },
+    {
+     "file": "_file/modeToggle.ad3d6df9.css",
+     "raw": 902,
+     "gz9": 413,
+     "gz6": 413
+    }
+   ]
+  },
+  "after": {
+   "styleCss": {
+    "raw": 49958,
+    "gz9": 13714,
+    "gz6": 13764
+   },
+   "styleCopies": 2,
+   "allLocalCss": {
+    "raw": 57299,
+    "gz9": 16415,
+    "gz6": 16467
+   },
+   "files": [
+    {
+     "file": "_import/style.8eb06335.css",
+     "raw": 18182,
+     "gz9": 5166,
+     "gz6": 5178
+    },
+    {
+     "file": "_file/sidebar.9e25e420.css",
+     "raw": 6439,
+     "gz9": 2288,
+     "gz6": 2290
+    },
+    {
+     "file": "_file/style.f80fca52.css",
+     "raw": 31776,
+     "gz9": 8548,
+     "gz6": 8586
+    },
+    {
+     "file": "_file/modeToggle.ad3d6df9.css",
+     "raw": 902,
+     "gz9": 413,
+     "gz6": 413
+    }
+   ]
+  }
+ },
+ "top-level (methodology)": {
+  "before": {
+   "styleCss": {
+    "raw": 86387,
+    "gz9": 19654,
+    "gz6": 19788
+   },
+   "styleCopies": 2,
+   "allLocalCss": {
+    "raw": 92826,
+    "gz9": 21942,
+    "gz6": 22078
+   },
+   "files": [
+    {
+     "file": "_import/style.59eb95fc.css",
+     "raw": 34893,
+     "gz9": 8304,
+     "gz6": 8341
+    },
+    {
+     "file": "_file/sidebar.9e25e420.css",
+     "raw": 6439,
+     "gz9": 2288,
+     "gz6": 2290
+    },
+    {
+     "file": "_file/style.acd7c9ec.css",
+     "raw": 51494,
+     "gz9": 11350,
+     "gz6": 11447
+    }
+   ]
+  },
+  "after": {
+   "styleCss": {
+    "raw": 49958,
+    "gz9": 13714,
+    "gz6": 13764
+   },
+   "styleCopies": 2,
+   "allLocalCss": {
+    "raw": 56397,
+    "gz9": 16002,
+    "gz6": 16054
+   },
+   "files": [
+    {
+     "file": "_import/style.8eb06335.css",
+     "raw": 18182,
+     "gz9": 5166,
+     "gz6": 5178
+    },
+    {
+     "file": "_file/sidebar.9e25e420.css",
+     "raw": 6439,
+     "gz9": 2288,
+     "gz6": 2290
+    },
+    {
+     "file": "_file/style.f80fca52.css",
+     "raw": 31776,
+     "gz9": 8548,
+     "gz6": 8586
+    }
+   ]
+  }
+ },
+ "country (AFG)": {
+  "before": {
+   "styleCss": {
+    "raw": 51494,
+    "gz9": 11350,
+    "gz6": 11447
+   },
+   "styleCopies": 1,
+   "allLocalCss": {
+    "raw": 84427,
+    "gz9": 20293,
+    "gz6": 20423
+   },
+   "files": [
+    {
+     "file": "_observablehq/theme-air.aad62322.css",
+     "raw": 24191,
+     "gz9": 5625,
+     "gz6": 5656
+    },
+    {
+     "file": "_file/sidebar.9e25e420.css",
+     "raw": 6439,
+     "gz9": 2288,
+     "gz6": 2290
+    },
+    {
+     "file": "_file/style.acd7c9ec.css",
+     "raw": 51494,
+     "gz9": 11350,
+     "gz6": 11447
+    },
+    {
+     "file": "_file/modeToggle.ad3d6df9.css",
+     "raw": 902,
+     "gz9": 413,
+     "gz6": 413
+    },
+    {
+     "file": "_file/custom-legend.423cadb6.css",
+     "raw": 1401,
+     "gz9": 617,
+     "gz6": 617
+    }
+   ]
+  },
+  "after": {
+   "styleCss": {
+    "raw": 31776,
+    "gz9": 8548,
+    "gz6": 8586
+   },
+   "styleCopies": 1,
+   "allLocalCss": {
+    "raw": 64709,
+    "gz9": 17491,
+    "gz6": 17562
+   },
+   "files": [
+    {
+     "file": "_observablehq/theme-air.aad62322.css",
+     "raw": 24191,
+     "gz9": 5625,
+     "gz6": 5656
+    },
+    {
+     "file": "_file/sidebar.9e25e420.css",
+     "raw": 6439,
+     "gz9": 2288,
+     "gz6": 2290
+    },
+    {
+     "file": "_file/style.f80fca52.css",
+     "raw": 31776,
+     "gz9": 8548,
+     "gz6": 8586
+    },
+    {
+     "file": "_file/modeToggle.ad3d6df9.css",
+     "raw": 902,
+     "gz9": 413,
+     "gz6": 413
+    },
+    {
+     "file": "_file/custom-legend.423cadb6.css",
+     "raw": 1401,
+     "gz9": 617,
+     "gz6": 617
+    }
+   ]
+  }
+ },
+ "prototype": {
+  "before": {
+   "styleCss": {
+    "raw": 34893,
+    "gz9": 8304,
+    "gz6": 8341
+   },
+   "styleCopies": 1,
+   "allLocalCss": {
+    "raw": 34893,
+    "gz9": 8304,
+    "gz6": 8341
+   },
+   "files": [
+    {
+     "file": "_import/style.59eb95fc.css",
+     "raw": 34893,
+     "gz9": 8304,
+     "gz6": 8341
+    }
+   ]
+  },
+  "after": {
+   "styleCss": {
+    "raw": 18182,
+    "gz9": 5166,
+    "gz6": 5178
+   },
+   "styleCopies": 1,
+   "allLocalCss": {
+    "raw": 18182,
+    "gz9": 5166,
+    "gz6": 5178
+   },
+   "files": [
+    {
+     "file": "_import/style.8eb06335.css",
+     "raw": 18182,
+     "gz9": 5166,
+     "gz6": 5178
+    }
+   ]
+  }
+ }
+}

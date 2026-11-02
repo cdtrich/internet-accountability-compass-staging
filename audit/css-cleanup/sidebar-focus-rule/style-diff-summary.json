@@ -1,0 +1,361 @@
+{
+ "AFG_1200x800": {
+  "elementsA": 1707,
+  "elementsB": 1707,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "AFG_375x667": {
+  "elementsA": 1707,
+  "elementsB": 1707,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "AUS_1200x800": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "AUS_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "BRA_1200x800": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "BRA_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "DNK_1200x800": {
+  "elementsA": 1719,
+  "elementsB": 1719,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "DNK_375x667": {
+  "elementsA": 1719,
+  "elementsB": 1719,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "MHL_1200x800": {
+  "elementsA": 1630,
+  "elementsB": 1630,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "MHL_375x667": {
+  "elementsA": 1630,
+  "elementsB": 1630,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "countries_1200x800": {
+  "elementsA": 8317,
+  "elementsB": 8317,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "countries_375x667": {
+  "elementsA": 8317,
+  "elementsB": 8317,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "directions_1200x800": {
+  "elementsA": 2877,
+  "elementsB": 2877,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "directions_375x667": {
+  "elementsA": 2877,
+  "elementsB": 2877,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "iframe_AUS_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "iframe_home_375x667": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "methodology_1200x800": {
+  "elementsA": 121,
+  "elementsB": 121,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "methodology_375x667": {
+  "elementsA": 121,
+  "elementsB": 121,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_768x1024": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "print_home_1200x800": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "prototype_1200x800": {
+  "elementsA": 7528,
+  "elementsB": 7528,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 45,
+  "changedProperties": 200,
+  "byProperty": {
+   "block-size": {
+    "elements": 19,
+    "values": {
+     "14391px -> 14422.2px": 3,
+     "10515.8px -> 10547px": 1,
+     "206.656px -> 237.844px": 1,
+     "143.156px -> 174.344px": 2,
+     "20.0938px -> 35.6875px": 2,
+     "15.5938px -> 31.1875px": 10
+    }
+   },
+   "height": {
+    "elements": 19,
+    "values": {
+     "14391px -> 14422.2px": 3,
+     "10515.8px -> 10547px": 1,
+     "206.656px -> 237.844px": 1,
+     "143.156px -> 174.344px": 2,
+     "20.0938px -> 35.6875px": 2,
+     "15.5938px -> 31.1875px": 10
+    }
+   },
+   "perspective-origin": {
+    "elements": 44,
+    "values": {
+     "592.5px 7195.5px -> 592.5px 7211.09px": 3,
+     "592.5px 5257.88px -> 592.5px 5273.47px": 1,
+     "592.5px 103.328px -> 592.5px 118.922px": 1,
+     "320px 71.5781px -> 320px 87.1719px": 2,
+     "320px 10.0469px -> 320px 17.8438px": 2,
+     "32.0156px 10.0469px -> 31.9688px 17.8438px": 2,
+     "47.9688px 10.0469px -> 47.9062px 17.8438px": 2,
+     "58.5625px 10.0469px -> 57.8438px 17.8438px": 2,
+     "83.3906px 10.0469px -> 82.1719px 17.8438px": 2,
+     "98.0312px 10.0469px -> 100.094px 17.8438px": 2,
+     "32.0156px 10.2969px -> 31.9688px 10.2969px": 5,
+     "47.9688px 10.2969px -> 47.9062px 10.2969px": 5,
+     "58.5625px 10.2969px -> 57.8438px 10.2969px": 5,
+     "83.3906px 10.2969px -> 82.1719px 10.2969px": 5,
+     "98.0312px 10.2969px -> 100.094px 10.2969px": 5
+    }
+   },
+   "transform-origin": {
+    "elements": 44,
+    "values": {
+     "592.5px 7195.51px -> 592.5px 7211.1px": 3,
+     "592.5px 5257.88px -> 592.5px 5273.48px": 1,
+     "592.5px 103.328px -> 592.5px 118.922px": 1,
+     "320px 71.5781px -> 320px 87.1719px": 2,
+     "320px 10.0469px -> 320px 17.8438px": 2,
+     "32.0156px 10.0469px -> 31.9688px 17.8438px": 2,
+     "47.9766px 10.0469px -> 47.9062px 17.8438px": 2,
+     "58.5703px 10.0469px -> 57.8438px 17.8438px": 2,
+     "83.3984px 10.0469px -> 82.1797px 17.8438px": 2,
+     "98.0391px 10.0469px -> 100.102px 17.8438px": 2,
+     "32.0156px 10.2969px -> 31.9688px 10.2969px": 5,
+     "47.9766px 10.2969px -> 47.9062px 10.2969px": 5,
+     "58.5703px 10.2969px -> 57.8438px 10.2969px": 5,
+     "83.3984px 10.2969px -> 82.1797px 10.2969px": 5,
+     "98.0391px 10.2969px -> 100.102px 10.2969px": 5
+    }
+   },
+   "inline-size": {
+    "elements": 35,
+    "values": {
+     "44.0312px -> 43.9375px": 7,
+     "75.9531px -> 75.8125px": 7,
+     "97.1406px -> 95.6875px": 7,
+     "146.797px -> 144.359px": 7,
+     "176.078px -> 180.203px": 7
+    }
+   },
+   "width": {
+    "elements": 35,
+    "values": {
+     "44.0312px -> 43.9375px": 7,
+     "75.9531px -> 75.8125px": 7,
+     "97.1406px -> 95.6875px": 7,
+     "146.797px -> 144.359px": 7,
+     "176.078px -> 180.203px": 7
+    }
+   },
+   "bottom": {
+    "elements": 1,
+    "values": {
+     "-13609px -> -13640.2px": 1
+    }
+   },
+   "inset-block-end": {
+    "elements": 1,
+    "values": {
+     "-13609px -> -13640.2px": 1
+    }
+   },
+   "inset-block-start": {
+    "elements": 1,
+    "values": {
+     "14391px -> 14422.2px": 1
+    }
+   },
+   "top": {
+    "elements": 1,
+    "values": {
+     "14391px -> 14422.2px": 1
+    }
+   }
+  }
+ },
+ "prototype_375x667": {
+  "elementsA": 7528,
+  "elementsB": 7528,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "resources_1200x800": {
+  "elementsA": 5287,
+  "elementsB": 5287,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "resources_375x667": {
+  "elementsA": 5287,
+  "elementsB": 5287,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ }
+}

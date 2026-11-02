@@ -1,5 +1,133 @@
 # Changelog: v3
 
+## 2026-11-01 — CSS cleanup: dead Framework copies and unused rules in style.css
+
+Branch `feature/css-cleanup`. Evidence and method: audit/css-cleanup/step0-report.md.
+style.css lines 635-2153 were a copy of an older Framework release's default
+CSS. Top-level pages load no Framework CSS, so that copy is their only source of
+those defaults. Country pages (`theme: air`) also get Framework 1.13.3's own.
+Only rules that no live page can use are removed. One commit per group, so each
+can be reverted alone. Original text: Framework's
+`node_modules/@observablehq/framework/dist/style/` (global, layout, grid, note,
+card, inspector, plot), and this file before the cleanup: `git show eadd799:src/style.css`.
+
+Usage evidence is static: the import graph from the live pages, a class-context
+scan of src/ (all .md/.js incl. unreachable and rollback modules), nav-html.js,
+all 203 built pages and the compiled components in dist/, and greps of dist/.
+
+- **(i) Bucket 1b, Framework features no live page uses.** Code-block wrapper and copy
+  button (`.observablehq-pre-*`, `@keyframes observablehq-pre-copied`),
+  syntax highlighting (pure `.hljs-*` rules; `.hljs-*` selectors stripped from
+  the 7 inspector rules they shared with `.observablehq--*`, which stay), notes
+  (`.note/.tip/.warning/.caution`), `.plot-d6a7b5`. No live page has a `<pre>`
+  (no fenced code is displayed; ` ```html ` fences are evaluated cells) and no
+  component creates one. No `hljs`, note/tip markup or `plot-d6a7b5` in src/ or
+  dist/ (Plot is not bundled at all). Country pages still get all of it from
+  theme-air. Internal page src/prototypes/radial: its `<pre id="radial-metrics">`
+  is built at runtime by a cell, so Framework's copy-button code (which wraps
+  `<pre>` present at load) never wrapped it. No pre-container, copy button or hljs
+  styling applied before either, and the Step 3 computed-style diff shows no change
+  beyond the page's own run-to-run noise. (Step 0 counted it as a static `<pre>`:
+  the grep had matched the cell's source text.)
+- **(ii) Bucket 1a, layout features switched off in the config.** Sidebar, TOC, footer,
+  search, `.observablehq-link*`, `.observablehq-secondary-link*`,
+  `.observablehq--draft`, and their breakpoints (5 `@media` blocks that held
+  only these rules). The config and all 203 pages set sidebar/toc/footer/pager to
+  false/null, none sets `draft` or `search`, and none of the 203 built pages contains
+  these elements. Framework's client only queries them, never creates them. Split,
+  not deleted whole: `@media print` keeps `#observablehq-center { padding-left }`, and
+  `#observablehq-main, #observablehq-header { margin; max-width }` keeps its two live selectors.
+- **(iii) Our own overrides for the removed TOC:** `.observablehq-secondary-link-highlight`
+  and `.observablehq-secondary-link-active a` (white background/text, `!important`).
+  They target Framework's TOC, which is off. The perspectives page uses its own `.blog-toc`.
+- **Header comment** in style.css (what the file is, what was removed, where
+  the original lives) and a one-line note on each kept `#observablehq-*` rule.
+  Comments only.
+- **Unused rules of ours** (no class/id hit in src/, nav-html.js or dist/; markup only
+  inside HTML comments where noted): `#hero-image` (commented out in countries and
+  directions), `heading-center` (a type selector, missing its dot), `.blog-divider`,
+  `#countryButton` (5 rules), `.card .key` and its copy in `@media (max-width: 640px)`,
+  `.back-to-root*` (6 rules, incl. `.back-to-root .arrow`; commented out in countries,
+  directions, methodology; no standalone `.arrow` rule existed), `.img-col`.
+  Known defects removed with them: `.blog-divider { margin: 3redm 0 }` (typo,
+  ignored by browsers) and `.card .key { border: solid 1px var (--theme-foreground-faintest) }`.
+  **A border on the key-stat cards was intended but never rendered:** the value
+  was invalid (`var (`), and the selector never matched (the markup is
+  `class="card key"`, one element, not a `.key` inside a `.card`). If the
+  border is wanted, add `.card.key { border: … }` as a deliberate visual change.
+- **Scroll-down arrow:** `.down-arrow`, `.down-arrow:after`, `@keyframes jumpInfinite`.
+  No markup uses `.down-arrow`, and `grep -rn jumpInfinite src dist` finds only these rules.
+- **Toggle switch:** `.toggle-switch-container`, `.toggle-label`,
+  `.toggle-label-active`, `.switch`, `.switch input`, `.slider`, `.slider:before`,
+  `input:checked + .slider` (+ `:before`), `.slider.round` (+ `:before`). Only
+  src/components/toggleSwitch.js uses these classes. Every import of it is commented out,
+  and it is not built into dist/. The live latest/historical toggle is modeToggle.js
+  (other classes). No dist stylesheet (incl. Framework's Inputs CSS) or dist JS
+  (`_npm`, `_observablehq`) uses `.slider`, `.round` or `.switch`, so the global
+  selectors styled nothing else. **src/toggleSwitch.css stays as the recovery copy** of
+  these rules (linked nowhere today).
+- **Framework utility classes:** `.big` (two copies, plus its entry in the
+  `@media (max-width: 640px)` font-size list), `.small`, `.red`, `.yellow`,
+  `.green`, `.blue`, `.muted`. No markup uses them; `.big` only appears inside an
+  HTML comment in index.md. `--font-big` went with `.big`, its only user (grep of src/,
+  nav-html.js, dist/). `--font-very-big` stays (`.very-big` is live on index and
+  directions), and so does `--font-small`. On country pages, theme-air still defines
+  its own `--font-big` and `.big`.
+- **Unused Framework grid helpers:** `.grid-cols-2`, `.grid-colspan-2/3/4`,
+  `.grid-rowspan-2/3/4`. Only `.grid`, `.grid-cols-3` and `.grid-cols-4` are used.
+  `grep -rn "grid-col\|grid-row" src dist` finds no template that builds these names
+  (the keystats grid picks `'grid-cols-4'`/`'grid-cols-3'` as literals; `grid-col-1/2`
+  in the country template is a different, unstyled class). `.grid`, `.grid-cols-3/4`
+  and their three `@container` wrappers are unchanged.
+
+**Verification** (audit/css-cleanup/step3-report.md; measured):
+- style.css: 2,264 → 1,329 lines, 363 → 204 rules. Each commit was checked with a
+  semantic rule diff: exactly the planned selectors removed, nothing else changed.
+- Build passes (1,221 links). Of 283 dist/ files, only the two style.css files
+  differ. HTML, JS, data and country pages are unchanged (after normalising the hash).
+- Pixel diff: 39/39 captures identical (home, methodology, perspectives, AUS,
+  MHL; 1200×800, 375×667, perspectives 768×1024; iframe home/AUS 375×667).
+  Noise floor before vs before: 0 differences.
+- Computed styles of every element, 28 cases (also countries, directions,
+  resources, prototype, AFG, DNK, BRA, home in print): the only change is the
+  unused custom property `--font-big`. The prototype also shows its own
+  run-to-run noise (a timing table).
+- CSS gzip -9: top-level pages −5,940 B (two copies of style.css; −27 % of
+  their own CSS), country pages −2,802 B (−14 %). Raw: −36,429 / −19,718 B.
+- Lighthouse (mobile, 5 runs each): before and after ranges overlap completely
+  (home LCP 2.8-12.5 vs 2.8-13.3 s). No measurable effect, none expected.
+- **Verify**: `git diff eadd799 HEAD -- src/style.css`; rebuild and open home,
+  /AUS/, /perspectives at desktop and phone width: nothing should look different.
+
+**Evaluated, not applied: dropping the duplicate page-level style.css link** on the
+6 top-level pages (src/index.md, countries, directions, resources, perspectives,
+methodology). It would save 1 request and 8,548 B gzip -9 (31,776 B raw) per
+top-level page. But style.css would then load only through the config bundle,
+before inputs.css and sidebar.css, and two equal-specificity ties flip
+(today load order decides them in favour of style.css):
+- (a) focus underline on the sidebar links: Framework copy `a[href]:focus
+  { text-decoration: underline }` vs `.sidebar-menu a[href] { text-decoration:
+  none }` (both 0,2,1). The underline also shows briefly after a click (a click
+  focuses the link). Keeping it would need `.sidebar-menu a[href]:focus {
+  text-decoration: underline; }` in sidebar.css.
+- (b) Directions search box 240px -> 360px at 1200 px (240 -> 265px at 375 px):
+  style.css `input[type="search"] { width: 240px }` vs Inputs
+  `.inputs-*-input > input { width: inherit }` (both 0,1,1). Keeping 240px would
+  need `[class*="inputs-"][class$="-input"] > input[type="search"] { width: 240px; }`
+  in style.css.
+**Correction:** the proposal (audit/css-cleanup/step3-report.md) said "no
+rendered property changes". That was wrong: (b) was in the proposal's own
+style diff and was missed (directions was not in the PNG matrix and the
+style-diff output was not read closely); (a) needs forced states, which that
+run did not cover. Both were then confirmed with a real build (commits
+fd154f5, da221d0, 876e8ce), and all three were reverted (f7cae21, ff6a197,
+5cc4782): src/ is identical to 20506d0. Option for the visual pass: decide (a)
+deliberately (e.g. remove the underline everywhere) and (b) (240 vs 360px),
+pin both with the rules above, then drop the link. Evidence:
+audit/css-cleanup/proposal-drop-duplicate-link/, sidebar-focus-rule/,
+drop-duplicate-link/; scripts states.cjs (forced states), ties.cjs (tie check),
+nonws.cjs.
+
 ## 2026-10-29 — Sources legend: inline SVG icons
 
 **What changed**: the four Font Awesome icons in

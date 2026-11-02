@@ -1,0 +1,522 @@
+[
+ {
+  "id": "home_1200x800_rest",
+  "elements": 543,
+  "uniqueStyles": 483
+ },
+ {
+  "id": "home_1200x800_00_hover",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "a.active \"Map\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_1200x800_00_focus",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "a.active \"Map\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_1200x800_01_hover",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "a \"Countries\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_1200x800_01_focus",
+  "elements": 543,
+  "uniqueStyles": 484,
+  "target": "a \"Countries\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_1200x800_02_hover",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "a \"Directions\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_1200x800_02_focus",
+  "elements": 543,
+  "uniqueStyles": 484,
+  "target": "a \"Directions\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_1200x800_03_hover",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "a \"Resources\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_1200x800_03_focus",
+  "elements": 543,
+  "uniqueStyles": 484,
+  "target": "a \"Resources\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_1200x800_04_hover",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "a \"Perspectives\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_1200x800_04_focus",
+  "elements": 543,
+  "uniqueStyles": 484,
+  "target": "a \"Perspectives\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_1200x800_05_hover",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "a \"Methodology\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_1200x800_05_focus",
+  "elements": 543,
+  "uniqueStyles": 484,
+  "target": "a \"Methodology\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_1200x800_06_hover",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "button.mobile-hamburger \"\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_1200x800_06_focus",
+  "elements": 543,
+  "uniqueStyles": 483,
+  "target": "button.mobile-hamburger \"\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_375x667_rest",
+  "elements": 543,
+  "uniqueStyles": 481
+ },
+ {
+  "id": "home_375x667_drawer-open",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "drawerOpen": true
+ },
+ {
+  "id": "home_375x667_drawer_00_hover",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "a.active \"Map\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_375x667_drawer_00_focus",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "a.active \"Map\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_375x667_drawer_01_hover",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "a \"Countries\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_375x667_drawer_01_focus",
+  "elements": 543,
+  "uniqueStyles": 482,
+  "target": "a \"Countries\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_375x667_drawer_02_hover",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "a \"Directions\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_375x667_drawer_02_focus",
+  "elements": 543,
+  "uniqueStyles": 482,
+  "target": "a \"Directions\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_375x667_drawer_03_hover",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "a \"Resources\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_375x667_drawer_03_focus",
+  "elements": 543,
+  "uniqueStyles": 482,
+  "target": "a \"Resources\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_375x667_drawer_04_hover",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "a \"Perspectives\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_375x667_drawer_04_focus",
+  "elements": 543,
+  "uniqueStyles": 482,
+  "target": "a \"Perspectives\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_375x667_drawer_05_hover",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "a \"Methodology\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_375x667_drawer_05_focus",
+  "elements": 543,
+  "uniqueStyles": 482,
+  "target": "a \"Methodology\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "home_375x667_drawer_06_hover",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "button.mobile-hamburger \"\"",
+  "state": "hover"
+ },
+ {
+  "id": "home_375x667_drawer_06_focus",
+  "elements": 543,
+  "uniqueStyles": 481,
+  "target": "button.mobile-hamburger \"\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_rest",
+  "elements": 226,
+  "uniqueStyles": 99
+ },
+ {
+  "id": "perspectives_1200x800_00_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a \"Map\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_00_focus",
+  "elements": 226,
+  "uniqueStyles": 100,
+  "target": "a \"Map\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_01_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a \"Countries\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_01_focus",
+  "elements": 226,
+  "uniqueStyles": 100,
+  "target": "a \"Countries\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_02_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a \"Directions\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_02_focus",
+  "elements": 226,
+  "uniqueStyles": 100,
+  "target": "a \"Directions\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_03_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a \"Resources\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_03_focus",
+  "elements": 226,
+  "uniqueStyles": 100,
+  "target": "a \"Resources\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_04_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a.active \"Perspectives\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_04_focus",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a.active \"Perspectives\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_05_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a \"Methodology\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_05_focus",
+  "elements": 226,
+  "uniqueStyles": 100,
+  "target": "a \"Methodology\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_06_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "button.mobile-hamburger \"\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_06_focus",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "button.mobile-hamburger \"\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_07_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a \"Charting a Way for Stronger In\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_07_focus",
+  "elements": 226,
+  "uniqueStyles": 100,
+  "target": "a \"Charting a Way for Stronger In\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_08_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a \"From Promises to Practice: The\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_08_focus",
+  "elements": 226,
+  "uniqueStyles": 100,
+  "target": "a \"From Promises to Practice: The\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_1200x800_09_hover",
+  "elements": 226,
+  "uniqueStyles": 99,
+  "target": "a \"Regional Contributions to Glob\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_1200x800_09_focus",
+  "elements": 226,
+  "uniqueStyles": 101,
+  "target": "a \"Regional Contributions to Glob\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_375x667_rest",
+  "elements": 229,
+  "uniqueStyles": 115
+ },
+ {
+  "id": "perspectives_375x667_drawer-open",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "drawerOpen": true
+ },
+ {
+  "id": "perspectives_375x667_drawer_00_hover",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "a \"Map\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_375x667_drawer_00_focus",
+  "elements": 229,
+  "uniqueStyles": 116,
+  "target": "a \"Map\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_375x667_drawer_01_hover",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "a \"Countries\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_375x667_drawer_01_focus",
+  "elements": 229,
+  "uniqueStyles": 116,
+  "target": "a \"Countries\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_375x667_drawer_02_hover",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "a \"Directions\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_375x667_drawer_02_focus",
+  "elements": 229,
+  "uniqueStyles": 116,
+  "target": "a \"Directions\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_375x667_drawer_03_hover",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "a \"Resources\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_375x667_drawer_03_focus",
+  "elements": 229,
+  "uniqueStyles": 116,
+  "target": "a \"Resources\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_375x667_drawer_04_hover",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "a.active \"Perspectives\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_375x667_drawer_04_focus",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "a.active \"Perspectives\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_375x667_drawer_05_hover",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "a \"Methodology\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_375x667_drawer_05_focus",
+  "elements": 229,
+  "uniqueStyles": 116,
+  "target": "a \"Methodology\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_375x667_drawer_06_hover",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "button.mobile-hamburger \"\"",
+  "state": "hover"
+ },
+ {
+  "id": "perspectives_375x667_drawer_06_focus",
+  "elements": 229,
+  "uniqueStyles": 115,
+  "target": "button.mobile-hamburger \"\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "perspectives_375x667_contents-open",
+  "elements": 229,
+  "uniqueStyles": 118,
+  "tocButton": true,
+  "tocOpen": true
+ },
+ {
+  "id": "AFG_1200x800_rest",
+  "elements": 1707,
+  "uniqueStyles": 1506
+ },
+ {
+  "id": "AFG_1200x800_00_focus",
+  "elements": 1707,
+  "uniqueStyles": 1507,
+  "target": "a \"Map\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "AFG_1200x800_01_focus",
+  "elements": 1707,
+  "uniqueStyles": 1506,
+  "target": "a.active \"Countries\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "AFG_1200x800_02_focus",
+  "elements": 1707,
+  "uniqueStyles": 1507,
+  "target": "a \"Directions\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "AFG_1200x800_03_focus",
+  "elements": 1707,
+  "uniqueStyles": 1507,
+  "target": "a \"Resources\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "AFG_1200x800_04_focus",
+  "elements": 1707,
+  "uniqueStyles": 1507,
+  "target": "a \"Perspectives\"",
+  "state": "focus+focus-visible"
+ },
+ {
+  "id": "AFG_1200x800_05_focus",
+  "elements": 1707,
+  "uniqueStyles": 1507,
+  "target": "a \"Methodology\"",
+  "state": "focus+focus-visible"
+ }
+]
