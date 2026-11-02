@@ -1,10 +1,9 @@
 /* ─────────────────────────────────────────────────────────────
    style.css: the site's main stylesheet.
    Loaded on every page. Top-level pages load no Framework theme, so this
-   file is their only base CSS; they now load it once, via the config
-   `style` bundle (their duplicate <link> was removed 2026-11-01). Country
-   pages (`theme: air`) load Framework's theme-air first, then this file
-   once, through their own <link>.
+   file is their only base CSS; they get it twice (config `style` bundle +
+   the page's own <link>). Country pages (`theme: air`) load Framework's
+   theme-air first, then this file once.
    Contents: our rules, then (from "default legend styles" on) a copy of an
    older Framework release's default CSS (global, layout, grid, card,
    inspector), which top-level pages need. Kept Framework rules that target
