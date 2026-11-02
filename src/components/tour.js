@@ -15,7 +15,7 @@ const AUTOSTART_WITHOUT_STORAGE = false;
 
 // Card edge when it cannot sit next to the ring. "top" keeps it in the part of
 // the frame visible first in the WordPress embed (audit/tour/report.md).
-const DOCK = "bottom";
+const DOCK = "top";
 
 const DONE_KEY = "iac:tour:v1"; // bump to show the tour again to everyone
 const SKIP_KEY = "iac:tour:skipped"; // sessionStorage: skipped in this session
@@ -44,16 +44,26 @@ const COPY = {
     steps: {
       legend: {
         title: "Total score at a glance",
-        body: "Each country is coloured by its overall Internet Accountability Score, from Off track to Leading. The figures above the map count the countries in each category. Hatched countries don't have enough data yet.",
+        body: "Each country is coloured by its overall Internet Accountability Score, from Off track to Leading. The figures above the map count the countries in each category. Hatched countries, as in this legend, don't have enough data to be scored.",
       },
       explore: {
         title: "Explore the map",
-        body: "Hover over a country for its score, or in Historical view for its change and trend. Click a country to open its page. Zoom with the + and − buttons or Ctrl/⌘ + scroll; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year.",
+        // Historical compares the latest year with the previous one
+        body: "Hover over a country for its details and click it to open its page. Zoom with the + and − buttons or Ctrl/⌘ + scroll; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year.",
         bodyTouch: "Tap a country to open its page. Pinch to zoom; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year.",
       },
       nav: {
         title: "Find your way around",
-        body: "Use the menu on the left to switch between Map, Countries, Directions, Resources, Perspectives and Methodology.",
+        body: "Use the menu to move between sections:",
+        // [label, description]: shown as a list under the body
+        list: [
+          ["Map", "All countries' scores on one map."],
+          ["Countries", "Compare countries across the four dimensions."],
+          ["Directions", "The four dimensions behind the score, each mapped."],
+          ["Resources", "Curated sources, analysis and projects."],
+          ["Perspectives", "Analysis, commentaries and opinions."],
+          ["Methodology", "How the Compass and its scores are built."],
+        ],
       },
       countries: {
         title: "Every country has its own page",
@@ -61,7 +71,7 @@ const COPY = {
       },
       navMobile: {
         title: "Find your way around",
-        body: "Open the menu at the top left to switch between Map, Countries, Directions, Resources, Perspectives and Methodology. Every country has its own page with its scores for each dimension: open it from Countries or by tapping the country on the map. The ? button at the top right reopens this tour.",
+        body: "Open the menu to switch between Map, Countries, Directions, Resources, Perspectives and Methodology. Every country has its own page with its scores for each dimension: open it from Countries or by tapping the country on the map. The ? button in the top bar reopens this tour.",
       },
     },
   },
@@ -92,8 +102,6 @@ function stepsFor(mobile) {
     );
   return steps;
 }
-
-// ─── storage (every access in try/catch: a blocked iframe can throw) ───
 
 function read(area, key) {
   try {
@@ -132,18 +140,14 @@ function autoStartAllowed() {
     read("sessionStorage", SKIP_KEY) !== "1";
 }
 
-// ─── public API ───
-
-let S = null; // state of the open tour
+let S = null;
 let opening = false;
 
-// Auto-start entry (index.md, after load + idle)
 export function startTour(options = {}) {
   if (!TOUR_ENABLED || !autoStartAllowed()) return;
   return open({ ...options, auto: true });
 }
 
-// "?" button
 export function openTour(options = {}) {
   if (!TOUR_ENABLED) return;
   return open({ ...options, auto: false });
@@ -154,14 +158,12 @@ async function open({ css, opener, auto }) {
   opening = true;
   try {
     const mobile = matchMedia(MOBILE).matches;
-    // Wait (in parallel, up to TARGET_WAIT) for each step's target
     const found = await Promise.all(
       stepsFor(mobile).map((s) => waitFor(s.targets, TARGET_WAIT)),
     );
     const available = new Set(
       stepsFor(mobile).filter((_s, i) => found[i]).map((s) => s.id),
     );
-    // No target at all: no auto-start; from "?" show the cards without ring
     if (!available.size && auto) return;
     await loadCss(css);
     S = build({ opener, mobile, available });
@@ -171,8 +173,6 @@ async function open({ css, opener, auto }) {
     opening = false;
   }
 }
-
-// ─── targets ───
 
 function resolve(selectors) {
   for (const sel of selectors) {
@@ -204,8 +204,6 @@ function isFixed(el) {
   return false;
 }
 
-// ─── DOM ───
-
 function loadCss(href) {
   if (!href || document.getElementById("iac-tour-css")) return;
   return new Promise((done) => {
@@ -227,7 +225,7 @@ function build({ opener, mobile, available }) {
 <div class="iac-tour-card" role="dialog" aria-modal="true" aria-labelledby="iac-tour-title" aria-describedby="iac-tour-body">
 <p class="iac-tour-count"></p>
 <h2 class="iac-tour-title" id="iac-tour-title" tabindex="-1"></h2>
-<p class="iac-tour-body" id="iac-tour-body"></p>
+<div class="iac-tour-body" id="iac-tour-body"></div>
 <label class="iac-tour-optout"><input type="checkbox"><span></span></label>
 <div class="iac-tour-actions"><button type="button" class="iac-tour-skip"></button><button type="button" class="iac-tour-back"></button><button type="button" class="iac-tour-next"></button></div>
 </div>`;
@@ -256,7 +254,6 @@ function build({ opener, mobile, available }) {
   s.optout.querySelector("span").textContent = t.dontShow;
   s.skip.textContent = t.skip;
   s.back.textContent = t.back;
-  // Nothing to remember without storage: hide the opt-out
   s.optout.hidden = !storageWorks();
 
   s.skip.addEventListener("click", () => close("skip"));
@@ -302,16 +299,12 @@ function build({ opener, mobile, available }) {
   return s;
 }
 
-// Steps whose target was found; from "?" with no targets at all, every step
-// is shown card-only
 function pick(mobile, available) {
   const all = stepsFor(mobile);
   const some = all.filter((s) => available.has(s.id));
   return some.length ? some : all;
 }
 
-// Crossing 768px while open: swap to the other layout's steps, keep position.
-// A step whose target is missing in the new layout is shown card-only.
 function relayout(mobile) {
   if (!S || S.mobile === mobile) return;
   const id = S.steps[S.i].id;
@@ -335,13 +328,25 @@ function render(stepChanged) {
   const last = S.i === S.steps.length - 1;
   S.count.textContent = t.stepOf(S.i + 1, S.steps.length);
   S.title.textContent = copy.title;
-  S.body.textContent =
+  const p = document.createElement("p");
+  p.textContent =
     copy.bodyTouch && matchMedia(TOUCH).matches ? copy.bodyTouch : copy.body;
+  S.body.replaceChildren(p);
+  if (copy.list) {
+    const ul = document.createElement("ul");
+    for (const [label, text] of copy.list) {
+      const li = document.createElement("li");
+      const b = document.createElement("b");
+      b.textContent = label;
+      li.append(b, " ", text);
+      ul.append(li);
+    }
+    S.body.append(ul);
+  }
   S.back.hidden = S.i === 0;
   S.next.textContent = last ? t.finish : t.next;
 
   if (stepChanged) {
-    // Fade the card in (opacity only; none under reduced motion, see tour.css)
     S.root.classList.add("iac-tour-changing");
     place(true);
     void S.card.offsetWidth;
@@ -359,15 +364,11 @@ function schedule() {
   });
 }
 
-// ─── geometry (all in this frame's own viewport) ───
-
 function frame() {
   const de = document.documentElement;
-  // clientWidth/Height: the layout viewport without scrollbars
   return { w: de.clientWidth || innerWidth, h: de.clientHeight || innerHeight };
 }
 
-// Height covered by the fixed mobile top bar (0 on desktop)
 function topInset() {
   const bar = document.querySelector(".mobile-top-bar");
   if (!bar || getComputedStyle(bar).display === "none") return 0;
@@ -380,7 +381,7 @@ function place(scroll) {
   const { w, h } = frame();
   const top = topInset();
   const step = S.steps[S.i];
-  const target = resolve(step.targets); // null: this step is card-only
+  const target = resolve(step.targets);
   if (target !== S.target) {
     S.ro.disconnect();
     if (target) S.ro.observe(target);
@@ -404,16 +405,14 @@ function place(scroll) {
   // neither stacked nor side by side (e.g. the whole map on a phone): dock
   if (!docked && !stacked && !besideFits) docked = true;
   const dockY = DOCK === "top" ? top + EDGE : h - EDGE - cardH;
-  // where the ring may go when docked: beside the card, or the band left over
   const band = besideFits
     ? [top, h]
     : DOCK === "top"
       ? [dockY + cardH + GAP, h]
       : [top, dockY - GAP];
 
-  // Bring the target into view: this document only, and only if needed
   if (scroll && r && !isFixed(target)) {
-    let want = null; // wanted r.top
+    let want = null;
     if (docked) {
       const avail = Math.max(0, band[1] - band[0]);
       if (r.top < band[0] + RING_PAD || r.bottom > band[1] - RING_PAD)
@@ -426,13 +425,12 @@ function place(scroll) {
       const room =
         r.top - RING_PAD - GAP - cardH >= top + EDGE ||
         r.bottom + RING_PAD + GAP + cardH <= h - EDGE;
-      // card above the ring, the pair centred in the frame
       if (!visible || !room)
         want =
           top + EDGE + (h - top - 2 * EDGE - (cardH + GAP + ringH)) / 2 +
           cardH + GAP + RING_PAD;
     } else if (r.top < top + RING_PAD || r.bottom > h - RING_PAD) {
-      want = top + (h - top - ringH) / 2 + RING_PAD; // centred, card beside
+      want = top + (h - top - ringH) / 2 + RING_PAD;
     }
     if (want !== null) {
       window.scrollTo({ top: scrollY + r.top - want, behavior: "instant" });
@@ -440,7 +438,6 @@ function place(scroll) {
     }
   }
 
-  // Ring: clamped to the visible part of the target
   let ring = null;
   if (r) {
     const x0 = clamp(r.left - RING_PAD, 2, w - 2);
@@ -450,7 +447,6 @@ function place(scroll) {
     if (x1 - x0 > 8 && y1 - y0 > 8) ring = { x0, x1, y0, y1 };
   }
 
-  // Card position, docked default: centred at the DOCK edge
   let x = (w - cardW) / 2;
   let y = dockY;
   if (ring && docked && ring.x1 > x && ring.x0 < x + cardW &&
@@ -469,7 +465,6 @@ function place(scroll) {
     S.ring.style.height = ring.y1 - ring.y0 + "px";
     S.ring.style.transform = `translate(${ring.x0}px, ${ring.y0}px)`;
   } else {
-    // No ring: a zero-size ring in the middle still casts the dim layer
     S.ring.classList.add("iac-tour-ring-none");
     S.ring.style.width = S.ring.style.height = "0px";
     S.ring.style.transform = `translate(${w / 2}px, ${h / 2}px)`;
@@ -493,8 +488,6 @@ function place(scroll) {
   S.card.style.transform = `translate(${Math.round(x)}px, ${Math.round(Math.max(EDGE, y))}px)`;
 }
 
-// ─── keyboard ───
-
 function focusables() {
   return [...S.card.querySelectorAll("button, input")].filter(
     (el) => !el.hidden && !el.closest("[hidden]") && el.getClientRects().length,
@@ -516,8 +509,6 @@ function trapTab(e) {
     first.focus({ preventScroll: true });
   }
 }
-
-// ─── close ───
 
 function close(reason) {
   if (!S) return;

@@ -77,9 +77,20 @@
 .iac-tour .iac-tour-title:focus {
   outline: none;
 }
-.iac-tour .iac-tour-body {
+.iac-tour .iac-tour-body,
+.iac-tour .iac-tour-body p {
+  margin: 0;
+  max-width: none;
   font-size: 0.95rem;
   line-height: 1.45;
+}
+.iac-tour .iac-tour-body ul {
+  margin: 4px 0 0;
+  padding: 0 0 0 1.1em;
+}
+.iac-tour .iac-tour-body li {
+  margin: 2px 0;
+  max-width: none;
 }
 
 .iac-tour-optout {

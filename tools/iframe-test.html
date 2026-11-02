@@ -53,6 +53,17 @@
   </div>
 </div>
 
+<div class="case">
+  <h3>6. Real host (GIFI page): frame = 100vh, starts ~117px down the page</h3>
+  <!-- Host CSS: .embedded-iframe-container { height: 100vh; overflow: hidden }
+       below a ~117px breadcrumb bar (estimate). Scroll so the bar's top meets
+       the window top: the frame's bottom 117px are then below the window. -->
+  <div style="height: 117px; background: #000"></div>
+  <div style="height: 100vh; overflow: hidden">
+    <iframe width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+</div>
+
 <script>
   const SRC =
     "https://cdtrich.github.io/internet-accountability-compass-staging/";

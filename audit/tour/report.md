@@ -7,6 +7,27 @@ Parent commit for comparisons: `1e73e1c` (dev). Both builds use the staging base
 (`/internet-accountability-compass-staging/`) and are served locally with gzip
 (audit/css-cleanup/scripts/serve.cjs). Scripts: audit/tour/scripts/.
 
+## 0. Update after review (2 Nov 2026)
+
+- **Applied A**: "?" at `top: 16px; right: 16px` on desktop (index.md); unchanged in the
+  mobile top bar. **Applied B**: `DOCK = "top"` in tour.js. **C not approved**: no visibility gate.
+- **Copy** revised as asked (section 6). Two claims checked against the code first:
+  (a) "how they have changed over time" does **not** hold: Historical colours the map and
+  counts the figures by the change between the latest year and the previous one
+  (`previousYear = latestYear - 1`, mapTotalD3.js and index.md); only the tooltip sparkline
+  spans the period. Step 2 therefore keeps "the change since the previous year".
+  (b) "Compare countries across the four dimensions" holds: countries.md is a
+  country-by-country view (a compass per country or a heatmap of the dimension scores).
+- Step 3 (desktop) is an intro plus a list of label/description pairs (each a whole string,
+  rendered as `<ul>`; label in bold, no joining punctuation). At 1200x300 the card scrolls
+  internally; card and ring do not overlap (checked at 1200x300, 1200x800, 375x667).
+- tools/iframe-test.html: case 6 models the real host (117px bar, then a 100vh container).
+- Size (built dist/, gzip): tour.js 6,502 B (18,764 raw) + tour.css 1,303 B (3,705 raw) =
+  **7,805 B**, 387 B under 8 KB. Before the comment trim the new copy and list brought it to
+  8,426 B (234 B over); tour.js comments that restate the code were removed (comments only).
+- Storage-stub check on the final build: PASS (storage-stub.log): no auto-start, no console
+  errors, opt-out hidden, "?" opens, Finish and Esc close, "?" reopens.
+
 ## 1. What the code does today (before the tour)
 
 - Total map (mapTotalD3.js): a click on any country, with or without data, opens
@@ -42,7 +63,7 @@ or swipe over the frame scrolls the frame first. Replica: scripts/host-replica.h
 | 3 | Is there an IntersectionObserver gate before auto-start? | **No.** Auto-start waits for `load` + idle and for the step targets (up to 5 s). Nothing checks whether the frame is in the visitor's window. Proposal C below. |
 | 4 | Card and ring visible to the visitor? | Card is placed next to the ring, **above first** (the top of the frame is what a visitor sees first). When ring and card cannot sit side by side or stacked (frames <420px, the whole map on a phone), the card docks at `DOCK` = "bottom" (as specified) and the ring is clamped to the band left over. In the real embed a bottom-docked card can fall into the hidden band on small phones (replica 360x640, step 2). Proposal B below. |
 
-### Proposals (not applied; your call)
+### Proposals (A and B applied 2 Nov, C not approved: see section 0)
 
 - **A.** "?" top-right on desktop too: `@media (min-width: 769px) { .tour-launch { top: 16px; bottom: auto } }` in index.md.
 - **B.** `const DOCK = "top"` in tour.js (the constant exists; default "bottom").
@@ -104,20 +125,12 @@ Controls: "Step n of N", Back, Next / Finish, "Skip tour", "Don't show again".
 
 | Step | Title | Body as shipped | Change against the brief, and why |
 |---|---|---|---|
-| 1 (legend, fallback map) | Total score at a glance | Each country is coloured by its overall Internet Accountability Score, from Off track to Leading. The figures above the map count the countries in each category. Hatched countries don't have enough data yet. | Labels confirmed (binLabels). Second sentence added: in Latest mode the map legend shows only "Not enough data"; the categories are the cards above the map. |
-| 2 desktop (zoom controls) | Explore the map | Hover over a country for its score, or in Historical view for its change and trend. Click a country to open its page. Zoom with the + and − buttons or Ctrl/⌘ + scroll; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year. | No trend in the Latest tooltip (only in Historical). Click navigates: confirmed. Toggle line added: the toggle exists. |
-| 2 touch, `(hover: none)` (map) | Explore the map | Tap a country to open its page. Pinch to zoom; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year. | A tap navigates at once; the tooltip only flashes. |
-| 3 desktop (nav) | Find your way around | Use the menu on the left to switch between Map, Countries, Directions, Resources, Perspectives and Methodology. | Nav labels verbatim. Descriptions: proposed below. |
-| 4 desktop (Countries link) | Every country has its own page | Open Countries, or click a country on the map, to see its scores for each dimension, how they changed over time and, where available, related resources. The ? button reopens this tour. | "pillar" → "dimension" (site wording); "sources" → the Resources block, which only appears when a country has sources. |
-| 3 mobile (hamburger; 3+4 merged) | Find your way around | Open the menu at the top left to switch between Map, Countries, Directions, Resources, Perspectives and Methodology. Every country has its own page with its scores for each dimension: open it from Countries or by tapping the country on the map. The ? button at the top right reopens this tour. | Merged as specified. |
-
-Proposed one-line descriptions for step 3 (for your approval; not in the code):
-Map: "Every country's Internet Accountability Score on one map." ·
-Countries: "Compare countries across the four dimensions." ·
-Directions: "Each dimension and its indicators, mapped." ·
-Resources: "Curated sources, analysis and projects." ·
-Perspectives: "Analysis, commentaries and opinions." (page subheader) ·
-Methodology: "How the Compass and its scores are built."
+| 1 (legend, fallback map) | Total score at a glance | Each country is coloured by its overall Internet Accountability Score, from Off track to Leading. The figures above the map count the countries in each category. Hatched countries, as in this legend, don't have enough data to be scored. | As asked. |
+| 2 desktop (zoom controls) | Explore the map | Hover over a country for its details and click it to open its page. Zoom with the + and − buttons or Ctrl/⌘ + scroll; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year. | "how they have changed over time" → "the change since the previous year" (claim a). |
+| 2 touch, `(hover: none)` (map) | Explore the map | Tap a country to open its page. Pinch to zoom; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year. | Same change (claim a). |
+| 3 desktop (nav) | Find your way around | Use the menu to move between sections: • **Map** All countries' scores on one map. • **Countries** Compare countries across the four dimensions. • **Directions** The four dimensions behind the score, each mapped. • **Resources** Curated sources, analysis and projects. • **Perspectives** Analysis, commentaries and opinions. • **Methodology** How the Compass and its scores are built. | As asked; rendered as a list. |
+| 4 desktop (Countries link) | Every country has its own page | Open Countries, or click a country on the map, to see its scores for each dimension, how they changed over time and, where available, related resources. The ? button reopens this tour. | Unchanged. |
+| 3 mobile (hamburger; 3+4 merged) | Find your way around | Open the menu to switch between Map, Countries, Directions, Resources, Perspectives and Methodology. Every country has its own page with its scores for each dimension: open it from Countries or by tapping the country on the map. The ? button in the top bar reopens this tour. | As asked. |
 
 ## 7. Deviations from the brief
 

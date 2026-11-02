@@ -1,5 +1,25 @@
 # Changelog: v3
 
+## 2026-11-02 — Onboarding tour: review changes (A, B, copy)
+
+Branch `feature/tour`. Detail: audit/tour/report.md, section 0.
+
+- **"?" top right on desktop** (src/index.md, `top: 16px` instead of `bottom: 40px`): in the
+  WordPress embed the frame's bottom ~117px start below the visitor's window. Mobile unchanged.
+- **Card docks at the top** (`DOCK = "top"` in tour.js) when it cannot sit next to the ring.
+- **Copy** (COPY.en): step 1 points at the hatched legend entry; step 2 "details" + click;
+  step 3 desktop is an intro plus a list of the six sections with one-line descriptions
+  (a `<ul>`; the card scrolls internally in short frames); step 3 mobile mentions the top bar.
+  The requested "how they have changed over time" was not used: Historical compares the
+  latest year with the previous one, so the text keeps "the change since the previous year".
+- tour.js: comments that restated the code removed (no code change).
+- **tools/iframe-test.html**: case 6 models the real host (117px bar, then a 100vh container).
+- **Size**: tour.js + tour.css 7,805 B gzip (was 8,104 B).
+
+**Verify**: `/` at 1200 px → "?" top right; step 3 shows the list. tools/iframe-test.html case 6 in
+a phone-sized window, scrolled to the black bar → the card stays in the visible top part.
+**Rollback**: revert this commit (restores the previous copy, "?" and DOCK).
+
 ## 2026-11-02 — Onboarding tour on the landing page
 
 Branch `feature/tour`. Report and evidence: audit/tour/report.md.

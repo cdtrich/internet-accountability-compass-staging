@@ -13,8 +13,9 @@
 <style>
 .tour-launch {
   position: fixed;
+  /* top: in the WordPress embed the frame's bottom starts below the window */
+  top: 16px;
   right: 16px;
-  bottom: 40px; /* clear of the staging label */
   z-index: 1003;
   display: flex;
   align-items: center;
@@ -41,7 +42,6 @@
 @media (max-width: 768px) {
   .tour-launch {
     top: 2px;
-    bottom: auto;
     right: 8px;
     box-shadow: none;
   }
