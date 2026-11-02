@@ -1,0 +1,623 @@
+{
+ "home_1200x800_00_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_00_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_01_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_01_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_02_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_02_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_03_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_03_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_04_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_04_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_05_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_05_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_06_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_06_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_1200x800_rest": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer-open": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_00_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_00_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_01_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_01_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_02_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_02_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_03_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_03_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_04_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_04_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_05_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_05_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_06_focus": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_drawer_06_hover": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "home_375x667_rest": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_00_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_00_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_01_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_01_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_02_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_02_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_03_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_03_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_04_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_04_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_05_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_05_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_06_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_06_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_07_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_07_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_08_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_08_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_09_focus": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_09_hover": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_1200x800_rest": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_contents-open": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer-open": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_00_focus": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_00_hover": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_01_focus": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_01_hover": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_02_focus": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_02_hover": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_03_focus": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_03_hover": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_04_focus": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_04_hover": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_05_focus": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_05_hover": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_06_focus": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_drawer_06_hover": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "perspectives_375x667_rest": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ }
+}

@@ -1,0 +1,40 @@
+{
+  cases: 28,
+  total: 433140,
+  whitespaceOnly: 432972,
+  props: [
+    '--font-small',
+    '--font-very-big',
+    '--sans-serif',
+    '--serif',
+    '--syntax-comment',
+    '--theme-background-alt',
+    '--theme-background-b',
+    '--theme-foreground-alt',
+    '--theme-foreground-faint',
+    '--theme-foreground-fainter',
+    '--theme-foreground-faintest',
+    '--theme-foreground-muted'
+  ],
+  other: 168
+}
+directions_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[21]>div[2]>form[1]>div[1]>input[1]  inline-size: 240px -> 360px
+directions_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[21]>div[2]>form[1]>div[1]>input[1]  perspective-origin: 120px 12.5px -> 180px 12.5px
+directions_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[21]>div[2]>form[1]>div[1]>input[1]  transform-origin: 120px 12.5px -> 180px 12.5px
+directions_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[21]>div[2]>form[1]>div[1]>input[1]  width: 240px -> 360px
+directions_375x667 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[21]>div[2]>form[1]>div[1]>input[1]  inline-size: 240px -> 265px
+directions_375x667 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[21]>div[2]>form[1]>div[1]>input[1]  perspective-origin: 120px 12.5px -> 132.5px 12.5px
+directions_375x667 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[21]>div[2]>form[1]>div[1]>input[1]  transform-origin: 120px 12.5px -> 132.5px 12.5px
+directions_375x667 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[21]>div[2]>form[1]>div[1]>input[1]  width: 240px -> 265px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[1]>th[4]  inline-size: 144.359px -> 144.391px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[1]>th[4]  perspective-origin: 82.1719px 17.8438px -> 82.1875px 17.8438px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[1]>th[4]  transform-origin: 82.1797px 17.8438px -> 82.1953px 17.8438px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[1]>th[4]  width: 144.359px -> 144.391px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[1]>th[5]  inline-size: 180.203px -> 180.172px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[1]>th[5]  perspective-origin: 100.094px 17.8438px -> 100.078px 17.8438px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[1]>th[5]  transform-origin: 100.102px 17.8438px -> 100.086px 17.8438px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[1]>th[5]  width: 180.203px -> 180.172px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[2]  block-size: 36.1875px -> 20.5938px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[2]  height: 36.1875px -> 20.5938px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[2]  perspective-origin: 320px 18.0938px -> 320px 10.2969px
+prototype_1200x800 html>body[1]>div#observablehq-center[1]>main#observablehq-main[1]>div[7]>span[1]>table[1]>tbody[1]>tr[2]  transform-origin: 320px 18.0938px -> 320px 10.2969px

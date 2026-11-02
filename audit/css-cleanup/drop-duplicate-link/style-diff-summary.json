@@ -1,0 +1,2019 @@
+{
+ "AFG_1200x800": {
+  "elementsA": 1707,
+  "elementsB": 1707,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "AFG_375x667": {
+  "elementsA": 1707,
+  "elementsB": 1707,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "AUS_1200x800": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "AUS_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "BRA_1200x800": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "BRA_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "DNK_1200x800": {
+  "elementsA": 1719,
+  "elementsB": 1719,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "DNK_375x667": {
+  "elementsA": 1719,
+  "elementsB": 1719,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "MHL_1200x800": {
+  "elementsA": 1630,
+  "elementsB": 1630,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "MHL_375x667": {
+  "elementsA": 1630,
+  "elementsB": 1630,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "countries_1200x800": {
+  "elementsA": 8317,
+  "elementsB": 8317,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 8317,
+  "changedProperties": 99804,
+  "byProperty": {
+   "--font-small": {
+    "elements": 8317,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 8317
+    }
+   },
+   "--font-very-big": {
+    "elements": 8317,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 8317
+    }
+   },
+   "--sans-serif": {
+    "elements": 8317,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 8317
+    }
+   },
+   "--serif": {
+    "elements": 8317,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 8317
+    }
+   },
+   "--syntax-comment": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 8317
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 8317
+    }
+   },
+   "--theme-background-b": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 8317
+    }
+   }
+  }
+ },
+ "countries_375x667": {
+  "elementsA": 8317,
+  "elementsB": 8317,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 8317,
+  "changedProperties": 99804,
+  "byProperty": {
+   "--font-small": {
+    "elements": 8317,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 8317
+    }
+   },
+   "--font-very-big": {
+    "elements": 8317,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 8317
+    }
+   },
+   "--sans-serif": {
+    "elements": 8317,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 8317
+    }
+   },
+   "--serif": {
+    "elements": 8317,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 8317
+    }
+   },
+   "--syntax-comment": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 8317
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 8317
+    }
+   },
+   "--theme-background-b": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 8317
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 8317,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 8317
+    }
+   }
+  }
+ },
+ "directions_1200x800": {
+  "elementsA": 2877,
+  "elementsB": 2877,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 2877,
+  "changedProperties": 34528,
+  "byProperty": {
+   "--font-small": {
+    "elements": 2877,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 2877
+    }
+   },
+   "--font-very-big": {
+    "elements": 2877,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 2877
+    }
+   },
+   "--sans-serif": {
+    "elements": 2877,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 2877
+    }
+   },
+   "--serif": {
+    "elements": 2877,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 2877
+    }
+   },
+   "--syntax-comment": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 2877
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 2877
+    }
+   },
+   "--theme-background-b": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 2877
+    }
+   },
+   "inline-size": {
+    "elements": 1,
+    "values": {
+     "240px -> 360px": 1
+    }
+   },
+   "perspective-origin": {
+    "elements": 1,
+    "values": {
+     "120px 12.5px -> 180px 12.5px": 1
+    }
+   },
+   "transform-origin": {
+    "elements": 1,
+    "values": {
+     "120px 12.5px -> 180px 12.5px": 1
+    }
+   },
+   "width": {
+    "elements": 1,
+    "values": {
+     "240px -> 360px": 1
+    }
+   }
+  }
+ },
+ "directions_375x667": {
+  "elementsA": 2877,
+  "elementsB": 2877,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 2877,
+  "changedProperties": 34528,
+  "byProperty": {
+   "--font-small": {
+    "elements": 2877,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 2877
+    }
+   },
+   "--font-very-big": {
+    "elements": 2877,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 2877
+    }
+   },
+   "--sans-serif": {
+    "elements": 2877,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 2877
+    }
+   },
+   "--serif": {
+    "elements": 2877,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 2877
+    }
+   },
+   "--syntax-comment": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 2877
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 2877
+    }
+   },
+   "--theme-background-b": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 2877
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 2877,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 2877
+    }
+   },
+   "inline-size": {
+    "elements": 1,
+    "values": {
+     "240px -> 265px": 1
+    }
+   },
+   "perspective-origin": {
+    "elements": 1,
+    "values": {
+     "120px 12.5px -> 132.5px 12.5px": 1
+    }
+   },
+   "transform-origin": {
+    "elements": 1,
+    "values": {
+     "120px 12.5px -> 132.5px 12.5px": 1
+    }
+   },
+   "width": {
+    "elements": 1,
+    "values": {
+     "240px -> 265px": 1
+    }
+   }
+  }
+ },
+ "home_1200x800": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 543,
+  "changedProperties": 6552,
+  "byProperty": {
+   "--font-small": {
+    "elements": 543,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--font-very-big": {
+    "elements": 543,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--sans-serif": {
+    "elements": 543,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--serif": {
+    "elements": 543,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 543
+    }
+   },
+   "--syntax-comment": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 543
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 543
+    }
+   },
+   "--theme-background-b": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 543
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 543
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 543
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 543
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 543
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 543
+    }
+   },
+   "--font-small ::after": {
+    "elements": 3,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--font-very-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--sans-serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 3
+    }
+   },
+   "--syntax-comment ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   },
+   "--theme-background-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-background-b ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-foreground-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faint ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 3
+    }
+   },
+   "--theme-foreground-fainter ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faintest ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 3
+    }
+   },
+   "--theme-foreground-muted ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   }
+  }
+ },
+ "home_375x667": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 543,
+  "changedProperties": 6552,
+  "byProperty": {
+   "--font-small": {
+    "elements": 543,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--font-very-big": {
+    "elements": 543,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--sans-serif": {
+    "elements": 543,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--serif": {
+    "elements": 543,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 543
+    }
+   },
+   "--syntax-comment": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 543
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 543
+    }
+   },
+   "--theme-background-b": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 543
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 543
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 543
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 543
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 543
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 543
+    }
+   },
+   "--font-small ::after": {
+    "elements": 3,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--font-very-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--sans-serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 3
+    }
+   },
+   "--syntax-comment ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   },
+   "--theme-background-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-background-b ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-foreground-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faint ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 3
+    }
+   },
+   "--theme-foreground-fainter ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faintest ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 3
+    }
+   },
+   "--theme-foreground-muted ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   }
+  }
+ },
+ "iframe_AUS_375x667": {
+  "elementsA": 1778,
+  "elementsB": 1778,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 0,
+  "changedProperties": 0,
+  "byProperty": {}
+ },
+ "iframe_home_375x667": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 543,
+  "changedProperties": 6552,
+  "byProperty": {
+   "--font-small": {
+    "elements": 543,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--font-very-big": {
+    "elements": 543,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--sans-serif": {
+    "elements": 543,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--serif": {
+    "elements": 543,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 543
+    }
+   },
+   "--syntax-comment": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 543
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 543
+    }
+   },
+   "--theme-background-b": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 543
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 543
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 543
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 543
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 543
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 543
+    }
+   },
+   "--font-small ::after": {
+    "elements": 3,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--font-very-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--sans-serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 3
+    }
+   },
+   "--syntax-comment ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   },
+   "--theme-background-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-background-b ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-foreground-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faint ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 3
+    }
+   },
+   "--theme-foreground-fainter ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faintest ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 3
+    }
+   },
+   "--theme-foreground-muted ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   }
+  }
+ },
+ "methodology_1200x800": {
+  "elementsA": 121,
+  "elementsB": 121,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 121,
+  "changedProperties": 1452,
+  "byProperty": {
+   "--font-small": {
+    "elements": 121,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 121
+    }
+   },
+   "--font-very-big": {
+    "elements": 121,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 121
+    }
+   },
+   "--sans-serif": {
+    "elements": 121,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 121
+    }
+   },
+   "--serif": {
+    "elements": 121,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 121
+    }
+   },
+   "--syntax-comment": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 121
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 121
+    }
+   },
+   "--theme-background-b": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 121
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 121
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 121
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 121
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 121
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 121
+    }
+   }
+  }
+ },
+ "methodology_375x667": {
+  "elementsA": 121,
+  "elementsB": 121,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 121,
+  "changedProperties": 1452,
+  "byProperty": {
+   "--font-small": {
+    "elements": 121,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 121
+    }
+   },
+   "--font-very-big": {
+    "elements": 121,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 121
+    }
+   },
+   "--sans-serif": {
+    "elements": 121,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 121
+    }
+   },
+   "--serif": {
+    "elements": 121,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 121
+    }
+   },
+   "--syntax-comment": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 121
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 121
+    }
+   },
+   "--theme-background-b": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 121
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 121
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 121
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 121
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 121
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 121,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 121
+    }
+   }
+  }
+ },
+ "perspectives_1200x800": {
+  "elementsA": 226,
+  "elementsB": 226,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 226,
+  "changedProperties": 2748,
+  "byProperty": {
+   "--font-small": {
+    "elements": 226,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 226
+    }
+   },
+   "--font-very-big": {
+    "elements": 226,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 226
+    }
+   },
+   "--sans-serif": {
+    "elements": 226,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 226
+    }
+   },
+   "--serif": {
+    "elements": 226,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 226
+    }
+   },
+   "--syntax-comment": {
+    "elements": 226,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 226
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 226,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 226
+    }
+   },
+   "--theme-background-b": {
+    "elements": 226,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 226
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 226,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 226
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 226,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 226
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 226,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 226
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 226,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 226
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 226,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 226
+    }
+   },
+   "--font-small ::after": {
+    "elements": 3,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--font-very-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--sans-serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 3
+    }
+   },
+   "--syntax-comment ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   },
+   "--theme-background-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-background-b ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-foreground-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faint ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 3
+    }
+   },
+   "--theme-foreground-fainter ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faintest ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 3
+    }
+   },
+   "--theme-foreground-muted ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   }
+  }
+ },
+ "perspectives_375x667": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 229,
+  "changedProperties": 2784,
+  "byProperty": {
+   "--font-small": {
+    "elements": 229,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 229
+    }
+   },
+   "--font-very-big": {
+    "elements": 229,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 229
+    }
+   },
+   "--sans-serif": {
+    "elements": 229,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 229
+    }
+   },
+   "--serif": {
+    "elements": 229,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 229
+    }
+   },
+   "--syntax-comment": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 229
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 229
+    }
+   },
+   "--theme-background-b": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 229
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 229
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 229
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 229
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 229
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 229
+    }
+   },
+   "--font-small ::after": {
+    "elements": 3,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--font-very-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--sans-serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 3
+    }
+   },
+   "--syntax-comment ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   },
+   "--theme-background-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-background-b ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-foreground-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faint ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 3
+    }
+   },
+   "--theme-foreground-fainter ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faintest ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 3
+    }
+   },
+   "--theme-foreground-muted ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   }
+  }
+ },
+ "perspectives_768x1024": {
+  "elementsA": 229,
+  "elementsB": 229,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 229,
+  "changedProperties": 2784,
+  "byProperty": {
+   "--font-small": {
+    "elements": 229,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 229
+    }
+   },
+   "--font-very-big": {
+    "elements": 229,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 229
+    }
+   },
+   "--sans-serif": {
+    "elements": 229,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 229
+    }
+   },
+   "--serif": {
+    "elements": 229,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 229
+    }
+   },
+   "--syntax-comment": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 229
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 229
+    }
+   },
+   "--theme-background-b": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 229
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 229
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 229
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 229
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 229
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 229,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 229
+    }
+   },
+   "--font-small ::after": {
+    "elements": 3,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--font-very-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--sans-serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 3
+    }
+   },
+   "--syntax-comment ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   },
+   "--theme-background-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-background-b ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-foreground-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faint ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 3
+    }
+   },
+   "--theme-foreground-fainter ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faintest ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 3
+    }
+   },
+   "--theme-foreground-muted ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   }
+  }
+ },
+ "print_home_1200x800": {
+  "elementsA": 543,
+  "elementsB": 543,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 543,
+  "changedProperties": 6552,
+  "byProperty": {
+   "--font-small": {
+    "elements": 543,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--font-very-big": {
+    "elements": 543,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--sans-serif": {
+    "elements": 543,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 543
+    }
+   },
+   "--serif": {
+    "elements": 543,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 543
+    }
+   },
+   "--syntax-comment": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 543
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 543
+    }
+   },
+   "--theme-background-b": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 543
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 543
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 543
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 543
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 543
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 543,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 543
+    }
+   },
+   "--font-small ::after": {
+    "elements": 3,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--font-very-big ::after": {
+    "elements": 3,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--sans-serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 3
+    }
+   },
+   "--serif ::after": {
+    "elements": 3,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 3
+    }
+   },
+   "--syntax-comment ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   },
+   "--theme-background-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-background-b ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 3
+    }
+   },
+   "--theme-foreground-alt ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faint ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 3
+    }
+   },
+   "--theme-foreground-fainter ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 3
+    }
+   },
+   "--theme-foreground-faintest ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 3
+    }
+   },
+   "--theme-foreground-muted ::after": {
+    "elements": 3,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 3
+    }
+   }
+  }
+ },
+ "prototype_1200x800": {
+  "elementsA": 7528,
+  "elementsB": 7528,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 22,
+  "changedProperties": 96,
+  "byProperty": {
+   "inline-size": {
+    "elements": 14,
+    "values": {
+     "144.359px -> 144.391px": 7,
+     "180.203px -> 180.172px": 7
+    }
+   },
+   "perspective-origin": {
+    "elements": 22,
+    "values": {
+     "82.1719px 17.8438px -> 82.1875px 17.8438px": 1,
+     "100.094px 17.8438px -> 100.078px 17.8438px": 1,
+     "320px 18.0938px -> 320px 10.2969px": 1,
+     "31.9688px 18.0938px -> 31.9688px 10.2969px": 1,
+     "47.9062px 18.0938px -> 47.9062px 10.2969px": 1,
+     "57.8438px 18.0938px -> 57.8438px 10.2969px": 1,
+     "82.1719px 18.0938px -> 82.1875px 10.2969px": 1,
+     "100.094px 18.0938px -> 100.078px 10.2969px": 1,
+     "320px 10.2969px -> 320px 18.0938px": 1,
+     "31.9688px 10.2969px -> 31.9688px 18.0938px": 1,
+     "47.9062px 10.2969px -> 47.9062px 18.0938px": 1,
+     "57.8438px 10.2969px -> 57.8438px 18.0938px": 1,
+     "82.1719px 10.2969px -> 82.1875px 18.0938px": 1,
+     "100.094px 10.2969px -> 100.078px 18.0938px": 1,
+     "82.1719px 10.2969px -> 82.1875px 10.2969px": 3,
+     "100.094px 10.2969px -> 100.078px 10.2969px": 3,
+     "82.1719px 10.0469px -> 82.1875px 10.0469px": 1,
+     "100.094px 10.0469px -> 100.078px 10.0469px": 1
+    }
+   },
+   "transform-origin": {
+    "elements": 22,
+    "values": {
+     "82.1797px 17.8438px -> 82.1953px 17.8438px": 1,
+     "100.102px 17.8438px -> 100.086px 17.8438px": 1,
+     "320px 18.0938px -> 320px 10.2969px": 1,
+     "31.9688px 18.0938px -> 31.9688px 10.2969px": 1,
+     "47.9062px 18.0938px -> 47.9062px 10.2969px": 1,
+     "57.8438px 18.0938px -> 57.8438px 10.2969px": 1,
+     "82.1797px 18.0938px -> 82.1953px 10.2969px": 1,
+     "100.102px 18.0938px -> 100.086px 10.2969px": 1,
+     "320px 10.2969px -> 320px 18.0938px": 1,
+     "31.9688px 10.2969px -> 31.9688px 18.0938px": 1,
+     "47.9062px 10.2969px -> 47.9062px 18.0938px": 1,
+     "57.8438px 10.2969px -> 57.8438px 18.0938px": 1,
+     "82.1797px 10.2969px -> 82.1953px 18.0938px": 1,
+     "100.102px 10.2969px -> 100.086px 18.0938px": 1,
+     "82.1797px 10.2969px -> 82.1953px 10.2969px": 3,
+     "100.102px 10.2969px -> 100.086px 10.2969px": 3,
+     "82.1797px 10.0469px -> 82.1953px 10.0469px": 1,
+     "100.102px 10.0469px -> 100.086px 10.0469px": 1
+    }
+   },
+   "width": {
+    "elements": 14,
+    "values": {
+     "144.359px -> 144.391px": 7,
+     "180.203px -> 180.172px": 7
+    }
+   },
+   "block-size": {
+    "elements": 12,
+    "values": {
+     "36.1875px -> 20.5938px": 1,
+     "31.1875px -> 15.5938px": 5,
+     "20.5938px -> 36.1875px": 1,
+     "15.5938px -> 31.1875px": 5
+    }
+   },
+   "height": {
+    "elements": 12,
+    "values": {
+     "36.1875px -> 20.5938px": 1,
+     "31.1875px -> 15.5938px": 5,
+     "20.5938px -> 36.1875px": 1,
+     "15.5938px -> 31.1875px": 5
+    }
+   }
+  }
+ },
+ "prototype_375x667": {
+  "elementsA": 7528,
+  "elementsB": 7528,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 16,
+  "changedProperties": 64,
+  "byProperty": {
+   "inline-size": {
+    "elements": 16,
+    "values": {
+     "339.094px -> 346.625px": 9,
+     "33.1562px -> 40.6875px": 7
+    }
+   },
+   "perspective-origin": {
+    "elements": 16,
+    "values": {
+     "169.547px 282.094px -> 173.312px 282.094px": 2,
+     "169.547px 33.4375px -> 173.312px 33.4375px": 1,
+     "26.5781px 33.4375px -> 30.3438px 33.4375px": 1,
+     "169.547px 41.4844px -> 173.312px 41.4844px": 5,
+     "26.5781px 41.4844px -> 30.3438px 41.4844px": 5,
+     "169.547px 41.2344px -> 173.312px 41.2344px": 1,
+     "26.5781px 41.2344px -> 30.3438px 41.2344px": 1
+    }
+   },
+   "transform-origin": {
+    "elements": 16,
+    "values": {
+     "169.547px 282.094px -> 173.312px 282.094px": 2,
+     "169.547px 33.4375px -> 173.312px 33.4375px": 1,
+     "26.5781px 33.4375px -> 30.3438px 33.4375px": 1,
+     "169.547px 41.4844px -> 173.312px 41.4844px": 5,
+     "26.5781px 41.4844px -> 30.3438px 41.4844px": 5,
+     "169.547px 41.2344px -> 173.312px 41.2344px": 1,
+     "26.5781px 41.2344px -> 30.3438px 41.2344px": 1
+    }
+   },
+   "width": {
+    "elements": 16,
+    "values": {
+     "339.094px -> 346.625px": 9,
+     "33.1562px -> 40.6875px": 7
+    }
+   }
+  }
+ },
+ "resources_1200x800": {
+  "elementsA": 5287,
+  "elementsB": 5287,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 5287,
+  "changedProperties": 63444,
+  "byProperty": {
+   "--font-small": {
+    "elements": 5287,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 5287
+    }
+   },
+   "--font-very-big": {
+    "elements": 5287,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 5287
+    }
+   },
+   "--sans-serif": {
+    "elements": 5287,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 5287
+    }
+   },
+   "--serif": {
+    "elements": 5287,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 5287
+    }
+   },
+   "--syntax-comment": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 5287
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 5287
+    }
+   },
+   "--theme-background-b": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 5287
+    }
+   }
+  }
+ },
+ "resources_375x667": {
+  "elementsA": 5287,
+  "elementsB": 5287,
+  "onlyInA": [],
+  "onlyInB": [],
+  "changedElements": 5287,
+  "changedProperties": 63444,
+  "byProperty": {
+   "--font-small": {
+    "elements": 5287,
+    "values": {
+     "14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 14px \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 5287
+    }
+   },
+   "--font-very-big": {
+    "elements": 5287,
+    "values": {
+     "900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> 900 48px/1 \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 5287
+    }
+   },
+   "--sans-serif": {
+    "elements": 5287,
+    "values": {
+     "\"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif -> \"Nunito Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, helvetica, \"helvetica neue\", ubuntu, roboto, noto, \"segoe ui\", arial, sans-serif": 5287
+    }
+   },
+   "--serif": {
+    "elements": 5287,
+    "values": {
+     "\"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\" -> \"Source Serif Pro\", \"Iowan Old Style\", \"Apple Garamond\", \"Palatino Linotype\", \"Times New Roman\", \"Droid Serif\", Times, serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 5287
+    }
+   },
+   "--syntax-comment": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 5287
+    }
+   },
+   "--theme-background-alt": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 5287
+    }
+   },
+   "--theme-background-b": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 4%, #fff ) -> color-mix( in srgb, #000 4%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-alt": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 90%, #fff ) -> color-mix( in srgb, #000 90%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-faint": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 50%, #fff ) -> color-mix( in srgb, #000 50%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-fainter": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 30%, #fff ) -> color-mix( in srgb, #000 30%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-faintest": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 14%, #fff ) -> color-mix( in srgb, #000 14%, #fff )": 5287
+    }
+   },
+   "--theme-foreground-muted": {
+    "elements": 5287,
+    "values": {
+     "color-mix( in srgb, #000 60%, #fff ) -> color-mix( in srgb, #000 60%, #fff )": 5287
+    }
+   }
+  }
+ }
+}

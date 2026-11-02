@@ -132,7 +132,23 @@ diffs and the byte counts above.
 - `--font-small`: its users (`.small`, the copy-button "Copied!") are gone; kept
   because it was not in the approved list.
 
-## Proposal (not implemented): drop the duplicate page-level style.css link
+## Proposal: drop the duplicate page-level style.css link (evaluated, NOT applied)
+
+**Outcome (2026-11-02): not applied.** The finding "no rendered property changes"
+below is **wrong**. Removing the link moves style.css (via the bundle) before
+inputs.css and sidebar.css and flips two equal-specificity ties:
+(a) sidebar links lose the focus underline (`a[href]:focus` vs
+`.sidebar-menu a[href]`, 0,2,1; found with forced states, which this run did not
+cover); (b) the Directions search box grows 240px -> 360px at 1200 px and
+240 -> 265px at 375 px (`input[type="search"]` vs Inputs `.inputs-*-input > input`, 0,1,1).
+(b) was in this run's own style diff and was missed: directions was not in the
+PNG matrix and the style-diff output was not read closely. Fixing rules
+(sidebar.css `.sidebar-menu a[href]:focus { text-decoration: underline; }`,
+style.css `[class*="inputs-"][class$="-input"] > input[type="search"] { width: 240px; }`)
+were tested, then everything was reverted; src/ equals 20506d0. Details and
+evidence: CHANGELOG_V3.md, `proposal-drop-duplicate-link/states/`,
+`sidebar-focus-rule/`, `drop-duplicate-link/` (each with `non-whitespace-changes.txt`
+where applicable). The original text follows unchanged.
 
 **Change:** remove `<link rel="stylesheet" href="style.css">` from the 6
 top-level pages (src/index.md, countries.md, directions.md, resources.md,
@@ -153,8 +169,8 @@ perspectives.md edit is unchanged). Same matrix and capture as step 3
 (`proposal-drop-duplicate-link/`), against a fresh AFTER run that reproduced the
 earlier AFTER manifest byte for byte:
 - pixels: **39/39 identical**.
-- computed styles: no rendered property changes on any element, in any case
-  (top-level pages at both widths, iframe, print). The only differences are
+- computed styles: ~~no rendered property changes on any element, in any case
+  (top-level pages at both widths, iframe, print)~~ WRONG, see the outcome above. The only differences are
   the text of 12 custom properties (`--sans-serif`, `--serif`,
   `--theme-foreground-*`, `--theme-background-alt/-b`, `--syntax-comment`,
   `--font-small`, `--font-very-big`). They are identical except for whitespace:

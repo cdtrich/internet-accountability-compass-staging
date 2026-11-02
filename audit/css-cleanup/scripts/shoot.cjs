@@ -12,7 +12,8 @@ const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
 
 // Matrix: perspectives is the top-level page with a TOC (blog TOC, own 769-1100px
 // layout), so it alone gets 768x1024. Iframe only for home and AUS at 375.
-const pages = { home: "/", methodology: "/methodology", perspectives: "/perspectives", AUS: "/AUS/", MHL: "/MHL/" };
+// directions has the only Inputs control on a top-level page (search box).
+const pages = { home: "/", methodology: "/methodology", perspectives: "/perspectives", directions: "/directions", AUS: "/AUS/", MHL: "/MHL/" };
 const cases = [];
 for (const name of Object.keys(pages)) {
   const sizes = [[1200, 800], [375, 667]];
@@ -22,8 +23,8 @@ for (const name of Object.keys(pages)) {
 cases.push({ name: "home", w: 375, h: 667, mode: "iframe" }, { name: "AUS", w: 375, h: 667, mode: "iframe" });
 // Computed styles only (no PNGs): more page types, more country pages, and
 // home under print media (covers the @media print split).
-Object.assign(pages, { countries: "/countries", directions: "/directions", resources: "/resources", prototype: "/prototypes/radial", AFG: "/AFG/", DNK: "/DNK/", BRA: "/BRA/" });
-for (const name of ["countries", "directions", "resources", "prototype", "AFG", "DNK", "BRA"])
+Object.assign(pages, { countries: "/countries", resources: "/resources", prototype: "/prototypes/radial", AFG: "/AFG/", DNK: "/DNK/", BRA: "/BRA/" });
+for (const name of ["countries", "resources", "prototype", "AFG", "DNK", "BRA"])
   for (const [w, h] of [[1200, 800], [375, 667]]) cases.push({ name, w, h, mode: "styles" });
 cases.push({ name: "home", w: 1200, h: 800, mode: "print" });
 const caseId = (c) => `${c.mode === "iframe" ? "iframe_" : c.mode === "print" ? "print_" : ""}${c.name}_${c.w}x${c.h}`;

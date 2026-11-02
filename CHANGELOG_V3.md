@@ -99,6 +99,35 @@ all 203 built pages and the compiled components in dist/, and greps of dist/.
 - **Verify**: `git diff eadd799 HEAD -- src/style.css`; rebuild and open home,
   /AUS/, /perspectives at desktop and phone width: nothing should look different.
 
+**Evaluated, not applied: dropping the duplicate page-level style.css link** on the
+6 top-level pages (src/index.md, countries, directions, resources, perspectives,
+methodology). It would save 1 request and 8,548 B gzip -9 (31,776 B raw) per
+top-level page. But style.css would then load only through the config bundle,
+before inputs.css and sidebar.css, and two equal-specificity ties flip
+(today load order decides them in favour of style.css):
+- (a) focus underline on the sidebar links: Framework copy `a[href]:focus
+  { text-decoration: underline }` vs `.sidebar-menu a[href] { text-decoration:
+  none }` (both 0,2,1). The underline also shows briefly after a click (a click
+  focuses the link). Keeping it would need `.sidebar-menu a[href]:focus {
+  text-decoration: underline; }` in sidebar.css.
+- (b) Directions search box 240px -> 360px at 1200 px (240 -> 265px at 375 px):
+  style.css `input[type="search"] { width: 240px }` vs Inputs
+  `.inputs-*-input > input { width: inherit }` (both 0,1,1). Keeping 240px would
+  need `[class*="inputs-"][class$="-input"] > input[type="search"] { width: 240px; }`
+  in style.css.
+**Correction:** the proposal (audit/css-cleanup/step3-report.md) said "no
+rendered property changes". That was wrong: (b) was in the proposal's own
+style diff and was missed (directions was not in the PNG matrix and the
+style-diff output was not read closely); (a) needs forced states, which that
+run did not cover. Both were then confirmed with a real build (commits
+fd154f5, da221d0, 876e8ce), and all three were reverted (f7cae21, ff6a197,
+5cc4782): src/ is identical to 20506d0. Option for the visual pass: decide (a)
+deliberately (e.g. remove the underline everywhere) and (b) (240 vs 360px),
+pin both with the rules above, then drop the link. Evidence:
+audit/css-cleanup/proposal-drop-duplicate-link/, sidebar-focus-rule/,
+drop-duplicate-link/; scripts states.cjs (forced states), ties.cjs (tie check),
+nonws.cjs.
+
 ## 2026-10-29 — Sources legend: inline SVG icons
 
 **What changed**: the four Font Awesome icons in

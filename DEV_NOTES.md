@@ -34,6 +34,9 @@ live in v3_BRIEF.md; per-change detail in CHANGELOG_V3.md.
 - Framework's `a[href]` colour beats single-class selectors; use `.x a[href]`.
 - `style.css` forces `svg text` to 16px Nunito Sans `!important`, overriding
   font sizes set in chart code.
+- After any change to stylesheet order, diff computed styles on ALL top-level
+  pages, including forced states (audit/css-cleanup/scripts/states.cjs, ties.cjs):
+  equal-specificity ties flip silently and PNGs alone will not show them.
 
 ## Country pages
 

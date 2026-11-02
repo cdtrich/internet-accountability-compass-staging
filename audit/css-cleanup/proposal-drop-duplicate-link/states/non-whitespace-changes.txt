@@ -1,0 +1,40 @@
+{
+  cases: 69,
+  total: 308244,
+  whitespaceOnly: 308148,
+  props: [
+    '--font-small',
+    '--font-very-big',
+    '--sans-serif',
+    '--serif',
+    '--syntax-comment',
+    '--theme-background-alt',
+    '--theme-background-b',
+    '--theme-foreground-alt',
+    '--theme-foreground-faint',
+    '--theme-foreground-fainter',
+    '--theme-foreground-faintest',
+    '--theme-foreground-muted'
+  ],
+  other: 96
+}
+home_1200x800_00_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[1]>a[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_00_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[1]>a[1]  text-decoration: underline -> none
+home_1200x800_00_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[1]>a[1]  text-decoration-line: underline -> none
+home_1200x800_00_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[1]>a[1]>span[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_01_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[2]>a[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_01_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[2]>a[1]  text-decoration: underline -> none
+home_1200x800_01_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[2]>a[1]  text-decoration-line: underline -> none
+home_1200x800_01_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[2]>a[1]>span[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_02_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[3]>a[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_02_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[3]>a[1]  text-decoration: underline -> none
+home_1200x800_02_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[3]>a[1]  text-decoration-line: underline -> none
+home_1200x800_02_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[3]>a[1]>span[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_03_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[4]>a[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_03_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[4]>a[1]  text-decoration: underline -> none
+home_1200x800_03_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[4]>a[1]  text-decoration-line: underline -> none
+home_1200x800_03_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[4]>a[1]>span[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_04_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[5]>a[1]  -webkit-text-decorations-in-effect: underline -> none
+home_1200x800_04_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[5]>a[1]  text-decoration: underline -> none
+home_1200x800_04_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[5]>a[1]  text-decoration-line: underline -> none
+home_1200x800_04_focus html>body[1]>div#observablehq-center[1]>header#observablehq-header[1]>nav#sidebar[1]>div[1]>ul[1]>li[5]>a[1]>span[1]  -webkit-text-decorations-in-effect: underline -> none
