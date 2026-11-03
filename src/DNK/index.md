@@ -29,6 +29,7 @@ import { viewofSourcesLegend } from "../components/sourcesLegend.js";
 import { pillarSparklineD3 } from "../components/pillarSparklineD3.js";
 import { indicatorHistorical } from "../components/indicatorHistorical.js";
 import { modeToggle } from "../components/modeToggle.js";
+import { statusLegend } from "../components/statusLegend.js";
 ```
 
 <!-- Get country from ISO3 code -->
@@ -177,6 +178,16 @@ const viewMode = view(
     value2: "historical",
     initial: "latest",
   }),
+);
+```
+
+```js
+// provenance legend for the indicator charts; in Latest an empty fragment,
+// which clears the legend and leaves an empty block (no space)
+display(
+  viewMode === "historical"
+    ? statusLegend()
+    : document.createDocumentFragment(),
 );
 ```
 
