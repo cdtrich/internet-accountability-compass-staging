@@ -10,31 +10,31 @@
 .legend-item {
   padding: 8px 24px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--ui-text-md);
   font-weight: 500; /* No bold on select */
-  transition: all 0.2s ease;
+  transition: all var(--ui-transition);
   border: none;
   user-select: none;
 }
 
 /* First item - rounded left only */
 .legend-item:first-child {
-  border-radius: 4px 0 0 4px;
+  border-radius: var(--ui-radius) 0 0 var(--ui-radius);
 }
 
 /* Last item - rounded right only */
 .legend-item:last-child {
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 var(--ui-radius) var(--ui-radius) 0;
 }
 
 /* Single item - rounded all corners */
 .legend-item:only-child {
-  border-radius: 4px;
+  border-radius: var(--ui-radius);
 }
 
 /* Hover effect - slight opacity increase */
 .legend-item:hover {
-  filter: brightness(0.95);
+  filter: var(--ui-hover-filter);
 }
 
 /* Selected state - no bold, colors handled by JS */
@@ -48,7 +48,7 @@
   flex-direction: row;
   align-items: center;
   gap: 6px;
-  padding: 10px 28px;
+  padding: 8px 24px;
 }
 
 .sources-legend-icon {
