@@ -9,24 +9,13 @@ import {
 // unique clipPath ids across charts on one page (charts rebuild on resize)
 let clipCounter = 0;
 
-// Tooltip / <title> text for one value, from the provenance columns
+// Tooltip / <title> text for one value; status only when it is computed
 function statusText(d) {
   const value = Math.round(d.value);
-  const edition = d.edition_year ?? d.year;
-  let detail;
-  if (d.value_status === "carried") {
-    detail = `computed: ${edition} edition carried forward`;
-  } else if (d.value_status === "backdated") {
-    detail = `computed: ${edition} edition applied to ${d.year}`;
-  } else {
-    detail = `${edition} edition`;
-    if (d.reference_year != null && d.reference_year !== d.year) {
-      detail += ` (data for ${d.reference_year})`;
-    }
-  }
+  const suffix = isComputedStatus(d.value_status) ? " (computed)" : "";
   return {
-    html: `<strong>${value}</strong> · ${detail}`,
-    plain: `${value} · ${detail}`,
+    html: `<strong>${value}</strong>${suffix}`,
+    plain: `${value}${suffix}`,
   };
 }
 
@@ -178,7 +167,9 @@ export function indicatorHistorical(
 
     // one slot per year, so a missing year stays a gap in the line
     const years = d3.range(yearExtent[0], yearExtent[1] + 1);
-    const slots = years.map((year) => byYear.get(year) ?? { year, value: null });
+    const slots = years.map(
+      (year) => byYear.get(year) ?? { year, value: null },
+    );
 
     // segments between consecutive years; dashed if either end is computed
     const segments = { solid: [], dashed: [] };

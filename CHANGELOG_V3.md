@@ -1,5 +1,20 @@
 # Changelog: v3
 
+## 2026-11-03 — Provenance markers: shorter tooltip, stacked legend on phones
+
+- **indicatorHistorical.js**: tooltip and `<title>` name the status only when computed:
+  "**24**" (published), "**24** (computed)" (carried or backdated). Edition and
+  "data for" wording removed (replaces the texts in the entry below).
+- **statusLegend.js**: layout moved from inline styles to a scoped `<style>` so a media
+  query can apply. ≤600px: a left-aligned column (`flex-direction: column`,
+  `align-items: flex-start`, `width: fit-content`, `margin-inline: auto`); wider: one
+  centred row as before. Markers `flex: none`. Second label "Computed value".
+
+**Verify** (AFG, Historical): at 361 and 393px both markers have the same left edge
+(43.6px and 58px) in a column; at 1440px one centred row. E-Waste 2021 "100 (computed)",
+2024 "99"; GCI 2020 "5 (computed)"; Freedom in the World 2026 "8".
+**Rollback**: revert this commit.
+
 ## 2026-11-03 — Provenance markers, steps 2-5: markers, legend, pages
 
 Brief: v3_BRIEF_section_provenance.md (Phase 3b), steps 2-5. Two commits: components,
