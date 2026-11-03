@@ -190,6 +190,7 @@ China,CHN,1,Connectivity and infrastructure,Analysis,The Locknet (China),China F
 China,CHN,2,Rights and freedoms,Analysis,The Locknet (China),China File,https://locknet.chinafile.com/the-locknet/intro/,1
 China,CHN,3,Responsibility and sustainability,Analysis,The Locknet (China),China File,https://locknet.chinafile.com/the-locknet/intro/,1
 China,CHN,1,Connectivity and infrastructure,Academic,Export surveillance,IJCJ&SD,https://doi.org/10.5204/ijcjsd.1908,4
+China,CHN,2,Rights and freedoms,Academic,Authoritarian diffusion,Democratization,https://doi.org/10.1080/13510347.2025.2504588,5
 Colombia,COL,1,Connectivity and infrastructure,Analysis,Resilience & infrastructure,Internet Society,https://pulse.internetsociety.org/en/reports/CO,2
 Colombia,COL,4,Trust and resilience,Analysis,Internet resilience,Internet Society,https://pulse.internetsociety.org/en/resilience/CO,2
 Colombia,COL,2,Rights and freedoms,Analysis,Digital rights,Freedom House,https://freedomhouse.org/country/colombia/freedom-net/2024,2
@@ -431,6 +432,8 @@ Indonesia,IDN,2,Rights and freedoms,Analysis,Network disruptions & censorship,Ne
 Indonesia,IDN,3,Responsibility and sustainability,Analysis,Trends & governance,Internet Society,https://www.internetsociety.org/globalinternetreport/,2
 Indonesia,IDN,2,Rights and freedoms,Analysis,Digital rights & online expression,SafeNet,https://safenet.or.id/id/2025/02/laporan-situasi-hak-hak-digital-indonesia-2024/,NA
 Iran,IRN,2,Rights and freedoms,Academic,Diaspora journalism,IJP/P,https://doi.org/10.1177/1940161224129,4
+Iran,IRN,2,Rights and freedoms,Academic,Authoritarian diffusion,Democratization,https://doi.org/10.1080/13510347.2025.2504588,5
+Iran,IRN,3,Responsibility and sustainability,Academic,AI Governance,Democratization,https://doi.org/10.1080/13510347.2025.2576527,5
 Israel,ISR,2,Rights and freedoms,Analysis,Digital rights,Freedom House,https://freedomhouse.org/country/israel/freedom-net/2024,2
 Italy,ITA,2,Rights and freedoms,Analysis,Digital rights,Freedom House,https://freedomhouse.org/country/italy/freedom-net/2024,2
 Jamaica,JAM,3,Inclusive and Affordable Access to the Internet,Source,National Broadband Initiative (Jamaica),Government,"https://jis.gov.jm/over-620-educational-institutions-now-have-internet-access-via-the-national-broadband-initiative/#:~:text=The%20national%20broadband%20network%20aims,speed%20as%20a%20basic%20requirement.",1
@@ -625,6 +628,7 @@ Pakistan,PAK,3,Responsibility and sustainability,Analysis,Digital economy & gove
 Pakistan,PAK,4,Trust and resilience,Analysis,Shutdowns,Access Now,https://www.accessnow.org/wp-content/uploads/2025/02/KeepItOn-2024-Internet-Shutdowns-Annual-Report.pdf,2
 Pakistan,PAK,2,Rights and freedoms,Analysis,Network disruptions & censorship,NetBlocks,https://netblocks.org/reports,2
 Pakistan,PAK,3,Responsibility and sustainability,Analysis,Trends & governance,Internet Society,https://www.internetsociety.org/globalinternetreport/,2
+Pakistan,PAK,2,Rights and freedoms,Academic,Authoritarian diffusion,Democratization,https://doi.org/10.1080/13510347.2025.2504588,5
 Paraguay,PRY,1,Connectivity and infrastructure,Analysis,Resilience & infrastructure,Internet Society,https://pulse.internetsociety.org/en/reports/PY,2
 Paraguay,PRY,4,Trust and resilience,Analysis,Internet resilience,Internet Society,https://pulse.internetsociety.org/en/resilience/PY,2
 Paraguay,PRY,2,Rights and freedoms,Analysis,Digital rights,Freedom House,https://freedomhouse.org/country/paraguay/freedom-net/2024,2
@@ -671,6 +675,8 @@ Rwanda,RWA,2,Rights and freedoms,Analysis,Network disruptions & censorship,NetBl
 Rwanda,RWA,3,Responsibility and sustainability,Analysis,Trends & governance,Internet Society,https://www.internetsociety.org/globalinternetreport/,2
 Saudi Arabia,SAU,4,Trust and resilience,Academic,Transnational repression,JCLQ,https://doi.org/10.1017/S0020589323000532,4
 Saudi Arabia,SAU,2,Rights and freedoms,Analysis,"Censorship, platform blocks, surveillance",Freedom House,https://freedomhouse.org/country/saudi-arabia/freedom-net/2024,3
+Saudi Arabia,SAU,3,Responsibility and sustainability,Academic,AI Governance,J. of Developing Societies,https://doi.org/10.1177/0169796X241288590,5
+Saudi Arabia,SAU,3,Responsibility and sustainability,Academic,AI Governance,Democratization,https://doi.org/10.1080/13510347.2025.2576527,5
 Senegal,SEN,1,Connectivity and infrastructure,Analysis,Resilience & infrastructure,Internet Society,https://pulse.internetsociety.org/en/reports/SN,2
 Senegal,SEN,4,Trust and resilience,Analysis,Internet resilience,Internet Society,https://pulse.internetsociety.org/en/resilience/SN,2
 Senegal,SEN,2,Rights and freedoms,Analysis,Digital rights,Freedom House,https://freedomhouse.org/country/senegal/freedom-net/2024,2
@@ -821,6 +827,8 @@ Uganda,UGA,3,Responsibility and sustainability,Analysis,Trends & governance,Inte
 Ukraine,UKR,1,Connectivity and infrastructure,Source,Internet Subvention Program (Ukraine),Government,https://www.kmu.gov.ua/storage/app/sites/1/recoveryrada/eng/digitization-eng.pdf,1
 Ukraine,UKR,4,Trust and resilience,Source,Internet Accessibility Standards (Ukraine),GIFI,NA,1
 Ukraine,UKR,3,Responsibility and sustainability,Source,Internet Accessibility Standards (Ukraine),GIFI,NA,1
+Ukraine,UKR,3,Responsibility and sustainability,Academic,AI-powered Disinformation,Frontiers,https://doi.org/10.3389/frai.2024.1474034,5
+United Arab Emirates,ARE,3,Responsibility and sustainability,Academic,AI governance,Democratization,https://doi.org/10.1080/13510347.2025.2576527,5
 United Kingdom,GBR,2,Rights and freedoms,Source,Online Harms White Paper (UK),Government,https://www.gov.uk/government/consultations/online-harms-white-paper,1
 United Kingdom,GBR,4,Trust and resilience,Source,Online Harms White Paper (UK),Government,https://www.gov.uk/government/consultations/online-harms-white-paper,1
 United Kingdom,GBR,1,Connectivity and infrastructure,Project,The Shared Rural Network (UK),GIFi,NA,NA
@@ -907,6 +915,10 @@ Global,GLO,3,Responsibility and sustainability,Academic,Digital sovereignty,JCLS
 Global,GLO,3,Responsibility and sustainability,Academic,Authoritarian collaboration,Democratization,https://doi.org/10.1080/13510347.2024.2442377,4
 Global,GLO,4,Trust and resilience,Academic,Transnational repression,JCLQ,https://doi.org/10.1017/S0020589323000532,4
 Global,GLO,2,Rights and freedoms,Academic,Transnational repression,EJIS,https://doi.org/10.1017/eis.2022.27,4
+Global,GLO,3,Responsibility and sustainability,Academic,Foreign Direct Investment,Democratization,https://doi.org/10.1080/13510347.2024.2442377,5
+Global,GLO,3,Responsibility and sustainability,Academic,AI & Democratization,PNAS,https://doi.org/10.1073/pnas.2423266122,5
+Global,GLO,1,Connectivity and infrastructure,Academic,Digital authoritarianism,Democratization,https://doi.org/10.1080/02681102.2024.2425352,5
+Global,GLO,3,Responsibility and sustainability,Academic,Digital authoritarianism,Democratization,https://doi.org/10.1080/02681102.2024.2425352,5
 Asia,ASI,3,Responsibility and sustainability,Academic,Platforms governance,Open Reserch Europe,https://doi.org/10.12688/openreseurope.18820.2,4
 Africa,AFR,3,Responsibility and sustainability,Analysis,Political economy of AI,Research ICT Africa,https://researchictafrica.net/research/a-new-primer-on-the-political-economy-of-african-ai/,3
 Africa,AFR,3,Responsibility and sustainability,Analysis,AI and democracy,Research ICT Africa,https://researchictafrica.net/research/how-might-ai-reshape-democracy-on-the-african-continent/,3
@@ -918,3 +930,4 @@ Africa,AFR,2,Rights and freedoms,Analysis,LONDA 2023/2024: Digital Rights in Afr
 Europe,EUR,2,Rights and freedoms,Analysis,Digital rights in Europe,EDRI,https://edri.org/our-work/edri-annual-report-2024-reinforcing-digital-rights-and-justice-in-uncertain-times/,3
 Europe,EUR,3,Responsibility and sustainability,Analysis,Surveillance exports,HRW,https://www.hrw.org/report/2026/05/12/looking-the-other-way/eu-failure-to-prevent-surveillance-exports-to-rights,4
 Europe,EUR,3,Responsibility and sustainability,Academic,Dual-use regulation,Defence Studies,https://doi.org/10.1080/14702436.2023.2277455,4
+Europe,EUR,3,Responsibility and sustainability,Academic,Content & digital sovereignty,JEPP,https://doi.org/10.1080/13501763.2024.2309179,5
