@@ -18,6 +18,9 @@ library(here)
 DFI_SOURCE <- "xlsx"
 DFI_XLSX <- here("src", "data", "Internet-Accountability-Index-V3.0.xlsx")
 DFI_SHEET_ID <- "15_2sax_UIxuyDnvFvwQD3ZKi-h5IyzDxZCxXwwR-9xA"
+# provenance of annual values (published vs carried/backdated); separate file
+# so the index workbook keeps its structure. See its Readme sheet.
+DFI_PROV <- here("src", "data", "Internet-Accountability-Index-Provenance.xlsx")
 
 if (DFI_SOURCE == "gsheet") {
     library(googlesheets4)
@@ -70,6 +73,96 @@ check_schema <- function(df, sheet) {
 years <- dfi_years()
 stopifnot(length(years) >= 1)
 latest_sheet <- max(years)
+
+# PROVENANCE ------------------------------------------------------------------
+
+prov_ind <- read_excel(
+    DFI_PROV,
+    sheet = "Indicators",
+    col_types = c("text", "numeric", "text", "text", "numeric", "text")
+)
+prov_exc <- read_excel(
+    DFI_PROV,
+    sheet = "Exceptions",
+    col_types = c("text", "numeric", "text", "numeric", "text", "numeric", "text")
+) %>%
+    select(commitment_num, year, status, edition_year)
+
+stopifnot(
+    nrow(prov_ind) == 12,
+    setequal(prov_ind$commitment_num, 1:12),
+    !anyNA(prov_ind$reference_lag)
+)
+
+# defaults: every indicator x year is "actual", published in its own edition
+build_prov <- function(years) {
+    expand_grid(commitment_num = prov_ind$commitment_num, year = as.numeric(years)) %>%
+        left_join(select(prov_ind, commitment_num, reference_lag), by = "commitment_num") %>%
+        left_join(prov_exc, by = c("commitment_num", "year")) %>%
+        mutate(
+            listed = !is.na(status),
+            value_status = coalesce(status, "actual"),
+            edition_year = coalesce(edition_year, year),
+            reference_year = edition_year - reference_lag
+        ) %>%
+        select(commitment_num, year, listed, value_status, edition_year, reference_year)
+}
+prov <- build_prov(years)
+
+# errors stop the build; soft checks go to stderr (stdout carries the CSV)
+check_provenance <- function(df, prov) {
+    stopifnot(
+        all(prov_exc$status %in% c("carried", "backdated", "actual")),
+        !anyDuplicated(prov_exc[c("commitment_num", "year")]),
+        # typo in year or commitment_num
+        nrow(anti_join(prov_exc, prov, by = c("commitment_num", "year"))) == 0,
+        !anyNA(prov_exc$edition_year[prov_exc$status %in% c("carried", "backdated")])
+    )
+    v <- df %>%
+        select(ISO3_CODE, commitment_num, year, value) %>%
+        left_join(prov, by = c("commitment_num", "year"))
+    show <- function(x) paste(capture.output(print(as.data.frame(x))), collapse = "\n")
+
+    # 1. every listed exception has values in the workbook
+    no_val <- v %>%
+        filter(listed) %>%
+        group_by(commitment_num, year) %>%
+        summarise(n_val = sum(!is.na(value)), .groups = "drop") %>%
+        filter(n_val == 0)
+    if (nrow(no_val)) stop("Provenance: exception without values\n", show(no_val))
+
+    # 2. same indicator + same edition_year => identical values per country
+    bad_ed <- v %>%
+        group_by(commitment_num, edition_year, ISO3_CODE) %>%
+        summarise(n_vals = n_distinct(value), .groups = "drop") %>%
+        filter(n_vals > 1) %>%
+        distinct(commitment_num, edition_year)
+    if (nrow(bad_ed)) stop("Provenance: values differ within one edition\n", show(bad_ed))
+
+    # 3. unlisted year (nearly) identical to the previous year looks carried forward
+    prior <- v %>%
+        select(ISO3_CODE, commitment_num, year, prior_value = value, prior_edition = edition_year) %>%
+        mutate(year = year + 1)
+    dup <- v %>%
+        filter(!listed) %>%
+        inner_join(prior, by = c("ISO3_CODE", "commitment_num", "year")) %>%
+        filter(prior_edition != edition_year, !is.na(value), !is.na(prior_value)) %>%
+        group_by(commitment_num, year) %>%
+        summarise(share_same = mean(value == prior_value), .groups = "drop")
+    if (any(dup$share_same >= 0.99)) {
+        stop(
+            "Provenance: looks carried forward, add to Exceptions (or list as 'actual' if confirmed)\n",
+            show(filter(dup, share_same >= 0.99))
+        )
+    }
+    if (any(dup$share_same >= 0.95)) {
+        message(
+            "Provenance warning: >=95% equal to previous year:\n",
+            show(filter(dup, share_same >= 0.95))
+        )
+    }
+    invisible(TRUE)
+}
 
 # READ ALL DATA FILES ---------------------------------------------------------
 
@@ -171,6 +264,7 @@ if (!all(map_lgl(indicators_by_year, ~ identical(.x, indicators)))) {
 
 # Process all years and combine
 df_all_years <- map_dfr(years, read_year)
+check_provenance(df_all_years, prov)
 
 # CLEAN COUNTRY NAMES ---------------------------------------
 
@@ -238,5 +332,14 @@ dfi_clean <- df_rename %>%
     ) %>%
     ungroup() %>%
     arrange(year, NAME_ENGL, pillar_num_cardinal, commitment_num_cardinal)
+
+# provenance columns appended last: existing columns and row order unchanged
+n_rows <- nrow(dfi_clean)
+dfi_clean <- dfi_clean %>%
+    left_join(
+        select(prov, commitment_num, year, value_status, edition_year, reference_year),
+        by = c("commitment_num", "year")
+    )
+stopifnot(nrow(dfi_clean) == n_rows, !anyNA(dfi_clean$value_status))
 
 cat(format_csv(dfi_clean))

@@ -1,5 +1,35 @@
 # Changelog: v3
 
+## 2026-11-03 — Provenance markers, step 1: loader (dfiFull.csv.R)
+
+Brief: v3_BRIEF_section_provenance.md (Phase 3b), step 1.
+
+- **What**: `src/data/dfiFull.csv.R` reads `Internet-Accountability-Index-Provenance.xlsx`
+  (sheets Exceptions, Indicators; committed in f44d2bc) and appends three columns at the end:
+  `value_status` (actual / carried / backdated; default actual), `edition_year`,
+  `reference_year` (= edition_year − reference_lag). Existing columns, column order,
+  row order and the jitter seed are unchanged.
+- **Checks** (after reading the year sheets): valid statuses, no duplicate or unknown
+  exception keys, edition_year present for carried/backdated; every exception has values;
+  identical values within one indicator edition; STOP if an unlisted year is ≥99% equal to
+  the previous edition ("looks carried forward"); message at ≥95%. On V3.0 the only
+  message is INDIGO (commitment 9) 2024, 0.957: known, published.
+- Changes to the brief's draft: `expand_grid` without `tidyr::`; extra stop if the
+  Indicators sheet is not exactly commitments 1-12 with a lag; stop if the final join
+  changes the row count or leaves a status NA; messages print a plain data frame.
+- `src/.observablehq/cache/data/dfiFull.csv` regenerated (CI has no R and builds from
+  the committed cache).
+- **Note**: `npm run build` reuses an existing cached loader output even when the loader
+  is newer ("[using stale]"); only `npm run dev` re-runs it. To refresh for a build,
+  delete the cached file.
+
+**Verify**: 16,296 rows before and after; with the three new columns dropped the CSV is
+byte-identical to the previous output. Status over the 84 indicator-years: 68 actual (5 of
+them without data: NRI 2020, GIRAI 2020-23), 15 carried, 1 backdated (GCI 2020). Negative
+test: removing the Exceptions row Global E-Waste Monitor 2021 stops the loader with
+"looks carried forward … 7 2021 share_same 1"; restored file → identical output.
+**Rollback**: revert this commit (front end ignores the extra columns).
+
 ## 2026-11-03 — Onboarding tour: step 1 points at the key figures
 
 Branch `feature/tour`. Detail: audit/tour/report.md, section 0b.
