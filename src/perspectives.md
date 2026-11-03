@@ -9,6 +9,7 @@
 <!-- import components -->
 
 ```js
+
 ```
 
 <!-- hero -->
@@ -230,7 +231,6 @@ _You can read the full piece [here](https://cadmus.eui.eu/entities/publication/4
 
 </div>
 
-
 ```js
 {
   document.querySelectorAll(".blog-toc").forEach((el) => el.remove());
@@ -292,7 +292,7 @@ _You can read the full piece [here](https://cadmus.eui.eu/entities/publication/4
       const tocToggle = document.createElement("button");
       tocToggle.className = "toc-toggle-button";
       tocToggle.setAttribute("aria-label", "Toggle table of contents");
-      tocToggle.innerHTML = `<i class="fa-solid fa-list-ul"></i> Contents`;
+      tocToggle.innerHTML = `<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false" style="vertical-align:-0.125em"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg> Contents`;
       tocToggle.addEventListener("click", () => {
         toc.classList.toggle("toc-open");
       });
