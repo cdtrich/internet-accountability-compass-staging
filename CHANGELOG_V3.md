@@ -1,5 +1,36 @@
 # Changelog: v3
 
+## 2026-11-03 — Provenance markers, steps 2-5: markers, legend, pages
+
+Brief: v3_BRIEF_section_provenance.md (Phase 3b), steps 2-5. Two commits: components,
+then template + 194 regenerated country pages.
+
+- **tokens.js**: `statusMarkers` (r 4, hover 6, stroke 1.5, dash "3 3"), `isComputedStatus`,
+  `styleStatusMarker`. Hollow fill is `var(--theme-background)`: cards are transparent in
+  style.css, so the page background is what sits behind the chart (set as style, not
+  attribute, so the variable resolves).
+- **statusLegend.js** (new): HTML legend, flex-wrap, centred under the toggle; markers are
+  small inline SVGs (aria-hidden), labels are HTML.
+- **indicatorHistorical.js** (highlighted country only; grey lines unchanged): a marker on
+  every value, filled = published, hollow = carried/backdated (replaces "hollow except the
+  last"); segments touching a computed point dashed. The curve stays one path (it already
+  used curveMonotoneX) clipped per segment, so dashing does not straighten it. Missing
+  years are gaps now (`line.defined`), not bridged. Tooltip and per-marker `<title>`:
+  "72 · 2026 edition (data for 2025)" / "computed: 2024 edition carried forward" /
+  "computed: 2021 edition applied to 2020".
+- **pillarSparklineD3.js**: dots removed; line, area and value/year labels kept (it had
+  no hover readout).
+- **1countryPageTemplate.md** (the brief's `src/countries/template.md`): legend cell right
+  after the Latest/Historical toggle. It always calls `display()` (an empty fragment in
+  Latest), because Framework only clears a block on the next display call.
+
+**Verify** (AFG, `npm run dev`, 393 and 1440 px): E-Waste filled 2020, 2024, hollow
+2021-23, 2025-26, all segments dashed; GCI hollow 2020; Rule of Law and the other published
+series filled and solid; tooltips as above; legend once in Historical, block 0 px with 0
+margins in Latest (on load and after switching back); legend fits at 361 px. Page width
+409/393 and 377/361 in both modes: the pre-existing `.chart-breakout` overflow.
+**Rollback**: revert the pages commit (template + pages), the components commit, or both.
+
 ## 2026-11-03 — Provenance markers, step 1: loader (dfiFull.csv.R)
 
 Brief: v3_BRIEF_section_provenance.md (Phase 3b), step 1.

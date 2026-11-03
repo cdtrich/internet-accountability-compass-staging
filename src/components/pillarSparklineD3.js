@@ -109,23 +109,11 @@ export function pillarSparklineD3(data, pillar, { width = 190 } = {}) {
     .attr("stroke-width", 3)
     .attr("d", line);
 
-  // Dots with labels
+  // Value and year labels (no dots: pillar scores are always computed from
+  // several indicators, so they carry no published/computed marker)
   pillarData.forEach((d, i) => {
     const isFirst = i === 0;
     const isLast = i === pillarData.length - 1;
-
-    // Dot
-    svg
-      .append("circle")
-      .attr("cx", xScale(d.year))
-      .attr("cy", yScale(d.value))
-      .attr("r", 3)
-      .attr("r", (d, i) => (i === pillarData.length - 1 ? 5 : 3)) // not working
-      .attr("fill", (d, i) =>
-        i === pillarData.length - 1 ? pillarColor : "#fff",
-      )
-      .attr("stroke", pillarColor)
-      .attr("stroke-width", 2);
 
     // Value label above (all points)
     svg

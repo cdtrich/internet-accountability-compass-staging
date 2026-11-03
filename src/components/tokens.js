@@ -70,6 +70,35 @@ export const inkMuted = "#555";
 // Hairline outline for legend swatches and bars
 export const swatchOutline = { stroke: ink, strokeWidth: 0.5 };
 
+// Provenance markers on indicator charts (value_status from dfiFull.csv.R):
+// published = filled, computed (carried/backdated) = hollow. The hollow fill
+// is opaque so the line does not show through; cards are transparent
+// (style.css), so it uses the page background behind them.
+export const statusMarkers = {
+  radius: 4,
+  radiusHover: 6,
+  strokeWidth: 1.5,
+  computedFill: "var(--theme-background)",
+  computedDash: "3 3", // line segments touching a computed point
+};
+
+export function isComputedStatus(status) {
+  return status === "carried" || status === "backdated";
+}
+
+// Applies marker fill/stroke for one value_status; colour = pillar colour.
+// Styles, not attributes, so the CSS variable resolves.
+export function styleStatusMarker(selection, color, status) {
+  return selection
+    .style("fill", (d) =>
+      isComputedStatus(status ?? d.value_status)
+        ? statusMarkers.computedFill
+        : color,
+    )
+    .style("stroke", color)
+    .style("stroke-width", statusMarkers.strokeWidth);
+}
+
 // Signed change with a direction glyph, e.g. "▲ +3", "▼ −2", "0"
 export function formatChange(change) {
   const rounded = Math.round(change);
@@ -93,6 +122,7 @@ export const tokens = {
   ink,
   inkMuted,
   swatchOutline,
+  statusMarkers,
 };
 
 export default tokens;

@@ -1,5 +1,34 @@
 import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
+import {
+  isComputedStatus,
+  statusMarkers,
+  styleStatusMarker,
+} from "./tokens.js";
+
+// unique clipPath ids across charts on one page (charts rebuild on resize)
+let clipCounter = 0;
+
+// Tooltip / <title> text for one value, from the provenance columns
+function statusText(d) {
+  const value = Math.round(d.value);
+  const edition = d.edition_year ?? d.year;
+  let detail;
+  if (d.value_status === "carried") {
+    detail = `computed: ${edition} edition carried forward`;
+  } else if (d.value_status === "backdated") {
+    detail = `computed: ${edition} edition applied to ${d.year}`;
+  } else {
+    detail = `${edition} edition`;
+    if (d.reference_year != null && d.reference_year !== d.year) {
+      detail += ` (data for ${d.reference_year})`;
+    }
+  }
+  return {
+    html: `<strong>${value}</strong> · ${detail}`,
+    plain: `${value} · ${detail}`,
+  };
+}
 
 /**
  * Historical Line Chart for Indicator
@@ -71,6 +100,7 @@ export function indicatorHistorical(
     .line()
     .x((d) => xScale(d.year))
     .y((d) => yScale(d.value))
+    .defined((d) => d.value !== null) // gaps for missing years (selected country)
     .curve(d3.curveMonotoneX);
 
   // Area generator (fills from the line down to the axis) — shares the
@@ -144,49 +174,84 @@ export function indicatorHistorical(
   const selectedCountryData = byCountry.get(country);
   if (selectedCountryData) {
     const sortedData = selectedCountryData.sort((a, b) => a.year - b.year);
+    const byYear = new Map(sortedData.map((d) => [d.year, d]));
 
-    g.append("path")
-      .datum(sortedData)
-      .attr("fill", "none")
-      .attr("stroke", pillarColor)
-      .attr("stroke-width", 3)
-      .attr("d", line);
+    // one slot per year, so a missing year stays a gap in the line
+    const years = d3.range(yearExtent[0], yearExtent[1] + 1);
+    const slots = years.map((year) => byYear.get(year) ?? { year, value: null });
 
-    // Dots for selected country (all hollow except last)
+    // segments between consecutive years; dashed if either end is computed
+    const segments = { solid: [], dashed: [] };
+    d3.pairs(years).forEach(([y0, y1]) => {
+      const a = byYear.get(y0);
+      const b = byYear.get(y1);
+      if (!a || !b) return;
+      const computed =
+        isComputedStatus(a.value_status) || isComputedStatus(b.value_status);
+      segments[computed ? "dashed" : "solid"].push([y0, y1]);
+    });
+
+    // one curved path, split per segment by clipping to its x-range
+    // (curveMonotoneX is monotone in x, so the pieces do not overlap)
+    const clipId = `indicator-historical-clip-${++clipCounter}`;
+    const defs = svg.append("defs");
+    Object.entries(segments).forEach(([kind, ranges]) => {
+      if (ranges.length === 0) return;
+      defs
+        .append("clipPath")
+        .attr("id", `${clipId}-${kind}`)
+        .selectAll("rect")
+        .data(ranges)
+        .join("rect")
+        .attr("x", ([y0]) => xScale(y0))
+        .attr("width", ([y0, y1]) => xScale(y1) - xScale(y0))
+        .attr("y", -margin.top)
+        .attr("height", height);
+
+      g.append("path")
+        .datum(slots)
+        .attr("fill", "none")
+        .attr("stroke", pillarColor)
+        .attr("stroke-width", 3)
+        .attr(
+          "stroke-dasharray",
+          kind === "dashed" ? statusMarkers.computedDash : null,
+        )
+        .attr("clip-path", `url(#${clipId}-${kind})`)
+        .attr("d", line);
+    });
+
+    // Markers for every value: filled = published, hollow = computed
     g.selectAll(".selected-dot")
       .data(sortedData)
       .join("circle")
       .attr("class", "selected-dot")
       .attr("cx", (d) => xScale(d.year))
       .attr("cy", (d) => yScale(d.value))
-      .attr("r", (d, i) => (i === sortedData.length - 1 ? 5 : 3))
-      .attr("fill", (d, i) =>
-        i === sortedData.length - 1 ? pillarColor : "#fff",
-      )
-      .attr("stroke", pillarColor)
-      .attr("stroke-width", 2)
+      .attr("r", statusMarkers.radius)
+      .call(styleStatusMarker, pillarColor)
       .style("cursor", "pointer")
+      .call((circles) =>
+        circles.append("title").text((d) => statusText(d).plain),
+      )
       .on("mouseenter", function (event, d) {
         d3.select(this)
           .transition()
           .duration(150)
-          .attr("r", (d, i) => (i === sortedData.length - 1 ? 7 : 5));
+          .attr("r", statusMarkers.radiusHover);
 
-        tooltip
-          .style("visibility", "visible")
-          .html(`<strong>${Math.round(d.value)}</strong> (${d.year})`);
+        tooltip.style("visibility", "visible").html(statusText(d).html);
       })
       .on("mousemove", function (event) {
         tooltip
           .style("top", event.pageY - 10 + "px")
           .style("left", event.pageX + 10 + "px");
       })
-      .on("mouseleave", function (event, d) {
-        const i = sortedData.indexOf(d);
+      .on("mouseleave", function () {
         d3.select(this)
           .transition()
           .duration(150)
-          .attr("r", i === sortedData.length - 1 ? 5 : 3);
+          .attr("r", statusMarkers.radius);
 
         tooltip.style("visibility", "hidden");
       });
