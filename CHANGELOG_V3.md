@@ -1,5 +1,16 @@
 # Changelog: v3
 
+## 2026-11-03 — Provenance markers: tooltip names the status; long legend label back
+
+- **indicatorHistorical.js**: tooltip and `<title>`: published "**8**", carried
+  "**100** (carried forward)", backdated "**5** (backdated)" (replaces "(computed)").
+- **statusLegend.js**: second label back to "Computed (carried forward or backdated)";
+  the ≤600px column also gets `max-width: 100%`.
+
+**Verify** (AFG, Historical): at 361 and 393px both markers at left edge 32px, column
+fits (right edge 293 / 322px); 1440px one centred row; tooltips as above.
+**Rollback**: revert this commit.
+
 ## 2026-11-03 — Provenance markers: shorter tooltip, stacked legend on phones
 
 - **indicatorHistorical.js**: tooltip and `<title>` name the status only when computed:

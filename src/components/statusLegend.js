@@ -33,6 +33,7 @@ const css = `
     flex-direction: column;
     align-items: flex-start;
     width: fit-content;
+    max-width: 100%;
     margin-inline: auto;
   }
 }
@@ -56,7 +57,7 @@ export function statusLegend() {
 
   const items = [
     { status: "actual", label: "Published in that year's edition" },
-    { status: "carried", label: "Computed value" },
+    { status: "carried", label: "Computed (carried forward or backdated)" },
   ];
 
   const size = 2 * (statusMarkers.radius + statusMarkers.strokeWidth);

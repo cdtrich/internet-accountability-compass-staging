@@ -10,9 +10,14 @@ import {
 let clipCounter = 0;
 
 // Tooltip / <title> text for one value; status only when it is computed
+const statusSuffix = {
+  carried: " (carried forward)",
+  backdated: " (backdated)",
+};
+
 function statusText(d) {
   const value = Math.round(d.value);
-  const suffix = isComputedStatus(d.value_status) ? " (computed)" : "";
+  const suffix = statusSuffix[d.value_status] ?? "";
   return {
     html: `<strong>${value}</strong>${suffix}`,
     plain: `${value}${suffix}`,
