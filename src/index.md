@@ -240,6 +240,7 @@ if (mapMode === "latest") {
 <div class="body-text">
   <div
     class="grid keystats-grid ${mapMode === 'latest' ? 'grid-cols-4' : 'grid-cols-3'}"
+    data-tour="figures"
   >
     ${statsData.map((stat) => html`
     <div class="card key">

@@ -28,6 +28,24 @@ Parent commit for comparisons: `1e73e1c` (dev). Both builds use the staging base
 - Storage-stub check on the final build: PASS (storage-stub.log): no auto-start, no console
   errors, opt-out hidden, "?" opens, Finish and Esc close, "?" reopens.
 
+## 0b. Step 1 targets the key figures (3 Nov 2026)
+
+- `data-tour="figures"` on the key-figure grid in src/index.md (attribute only); step 1 targets
+  it, fallback the map. `data-tour="legend"` removed from mapTotalD3.js (nothing else used it).
+- The cards show in both modes, but **in Historical they are three change cards** (▼ Decrease,
+  No change, ▲ Increase), so step 1's "four categories, from Off track to Leading" is true in
+  Latest only. Auto-start always opens in Latest; only a visitor who switches to Historical and
+  then presses "?" sees the mismatch.
+- Step 1 card goes **below** the figures (`place: ["below"]`), and the scroll keeps the Latest /
+  Historical switch (`.mode-toggle`, `keep`) in view above the ring, so the switch step 2 names
+  is visible. Checked (scripts/tour-steps.cjs, now also reports the switch):
+  1200x800, 768x1024, 375x667: card fully visible, below the ring, switch on screen and not
+  under the card or ring. **Frames under 420px** (1200x300, 390x480): the card docks at the
+  top and covers the switch; at 1200x300 the frame is too short for card + figures, so step 1 is
+  card-only (no ring). Card fully visible in all cases; it scrolls internally at 1200x300.
+- Size from dist/: 8,063 B gzip as built here (Windows checkout, CRLF); **8,017 B** with LF line
+  endings as a Linux CI build ships it. Under 8 KB either way.
+
 ## 1. What the code does today (before the tour)
 
 - Total map (mapTotalD3.js): a click on any country, with or without data, opens
@@ -125,7 +143,7 @@ Controls: "Step n of N", Back, Next / Finish, "Skip tour", "Don't show again".
 
 | Step | Title | Body as shipped | Change against the brief, and why |
 |---|---|---|---|
-| 1 (legend, fallback map) | Total score at a glance | Each country is coloured by its overall Internet Accountability Score, from Off track to Leading. The figures above the map count the countries in each category. Hatched countries, as in this legend, don't have enough data to be scored. | As asked. |
+| 1 (key figures, fallback map; card below, switch kept in view) | Total score at a glance | Each country is coloured by its overall Internet Accountability Score. These figures show the four categories, from Off track to Leading, and how many countries fall into each. Hatched countries on the map don't have enough data to be scored. | 3 Nov: target moved from the legend (Latest shows only "Not enough data") to the key-figure cards. Card labels = binLabels; card colours come from getOrdinalCategoryScale (binLabels → binColors), the same tokens as the map. |
 | 2 desktop (zoom controls) | Explore the map | Hover over a country for its details and click it to open its page. Zoom with the + and − buttons or Ctrl/⌘ + scroll; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year. | "how they have changed over time" → "the change since the previous year" (claim a). |
 | 2 touch, `(hover: none)` (map) | Explore the map | Tap a country to open its page. Pinch to zoom; the ⌂ button resets the view. The Latest / Historical switch above the figures shows current scores or the change since the previous year. | Same change (claim a). |
 | 3 desktop (nav) | Find your way around | Use the menu to move between sections: • **Map** All countries' scores on one map. • **Countries** Compare countries across the four dimensions. • **Directions** The four dimensions behind the score, each mapped. • **Resources** Curated sources, analysis and projects. • **Perspectives** Analysis, commentaries and opinions. • **Methodology** How the Compass and its scores are built. | As asked; rendered as a list. |

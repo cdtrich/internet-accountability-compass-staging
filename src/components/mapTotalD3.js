@@ -760,7 +760,6 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
   const legend = svg
     .append("g")
     .attr("class", "map-legend")
-    .attr("data-tour", "legend") // onboarding tour anchor (tour.js)
     .attr(
       "transform",
       `translate(${(width - legendBlockWidth) / 2 + 20}, ${height + 40})`,

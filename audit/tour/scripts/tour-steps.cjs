@@ -25,7 +25,10 @@ const [url, w, h, out, touch] = process.argv.slice(2);
         frame: [fw, fh], ring: noRing ? "none" : rr, card: cr, ringInside: noRing || inside(rr), cardInside: inside(cr),
         overlap: !noRing && rr[0] < cr[2] && cr[0] < rr[2] && rr[1] < cr[3] && cr[1] < rr[3], cardScroll: card.scrollHeight > card.clientHeight, hScroll: de.scrollWidth > de.clientWidth, scrollY: Math.round(scrollY),
         focus: document.activeElement?.className || document.activeElement?.tagName, optoutHidden: document.querySelector(".iac-tour-optout").hidden,
-        inert: document.getElementById("observablehq-center").inert };
+        inert: document.getElementById("observablehq-center").inert,
+        // Latest/Historical toggle: on screen, inside the ring (lit), or under the card (hidden)?
+        toggle: (() => { const t = R(document.querySelector(".mode-toggle")), hit = (a, b) => a[0] < b[2] && b[0] < a[2] && a[1] < b[3] && b[1] < a[3];
+          return { rect: t, onScreen: hit(t, [0, 0, fw, fh]), underCard: hit(t, cr), inRing: !noRing && t[0] >= rr[0] && t[1] >= rr[1] && t[2] <= rr[2] && t[3] <= rr[3] }; })() };
     });
     console.log(JSON.stringify(g));
     if (out) await p.screenshot({ path: path.join(out, `${w}x${h}${touch ? "_touch" : ""}_step${i + 1}.png` ) });

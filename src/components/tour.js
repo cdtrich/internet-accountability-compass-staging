@@ -44,7 +44,7 @@ const COPY = {
     steps: {
       legend: {
         title: "Total score at a glance",
-        body: "Each country is coloured by its overall Internet Accountability Score, from Off track to Leading. The figures above the map count the countries in each category. Hatched countries, as in this legend, don't have enough data to be scored.",
+        body: "Each country is coloured by its overall Internet Accountability Score. These figures show the four categories, from Off track to Leading, and how many countries fall into each. Hatched countries on the map don't have enough data to be scored.",
       },
       explore: {
         title: "Explore the map",
@@ -79,9 +79,15 @@ const COPY = {
 
 // Steps per layout. targets: selectors tried in order (fallbacks).
 // place: preferred card sides, tried in order before docking.
+// keep: element above the target to keep in view when the card goes below.
 function stepsFor(mobile) {
   const steps = [
-    { id: "legend", targets: ['[data-tour="legend"]', '[data-tour="map"]'] },
+    {
+      id: "legend",
+      targets: ['[data-tour="figures"]', '[data-tour="map"]'],
+      place: ["below"],
+      keep: ".mode-toggle",
+    },
     {
       id: "explore",
       targets: mobile
@@ -421,14 +427,22 @@ function place(scroll) {
             ? band[0] + (avail - ringH) / 2 + RING_PAD
             : band[0] + RING_PAD;
     } else if (stacked) {
-      const visible = r.top - RING_PAD >= top && r.bottom + RING_PAD <= h;
-      const room =
-        r.top - RING_PAD - GAP - cardH >= top + EDGE ||
-        r.bottom + RING_PAD + GAP + cardH <= h - EDGE;
+      // Card below the ring when the step asks for it; then also keep
+      // step.keep (the Latest / Historical switch above the figures) in view
+      const below = step.place?.[0] === "below";
+      const avail = h - top - 2 * EDGE;
+      const k = below && step.keep && document.querySelector(step.keep);
+      let lead = k ? Math.max(0, r.top - RING_PAD - k.getBoundingClientRect().top) : 0;
+      if (lead + ringH + GAP + cardH > avail) lead = 0;
+      const visible = r.top - RING_PAD - lead >= top && r.bottom + RING_PAD <= h;
+      const fitsBelow = r.bottom + RING_PAD + GAP + cardH <= h - EDGE;
+      const room = below
+        ? fitsBelow
+        : fitsBelow || r.top - RING_PAD - GAP - cardH >= top + EDGE;
       if (!visible || !room)
-        want =
-          top + EDGE + (h - top - 2 * EDGE - (cardH + GAP + ringH)) / 2 +
-          cardH + GAP + RING_PAD;
+        want = below
+          ? top + EDGE + (avail - (lead + ringH + GAP + cardH)) / 2 + lead + RING_PAD
+          : top + EDGE + (avail - (cardH + GAP + ringH)) / 2 + cardH + GAP + RING_PAD;
     } else if (r.top < top + RING_PAD || r.bottom > h - RING_PAD) {
       want = top + (h - top - ringH) / 2 + RING_PAD;
     }

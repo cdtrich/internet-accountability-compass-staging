@@ -1,5 +1,25 @@
 # Changelog: v3
 
+## 2026-11-03 — Onboarding tour: step 1 points at the key figures
+
+Branch `feature/tour`. Detail: audit/tour/report.md, section 0b.
+
+- **What**: step 1 ("Total score at a glance") now rings the key-figure cards
+  (`data-tour="figures"` on the grid in src/index.md, attribute only; fallback the map)
+  instead of the map legend, which in Latest mode shows only "Not enough data".
+  `data-tour="legend"` removed from mapTotalD3.js. New step 1 copy names the four
+  categories and their counts; card labels match binLabels, card colours use the same
+  bin tokens as the map.
+- The step 1 card sits below the figures and the scroll keeps the Latest / Historical
+  switch in view above them, so the switch step 2 mentions is visible (frames ≥420px tall).
+- **Known**: in Historical the cards are three change cards, so "four categories" is true
+  in Latest only (auto-start always opens in Latest). In frames under 420px the docked card
+  covers the switch; at 1200x300 step 1 has no ring (card only).
+- **Size**: tour.js + tour.css 8,017 B gzip (LF, as CI builds it).
+
+**Verify**: `/?tour=1` at 1200x800 → ring on the four cards, card below them, switch visible above.
+**Rollback**: revert this commit.
+
 ## 2026-11-02 — Onboarding tour: review changes (A, B, copy)
 
 Branch `feature/tour`. Detail: audit/tour/report.md, section 0.
