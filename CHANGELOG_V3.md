@@ -1,5 +1,79 @@
 # Changelog: v3
 
+## 2026-11-03 — UI tokens, phase 1 (CSS only)
+
+Branch `feature/ui-tokens` (tag `pre-ui-tokens` = dev before). Files: src/style.css,
+src/modeToggle.css, src/custom-legend.css. Values only: no selector or stylesheet-order
+changes, except three new rules (sourcecard focus, zoom-button hover, mobile toggle height).
+Inventory behind it: INVENTORY_UI.md (untracked).
+
+**Tokens** (new `:root` block in style.css, next to the theme block; comment: keep in sync with
+components/tokens.js `ink`, `inkMuted`, `bins.leading`):
+`--ui-radius: 4px`, `--ui-border-color: #ddd`, `--ui-shadow: 0 2px 8px rgb(0 0 0 / 0.15)`,
+`--ui-text-xs: 0.6875rem` (11px), `--ui-text-sm: 0.75rem` (12px), `--ui-text-md: 0.875rem` (14px),
+`--ui-ink: #222`, `--ui-ink-muted: #555`, `--ui-accent: #007162`, `--ui-surface: #fff`,
+`--ui-transition: 0.2s ease`, `--ui-hover-filter: brightness(0.95)`,
+`--ui-focus: 2px solid var(--hover-color)`, `--z-tooltip: 1100`.
+`--theme-foreground-focus` is now `var(--ui-accent)` (same value).
+
+**Computed-style changes** (dev server, puppeteer-core; home, perspectives, directions, AUS at
+1280 and 390px; normal / hover / focus; script outside the repo). Every difference found is
+listed; all are intended. Colour changes also move `border-*-color` and `outline-color`
+(both `currentColor`, no visible border or outline).
+
+| component | property | before | after | intended |
+|---|---|---|---|---|
+| .chart-tooltip | padding | 8px | 10px 12px | Y |
+| .chart-tooltip | box-shadow | none | 0 2px 8px rgb(0 0 0 / .15) | Y |
+| .chart-tooltip | z-index | 1000 | 1100 | Y |
+| .chart-tooltip | width (AUS 390, follows padding) | 144.4px | 136.4px | Y |
+| .chart-tooltip / .tooltip-small | font-size | 12px / 11px | 12px / 11px (rem tokens) | Y (no change) |
+| .mode-toggle-item (unselected) | color | #111 | #222 | Y |
+| .mode-toggle-item (unselected) :hover | background | #d0d0d0 | #e0e0e0 + brightness(0.95) | Y |
+| .mode-toggle-item.selected :hover | background | #000 | #222 + brightness(0.95) | Y |
+| .mode-toggle-item ≤768px | display / min-height / height | block / auto / 21px | flex, centred / 44px / 44px content (60px box incl. padding) | Y |
+| .sources-legend-item | padding | 10px 28px | 8px 24px | Y |
+| .legend-item | font-size, radius, transition, hover filter | 14px, 4px, all .2s, .95 | same values via tokens | Y (no change) |
+| .sourcecard | border-radius | 10px | 4px | Y |
+| .sourcecard | transition | bg, color .3s | bg, color, transform, box-shadow .2s | Y |
+| .sourcecard:hover | transform | scale(1.05) | scale(1.02) | Y |
+| .sourcecard:hover | box-shadow | 0 4px 8px rgba(0,0,0,.3) | 0 2px 8px rgb(0 0 0 / .15) | Y |
+| .sourcecard:hover | font-weight | 700 | 500 | Y |
+| a:focus-visible .sourcecard | outline | none | 2px solid #000, offset 2px | Y |
+| .desktop-notice (≤640px) | color | #333 | #222 | Y |
+| .desktop-notice | border-bottom-color / font-size | #d0e8ff / 14px | #ddd / 14px | Y |
+| .zoom-button:hover circle | fill | white | #f2f2f2 | Y |
+| .blog-date | color | #999 | #555 | Y |
+| .blog-toc-date | color | #595959 | #555 | Y |
+| .blog-toc li | border-left-color | #e0e0e0 | #ddd | Y |
+| .toc-toggle-button (390) | color | #999 | #555 | Y |
+| .card (AUS) | border-radius | 12px (Framework card.css) | 4px | Y |
+
+**Notes from the check**
+- Tooltip child font sizes, unchanged (reported, not fixed): `.chart-tooltip` 12px container;
+  inline `<strong>` 28px (polar) / 42px (map); unstyled `<strong>` country name and inline
+  polar `<span>` render 16px (`div > *` rule); `.map-tooltip` 14px container, inline label 12px,
+  score 42px, name 16px, pillar list 11px.
+- `.card` on top-level pages (index, countries, directions): background transparent, border 0,
+  no overflow clipping, so the radius paints nothing (no visible change).
+- At 1280px the map zoom buttons sit at x 68-108px, under the fixed 100px sidebar: the mouse
+  hits the nav, so the hover (and the buttons) are unreachable there. Pre-existing, not fixed.
+  Hover verified at 390px.
+- Not captured (hidden by design): desktop notice at 1280, zoom +/− at 390, mobile blog ToC
+  while closed, ToC button at 1280.
+- Size: style.css +1,127 B raw, +360 B gzip -9 (source, LF); top-level pages load it twice
+  (minified bundle + link). modeToggle.css +84 B gzip, custom-legend.css +7 B gzip.
+
+**Deferred**: Phase 2 (JS inline styles: map tooltip, scroll message, zoom buttons, legend
+colours, sources.js); Phase 3 (keyboard access for toggle, legend items, zoom buttons);
+tooltip title size, pending a decision on the child font-size table above.
+
+**Rollback**: `git switch dev; git branch -D feature/ui-tokens` (tag `pre-ui-tokens` marks the
+starting point).
+
+- 2026-11-04 recheck: mode toggle hover is `filter: var(--ui-hover-filter)` only on both states (no background swap; already so in phase 1). Rendered heights: toggle 37px at 1280, 60px at 390.
+- FLAG (not fixed, predates phase 1): at ≤768px `.legend-item` and `.sources-legend-item` also render 60px, not 44px (`min-height: 44px` + 8px padding, `content-box`; sources item was 64px before phase 1). The toggle is left at the same 60px, so no `box-sizing` change.
+
 ## 2026-11-03 — Provenance markers: tooltip names the status; long legend label back
 
 - **indicatorHistorical.js**: tooltip and `<title>`: published "**8**", carried

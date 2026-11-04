@@ -10,39 +10,49 @@
 .mode-toggle-item {
   padding: 8px 24px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--ui-text-md);
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all var(--ui-transition);
   border: none;
   user-select: none;
 }
 
 /* First item - rounded left */
 .mode-toggle-item:first-child {
-  border-radius: 4px 0 0 4px;
+  border-radius: var(--ui-radius) 0 0 var(--ui-radius);
 }
 
 /* Last item - rounded right */
 .mode-toggle-item:last-child {
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 var(--ui-radius) var(--ui-radius) 0;
 }
 
 /* Unselected state - light gray */
 .mode-toggle-item:not(.selected) {
   background-color: #e0e0e0;
-  color: #111;
+  color: var(--ui-ink);
 }
 
 .mode-toggle-item:not(.selected):hover {
-  background-color: #d0d0d0;
+  filter: var(--ui-hover-filter);
 }
 
 /* Selected state - dark gray */
 .mode-toggle-item.selected {
-  background-color: #222;
+  background-color: var(--ui-ink);
   color: white;
 }
 
 .mode-toggle-item.selected:hover {
-  background-color: #000;
+  filter: var(--ui-hover-filter);
+}
+
+/* 44px tap target on phones */
+@media (max-width: 768px) {
+  .mode-toggle-item {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

@@ -275,7 +275,7 @@ a.blog-img-link {
 .blog-toc li {
   margin-bottom: 1rem;
   padding-left: 0.6rem;
-  border-left: 2px solid #e0e0e0;
+  border-left: 2px solid var(--ui-border-color);
   transition: border-color 0.15s;
 }
 
@@ -303,7 +303,7 @@ a.blog-img-link {
 .blog-toc-date {
   display: block;
   font-weight: 400;
-  color: #595959;
+  color: var(--ui-ink-muted);
   font-size: 0.72rem;
 }
 
@@ -321,7 +321,7 @@ a.blog-img-link {
   cursor: pointer;
   font-family: var(--sans-serif);
   font-size: 0.85rem;
-  color: var(--text-color);
+  color: var(--ui-ink-muted);
   padding: 10px 12px;
   align-items: center;
   gap: 6px;
@@ -378,7 +378,7 @@ div[class*="-swatches-"] {
 /* country practices cards */
 .sourcecard {
   /* border: 1px solid #fff; Thin white outline */
-  border-radius: 10px; /* Rounded edges */
+  border-radius: var(--ui-radius); /* Rounded edges */
   font-size: 1em;
   font-weight: 500;
   /* font-size: 0.9em; */
@@ -386,8 +386,10 @@ div[class*="-swatches-"] {
   padding: 12px; /* Add some padding inside the card */
   text-align: left; /* Center the text */
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease; /* Smooth transition for background and text color */
+    background-color var(--ui-transition),
+    color var(--ui-transition),
+    transform var(--ui-transition),
+    box-shadow var(--ui-transition);
 }
 
 /* Ensure the text inside the card (span) is white */
@@ -408,13 +410,18 @@ a:hover {
 /* Hover effect */
 .sourcecard:hover {
   /* border: 2px solid #fff; */
-  transform: scale(1.05);
+  transform: scale(1.02);
   /* background-color: var(--hovered-card-color); Fill with white on hover */
   /* border-color: 1px var(--hovered-card-border); Thin white outline */
   /* border-width: 10px; Thin white outline */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  font-weight: 700;
+  box-shadow: var(--ui-shadow);
   /* color: #000; Change the general text color on hover */
+}
+
+/* Keyboard focus: the card is wrapped in a plain <a> (components/sources.js) */
+a:focus-visible .sourcecard {
+  outline: var(--ui-focus);
+  outline-offset: 2px;
 }
 
 /* Ensure the span text changes color on hover */
@@ -426,11 +433,11 @@ a:hover {
 
 .desktop-notice {
   background-color: #4ed0bf33;
-  color: #333;
+  color: var(--ui-ink);
   padding: 12px 20px;
   text-align: center;
-  border-bottom: 1px solid #d0e8ff;
-  font-size: 14px;
+  border-bottom: 1px solid var(--ui-border-color);
+  font-size: var(--ui-text-md);
 }
 
 /* Hide on desktop screens */
@@ -451,20 +458,21 @@ a:hover {
 .chart-tooltip {
   position: absolute;
   visibility: hidden;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 8px;
+  background-color: var(--ui-surface);
+  border: 1px solid var(--ui-border-color);
+  border-radius: var(--ui-radius);
+  box-shadow: var(--ui-shadow);
+  padding: 10px 12px;
   font-family: var(--sans-serif);
-  font-size: 12px;
+  font-size: var(--ui-text-sm);
   pointer-events: none;
-  z-index: 1000;
+  z-index: var(--z-tooltip);
 }
 
 /* map tooltips with sparkline */
 .tooltip-small {
-  font-size: 11px;
-  color: #666;
+  font-size: var(--ui-text-xs);
+  color: var(--ui-ink-muted);
   line-height: 0.5;
 }
 
@@ -694,6 +702,11 @@ textarea {
 /* zoomable d3js */
 .map-scroll-overlay {
   transition: opacity 0.2s;
+}
+
+/* Zoom buttons: circle fill is an SVG presentation attribute, so CSS wins */
+.zoom-button:hover circle {
+  fill: #f2f2f2;
 }
 
 .map-scroll-message span {
@@ -961,7 +974,7 @@ a[href].observablehq-header-anchor {
   .legend-item:first-child,
   .legend-item:last-child,
   .legend-item:only-child {
-    border-radius: 4px;
+    border-radius: var(--ui-radius);
   }
 
   /* Maps: drop +/- zoom buttons in favor of pinch-to-zoom; keep reset */
@@ -1063,6 +1076,7 @@ a[href].observablehq-header-anchor {
   background-color: rgba(0, 0, 0, 0);
   padding: 0;
   border: 0;
+  border-radius: var(--ui-radius);
   margin: 1rem 0;
   font: 1rem var(--sans-serif);
 }
@@ -1250,8 +1264,26 @@ observablehq-loading:before {
 }
 :root {
   --theme-foreground: #000;
-  --theme-foreground-focus: #007162;
+  --theme-foreground-focus: var(--ui-accent);
   --theme-background-a: #fff;
+}
+/* UI tokens (phase 1): tooltips, toggles, legends, cards, notices.
+   Keep in sync with components/tokens.js: ink, inkMuted, bins.leading */
+:root {
+  --ui-radius: 4px;
+  --ui-border-color: #ddd;
+  --ui-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  --ui-text-xs: 0.6875rem;
+  --ui-text-sm: 0.75rem;
+  --ui-text-md: 0.875rem;
+  --ui-ink: #222;
+  --ui-ink-muted: #555;
+  --ui-accent: #007162;
+  --ui-surface: #fff;
+  --ui-transition: 0.2s ease;
+  --ui-hover-filter: brightness(0.95);
+  --ui-focus: 2px solid var(--hover-color);
+  --z-tooltip: 1100;
 }
 
 /* hide output of search bar */
@@ -1300,7 +1332,7 @@ a.blog-preview-tile:hover .blog-img-wrap img {
 }
 .blog-date {
   font-size: 0.8rem;
-  color: #999;
+  color: var(--ui-ink-muted);
   margin: 0;
   display: block;
 }
