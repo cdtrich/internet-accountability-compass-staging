@@ -12,6 +12,7 @@ import {
   appendNoDataPattern,
   formatChange,
 } from "./tokens.js";
+import { tooltipHTML } from "./tooltipHTML.js";
 
 /**
  * D3 Map for Total Score
@@ -136,10 +137,8 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
         .attr("y", yScale(d.value) - 8)
         .attr("text-anchor", "middle")
         .style("font-size", "10px")
-        // .style("font-weight", "bold")
-        .attr("fill", "#000")
-        // .attr("fill", dotColor)
-        // .attr("fill", "#000")
+        .style("font-weight", "bold")
+        .attr("fill", ink)
         .text(`${Math.round(d.value)}`);
 
       // Year label below (only first and last)
@@ -475,7 +474,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
   }
 
   // Tooltip
-  // Look from .chart-tooltip (style.css); max-width from .map-tooltip
+  // Look and line-height from .chart-tooltip (style.css); content from tooltipHTML
   const tooltip = d3
     .select("body")
     .selectAll(".map-tooltip")
@@ -484,8 +483,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
     .attr("class", "chart-tooltip map-tooltip")
     .style("position", "absolute")
     .style("visibility", "hidden")
-    .style("pointer-events", "none")
-    .style("line-height", "1.6");
+    .style("pointer-events", "none");
 
   // Hover interactions
   mapGroup
@@ -542,8 +540,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
             note === "NA" ? Math.round(value) : Math.round(value) + note;
           return `${pillar}: ${scoreText}`;
         })
-        .filter(Boolean)
-        .join("<br>");
+        .filter(Boolean);
 
       // Generate sparkline
       const sparklineHTML = createTooltipSparkline(
@@ -554,39 +551,42 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
         globalYearDomain,
       );
 
-      let tooltipHTML;
+      let tooltipContent;
       if (mode === "historical") {
         const change = d.properties.change;
 
-        tooltipHTML = `
-          <strong style="font-size: 28px; font-weight: bold; color: ${ink}; margin-bottom: 8px;">
-          ${formatChange(change)}
-          </strong><strong class="tooltip-title">${fullData.properties.NAME_ENGL}</strong><br>
-          <span class="tooltip-small">Change in total Internet <br>Accountability Score (2024→2025)</span><br>          
-          ${sparklineHTML}
-        `;
+        tooltipContent = tooltipHTML({
+          value: formatChange(change),
+          kind: "change",
+          title: fullData.properties.NAME_ENGL,
+          notes: [
+            `Change in total Internet Accountability Score (${previousYear}→${latestYear})`,
+          ],
+          extra: sparklineHTML,
+        });
       } else {
-        const categoryDisplay =
-          fullData.properties.group_value === "NA"
-            ? "Not enough data"
-            : fullData.properties.group_value;
-
         const totalScore =
           fullData.properties["Total score"] || fullData.properties.total || 0;
 
-        tooltipHTML = `
-          <strong style="font-size: 12px; font-weight: 400; color: ${ink}; margin-bottom: 0px;">
-          Internet Accountability Score (IAS)
-          </strong><br>
-          <strong style="font-size: 42px; font-weight: bold; color: ${ink}; margin-top: 0px; margin-bottom: 8px;">
-            ${Math.round(totalScore)}
-          </strong>
-          <strong class="tooltip-title">${fullData.properties.NAME_ENGL}</strong> (${categoryDisplay})<br>
-          <span class="tooltip-small">${pillarScores}</span>
-        `;
+        // No category: name and "Not enough data" only
+        tooltipContent =
+          fullData.properties.group_value === "NA"
+            ? tooltipHTML({
+                title: fullData.properties.NAME_ENGL,
+                notes: ["Not enough data"],
+              })
+            : tooltipHTML({
+                value: Math.round(totalScore),
+                title: fullData.properties.NAME_ENGL,
+                context: [
+                  "Internet Accountability Score (IAS)",
+                  fullData.properties.group_value,
+                ],
+                notes: pillarScores,
+              });
       }
 
-      tooltip.style("visibility", "visible").html(tooltipHTML);
+      tooltip.style("visibility", "visible").html(tooltipContent);
 
       const svgRect = svg.node().getBoundingClientRect();
       tooltip
@@ -642,12 +642,12 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
         projectedCentroid[1] * transform.k + transform.y,
       ];
 
-      const tooltipHTML = `
-        <strong class="tooltip-title">${d.properties.NAME_ENGL}</strong><br>
-        <span class="tooltip-small">Not enough data</span>
-      `;
+      const tooltipContent = tooltipHTML({
+        title: d.properties.NAME_ENGL,
+        notes: ["Not enough data"],
+      });
 
-      tooltip.style("visibility", "visible").html(tooltipHTML);
+      tooltip.style("visibility", "visible").html(tooltipContent);
 
       const svgRect = svg.node().getBoundingClientRect();
       tooltip

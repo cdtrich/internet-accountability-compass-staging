@@ -2,6 +2,7 @@ import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
 import { wrapText } from "./wrapText.js";
 import { basePath } from "./basePath.js";
+import { tooltipHTML } from "./tooltipHTML.js";
 
 /**
  * Polar "bars" charts (v3): successors of polarD3 (small multiples) and
@@ -369,7 +370,7 @@ export function polarBarsD3(data, isMobile, options = {}) {
       .attr("text-anchor", "middle")
       .attr("font-size", 14)
       .text(
-        `${isNaN(totalScore) ? "Not enough data" : Math.floor(totalScore)} ${isNaN(totalScore) ? "" : `(${group})`}`,
+        `${isNaN(totalScore) ? "Not enough data" : Math.round(totalScore)} ${isNaN(totalScore) ? "" : `(${group})`}`,
       );
   }
 
@@ -383,10 +384,11 @@ export function polarBarsD3(data, isMobile, options = {}) {
   attachHover(
     svg,
     tooltip,
-    (d) => `
-      Score: <strong class="tooltip-title">${Math.floor(d.value)}</strong><br>
-      ${d.commitment_txt_cardinal}<br>
-    `,
+    (d) =>
+      tooltipHTML({
+        value: Math.round(d.value),
+        title: d.commitment_txt_cardinal,
+      }),
   );
 
   return svg.node();
@@ -445,13 +447,13 @@ export function polarCountryBarsD3(data, country, options = {}) {
 
   attachHover(svg, tooltip, (d) => {
     const scoreColor = fillScale.getColor(d.pillar_txt);
-    return `
-      <strong style="font-size: 28px; font-weight: bold; color: ${scoreColor}; margin-bottom: 8px;">
-      ${Math.floor(d.value)}</strong>
-      <br>
-      <span class="tooltip-title" style="color: ${scoreColor};">${d.commitment_txt_cardinal}</span><br>
-      ${d.pillar_txt}
-    `;
+    return tooltipHTML({
+      value: Math.round(d.value),
+      valueColor: scoreColor,
+      title: d.commitment_txt_cardinal,
+      titleColor: scoreColor,
+      context: [d.pillar_txt],
+    });
   });
 
   return svg.node();

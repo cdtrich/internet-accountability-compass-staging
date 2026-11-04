@@ -1,8 +1,8 @@
 import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
-import { ink } from "./tokens.js";
 import { wrapText } from "./wrapText.js";
 import { basePath } from "./basePath.js";
+import { tooltipHTML } from "./tooltipHTML.js";
 
 /**
  * D3 Heatmap with Linked Brushing
@@ -182,7 +182,7 @@ export function heatmap(data, isMobile, options = {}) {
       ) {
         return "";
       }
-      return Math.floor(d.value) + (d.note === " (partial data)" ? "*" : "");
+      return Math.round(d.value) + (d.note === " (partial data)" ? "*" : "");
     });
 
   // LINKED BRUSHING - Hover interactions
@@ -223,20 +223,27 @@ export function heatmap(data, isMobile, options = {}) {
 
   cells
     .on("mouseover", function (event, d) {
-      const valueText =
+      const noValue =
         d.value === "NA" ||
         d.value === null ||
         d.value === undefined ||
-        isNaN(d.value)
-          ? "No data"
-          : Math.floor(d.value);
+        isNaN(d.value);
       const partialNote = d.note === " (partial data)" ? " (partial data)" : "";
 
-      tooltip.style("visibility", "visible").html(`
-        <strong style="font-size: 28px; font-weight: bold; color: ${ink}; margin-bottom: 8px;"><strong>${valueText}</strong> ${partialNote}</strong><strong>${d.NAME_ENGL}</strong><br>
-        ${d.pillar_txt}<br>
-        <em>${d.group_value || "N/A"}</em>
-      `);
+      tooltip.style("visibility", "visible").html(
+        noValue
+          ? tooltipHTML({ title: d.NAME_ENGL, notes: ["Not enough data"] })
+          : tooltipHTML({
+              value: Math.round(d.value),
+              title: d.NAME_ENGL,
+              // no category row when it is missing
+              context: [
+                d.pillar_txt,
+                d.group_value === "N/A" ? "" : d.group_value,
+              ],
+              notes: partialNote ? ["Partial data"] : [],
+            }),
+      );
     })
     .on("mousemove", function (event) {
       // Get center of the rect

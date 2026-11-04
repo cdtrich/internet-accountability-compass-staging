@@ -465,24 +465,58 @@ a:focus-visible .sourcecard {
   padding: 10px 12px;
   font-family: var(--sans-serif);
   font-size: var(--ui-text-sm);
+  line-height: var(--tt-line-height);
+  color: var(--ui-ink);
+  /* max-width includes padding and border */
+  box-sizing: border-box;
+  max-width: var(--tt-max-width);
   pointer-events: none;
   z-index: var(--z-tooltip);
 }
 
-/* Total map tooltip (also .chart-tooltip) */
-.map-tooltip {
-  max-width: 300px;
+/* Tooltip anatomy (components/tooltipHTML.js): value, title, context, note */
+:root {
+  --tt-value-size: 1.75rem;
+  --tt-change-size: 1.25rem;
+  --tt-title-size: 1rem;
+  --tt-line-height: 1.4;
+  --tt-value-line-height: 1.15;
+  --tt-gap: 2px;
+  --tt-max-width: 260px;
 }
 
-/* Tooltip headings at body size; the `div > *` rule sets the same 1rem today */
-.tooltip-title {
-  font-size: 1rem;
+.tt-value {
+  font-size: var(--tt-value-size);
+  font-weight: 700;
+  line-height: var(--tt-value-line-height);
+  color: var(--ui-ink);
 }
 
-/* map tooltips with sparkline */
-.tooltip-small {
+.tt-value--change {
+  font-size: var(--tt-change-size);
+}
+
+.tt-title {
+  font-size: var(--tt-title-size);
+  font-weight: 700;
+  margin-top: var(--tt-gap);
+}
+
+.tt-context {
+  font-size: var(--ui-text-sm);
+  font-weight: 400;
+  margin-top: var(--tt-gap);
+}
+
+.tt-note {
   font-size: var(--ui-text-xs);
+  font-weight: 400;
   color: var(--ui-ink-muted);
+  margin-top: var(--tt-gap);
+}
+
+.chart-tooltip > :first-child {
+  margin-top: 0;
 }
 
 /* CHART STYLING */

@@ -5,23 +5,27 @@ import {
   statusMarkers,
   styleStatusMarker,
 } from "./tokens.js";
+import { tooltipHTML } from "./tooltipHTML.js";
 
 // unique clipPath ids across charts on one page (charts rebuild on resize)
 let clipCounter = 0;
 
-// Tooltip / <title> text for one value; status only when it is computed
+// <title> text for one value; status only when it is computed
 const statusSuffix = {
   carried: " (carried forward)",
   backdated: " (backdated)",
 };
 
+// Tooltip note per status; none for "actual"
+const statusNote = {
+  carried: "Carried forward",
+  backdated: "Backdated",
+};
+
 function statusText(d) {
   const value = Math.round(d.value);
   const suffix = statusSuffix[d.value_status] ?? "";
-  return {
-    html: `<strong>${value}</strong>${suffix}`,
-    plain: `${value}${suffix}`,
-  };
+  return { plain: `${value}${suffix}` };
 }
 
 /**
@@ -236,7 +240,14 @@ export function indicatorHistorical(
           .duration(150)
           .attr("r", statusMarkers.radiusHover);
 
-        tooltip.style("visibility", "visible").html(statusText(d).html);
+        tooltip
+          .style("visibility", "visible")
+          .html(
+            tooltipHTML({
+              value: Math.round(d.value),
+              notes: [statusNote[d.value_status]],
+            }),
+          );
       })
       .on("mousemove", function (event) {
         tooltip

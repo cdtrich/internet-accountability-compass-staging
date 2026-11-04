@@ -1,5 +1,109 @@
 # Changelog: v3
 
+## 2026-11-04 — UI tokens, phase 3 (one tooltip anatomy)
+
+Branch `feature/ui-tooltips` (tag `pre-ui-tooltips` = dev with phase 2 merged). Three commits:
+(1) rounding; (2) helper + CSS + the four maps + caption + sparkline labels; (3) the other five
+charts + dead-class removal + this entry. Template per chart: TOOLTIP_INVENTORY.md (untracked).
+
+**Anatomy** (`components/tooltipHTML.js`, rules next to `.chart-tooltip` in style.css). Rows in
+this order, empty rows skipped, text inserted as before (no escaping added):
+
+| row | class | size | weight | line-height | colour |
+|---|---|---|---|---|---|
+| value | `.tt-value` | 28px (`--tt-value-size` 1.75rem) | 700 | 1.15 | ink #222, or `valueColor` |
+| change value | `.tt-value.tt-value--change` | 20px (`--tt-change-size`) | 700 | 1.15 | ink |
+| title | `.tt-title` | 16px (`--tt-title-size`) | 700 | 1.4 | ink, or `titleColor` |
+| context, one per item | `.tt-context` | 12px (`--ui-text-sm`) | 400 | 1.4 | ink |
+| note, one per item | `.tt-note` | 11px (`--ui-text-xs`) | 400 | 1.4 | #555 (`--ui-ink-muted`) |
+| extra | (sparkline SVG) | | | | |
+
+Rows after the first get `margin-top: 2px` (`--tt-gap`). `.chart-tooltip` gains
+`line-height: 1.4`, `color: var(--ui-ink)` and `max-width: var(--tt-max-width)` (260px) with
+`box-sizing: border-box`. One token replaces the earlier 300px on `.chart-tooltip` and `.map-tooltip`
+(the `.map-tooltip` rule is gone; the class stays in mapTotalD3.js as the singleton selector).
+The border-box is an addition to the spec: without it, padding and border made the historical
+map tooltips 326px wide at the first 300px limit.
+At 260px (Brazil): Total Latest 211.1px (unchanged); Total, Pillar and Commitment Historical 260px.
+Only the change caption notes wrap (2 lines, as at 300px); no title or context row wraps.
+
+**Per chart**
+- **Total map**
+  - Latest: value, name, context "Internet Accountability Score (IAS)" + category, then one note per pillar. The `_ned`/`_note` logic is unchanged.
+  - group_value "NA": name + "Not enough data".
+  - Inline `line-height: 1.6` removed.
+- **Pillar and Commitment maps**
+  - Latest: value, name, category; "Partial data" note under the existing condition.
+  - Historical: change, name, caption note, sparkline.
+  - No data: name + "Not enough data".
+- **Sources map:** name, then context "Analysis: n".
+- **Polar multiples:** value, then commitment as the title ("Score:" prefix dropped).
+- **Polar single:** value and title in the pillar colour; pillar as context.
+- **Heatmap**
+  - Value, name, context pillar + category (category omitted when empty or "N/A"), "Partial data" note under the existing condition.
+  - No value: name + "Not enough data" (was "No data").
+- **Sparkline table:** value, then context year.
+- **Straight plot:** value, then label (country, or "N countries").
+- **Indicator historical**
+  - Value, plus note "Carried forward" / "Backdated"; nothing for "actual".
+  - The circle `<title>` text is unchanged.
+- **Sparklines:** Total map value labels bold and ink (were 400, #000), as on Pillar and Commitment. Nothing else in any sparkline changed (diffed: positions, sizes, fills, attributes).
+- **Dead classes:** `.tooltip-title` and `.tooltip-small` removed from style.css (grep: no users left). Unused leftovers also removed: heatmapD3's `ink` import, and indicatorHistorical's `statusText().html`.
+
+**Rounding** (commit 1, revertible on its own)
+- Displayed scores use `Math.round` everywhere: polar multiples total label and tooltip, polar single tooltip, heatmap cell labels and tooltip.
+- Remaining `Math.floor` calls are layout only (grid rows, label truncation, legend rows), plus the rollback-only polarD3/polarCountryD3, which aren't imported.
+- No binning uses a floored value: categories come from R `cut()` on the raw value.
+- Changed values today: **0**. Every score in the data is an integer: 0 of 2,027 polar marks, 172 polar totals and 945 heatmap cells; 0 of 13,504 dfiFull and 6,587 dfiCardinal values over all years.
+
+**Change caption is now derived**: `(${previousYear}→${latestYear})`, the variables the change is
+computed from (`latestYear = d3.max(data, year)`, `previousYear = latestYear - 1`). It reads
+**2025→2026** on all three maps (was the literal "2024→2025"). No forced line breaks.
+
+**Visible changes** (dev server, 1280px, each chart's own hover event; element screenshots and
+computed styles outside the repo; mobile and touch not checked)
+
+| component | before | after | intended |
+|---|---|---|---|
+| Latest map score (Total, Pillar, Commitment) | 42px, inline with the name | 28px row; name on its own row below | Y |
+| Total "IAS" label | 12px/400 above the score | 12px context row below the name | Y |
+| Category | "(On track)" bare text, 12px, after the name; heatmap `<em>` 16px italic | 12px context row, no brackets, not italic | Y |
+| Total pillar lines | 11px #000, one span | 11px #555, one note row each | Y |
+| Change value (Total) | 28px | 20px | Y |
+| Change caption | "(2024→2025)", forced `<br>`s | "(2025→2026)", wraps at 260px | Y |
+| Historical map tooltip width (Total / Pillar / Commitment) | 203.3 / 211.3 / 176px | 260px (max-width binds) | Y |
+| Names and body text | #000 | #222 (ink) | Y |
+| Heatmap score | 28px/900 (nested strong) | 28px/700 | Y |
+| Polar multiples | "Score: **56**" 12+16px, commitment 12px | 28px value, commitment 16px/700 title | Y |
+| Polar single commitment | 16px/400, pillar colour | 16px/700, pillar colour | Y |
+| Sparkline table, indicator, straight plot value | 16px (12px straight plot) | 28px | Y |
+| Straight plot order | name, value | value, name | Y |
+| Indicator status | " (carried forward)" 12px #000 inline | "Carried forward" 11px #555 note row | Y |
+| Sparkline table year | "(2026)" 12px inline | "2026" 12px row | Y |
+| No-data tooltips (Total, Commitment) | 66.8 / 64.5px tall | 61.8px (line-height 1.4) | Y |
+| Total sparkline value labels | 400, #000 | 700, #222 | Y |
+| Polar and heatmap displayed numbers | `Math.floor` | `Math.round` (0 values differ) | Y |
+
+**Checks**
+- Every text node in every tooltip is 28, 20, 16, 12 or 11px (sparkline SVG text excluded).
+- No tooltip is wider than 260px (checked at 300px for all charts; the four widest recaptured at 260px).
+- Captions read 2025→2026 on all three maps.
+- On-chart labels equal the tooltip values:
+  - Polar: 5 total labels match `total`; 5 marks' tooltip values match the data.
+  - Heatmap: 5 cells, plus the Total column for the same 5 countries.
+- Console on home, directions, countries (3 views), resources and AUS (2 views): only the
+  `404 /favicon.ico` on home, as before.
+
+**Deferred**
+- **Partial-data audit.** The checks never match the data, so "Partial data" never shows:
+  - Pillar map: tests `ned === "not enough data"`; the data has "Partial data" for 146 countries (NA for 120).
+  - Commitment map and heatmap: test `note === " (partial data)"`; the data has "NA" or "Not enough data".
+  - Total map pillar lines: test `_ned === "not enough data"`, against the same data.
+- Rounding in the rollback-only polarD3/polarCountryD3.
+
+**Rollback**: `git switch dev; git branch -D feature/ui-tooltips` (tag `pre-ui-tooltips`), or
+`git revert` any of the three commits (rounding is its own commit).
+
 ## 2026-11-04 — UI tokens, phase 2 (component JS + CSS)
 
 Branch `feature/ui-tokens-js` (tag `pre-ui-tokens-js` = dev before, phase 1 merged).
