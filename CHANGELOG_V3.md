@@ -1,5 +1,45 @@
 # Changelog: v3
 
+## 2026-11-04 — Partial data on the pillar and Total maps
+
+Direct on `dev` (tag `pre-partial-data` = 5c9ccb0). Components only: `mapPillarD3.js`,
+`mapTotalD3.js`. Basis: methodology rule 2 (a pillar score needs all three indicators). On the
+current data every pillar row without a value has ned "Partial data" (231 rows in 2026, 0
+exceptions), so every grey Latest country on the pillar map is a Partial-data country.
+
+**Pillar map**
+- One hatch for countries without a value (`white-diagonal-lines-map-ned`, grey base), both modes.
+  The second overlay (`ned === "Partial data"`, `white-diagonal-lines-map`) and its pattern are
+  removed (grep: no other user), so hatches no longer stack.
+- Legend: one grey-with-hatch entry, "Partial data" in Latest, "Not enough data" in Historical.
+  The dark "Partial data" swatch is gone.
+- Tooltip, no value: Latest "Partial data" when ned is "Partial data", else "Not enough data";
+  Historical stays "Not enough data". The dead `partialNote` (tested "not enough data") is removed.
+
+**Total map**: a pillar with value "NA" and ned "Partial data" now gets a note line
+"{Pillar}: Partial data", in pillar order (replaces the dead `_ned === "not enough data"` test).
+Numeric lines unchanged.
+
+**Verified** (dev server, 1280px, current data)
+- Grey countries: Latest 73, Historical 75 (unchanged); each has exactly one hatch; no other
+  country has an overlay. Pattern defs: only `white-diagonal-lines-map-ned`.
+- Historical-only grey: Bolivia and Nepal (2026 Connectivity 71 and 68, 2025 "Partial data", so
+  no change value). Grey with the same hatch; tooltip "Bolivia / Not enough data",
+  "Nepal / Not enough data".
+- Tooltips (all pass the phase 3 assertions: sizes in the set, width ≤ 260px, `.tt-*` tokens):
+  - Total Brazil: unchanged text, 211.1 × 185.7px.
+  - Total Afghanistan: "Connectivity and infrastructure: Partial data" added, 245.8 × 185.7px.
+  - Total Djibouti: three pillars "Partial data", Trust 41, 253.6 × 185.7px.
+  - Total Bahamas: four pillars "Partial data", 253.6 × 185.7px.
+  - Pillar Kiribati: Latest "Kiribati / Partial data" (84.8 × 61.8px); Historical
+    "Kiribati / Not enough data" (111 × 61.8px). Pillar Latest Brazil "80 / Brazil / Leading".
+- Console: home only `404 /favicon.ico` (dev server, as before); directions (both modes) clean.
+
+**Not changed**: commitment map, heatmap, sparkline table, polar charts, country page template.
+
+**Rollback**: `git reset --hard pre-partial-data` (only before any push), or `git revert` the
+component commit.
+
 ## 2026-11-04 — Data refresh: dfiCardinal cache
 
 Committed on `dev` as 86672ee (`src/.observablehq/cache/data/dfiCardinal.csv` only).
