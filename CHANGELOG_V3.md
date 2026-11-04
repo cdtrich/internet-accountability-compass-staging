@@ -1,5 +1,43 @@
 # Changelog: v3
 
+## 2026-11-04 — Data refresh: dfiCardinal cache
+
+Committed on `dev` as 86672ee (`src/.observablehq/cache/data/dfiCardinal.csv` only).
+
+**Why**: the committed cache (436f4e5, 26 Oct) predated the 3 Nov workbook update (f44d2bc).
+Framework rebuilds a cache only when the loader script is newer than it, and does not check the
+workbook. The cache was regenerated after the loader edit (0cd792b) touched the loader file.
+
+**Data rule**: the workbook follows methodology.md rule 2 (a pillar score needs all three
+indicators); the old cache did not (e.g. Andorra Connectivity 96 was the mean of two indicators).
+
+**Numbers** (old cache vs new)
+- 6,790 rows, 3,301 changed: value to NA 2,214, revised 1,087, NA to number 0; group_value
+  changed in 2,287 rows.
+- 2026 total scores unchanged (281 earlier-year totals changed).
+- 101 countries lose at least one 2026 pillar score (39 lose 1, 17 lose 2, 25 lose 3, 20 lose 4).
+- 2026 pillar rows with no value: 231, all with ned "Partial data" (0 exceptions). Countries with
+  no 2026 value per pillar: Connectivity 74, Rights 60, Responsibility 68, Trust 29.
+
+**Effects seen on the current data** (render check, no fixes)
+- Total map tooltip omits missing pillars for 79 countries.
+- Pillar map: stacked hatches on 73 grey countries; the "Partial data" legend entry describes no
+  country alone.
+- Heatmap drops 253 cells (148 blank slots, 21 countries absent).
+- Sparkline table has 17 empty rows.
+- Andorra page says "Partial data in ..." for pillars with no value.
+
+**Not yet served anywhere**: `staging/main` is still 0cd792b with the old cache.
+
+**Rollback**: `git reset --hard 0cd792b` (only before any push).
+
+**Open**
+- Partial-data wording and the hatch fix.
+- Heatmap and sparkline table presentation of missing values.
+- Andorra page text (template: needs regeneration, ask first).
+- A freshness check for the cache (workbook newer than cache).
+- `src/data/sources.csv.R` still reads a Google Sheet.
+
 ## 2026-11-04 — UI tokens, phase 3 (one tooltip anatomy)
 
 Branch `feature/ui-tooltips` (tag `pre-ui-tooltips` = dev with phase 2 merged). Three commits:
@@ -170,8 +208,10 @@ at 1280 and 390.
 **Notes**
 - `.legend-item` at 390 renders 58px, not 44: every label wraps to two lines in the half-width
   tile (2 × 21px + 16px padding). The 44px minimum now applies; content is taller.
-- The pillar map has data for all 266 countries in its default view, so its "Not enough data"
-  tooltip was not reachable; the commitment one (same markup) was captured.
+- The pillar map's default view (Connectivity, latest year) had a value for every country at the
+  time (stale cache), so its "Not enough data" tooltip was not reachable and the commitment one
+  (same markup) was captured. On the current data Connectivity has no 2026 value for 74 countries
+  (see "Data refresh: dfiCardinal cache", 2026-11-04).
 - Console (home, directions, AUS; also resources, countries): no page errors; one
   `404 /favicon.ico` on home from the dev server, before and after.
 
