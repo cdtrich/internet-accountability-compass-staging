@@ -13,43 +13,24 @@ library(here)
 
 # CONFIG ----------------------------------------------------------------------
 
-# "xlsx"   = committed workbook in src/data (reproducible, no network)
-# "gsheet" = live Google Sheet (previous behaviour; needs googlesheets4)
-DFI_SOURCE <- "xlsx"
+# single source of truth: committed workbook, no network
 DFI_XLSX <- here("src", "data", "Internet-Accountability-Index-V3.0.xlsx")
-DFI_SHEET_ID <- "15_2sax_UIxuyDnvFvwQD3ZKi-h5IyzDxZCxXwwR-9xA"
-
-if (DFI_SOURCE == "gsheet") {
-    library(googlesheets4)
-    gs4_deauth() # public/link-shareable sheet
-}
+stopifnot("Index workbook not found" = file.exists(DFI_XLSX))
 
 # READ HELPERS ----------------------------------------------------------------
 
 # everything as text, "NA" and empty cells -> NA; converted to numeric later
 read_dfi <- function(sheet, skip = 0) {
-    if (DFI_SOURCE == "xlsx") {
-        read_excel(
-            DFI_XLSX,
-            sheet = sheet, skip = skip,
-            col_types = "text", na = c("", "NA")
-        )
-    } else {
-        googlesheets4::read_sheet(
-            DFI_SHEET_ID,
-            sheet = sheet, skip = skip,
-            col_types = "c", na = c("", "NA")
-        )
-    }
+    read_excel(
+        DFI_XLSX,
+        sheet = sheet, skip = skip,
+        col_types = "text", na = c("", "NA")
+    )
 }
 
 # all four-digit sheet names = data years (no hardcoded year vector)
 dfi_years <- function() {
-    sheets <- if (DFI_SOURCE == "xlsx") {
-        excel_sheets(DFI_XLSX)
-    } else {
-        googlesheets4::sheet_names(DFI_SHEET_ID)
-    }
+    sheets <- excel_sheets(DFI_XLSX)
     sort(sheets[str_detect(sheets, "^\\d{4}$")])
 }
 
