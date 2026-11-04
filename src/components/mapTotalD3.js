@@ -530,11 +530,9 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
           const ned = fullData.properties[`${pillar}_ned`];
           const note = fullData.properties[`${pillar}_note`];
 
-          if (ned === "not enough data") {
-            return `${pillar}: Not enough data`;
+          if (value === "NA") {
+            return ned === "Partial data" ? `${pillar}: Partial data` : null;
           }
-
-          if (value === "NA") return null;
 
           const scoreText =
             note === "NA" ? Math.round(value) : Math.round(value) + note;

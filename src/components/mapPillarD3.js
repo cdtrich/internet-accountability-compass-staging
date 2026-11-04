@@ -268,19 +268,16 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
     ];
   }
 
-  // Append the hatch-pattern entries so they lay out as part of the same
-  // legend grid rather than as hand-positioned extras
+  // Append the no-value hatch entry so it lays out as part of the same
+  // legend grid rather than as a hand-positioned extra. Latest: every pillar
+  // row without a value is flagged "Partial data" (methodology rule 2: a
+  // pillar score needs all three indicators). Historical: no change value.
   legendData = [
     ...legendData,
     {
-      label: "Not enough data",
+      label: mode === "historical" ? "Not enough data" : "Partial data",
       color: noData,
       pattern: "url(#white-diagonal-lines-map-ned)",
-    },
-    {
-      label: "Partial data",
-      color: "#111",
-      pattern: "url(#white-diagonal-lines-map)",
     },
   ];
 
@@ -304,22 +301,7 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
 
   const defs = svg.append("defs");
 
-  // Partial data pattern: rotate(45)
-  defs
-    .append("pattern")
-    .attr("id", "white-diagonal-lines-map")
-    .attr("patternUnits", "userSpaceOnUse")
-    .attr("width", 4.2425)
-    .attr("height", 4.2425)
-    .attr("patternTransform", "rotate(45)")
-    .append("rect")
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("width", 1.5)
-    .attr("height", 4.2425)
-    .attr("fill", "white");
-
-  // Not enough data pattern: rotate(-45)
+  // No-value hatch pattern: rotate(-45)
   defs
     .append("pattern")
     .attr("id", "white-diagonal-lines-map-ned")
@@ -415,7 +397,7 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
       }
     });
 
-  // Not enough data overlay — grey base already set in fill
+  // No-value overlay (one hatch, both modes) — grey base already set in fill
   // latest: in dataset but no score; historical: in dataset but no prior-year value
   countries
     .filter((d) =>
@@ -427,15 +409,6 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
     .append("path")
     .attr("d", path)
     .attr("fill", "url(#white-diagonal-lines-map-ned)")
-    .attr("stroke", "none")
-    .style("pointer-events", "none");
-
-  // Partial data overlay — white hatch on top of category/change fill (both modes)
-  countries
-    .filter((d) => d.properties.ned === "Partial data")
-    .append("path")
-    .attr("d", path)
-    .attr("fill", "url(#white-diagonal-lines-map)")
     .attr("stroke", "none")
     .style("pointer-events", "none");
 
@@ -486,10 +459,6 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
           ? d.properties.change !== null && d.properties.change !== undefined
           : !isNaN(d.properties.value);
 
-      const partialNote =
-        // d.properties.note === " (partial data)" ? " (partial data)" : "";
-        d.properties.ned === "not enough data" ? " (partial data)" : "";
-
       // Get color for sparkline based on mode
       let categoryColor;
       if (mode === "historical" && hasData) {
@@ -518,7 +487,11 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
 
       const noData = tooltipHTML({
         title: d.properties.NAME_ENGL,
-        notes: ["Not enough data"],
+        notes: [
+          mode === "latest" && d.properties.ned === "Partial data"
+            ? "Partial data"
+            : "Not enough data",
+        ],
       });
 
       let tooltipContent;
@@ -540,7 +513,6 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
               value: Math.round(d.properties.value),
               title: d.properties.NAME_ENGL,
               context: [d.properties.group_value],
-              notes: partialNote ? ["Partial data"] : [],
             })
           : noData;
       }
