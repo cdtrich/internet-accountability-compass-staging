@@ -475,22 +475,17 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
   }
 
   // Tooltip
+  // Look from .chart-tooltip (style.css); max-width from .map-tooltip
   const tooltip = d3
     .select("body")
-    .append("div")
-    .attr("class", "map-tooltip")
+    .selectAll(".map-tooltip")
+    .data([null])
+    .join("div")
+    .attr("class", "chart-tooltip map-tooltip")
     .style("position", "absolute")
     .style("visibility", "hidden")
-    .style("background", "white")
-    .style("padding", "12px")
-    .style("border-radius", "8px")
-    .style("box-shadow", "0 4px 12px rgba(0,0,0,0.15)")
     .style("pointer-events", "none")
-    .style("font-family", "var(--sans-serif)")
-    .style("font-size", "14px")
-    .style("line-height", "1.6")
-    .style("max-width", "300px")
-    .style("z-index", "1000");
+    .style("line-height", "1.6");
 
   // Hover interactions
   mapGroup
@@ -566,8 +561,8 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
         tooltipHTML = `
           <strong style="font-size: 28px; font-weight: bold; color: ${ink}; margin-bottom: 8px;">
           ${formatChange(change)}
-          </strong><strong>${fullData.properties.NAME_ENGL}</strong><br>
-          <span style="font-size: 11px; color: #000;">Change in total Internet <br>Accountability Score (2024→2025)</span><br>          
+          </strong><strong class="tooltip-title">${fullData.properties.NAME_ENGL}</strong><br>
+          <span class="tooltip-small">Change in total Internet <br>Accountability Score (2024→2025)</span><br>          
           ${sparklineHTML}
         `;
       } else {
@@ -580,14 +575,14 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
           fullData.properties["Total score"] || fullData.properties.total || 0;
 
         tooltipHTML = `
-          <strong style="font-size: 12px; font-weight: regular; color: ${ink}; margin-bottom: 0px;">
+          <strong style="font-size: 12px; font-weight: 400; color: ${ink}; margin-bottom: 0px;">
           Internet Accountability Score (IAS)
           </strong><br>
           <strong style="font-size: 42px; font-weight: bold; color: ${ink}; margin-top: 0px; margin-bottom: 8px;">
             ${Math.round(totalScore)}
           </strong>
-          <strong>${fullData.properties.NAME_ENGL}</strong> (${categoryDisplay})<br>
-          <span style="font-size: 11px; color: #000;">${pillarScores}</span>
+          <strong class="tooltip-title">${fullData.properties.NAME_ENGL}</strong> (${categoryDisplay})<br>
+          <span class="tooltip-small">${pillarScores}</span>
         `;
       }
 
@@ -648,7 +643,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
       ];
 
       const tooltipHTML = `
-        <strong>${d.properties.NAME_ENGL}</strong><br>
+        <strong class="tooltip-title">${d.properties.NAME_ENGL}</strong><br>
         <span class="tooltip-small">Not enough data</span>
       `;
 
@@ -793,18 +788,6 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
     display: none;
     pointer-events: none;
     z-index: 10;
-  `;
-
-  const messageDiv = overlayDiv.querySelector(".map-scroll-message");
-  messageDiv.style.cssText = `
-    background: rgba(255, 255, 255, 0.95);
-    padding: 8px 16px;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    font-size: 12px;
-    font-weight: 500;
-    color: #666;
-    border: 1px solid #ddd;
   `;
 
   const container = document.createElement("div");

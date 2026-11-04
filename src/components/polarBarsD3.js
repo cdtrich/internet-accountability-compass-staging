@@ -384,7 +384,7 @@ export function polarBarsD3(data, isMobile, options = {}) {
     svg,
     tooltip,
     (d) => `
-      Score: <strong>${Math.floor(d.value)}</strong><br>
+      Score: <strong class="tooltip-title">${Math.floor(d.value)}</strong><br>
       ${d.commitment_txt_cardinal}<br>
     `,
   );
@@ -449,7 +449,7 @@ export function polarCountryBarsD3(data, country, options = {}) {
       <strong style="font-size: 28px; font-weight: bold; color: ${scoreColor}; margin-bottom: 8px;">
       ${Math.floor(d.value)}</strong>
       <br>
-      <span style="color: ${scoreColor};">${d.commitment_txt_cardinal}</span><br>
+      <span class="tooltip-title" style="color: ${scoreColor};">${d.commitment_txt_cardinal}</span><br>
       ${d.pillar_txt}
     `;
   });

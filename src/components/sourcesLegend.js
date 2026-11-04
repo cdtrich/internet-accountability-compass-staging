@@ -57,7 +57,7 @@ function applyStyles(item, config, isSelected) {
     item.style.backgroundColor = color;
     item.style.color = luminance(color) > 0.5 ? "#333" : "white";
   } else {
-    item.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.12)`;
+    item.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.1)`;
     item.style.color = textColor;
   }
 }

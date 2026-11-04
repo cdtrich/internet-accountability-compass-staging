@@ -469,11 +469,20 @@ a:focus-visible .sourcecard {
   z-index: var(--z-tooltip);
 }
 
+/* Total map tooltip (also .chart-tooltip) */
+.map-tooltip {
+  max-width: 300px;
+}
+
+/* Tooltip headings at body size; the `div > *` rule sets the same 1rem today */
+.tooltip-title {
+  font-size: 1rem;
+}
+
 /* map tooltips with sparkline */
 .tooltip-small {
   font-size: var(--ui-text-xs);
   color: var(--ui-ink-muted);
-  line-height: 0.5;
 }
 
 /* CHART STYLING */
@@ -707,6 +716,18 @@ textarea {
 /* Zoom buttons: circle fill is an SVG presentation attribute, so CSS wins */
 .zoom-button:hover circle {
   fill: #f2f2f2;
+}
+
+/* "Ctrl + scroll to zoom" hint (all four maps; the wrapper keeps its inline cssText) */
+.map-scroll-message {
+  font-size: var(--ui-text-sm);
+  font-weight: 500;
+  color: var(--ui-ink-muted);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--ui-border-color);
+  border-radius: var(--ui-radius);
+  box-shadow: var(--ui-shadow);
+  padding: 8px 16px;
 }
 
 .map-scroll-message span {
@@ -952,6 +973,7 @@ a[href].observablehq-header-anchor {
   .legend-item,
   .sources-legend-item {
     min-height: 44px;
+    box-sizing: border-box;
     align-items: center;
   }
 
