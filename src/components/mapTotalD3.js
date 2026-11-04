@@ -568,22 +568,15 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
         const totalScore =
           fullData.properties["Total score"] || fullData.properties.total || 0;
 
-        // No category: name and "Not enough data" only
-        tooltipContent =
-          fullData.properties.group_value === "NA"
-            ? tooltipHTML({
-                title: fullData.properties.NAME_ENGL,
-                notes: ["Not enough data"],
-              })
-            : tooltipHTML({
-                value: Math.round(totalScore),
-                title: fullData.properties.NAME_ENGL,
-                context: [
-                  "Internet Accountability Score (IAS)",
-                  fullData.properties.group_value,
-                ],
-                notes: pillarScores,
-              });
+        tooltipContent = tooltipHTML({
+          value: Math.round(totalScore),
+          title: fullData.properties.NAME_ENGL,
+          context: [
+            "Internet Accountability Score (IAS)",
+            fullData.properties.group_value,
+          ],
+          notes: pillarScores,
+        });
       }
 
       tooltip.style("visibility", "visible").html(tooltipContent);

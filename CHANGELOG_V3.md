@@ -31,6 +31,7 @@ Only the change caption notes wrap (2 lines, as at 300px); no title or context r
 - **Total map**
   - Latest: value, name, context "Internet Accountability Score (IAS)" + category, then one note per pillar. The `_ned`/`_note` logic is unchanged.
   - group_value "NA": name + "Not enough data".
+  - That branch was removed again (unreachable: the data layer only holds a set, non-NA group_value; the 22 such countries get the base-layer no-data tooltip). Brazil's Latest tooltip is identical before and after (text, computed styles, 211.1 × 185.7px).
   - Inline `line-height: 1.6` removed.
 - **Pillar and Commitment maps**
   - Latest: value, name, category; "Partial data" note under the existing condition.
