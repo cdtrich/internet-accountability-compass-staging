@@ -3,6 +3,7 @@ import colorScales from "./scales.js";
 import { wrapText } from "./wrapText.js";
 import { basePath } from "./basePath.js";
 import { binLabels, binColors } from "./tokens.js";
+import { tooltipHTML } from "./tooltipHTML.js";
 
 /**
  * Sparkline - single inline trend line for one country + one metric
@@ -137,7 +138,12 @@ export function sparkline(
 
       tooltip
         .style("visibility", "visible")
-        .html(`<strong>${Math.round(d.value)}</strong> (${d.year})`);
+        .html(
+          tooltipHTML({
+            value: Math.round(d.value),
+            context: [String(d.year)],
+          }),
+        );
     })
     .on("mousemove", function (event, d) {
       // Snap to the data point position

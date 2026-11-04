@@ -523,17 +523,6 @@ a:focus-visible .sourcecard {
   max-width: 300px;
 }
 
-/* Tooltip headings at body size; the `div > *` rule sets the same 1rem today */
-.tooltip-title {
-  font-size: 1rem;
-}
-
-/* map tooltips with sparkline */
-.tooltip-small {
-  font-size: var(--ui-text-xs);
-  color: var(--ui-ink-muted);
-}
-
 /* CHART STYLING */
 
 .chart-axistext {

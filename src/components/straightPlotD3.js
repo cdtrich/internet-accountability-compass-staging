@@ -1,6 +1,7 @@
 import * as d3 from "npm:d3";
 import colorScales from "./scales.js";
 import { basePath } from "./basePath.js";
+import { tooltipHTML } from "./tooltipHTML.js";
 
 /**
  * Animated Commitment Beeswarm Plot
@@ -229,7 +230,7 @@ export function straightPlotD3(data, country, pillar, options = {}) {
 
         tooltip
           .style("visibility", "visible")
-          .html(`<strong class="tooltip-title">${d.label}</strong><br>${Math.round(d.value)}`);
+          .html(tooltipHTML({ value: Math.round(d.value), title: d.label }));
 
         tooltip
           .style("top", event.pageY - 10 + "px")
