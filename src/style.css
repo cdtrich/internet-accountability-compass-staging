@@ -467,9 +467,9 @@ a:focus-visible .sourcecard {
   font-size: var(--ui-text-sm);
   line-height: var(--tt-line-height);
   color: var(--ui-ink);
-  /* 300px including padding and border */
+  /* max-width includes padding and border */
   box-sizing: border-box;
-  max-width: 300px;
+  max-width: var(--tt-max-width);
   pointer-events: none;
   z-index: var(--z-tooltip);
 }
@@ -482,6 +482,7 @@ a:focus-visible .sourcecard {
   --tt-line-height: 1.4;
   --tt-value-line-height: 1.15;
   --tt-gap: 2px;
+  --tt-max-width: 260px;
 }
 
 .tt-value {
@@ -516,11 +517,6 @@ a:focus-visible .sourcecard {
 
 .chart-tooltip > :first-child {
   margin-top: 0;
-}
-
-/* Total map tooltip (also .chart-tooltip) */
-.map-tooltip {
-  max-width: 300px;
 }
 
 /* CHART STYLING */

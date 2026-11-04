@@ -19,9 +19,13 @@ this order, empty rows skipped, text inserted as before (no escaping added):
 | extra | (sparkline SVG) | | | | |
 
 Rows after the first get `margin-top: 2px` (`--tt-gap`). `.chart-tooltip` gains
-`line-height: 1.4`, `color: var(--ui-ink)` and `max-width: 300px` with `box-sizing: border-box`.
+`line-height: 1.4`, `color: var(--ui-ink)` and `max-width: var(--tt-max-width)` (260px) with
+`box-sizing: border-box`. One token replaces the earlier 300px on `.chart-tooltip` and `.map-tooltip`
+(the `.map-tooltip` rule is gone; the class stays in mapTotalD3.js as the singleton selector).
 The border-box is an addition to the spec: without it, padding and border made the historical
-map tooltips 326px wide.
+map tooltips 326px wide at the first 300px limit.
+At 260px (Brazil): Total Latest 211.1px (unchanged); Total, Pillar and Commitment Historical 260px.
+Only the change caption notes wrap (2 lines, as at 300px); no title or context row wraps.
 
 **Per chart**
 - **Total map**
@@ -66,8 +70,8 @@ computed styles outside the repo; mobile and touch not checked)
 | Category | "(On track)" bare text, 12px, after the name; heatmap `<em>` 16px italic | 12px context row, no brackets, not italic | Y |
 | Total pillar lines | 11px #000, one span | 11px #555, one note row each | Y |
 | Change value (Total) | 28px | 20px | Y |
-| Change caption | "(2024→2025)", forced `<br>`s | "(2025→2026)", wraps at 300px | Y |
-| Historical map tooltip width (Total / Pillar / Commitment) | 203.3 / 211.3 / 176px | 300px (max-width binds) | Y |
+| Change caption | "(2024→2025)", forced `<br>`s | "(2025→2026)", wraps at 260px | Y |
+| Historical map tooltip width (Total / Pillar / Commitment) | 203.3 / 211.3 / 176px | 260px (max-width binds) | Y |
 | Names and body text | #000 | #222 (ink) | Y |
 | Heatmap score | 28px/900 (nested strong) | 28px/700 | Y |
 | Polar multiples | "Score: **56**" 12+16px, commitment 12px | 28px value, commitment 16px/700 title | Y |
@@ -82,7 +86,7 @@ computed styles outside the repo; mobile and touch not checked)
 
 **Checks**
 - Every text node in every tooltip is 28, 20, 16, 12 or 11px (sparkline SVG text excluded).
-- No tooltip is wider than 300px.
+- No tooltip is wider than 260px (checked at 300px for all charts; the four widest recaptured at 260px).
 - Captions read 2025→2026 on all three maps.
 - On-chart labels equal the tooltip values:
   - Polar: 5 total labels match `total`; 5 marks' tooltip values match the data.
