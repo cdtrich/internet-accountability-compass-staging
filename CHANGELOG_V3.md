@@ -71,6 +71,9 @@ tooltip title size, pending a decision on the child font-size table above.
 **Rollback**: `git switch dev; git branch -D feature/ui-tokens` (tag `pre-ui-tokens` marks the
 starting point).
 
+- 2026-11-04 recheck: mode toggle hover is `filter: var(--ui-hover-filter)` only on both states (no background swap; already so in phase 1). Rendered heights: toggle 37px at 1280, 60px at 390.
+- FLAG (not fixed, predates phase 1): at ≤768px `.legend-item` and `.sources-legend-item` also render 60px, not 44px (`min-height: 44px` + 8px padding, `content-box`; sources item was 64px before phase 1). The toggle is left at the same 60px, so no `box-sizing` change.
+
 ## 2026-11-03 — Provenance markers: tooltip names the status; long legend label back
 
 - **indicatorHistorical.js**: tooltip and `<title>`: published "**8**", carried
