@@ -1,4 +1,5 @@
 import * as d3 from "npm:d3";
+import { tooltipHTML } from "./tooltipHTML.js";
 
 /**
  * D3 Map for Sources/Resources
@@ -216,10 +217,10 @@ export function mapSourcesD3(world, coast, sourcesData, options = {}) {
 
       // Build tooltip content
       const counts = d.properties;
-      const tooltipContent = `
-        <strong class="tooltip-title">${counts.NAME_ENGL}</strong><br>
-        ${selectedType}: ${counts[baseType] || 0}
-      `;
+      const tooltipContent = tooltipHTML({
+        title: counts.NAME_ENGL,
+        context: [`${selectedType}: ${counts[baseType] || 0}`],
+      });
 
       tooltip.style("visibility", "visible").html(tooltipContent);
 

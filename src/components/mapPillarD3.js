@@ -15,6 +15,7 @@ import {
   ink,
   formatChange,
 } from "./tokens.js";
+import { tooltipHTML } from "./tooltipHTML.js";
 
 /**
  * D3 Map with Zoom/Pan
@@ -515,25 +516,33 @@ export function mapPillarD3(world, coast, data, selectedPillar, options = {}) {
           )
         : "";
 
+      const noData = tooltipHTML({
+        title: d.properties.NAME_ENGL,
+        notes: ["Not enough data"],
+      });
+
       let tooltipContent;
       if (mode === "historical") {
-        if (hasData) {
-          const change = d.properties.change;
-          tooltipContent = `<strong style="font-size: 20px; color: ${ink};">
-            ${formatChange(change)}
-          </strong><br>
-          <strong>${d.properties.NAME_ENGL}</strong><br>
-          <span class="tooltip-small">Change in <br>${d.properties.pillar_txt} score <br>(2024→2025)</span><br>
-          ${sparklineHTML}`;
-        } else {
-          tooltipContent = `<strong>${d.properties.NAME_ENGL}</strong><br><span class="tooltip-small">Not enough data</span>`;
-        }
+        tooltipContent = hasData
+          ? tooltipHTML({
+              value: formatChange(d.properties.change),
+              kind: "change",
+              title: d.properties.NAME_ENGL,
+              notes: [
+                `Change in ${d.properties.pillar_txt} score (${previousYear}→${latestYear})`,
+              ],
+              extra: sparklineHTML,
+            })
+          : noData;
       } else {
         tooltipContent = hasData
-          ? `<strong style="font-size: 42px; font-weight: bold; color: ${ink}; margin-top: 0px; margin-bottom: 8px;">
-          ${Math.round(d.properties.value)}</strong> <strong>${d.properties.NAME_ENGL}</strong> (${d.properties.group_value})<br>
-          ${partialNote}`
-          : `<strong>${d.properties.NAME_ENGL}</strong><br><span class="tooltip-small">Not enough data</span>`;
+          ? tooltipHTML({
+              value: Math.round(d.properties.value),
+              title: d.properties.NAME_ENGL,
+              context: [d.properties.group_value],
+              notes: partialNote ? ["Partial data"] : [],
+            })
+          : noData;
       }
 
       tooltip.style("visibility", "visible").html(tooltipContent);
