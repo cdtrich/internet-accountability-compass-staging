@@ -492,10 +492,10 @@ export function mapCommitmentD3(
             ${formatChange(change)}
           </strong><br>
           <strong>${d.properties.NAME_ENGL}</strong><br>
-          <span style="font-size: 11px; color: #000;">Change in <br>${d.properties.commitment_txt_cardinal} score <br>(2024→2025)</span><br>
+          <span class="tooltip-small">Change in <br>${d.properties.commitment_txt_cardinal} score <br>(2024→2025)</span><br>
           ${sparklineHTML}`;
         } else {
-          tooltipContent = `<strong>${d.properties.NAME_ENGL}</strong><br><span style="font-size: 11px; color: #666;">Not enough data</span>`;
+          tooltipContent = `<strong>${d.properties.NAME_ENGL}</strong><br><span class="tooltip-small">Not enough data</span>`;
         }
       } else {
         tooltipContent = hasData
@@ -503,7 +503,7 @@ export function mapCommitmentD3(
           ${Math.round(d.properties.value)}</strong> <strong>${d.properties.NAME_ENGL}</strong> (${d.properties.group_value})<br>
           ${partialNote}
           `
-          : `<strong>${d.properties.NAME_ENGL}</strong><br><span style="font-size: 11px; color: #666;">Not enough data</span>`;
+          : `<strong>${d.properties.NAME_ENGL}</strong><br><span class="tooltip-small">Not enough data</span>`;
       }
 
       tooltip.style("visibility", "visible").html(tooltipContent);

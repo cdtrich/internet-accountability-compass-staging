@@ -217,7 +217,7 @@ export function mapSourcesD3(world, coast, sourcesData, options = {}) {
       // Build tooltip content
       const counts = d.properties;
       const tooltipContent = `
-        <strong>${counts.NAME_ENGL}</strong><br>
+        <strong class="tooltip-title">${counts.NAME_ENGL}</strong><br>
         ${selectedType}: ${counts[baseType] || 0}
       `;
 
