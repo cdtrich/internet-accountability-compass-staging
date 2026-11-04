@@ -1,5 +1,81 @@
 # Changelog: v3
 
+## 2026-11-04 — UI tokens, phase 2 (component JS + CSS)
+
+Branch `feature/ui-tokens-js` (tag `pre-ui-tokens-js` = dev before, phase 1 merged).
+Two commits: (1) tooltips, edits 1-4; (2) scroll message, legend tint, mobile heights, this entry.
+
+**Edits**
+1. **mapTotalD3.js**: tooltip is `chart-tooltip map-tooltip`, a singleton joined on `.map-tooltip`
+   (was `append`, which added a new div per render). Inline styles removed except position,
+   visibility, pointer-events and `line-height: 1.6` (not provided by `.chart-tooltip`; kept so
+   the only line-height change is the one that follows the 14 → 12px base text).
+   style.css: `.map-tooltip { max-width: 300px }`.
+2. style.css: `.tooltip-title { font-size: 1rem }` on the unstyled country-name `<strong>` in
+   mapTotalD3 (3 variants), mapSourcesD3, straightPlotD3, the polarBarsD3 multiples `<strong>`
+   (it holds the score) and the polar single indicator-name `<span>`. Not applied (outside the
+   list, same 16px via `div > *`): the name `<strong>` in mapPillarD3, mapCommitmentD3, heatmapD3.
+3. Captions and "Not enough data" spans in mapTotalD3, mapPillarD3, mapCommitmentD3: inline
+   `font-size: 11px; color: #000/#666` → `class="tooltip-small"`. Defect found and fixed:
+   `.tooltip-small` had `line-height: 0.5`, which shortened the pillar/commitment tooltips by
+   1.5px (historical) and 0.5px ("Not enough data"). Removed; measured no-op on the Total map
+   tooltips, which used the class before (66.8 → 66.8px, 185.1 → 185.1px).
+4. mapTotalD3.js: label above the score `font-weight: regular` (invalid, rendered 700) → 400.
+5. `.map-scroll-message` rule in style.css (tokens); the identical inline cssText removed from
+   mapTotalD3, mapPillarD3, mapCommitmentD3, mapSourcesD3 (8 static properties, nothing dynamic;
+   `messageDiv` had no other use). Wrapper `.map-scroll-overlay` cssText unchanged.
+6. sourcesLegend.js: unselected tint alpha 0.12 → 0.1 (as customLegend.js).
+7. ≤768px `box-sizing: border-box`: style.css on `.legend-item, .sources-legend-item`; for
+   `.mode-toggle-item` in modeToggle.css's existing ≤768px rule (where its min-height lives;
+   adding it to style.css would have needed a new selector there).
+
+**Computed-style changes** (dev server, puppeteer-core; 1280 and 390px; home, directions,
+resources, AUS, countries; tooltips via each chart's own hover event; script outside the repo).
+All differences found, all intended:
+
+| component | property | before | after | intended |
+|---|---|---|---|---|
+| Total map tooltip | class | map-tooltip | chart-tooltip map-tooltip | Y |
+| Total map tooltip | border | none | 1px solid #ddd | Y |
+| Total map tooltip | radius | 8px | 4px | Y |
+| Total map tooltip | box-shadow | 0 4px 12px rgba(0,0,0,.15) | 0 2px 8px rgb(0 0 0/.15) | Y |
+| Total map tooltip | padding | 12px | 10px 12px | Y |
+| Total map tooltip | font-size (base text, e.g. "(On track)") | 14px | 12px | Y |
+| Total map tooltip | line-height (follows font-size, factor 1.6) | 22.4px | 19.2px | Y |
+| Total map tooltip | z-index | 1000 | 1100 | Y |
+| Total map tooltip | size, BRA latest / historical / Samoa | 217.7×203.1 / 201.3×181.6 / 109×72 | 211.1×185.1 / 203.3×173.2 / 111×66.8 | Y (follows above) |
+| Total map tooltip | max-width | 300px | 300px (CSS) | Y (no change) |
+| Total, Pillar, Commitment captions + "Not enough data" | colour | #000 / #666 | #555 | Y |
+| same | font-size | 11px | 11px | Y (no change) |
+| **Total label "Internet Accountability Score (IAS)"** | **font-weight** | **700** | **400** | **Y (visible)** |
+| scroll message ×4 | box-shadow | 0 2px 8px rgba(0,0,0,.2) | 0 2px 8px rgb(0 0 0/.15) | Y |
+| scroll message ×4 | colour (box and span) | #666 | #555 | Y |
+| scroll message ×4 | size, padding, border, radius, bg, weight | 212.4×42 … | equal | Y (no change) |
+| sources legend, unselected | background alpha | 0.12 | 0.1 | Y |
+| .mode-toggle-item ≤768px | rendered height | 60px | 44px | Y |
+| .sources-legend-item ≤768px (normal + selected) | rendered height | 60px | 44px | Y |
+| .legend-item ≤768px (directions) | rendered height | 60px | 58px | Y (see note) |
+
+`.tooltip-title` elements, computed font-size/weight before → after (must be equal): Total
+"Brazil" (latest, historical) 16px/700 → 16px/700; Total "Samoa"/"Tonga" 16/700 → 16/700;
+Sources "United States" 16/700 → 16/700; straightPlot "Afghanistan" 16/700 → 16/700; polar
+multiples "36" 16/700 → 16/700; polar single "ICT Development Index" 16/400 → 16/400. All equal
+at 1280 and 390.
+
+**Notes**
+- `.legend-item` at 390 renders 58px, not 44: every label wraps to two lines in the half-width
+  tile (2 × 21px + 16px padding). The 44px minimum now applies; content is taller.
+- The pillar map has data for all 266 countries in its default view, so its "Not enough data"
+  tooltip was not reachable; the commitment one (same markup) was captured.
+- Console (home, directions, AUS; also resources, countries): no page errors; one
+  `404 /favicon.ico` on home from the dev server, before and after.
+
+**Deferred**: Phase 3 keyboard access (toggle, legend items, zoom buttons); blog font sizes;
+zoom buttons under the sidebar at 1280 (x 68-108px vs sidebar 0-100px, measured 2026-11-04).
+
+**Rollback**: `git switch dev; git branch -D feature/ui-tokens-js` (tag `pre-ui-tokens-js`), or
+`git revert` either commit.
+
 ## 2026-11-03 — UI tokens, phase 1 (CSS only)
 
 Branch `feature/ui-tokens` (tag `pre-ui-tokens` = dev before). Files: src/style.css,

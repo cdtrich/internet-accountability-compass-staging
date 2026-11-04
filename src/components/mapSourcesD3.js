@@ -350,18 +350,6 @@ export function mapSourcesD3(world, coast, sourcesData, options = {}) {
   z-index: 10;
 `;
 
-  const messageDiv = overlayDiv.querySelector(".map-scroll-message");
-  messageDiv.style.cssText = `
-  background: rgba(255, 255, 255, 0.95);
-  padding: 8px 16px;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  font-size: 12px;
-  font-weight: 500;
-  color: #666;
-  border: 1px solid #ddd;
-`;
-
   // Append to container
   container.appendChild(svg.node());
   container.appendChild(overlayDiv);
