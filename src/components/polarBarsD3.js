@@ -369,7 +369,7 @@ export function polarBarsD3(data, isMobile, options = {}) {
       .attr("text-anchor", "middle")
       .attr("font-size", 14)
       .text(
-        `${isNaN(totalScore) ? "Not enough data" : Math.floor(totalScore)} ${isNaN(totalScore) ? "" : `(${group})`}`,
+        `${isNaN(totalScore) ? "Not enough data" : Math.round(totalScore)} ${isNaN(totalScore) ? "" : `(${group})`}`,
       );
   }
 
@@ -384,7 +384,7 @@ export function polarBarsD3(data, isMobile, options = {}) {
     svg,
     tooltip,
     (d) => `
-      Score: <strong class="tooltip-title">${Math.floor(d.value)}</strong><br>
+      Score: <strong class="tooltip-title">${Math.round(d.value)}</strong><br>
       ${d.commitment_txt_cardinal}<br>
     `,
   );
@@ -447,7 +447,7 @@ export function polarCountryBarsD3(data, country, options = {}) {
     const scoreColor = fillScale.getColor(d.pillar_txt);
     return `
       <strong style="font-size: 28px; font-weight: bold; color: ${scoreColor}; margin-bottom: 8px;">
-      ${Math.floor(d.value)}</strong>
+      ${Math.round(d.value)}</strong>
       <br>
       <span class="tooltip-title" style="color: ${scoreColor};">${d.commitment_txt_cardinal}</span><br>
       ${d.pillar_txt}

@@ -182,7 +182,7 @@ export function heatmap(data, isMobile, options = {}) {
       ) {
         return "";
       }
-      return Math.floor(d.value) + (d.note === " (partial data)" ? "*" : "");
+      return Math.round(d.value) + (d.note === " (partial data)" ? "*" : "");
     });
 
   // LINKED BRUSHING - Hover interactions
@@ -229,7 +229,7 @@ export function heatmap(data, isMobile, options = {}) {
         d.value === undefined ||
         isNaN(d.value)
           ? "No data"
-          : Math.floor(d.value);
+          : Math.round(d.value);
       const partialNote = d.note === " (partial data)" ? " (partial data)" : "";
 
       tooltip.style("visibility", "visible").html(`
