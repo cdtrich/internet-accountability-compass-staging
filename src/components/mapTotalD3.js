@@ -666,9 +666,7 @@ export function mapTotalD3(world, coast, dataCardinal, options = {}) {
     .append("g")
     .attr("class", "zoom-controls")
     .attr("data-tour", "zoom") // onboarding tour anchor (tour.js)
-    // right edge, mirroring the old left offset (buttons are centred on x):
-    // on the left they sat under the sidebar at 1280px
-    .attr("transform", `translate(${width - width / 8}, ${height - 130})`);
+    .attr("transform", `translate(${width / 8}, ${height - 130})`);
 
   const zoomInButton = controlsGroup
     .append("g")
