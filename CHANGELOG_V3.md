@@ -1,5 +1,47 @@
 # Changelog: v3
 
+## 2026-11-05 — Heatmap: a row for every country, empty cells hoverable
+
+Direct on `dev` (tag `pre-heatmap-rows` = 55d6b37). Component only: `heatmapD3.js`.
+
+**Why**: the heatmap (countries, Heatmap view) dropped every row whose group_value is "NA"
+before drawing. On the current data that hid 253 cells: 148 blank slots in 173 rows that could
+not be hovered, and 21 countries with no row at all.
+
+**Change**
+- Every country in the latest-year data gets a row (194). A cell without a category is drawn
+  as an empty rect: no fill, no hatch, no border, `pointer-events: all`, same click (country page).
+- Empty-cell tooltip (tooltipHTML): title country, context pillar, note "Partial data" for a
+  pillar whose ned is "Partial data", otherwise "Not enough data"; the Total score column is
+  always "Not enough data". Drawn cells' tooltips unchanged.
+- Height: fixed 27px rows (the rows were 27.1px at 1280 and 26.7px at 390 with 173 rows),
+  `max(3000, marginTop + marginBottom + rows × 27)`. Replaces `max(3000, data.length × 5)`.
+- Row order rule unchanged. Note: the sort reads `d.total`, which dfiCardinal rows do not have,
+  so every country scores −1 and the order is the data order (alphabetical). The 21 rows
+  therefore appear at their alphabetical positions; the 173 existing rows keep their order.
+
+**Verified** (dev server, current data)
+- 194 rows × 5 = 970 cells (before 173 rows, 717 cells); 253 empty (231 pillar cells, all ned
+  "Partial data", and 22 Total score cells); no duplicate country/pillar cells.
+- Newly shown (21): Andorra, Brunei, Cuba, Dominica, Equatorial Guinea, Eritrea, Grenada,
+  Kiribati, Liechtenstein, Marshall Islands, Micronesia, Monaco, Nauru, North Korea, Palau,
+  Saint Kitts and Nevis, Samoa, San Marino, Solomon Islands, Tonga, Tuvalu.
+- Tooltips (hit test on the cell itself; sizes in {28, 20, 16, 12, 11}px, width ≤ 260px):
+  - Afghanistan, Connectivity (empty): "Afghanistan / Connectivity and infrastructure / Partial data", 190.9 × 80.6px.
+  - Andorra, Total score (empty): "Andorra / Total score / Not enough data", 111 × 80.6px.
+  - Afghanistan, Rights (drawn): "24 / Afghanistan / Rights and freedoms / Off track", 137.7 × 116.2px, as before.
+  - Brazil, Total (drawn): "73 / Brazil / Total score / On track", 84.6 × 116.2px, as before.
+- Size: svg 1216 × 5399.6 at 1280 (was 4850), 390 × 5473 at 390; cells 121.6 × 27 and
+  62.4 × 27. 194 y-axis labels; the last ends 42px above the svg bottom; the card grows with
+  it (5405.6px). In a 100%-wide iframe (height 800) the page scrolls to the chart end (svg
+  bottom at 756 of 800 when scrolled to the bottom); no horizontal scroll (scrollWidth 1280).
+- Console: countries only `404 /favicon.ico` (dev server, as before); AUS none.
+
+**Seen, not changed**: at 1280 the y-axis label "Antigua and Barbuda" starts under the sidebar
+(before and after).
+
+**Rollback**: `git revert` this commit, or `git reset --hard pre-heatmap-rows` (only before any push).
+
 ## 2026-11-05 — Map zoom controls moved to the right edge
 
 Direct on `dev` (tag `pre-zoom-move` = fefb8b0). Components only: `mapTotalD3.js`,

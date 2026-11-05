@@ -15,9 +15,7 @@ import { tooltipHTML } from "./tooltipHTML.js";
 export function heatmap(data, isMobile, options = {}) {
   const { width = 640 } = options;
 
-  // Dimensions
-  const height = data.length * 5;
-  const finalHeight = height < 3000 ? 3000 : height;
+  // Dimensions (height is set below from the row count)
   const marginLeft = isMobile ? width / 5 : width / 4;
   const marginRight = isMobile ? 0 : width / 4;
   const marginTop = isMobile ? width / 2 : width / 10;
@@ -26,13 +24,13 @@ export function heatmap(data, isMobile, options = {}) {
   // Get color scale
   const fillScale = colorScales();
 
-  // Filter out NA values (check for string "NA" and actual NA/null/undefined)
-  const dataDropNA = data.filter(
-    (d) =>
-      d.group_value !== "NA" &&
-      d.group_value !== null &&
-      d.group_value !== undefined,
-  );
+  // A cell without a category (string "NA" or null/undefined) has no value:
+  // it is drawn as an empty, hoverable cell, so every country keeps its row
+  const isBlank = (d) =>
+    d.group_value === "NA" ||
+    d.group_value === null ||
+    d.group_value === undefined;
+  const dataDropNA = data.filter((d) => !isBlank(d));
 
   // Get y domain (countries sorted by total score)
   // First, get countries with total scores for sorting
@@ -48,9 +46,9 @@ export function heatmap(data, isMobile, options = {}) {
     ]),
   );
 
-  // Get ALL unique countries from the data
+  // Get ALL unique countries from the data, including those without any value
   const allCountries = [
-    ...new Set(dataDropNA.map((d) => (isMobile ? d.ISO3_CODE : d.NAME_ENGL))),
+    ...new Set(data.map((d) => (isMobile ? d.ISO3_CODE : d.NAME_ENGL))),
   ];
 
   // Sort by total score (countries without total score go to the end)
@@ -68,6 +66,13 @@ export function heatmap(data, isMobile, options = {}) {
     "Trust and resilience",
     "Total score",
   ];
+
+  // Fixed row height (27px, as the rows were at 173 rows), at least 3000px
+  const rowHeight = 27;
+  const finalHeight = Math.max(
+    3000,
+    marginTop + marginBottom + yDomain.length * rowHeight,
+  );
 
   // Scales
   const xScale = d3
@@ -111,7 +116,7 @@ export function heatmap(data, isMobile, options = {}) {
     .append("g")
     .attr("class", "cells")
     .selectAll("g")
-    .data(dataDropNA)
+    .data(data)
     .join("g")
     .attr("class", "cell")
     .attr("transform", (d) => {
@@ -140,10 +145,14 @@ export function heatmap(data, isMobile, options = {}) {
     .attr("width", xScale.bandwidth())
     .attr("height", yScale.bandwidth())
     .attr("fill", (d) =>
-      fillScale.getOrdinalCategoryScale(d.pillar_txt)(d.group_value),
+      isBlank(d)
+        ? "none"
+        : fillScale.getOrdinalCategoryScale(d.pillar_txt)(d.group_value),
     )
-    .attr("stroke", "#fff")
+    .attr("stroke", (d) => (isBlank(d) ? "none" : "#fff"))
     .attr("stroke-width", 2)
+    // empty cells stay hoverable
+    .style("pointer-events", (d) => (isBlank(d) ? "all" : null))
     .style("cursor", "pointer")
     .on("click", (event, d) => {
       if (d.ISO3_CODE) {
@@ -153,7 +162,7 @@ export function heatmap(data, isMobile, options = {}) {
 
   // Add diagonal pattern overlay for partial data
   cells
-    .filter((d) => d.note === " (partial data)")
+    .filter((d) => !isBlank(d) && d.note === " (partial data)")
     .append("rect")
     .attr("class", "cell-pattern")
     .attr("width", xScale.bandwidth())
@@ -230,9 +239,20 @@ export function heatmap(data, isMobile, options = {}) {
         isNaN(d.value);
       const partialNote = d.note === " (partial data)" ? " (partial data)" : "";
 
+      // empty cell: a pillar flagged "Partial data" says so; the Total score
+      // column (and anything else without a value) says "Not enough data"
+      const blankNote =
+        d.pillar_txt !== "Total score" && d.ned === "Partial data"
+          ? "Partial data"
+          : "Not enough data";
+
       tooltip.style("visibility", "visible").html(
-        noValue
-          ? tooltipHTML({ title: d.NAME_ENGL, notes: ["Not enough data"] })
+        isBlank(d) || noValue
+          ? tooltipHTML({
+              title: d.NAME_ENGL,
+              context: [d.pillar_txt],
+              notes: [blankNote],
+            })
           : tooltipHTML({
               value: Math.round(d.value),
               title: d.NAME_ENGL,
