@@ -1,5 +1,47 @@
 # Changelog: v3
 
+## 2026-11-05 — Map zoom controls moved to the right edge
+
+Direct on `dev` (tag `pre-zoom-move` = fefb8b0). Components only: `mapTotalD3.js`,
+`mapPillarD3.js`, `mapCommitmentD3.js`.
+
+**Why**: at 1280px the zoom group (+, −, ⌂; 40 × 140) sat at x 68-108, under the 100px sidebar
+(home and both directions maps, standalone and in the iframe). `elementFromPoint` at the button
+centres hit the sidebar links (Resources, Perspectives, Methodology), and a real click on a
+button opened that page instead of zooming. The svg at 1280 starts at x −64, so `width / 8`
+(152 user units) lands at screen x 88.
+
+**Change**: `translate(${width / 8}, …)` → `translate(${width - width / 8}, …)`, same y.
+The circles are centred on the group's x (r 20), so this mirrors the old offset exactly
+(left edge `width / 8 − 20` from the left ↔ right edge `width / 8 − 20` from the right).
+Sizes, spacing, hover, click handlers and `data-tour="zoom"` (Total map) unchanged.
+`mapSourcesD3.js` already sat at the right edge (`width − 50`) and is unchanged.
+
+**Verified** (dev server; widths 800, 1024, 1280, 1366, 1440, 1920; standalone and in a
+same-origin iframe, width 100%, height 800; home, directions (both maps), resources)
+- No overlap with the sidebar rect at any width, and none with the map legend or the
+  scroll-message overlay.
+- `elementFromPoint` at all three button centres is that button in every case (before: sidebar
+  links at 1280 on home and directions).
+- Real mouse clicks: + k 1 → 1.5, − 1.5 → 1.005, ⌂ → identity, at every width in both
+  contexts. Before: at 1280 the clicks navigated to /resources or /perspectives.
+- Example position at 1280: group at x 980-1020 (svg −64 to 1152); at 1440 x 1177-1217;
+  at 1920 x 1677.5-1717.5.
+- ≤ 768px: + and − are still `display: none`. The ⌂ button, still shown by design, moves with
+  the group to the right: directions/home x 60 → 636 at 768, 13 → 305 at 390.
+  Resources unchanged (682 at 768, 304 at 390).
+- Console on home, directions, resources: no errors.
+- The buttons now sit over the map at eastern Australia / Tasman Sea (screenshot at 1280);
+  they block hover there.
+
+**Open finding (not fixed)**: at 1920 `document.documentElement.scrollWidth` is 2016 on
+directions: `div.hero` is 1536px wide with its right edge at 1964. Home and resources also measure
+2016 at 1920 (cause there not checked).
+
+**Not changed**: tour.js (its text mentions the + / − / ⌂ buttons but not their position).
+
+**Rollback**: `git revert` this commit, or `git reset --hard pre-zoom-move` (only before any push).
+
 ## 2026-11-04 — Partial data on the pillar and Total maps
 
 Direct on `dev` (tag `pre-partial-data` = 5c9ccb0). Components only: `mapPillarD3.js`,
