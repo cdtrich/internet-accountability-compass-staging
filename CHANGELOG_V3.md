@@ -1,5 +1,26 @@
 # Changelog: v3
 
+## 2026-11-06 — Layout: hero capped at 1200px
+
+Direct on `dev`, after the layout entry below. `src/style.css` only: `.hero { width: 80vw }` →
+`width: min(80vw, 1200px)`.
+
+**Why**: the hero is 80vw wide and shifted 5vw right, so above about 1650px it ran past the window
+(right edge 2008.5 in a 1905px client at 1920: 104px horizontal scroll on every page; on country
+pages since they are centred).
+
+**Effect**: 80vw < 1200px below 1500px, so nothing changes there; the 769-1200 and ≤768 rules
+(`width: auto`) still win. At 1920 the hero is 1200px wide and ends at 1672.5 (centred main ends at
+1528.5). Bound: with main centred, the right edge stays inside 100vw − 32px for any width ≥ 1500.
+
+**Verified** (classic scrollbars, standalone and iframe; home, directions, resources, countries
+×3, AUS, BRA at 390, 1024, 1280, 1440, 1920): computed styles of `.hero`, `.body-text`,
+`.figure-w-full`, `.chart-breakout` identical to the previous commit except `.hero` width at 1920
+(1536 → 1200px). scrollWidth = clientWidth at 1920 on all pages. Remaining mismatches are the
+pre-existing ones listed below (1280 `.body-text`, ≤768 `.chart-breakout`).
+
+**Rollback**: `git revert` this commit.
+
 ## 2026-11-06 — Layout: content right of the sidebar
 
 Direct on `dev` (tag `pre-layout-fix` = 9ef39ad). `src/style.css` only; values edited inside
@@ -56,8 +77,8 @@ height 800; home, directions, resources, countries Compass/Heatmap/Historical, A
   `.chart-breakout` now shares that rule and edge.
 - ≤768px country pages: `.chart-breakout { width: 100vw }` overflows by the scrollbar width
   (406/375 at 390, 784/753 at 768).
-- 1920: `.hero` (80vw) ends at 2008.5 in a 1905px client (next entry); on country pages this
-  overflow is new because they are now centred.
+- 1920: `.hero` (80vw) ends at 2008.5 in a 1905px client; on country pages this overflow is new
+  because they are now centred. Fixed in the next commit (hero entry above).
 
 **Rollback**: `git reset --hard pre-layout-fix` (only before any push), or `git revert`.
 

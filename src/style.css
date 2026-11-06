@@ -218,7 +218,9 @@ div > div > form > #inputs-3a86ea-1 {
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 80vw;
+  /* 80vw, capped from 1500px up so the right edge stays inside 100vw - 32px
+     (main is centred, max 1152px; the 5vw shift is added on top) */
+  width: min(80vw, 1200px);
   transform: translateX(5vw);
 }
 
