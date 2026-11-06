@@ -1,5 +1,66 @@
 # Changelog: v3
 
+## 2026-11-06 — Layout: content right of the sidebar
+
+Direct on `dev` (tag `pre-layout-fix` = 9ef39ad). `src/style.css` only; values edited inside
+existing rules, no rules reordered, no stylesheet links added.
+
+**Why** (measured 2026-11-05): `.figure-w-full` (Total, directions and resources maps, polar
+multiples, heatmap) sat 66-164px under the fixed sidebar at 800-1366px and ran past the window at
+1920. The 769-1200 override set a width for the space right of the sidebar but no left offset.
+On country pages `.chart-breakout` (dot charts) started at main's left edge, not at the text
+column (34-68px under the sidebar at 800-1280). Country pages sat left of centre above 1440px
+(theme-air `body { max-width: 1440px }` plus our `margin: 0`).
+
+**Changes**
+1. `:root { --sidebar-space: 100px }`, `calc(100vw / 12)` at ≤1200px, `0px` at ≤768px (must match
+   sidebar.css:6 and :143). The 769-1200 `.body-text`/`.hero` paddings use it
+   (`calc(var(--sidebar-space) + 1rem)`, computed values identical).
+2. `.figure-w-full` (desktop rule and the 769-1200 rule): `width: min(calc(100vw - var(--sidebar-space) - 48px), 1780px)`,
+   `margin-left: calc(50% - 50vw + var(--sidebar-space) + 16px)`, `transform: none`. 16px gap
+   after the sidebar, 32px right gutter (absorbs a classic scrollbar: 100vw includes it). The ≤768
+   and ≤640 rules are unchanged and still win there.
+3. `.chart-breakout` joins the `.body-text` selector lists (desktop and 769-1200). The ≤768 rule
+   now also resets what that list gives it (`display: block; flex-direction: row; transform: none;
+   margin: 0 -1rem`), so phones compute exactly as before.
+4. `body { max-width: none }`: country pages are centred like the top-level pages.
+
+**Intended visual changes**: figures start 16px right of the sidebar (8.5px with a 15px classic
+scrollbar, which shifts centring by half its width) and are narrower: 1216 → 1132px at 1280
+(−6.9%), 1000 → 960 at 1100, 1368 → 1292 at 1440, 1780 → 1772 at 1920. Charts inside resize with
+them (polar multiples 1094 → 1019 at 1280). Country-page dot charts start with the text
+(120.5 at 1280, 48px right of the sidebar at 800-1200). Country pages at 1920: main 144 → 376.5,
+text column 240 → 472.5 (centred). Nothing changes at ≤768px or on country pages at ≤1440px
+apart from the dot charts.
+
+**Verified** (dev server, Chrome with classic scrollbars, standalone and in a 100%-wide iframe of
+height 800; home, directions, resources, countries Compass/Heatmap/Historical, AUS, BRA; widths
+390, 768, 800, 1024, 1100, 1200, 1280, 1366, 1440, 1920; iframe numbers equal standalone)
+- Every `.figure-w-full` and chart svg starts at or right of the sidebar at ≥769px (8.5px right).
+  `.chart-breakout` boxes at 769-1200 start at main (32px) but their padding puts the dot charts
+  48px right of the sidebar.
+- Under the sidebar (elementsFromPoint, 10px grid, whole page height): chart content at 80
+  page-widths before, 0 after. Heatmap label "Antigua and Barbuda" at 1280: left 76.3 → 235.3.
+- ≤768px: computed styles of `.figure-w-full`, `.chart-breakout`, `.body-text`, `.hero` identical.
+- ≥769px: `.body-text`/`.hero` margin, width, transform, padding identical (country pages above
+  1440 move only through body centring).
+- Zoom buttons (original position, width / 8) on the three maps: 74-210px right of the sidebar at
+  800-1920 (before: −39.5 at 1280). At 1280 and 1440 they touch no country shape, only
+  outline-only French Polynesia islets (4-24px). Real clicks: 48 of 48 runs zoom in (k 1.5), out
+  and reset; elementFromPoint at each button centre is the button.
+- Console: only the dev server's favicon 404.
+
+**Not fixed (pre-existing, unchanged; scrollWidth ≠ clientWidth)**
+- 1280 with a classic scrollbar: `.body-text` (100% wide + translateX(5vw)) ends at 1272.5 in a
+  1265px client: 8px horizontal scroll on pages with body text; on country pages
+  `.chart-breakout` now shares that rule and edge.
+- ≤768px country pages: `.chart-breakout { width: 100vw }` overflows by the scrollbar width
+  (406/375 at 390, 784/753 at 768).
+- 1920: `.hero` (80vw) ends at 2008.5 in a 1905px client (next entry); on country pages this
+  overflow is new because they are now centred.
+
+**Rollback**: `git reset --hard pre-layout-fix` (only before any push), or `git revert`.
+
 ## 2026-11-05 — Heatmap: a row for every country, empty cells hoverable
 
 Direct on `dev` (tag `pre-heatmap-rows` = 55d6b37). Component only: `heatmapD3.js`.

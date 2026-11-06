@@ -46,6 +46,18 @@
   /* --hovered-card-color: rgba(0, 0, 0, 0.1); */
   --hovered-card-color: #fff;
   --hovered-card-border: #000;
+  /* Horizontal space taken by the fixed sidebar; must match sidebar.css:6 and :143 */
+  --sidebar-space: 100px;
+}
+@media (max-width: 1200px) {
+  :root {
+    --sidebar-space: calc(100vw / 12);
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --sidebar-space: 0px;
+  }
 }
 
 /* pillar colors */
@@ -125,9 +137,11 @@ h1,
   }
 }
 
-/* centered text for dynamically generated directions texts */
+/* centered text for dynamically generated directions texts;
+   .chart-breakout (country-page dot charts) starts where the text does */
 .body-text,
-#pillar-content {
+#pillar-content,
+.chart-breakout {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -178,9 +192,13 @@ form > * {
   font-size: 0.95em;
 }
 
+/* Full-width figures: from 16px right of the sidebar to 32px short of the
+   viewport edge (100vw includes a classic scrollbar). 50% - 50vw is the
+   distance from the parent's left edge to the viewport's: parents are centred. */
 .figure-w-full {
-  width: min(95vw, 1780px);
-  transform: translateX(-10vw);
+  width: min(calc(100vw - var(--sidebar-space) - 48px), 1780px);
+  margin-left: calc(50% - 50vw + var(--sidebar-space) + 16px);
+  transform: none;
 }
 
 div > form > div,
@@ -600,6 +618,7 @@ html {
 body {
   font: 20px/1.5 var(--sans-serif);
   margin: 0;
+  max-width: none;
   background-image: url("https://raw.githubusercontent.com/cdtrich/dfi/refs/heads/main/img/GIFI background.png") !important;
   background-repeat: repeat-y !important; /* only downwards */
   background-position: top center !important; /* start at very top */
@@ -917,28 +936,30 @@ a[href].observablehq-header-anchor {
 }
 /* ─────────────────────────────────────────────────────────────
    MEDIUM-SCREEN SIDEBAR FIX (769px – 1200px)
-   At this range the sidebar width is calc(100vw / 12), which
+   At this range the sidebar width is var(--sidebar-space), which
    exceeds the 5vw translateX offset used by .body-text / .hero.
    ───────────────────────────────────────────────────────────── */
 @media (min-width: 769px) and (max-width: 1200px) {
   .body-text,
-  #pillar-content {
+  #pillar-content,
+  .chart-breakout {
     transform: none;
-    padding-left: calc(100vw / 12 + 1rem);
+    padding-left: calc(var(--sidebar-space) + 1rem);
     box-sizing: border-box;
   }
 
   .hero {
     transform: none;
-    padding-left: calc(100vw / 12 + 1rem);
+    padding-left: calc(var(--sidebar-space) + 1rem);
     width: auto;
     box-sizing: border-box;
   }
 
   .figure-w-full {
-    width: calc(100vw - 100vw / 12 - 0.5rem);
+    width: min(calc(100vw - var(--sidebar-space) - 48px), 1780px);
     transform: none;
     margin: 0;
+    margin-left: calc(50% - 50vw + var(--sidebar-space) + 16px);
   }
 }
 
@@ -1056,9 +1077,12 @@ a[href].observablehq-header-anchor {
      they can use the full viewport width (straightPlotD3 trims a sliver
      off that for the bubble gutter) */
   .chart-breakout {
+    /* reset the desktop .body-text values it shares (display, transform, margins) */
+    display: block;
+    flex-direction: row;
+    transform: none;
     width: 100vw;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin: 0 -1rem;
   }
 
   /* Sparkline table: rotate pillar column headers to vertical so narrow
