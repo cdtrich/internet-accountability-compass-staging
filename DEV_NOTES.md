@@ -28,7 +28,7 @@ live in v3_BRIEF.md; per-change detail in CHANGELOG_V3.md.
   - country pages (`theme: air` in front matter): Framework's theme-air
     (global, layout, grid, note, card, inspector, plot, syntax) + sidebar.css +
     style.css once. The config `style` bundle is not loaded.
-  Any Framework default can therefore apply on country pages only. Test both.
+    Any Framework default can therefore apply on country pages only. Test both.
 - Pages with their own front-matter `head:` lose the global head (staging
   noindex label, sidebar.css), e.g. src/prototypes/radial.md.
 - Framework's `a[href]` colour beats single-class selectors; use `.x a[href]`.
@@ -75,4 +75,14 @@ live in v3_BRIEF.md; per-change detail in CHANGELOG_V3.md.
 ## Large files
 
 - Don't commit screenshot sets (tens of MB). Commit reports and a SHA-256
-  manifest; delete PNGs after the diff (audit/css-cleanup/.gitignore also ignores *.png).
+  manifest; delete PNGs after the diff (audit/css-cleanup/.gitignore also ignores \*.png).
+
+## Data refresh
+
+Framework rebuilds src/.observablehq/cache/data/\*.csv only when the loader
+script is newer than the cache. It does not look at the xlsx. CI has no R and
+builds from the committed cache. After changing a workbook in src/data/:
+
+1. Delete src/.observablehq/cache/data/dfiCardinal.csv and dfiFull.csv.
+2. Run npm run dev (or npm run build) once so R regenerates them.
+3. Check git status shows both CSVs modified, then commit them, then push.
