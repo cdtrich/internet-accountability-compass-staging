@@ -1,7 +1,20 @@
+import { FileAttachment } from "observablehq:stdlib";
 import { basePath } from "./basePath.js";
+
+const wsisImage = await FileAttachment(
+  "../img/perspectives_entry4_wsis.jpg",
+).url();
 
 export function featuredPreview() {
   const posts = [
+    {
+      title:
+        "Using the Internet Accountability Compass to explore WSIS and GDC implementation",
+      slug: "using-the-internet-accountability-compass-to-explore-wsis-and-gdc-implementation",
+      image: wsisImage,
+      date: "6 November 2026",
+      author: "Nils Berglund",
+    },
     {
       title: "Charting a Way for Stronger Internet Accountability",
       slug: "charting-a-way-for-stronger-internet-accountability",
@@ -16,14 +29,6 @@ export function featuredPreview() {
       image: "https://picsum.photos/seed/cooperation/640/340",
       date: "27 April 2026",
       author: "Patryk Pawlak and Nils Berglund",
-    },
-    {
-      title:
-        "Internet accountability in Latin America and the Caribbean: state of play and outlook",
-      url: "https://cadmus.eui.eu/entities/publication/c487323d-0240-4ab5-a785-8af8aa94e1e0",
-      image: "https://picsum.photos/seed/aigovernance42/640/340",
-      date: "June 2026",
-      author: "Olga Cavalli",
     },
   ];
 
