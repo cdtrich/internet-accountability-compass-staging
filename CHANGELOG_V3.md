@@ -1,5 +1,39 @@
 # Changelog: v3
 
+## 2026-11-06 — Polar multiples on phones: padding and wrapped names
+
+Direct on `dev` (tag `pre-polar-pad` = 1b6ddc6). `src/components/polarBarsD3.js` only; ≤768px
+(`isMobile`) only.
+
+**Why**: at ≤768 `.figure-w-full` is 100vw wide with `margin: 0 -1rem`, so the multiples svg
+started at x −16: the first column's labels began off-screen (Central African Republic, Saint
+Kitts and Nevis, Saint Vincent and The Grenadines, UAE, Tanzania at 390), and five names were
+wider than their 175px cell (Democratic Republic of The Congo 257px overlapped Côte d'Ivoire).
+
+**Change** (mobile only)
+- Grid inset: svg `margin-left: 32px` (16 back on screen + 16 padding), width `container − 48`,
+  so it spans x 16 to clientWidth − 17 (classic scrollbar). Not scaled: text stays at the forced
+  16px. The ≤768 `.figure-w-full` rule is unchanged (maps and heatmap still start at −16).
+- Names wider than cell − 8px wrap onto two lines (split at the most balanced space, measured
+  with canvas at 700 16px); each row is 18px taller to make room. Chosen over fewer columns:
+  one column at 390 would make 194 rows of ~340px (≈66,000px page); wrapping adds 18px per row
+  (≈1,750px over 97 rows).
+- Wrapped at 390: Bosnia and / Herzegovina, Central African / Republic, Democratic Republic /
+  of The Congo, Saint Vincent and / The Grenadines, São Tomé / and Príncipe, United Republic /
+  of Tanzania. None at 600 or 744.
+
+**Verified** (classic scrollbars): at 390, 600 and 744 the svg spans 16 to 358 / 568 / 712
+(clientWidth 375 / 585 / 729); no label outside the svg, none wider than its cell, no overlap
+between neighbours; countries scrollWidth = clientWidth. 1024 and 1280 identical to before.
+Console: no new errors (the resize call with width 0 is clamped).
+
+**Seen above 768, not changed**: at 1024 (cell 160px) six names are wider than their cell and
+three overlap a neighbour (DRC | Denmark, Saint Lucia | Saint Vincent…, United Kingdom | United
+Republic of Tanzania); at 1280 (204px) three are wider, two leave the svg. Wrapping could be
+enabled there too (with the 18px row allowance).
+
+**Rollback**: `git revert` this commit.
+
 ## 2026-11-06 — Layout: hero capped at 1200px
 
 Direct on `dev`, after the layout entry below. `src/style.css` only: `.hero { width: 80vw }` →

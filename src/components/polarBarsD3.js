@@ -189,10 +189,16 @@ export function polarBarsD3(data, isMobile, options = {}) {
   // legend row at the top
   const cols = isMobile ? 2 : 5;
   const rows = Math.ceil(countries.length / cols) + 1;
-  const cellWidth = (width * 0.9) / cols;
-  const cellHeight = cellWidth;
+  // Mobile (<=768): .figure-w-full is 100vw wide with margin 0 -1rem
+  // (style.css), so its first 16px are off-screen. Inset the grid by 32px on
+  // the left (16 back on screen + 16 padding) and 16px on the right.
+  const insetLeft = isMobile ? 32 : 0;
+  const totalWidth = isMobile ? Math.max(0, width - 48) : width * 0.9;
+  const cellWidth = totalWidth / cols;
+  // Mobile: one extra name line per row, for names wrapped onto two lines
+  const nameLine = 18;
+  const cellHeight = cellWidth + (isMobile ? nameLine : 0);
   const radius = cellWidth * 0.35;
-  const totalWidth = width * 0.9;
   const totalHeight = rows * cellHeight;
 
   const radialScale = radialScaleFor(radius);
@@ -203,7 +209,29 @@ export function polarBarsD3(data, isMobile, options = {}) {
     .attr("width", totalWidth)
     .attr("height", totalHeight)
     .attr("viewBox", [0, 0, totalWidth, totalHeight])
-    .attr("style", "max-width: 100%; height: auto;");
+    .attr(
+      "style",
+      `max-width: 100%; height: auto;${insetLeft ? ` margin-left: ${insetLeft}px;` : ""}`,
+    );
+
+  // Mobile: names wider than their cell wrap onto two lines, split at the
+  // space that gives the shorter longer line. Measured at the forced 16px
+  // bold (style.css svg text rule); the svg is not scaled on mobile.
+  const measure = document.createElement("canvas").getContext("2d");
+  measure.font = `700 16px ${getComputedStyle(document.body).getPropertyValue("--sans-serif") || "sans-serif"}`;
+  const nameLines = (name) => {
+    if (!isMobile || measure.measureText(name).width <= cellWidth - 8) return [name];
+    const words = name.split(" ");
+    let best = [name];
+    let bestW = Infinity;
+    for (let i = 1; i < words.length; i++) {
+      const a = words.slice(0, i).join(" ");
+      const b = words.slice(i).join(" ");
+      const w = Math.max(measure.measureText(a).width, measure.measureText(b).width);
+      if (w < bestW) [best, bestW] = [[a, b], w];
+    }
+    return best;
+  };
 
   // Legend centred horizontally regardless of column count
   drawLegend(
@@ -350,16 +378,27 @@ export function polarBarsD3(data, isMobile, options = {}) {
       capThickness: 3,
     });
 
-    // Country name (links to the country page) and total score above
-    g.append("text")
-      .attr("y", -radius - 25)
+    // Country name (links to the country page) and total score above;
+    // a wrapped name starts one line higher
+    const lines = nameLines(country);
+    const name = g
+      .append("text")
+      .attr("y", -radius - 25 - (lines.length - 1) * nameLine)
       .attr("text-anchor", "middle")
       .attr("font-size", 14)
       .attr("font-weight", 700)
       .attr("fill", "#000")
-      .style("cursor", "pointer")
-      .text(country)
-      .on("click", () => {
+      .style("cursor", "pointer");
+    if (lines.length === 1) name.text(country);
+    else
+      lines.forEach((line, i) =>
+        name
+          .append("tspan")
+          .attr("x", 0)
+          .attr("dy", i ? nameLine : 0)
+          .text(line),
+      );
+    name.on("click", () => {
         const iso3 = countryData[0]?.ISO3_CODE;
         if (iso3) window.location.href = `${basePath}/${iso3}/`;
       });
