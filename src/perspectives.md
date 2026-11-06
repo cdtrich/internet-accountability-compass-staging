@@ -26,7 +26,7 @@
 
 <a class="blog-img-link" href="#using-the-internet-accountability-compass-to-explore-wsis-and-gdc-implementation">
   <div class="blog-img-wrap">
-    <img src="./img/perspectives_entry4_wsis.jpg" alt="Total map of the Internet Accountability Tracker">
+    <img src="./img/perspectives_entry4_wsis.jpg" alt="Screengrab of a map displaying the total Internet Accountability score">
   </div>
 </a>
 
