@@ -126,7 +126,8 @@ window.addEventListener("map-country-selected", (e) => {
 ```js
 const sourcesDataFiltered = sourcesDataUnique.filter((d) => {
   const typeMatch = d.type === selectedSourceType;
-  const countryMatch = !selectedCountry || d.NAME_ENGL === selectedCountry;
+  // selectedCountry is an ISO3 code (set by the sources map)
+  const countryMatch = !selectedCountry || d.ISO3_CODE === selectedCountry;
   return typeMatch && countryMatch;
 });
 sources(sourcesDataFiltered);

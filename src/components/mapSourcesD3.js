@@ -147,7 +147,8 @@ export function mapSourcesD3(world, coast, sourcesData, options = {}) {
     .on("click", function (event, d) {
       if (countriesWithResources.includes(d.properties.ISO3_CODE)) {
         event.stopPropagation();
-        selectedCountry = d.properties.NAME_ENGL;
+        // ISO3, not the name: geometry and sources sheet spell names differently
+        selectedCountry = d.properties.ISO3_CODE;
         updateStyles();
         window.dispatchEvent(
           new CustomEvent("map-country-selected", { detail: selectedCountry }),
@@ -161,15 +162,15 @@ export function mapSourcesD3(world, coast, sourcesData, options = {}) {
       .transition()
       .duration(200)
       .attr("opacity", (d) =>
-        !selectedCountry || d.properties.NAME_ENGL === selectedCountry
+        !selectedCountry || d.properties.ISO3_CODE === selectedCountry
           ? 1
           : 0.2,
       )
       .attr("stroke", (d) =>
-        d.properties.NAME_ENGL === selectedCountry ? "#333" : "#eee",
+        d.properties.ISO3_CODE === selectedCountry ? "#333" : "#eee",
       )
       .attr("stroke-width", (d) =>
-        d.properties.NAME_ENGL === selectedCountry ? 2 : 0.5,
+        d.properties.ISO3_CODE === selectedCountry ? 2 : 0.5,
       );
   }
 
@@ -238,7 +239,7 @@ export function mapSourcesD3(world, coast, sourcesData, options = {}) {
     })
     .on("mouseleave touchend", function (event, d) {
       // Reset stroke if not selected
-      if (d.properties.NAME_ENGL !== selectedCountry) {
+      if (d.properties.ISO3_CODE !== selectedCountry) {
         d3.select(this)
           .transition()
           .duration(150)
