@@ -9,7 +9,8 @@
 <!-- import components -->
 
 ```js
-
+import { wsisMap } from "./components/wsisMap.js";
+const wsisData = FileAttachment("./data/wsis-mapping.csv").csv();
 ```
 
 <!-- hero -->
@@ -53,29 +54,7 @@ _Is connectivity available, affordable and usable for everyone, and does access 
 
 **Related WSIS+20 priorities:** universal, meaningful and affordable connectivity; closing the gender and rural digital divides; public access through schools, libraries, post offices and hospitals; resilient infrastructure; refraining from internet shutdowns and measures that target internet access.
 
-| Compass indicator                                                                              | What it can show                                                                                               |
-| ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| [ICT Development Index](https://www.itu.int/en/ITU-D/Statistics/Pages/IDI/default.aspx) (ITU)  | How far connectivity in a country is universal and meaningful, covering access, use, affordability and quality |
-| [Internet shutdowns](https://pulse.internetsociety.org/en/shutdowns/) (Internet Society Pulse) | Whether governments deliberately disrupt connectivity, and how often                                           |
-| [Network Readiness Index](https://networkreadinessindex.org/) (Portulans Institute)            | The wider technological, human, governance and economic conditions that shape how networks are used            |
-
-<details class="blog-read-more">
-<summary>How does it connect to global governance commitments?</summary>
-
-- **[ICT Development Index](https://www.itu.int/en/ITU-D/Statistics/Pages/IDI/default.aspx) (ITU)**
-  - **Closest Action Lines:** [C2](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C3](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C4](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [5.b](https://unstats.un.org/sdgs/metadata/?Text=&Goal=5&Target=5.b), [9.c](https://unstats.un.org/sdgs/metadata/?Text=&Goal=9&Target=9.c), [17.8](https://unstats.un.org/sdgs/metadata/?Text=&Goal=17&Target=17.8)
-  - **Related GDC commitments:** Paras [10](https://dig.watch/resource/global-digital-compact) to [13](https://dig.watch/resource/global-digital-compact), especially [11(a) to (g)](https://dig.watch/resource/global-digital-compact)
-- **[Internet shutdowns](https://pulse.internetsociety.org/en/shutdowns/) (Internet Society Pulse)**
-  - **Closest Action Lines:** [C2](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C3](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C5](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html); also [C9](https://www.itu.int/net/wsis/docs/geneva/official/poa.html) and [C10](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [9.c](https://unstats.un.org/sdgs/metadata/?Text=&Goal=9&Target=9.c), [16.10](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.10)
-  - **Related GDC commitments:** Paras [26](https://dig.watch/resource/global-digital-compact) to [29](https://dig.watch/resource/global-digital-compact), especially [29(d)](https://dig.watch/resource/global-digital-compact)
-- **[Network Readiness Index](https://networkreadinessindex.org/) (Portulans Institute)**
-  - **Closest Action Lines:** [C1](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C2](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C4](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html); also [C3](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C5](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C7](https://www.itu.int/net/wsis/docs/geneva/official/poa.html) and [C11](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [9.c](https://unstats.un.org/sdgs/metadata/?Text=&Goal=9&Target=9.c), [16.6](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.6), [17.8](https://unstats.un.org/sdgs/metadata/?Text=&Goal=17&Target=17.8), [17.16](https://unstats.un.org/sdgs/metadata/?Text=&Goal=17&Target=17.16)
-  - **Related GDC commitments:** Paras [10](https://dig.watch/resource/global-digital-compact) to [21](https://dig.watch/resource/global-digital-compact)
-
-</details>
+${resize((width) => wsisMap(wsisData, "Connectivity and infrastructure", { width }))}
 
 **Open questions:** connectivity is the best-measured part of the digital agenda, yet the commitments made at WSIS+20 and in the Global Digital Compact ask for more than the current indicators can show. How affordable is a connection relative to what people earn, and is it fast and stable enough to work, study and reach public services? How does access differ between women and men, between cities and rural areas, and for people with disabilities? Are community access points reaching those who would otherwise be offline? Shutdown data record documented disruptions; slower and more selective interference, such as throttling or the blocking of particular services, is harder to detect and rarely counted. Answering these questions may depend on household surveys designed from the outset to capture them, and on the resources and priorities of national statistical systems.
 
@@ -89,29 +68,7 @@ _Can people exercise their rights and reach information online, and do instituti
 
 **Related WSIS+20 priorities:** protection of human rights online as offline; freedom of expression and access to information; privacy; media freedom and the safety of journalists; safeguards, oversight and effective remedy; business respect for human rights.
 
-| Compass indicator                                                                               | What it can show                                                                                                                               |
-| ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Freedom on the Net](https://freedomhouse.org/report/freedom-net) (Freedom House)               | The legal and practical conditions for expression, access and privacy online, including censorship, surveillance and arrests for online speech |
-| [Freedom in the World](https://freedomhouse.org/report/freedom-world) (Freedom House)           | The wider civil and political environment in which people go online                                                                            |
-| [Rule of Law Index](https://worldjusticeproject.org/rule-of-law-index/) (World Justice Project) | Whether public power is constrained, rights are protected and people can access justice                                                        |
-
-<details class="blog-read-more">
-<summary>How does it connect to global governance commitments?</summary>
-
-- **[Freedom on the Net](https://freedomhouse.org/report/freedom-net) (Freedom House)**
-  - **Closest Action Lines:** [C3](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C5](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C9](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C10](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [16.3](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.3), [16.10](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.10)
-  - **Related GDC commitments:** Paras [22](https://dig.watch/resource/global-digital-compact) to [36](https://dig.watch/resource/global-digital-compact), especially [23](https://dig.watch/resource/global-digital-compact), [29](https://dig.watch/resource/global-digital-compact), [31](https://dig.watch/resource/global-digital-compact) and [36](https://dig.watch/resource/global-digital-compact)
-- **[Freedom in the World](https://freedomhouse.org/report/freedom-world) (Freedom House)**
-  - **Closest Action Lines:** [C1](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C3](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C9](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C10](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [16.3](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.3), [16.6](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.6), [16.7](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.7), [16.10](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.10)
-  - **Related GDC commitments:** Paras [22](https://dig.watch/resource/global-digital-compact) to [36](https://dig.watch/resource/global-digital-compact)
-- **[Rule of Law Index](https://worldjusticeproject.org/rule-of-law-index/) (World Justice Project)**
-  - **Closest Action Lines:** [C1](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C5](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C10](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [16.3](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.3), [16.6](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.6)
-  - **Related GDC commitments:** Paras [23(b)](https://dig.watch/resource/global-digital-compact), [25(b)](https://dig.watch/resource/global-digital-compact) and [31(d)](https://dig.watch/resource/global-digital-compact)
-
-</details>
+${resize((width) => wsisMap(wsisData, "Rights and freedoms", { width }))}
 
 **Open questions:** rights commitments are among the hardest to measure, and this is where the gap between what states have promised and what can be observed is widest. How do we know whether people who are harmed online can actually obtain a remedy? How can the lawfulness and scale of surveillance be assessed when it is designed to be invisible? What would it take to monitor how platforms moderate content, handle complaints and protect users across different countries? Independent assessments fill part of this gap, but they cover only part of the world and tend to be thinnest where the concerns are greatest, and the broader measures of civil liberties and the rule of law describe the environment in which people go online rather than digital rights themselves. Building rights-sensitive indicators that are credible, comparable and safe to collect is one of the central challenges for the next WSIS cycle.
 
@@ -125,29 +82,7 @@ _Is digital transformation environmentally sustainable, economically inclusive a
 
 **Related WSIS+20 priorities:** the environmental footprint of digital technologies across their life cycle; e-waste; energy and water demand from data centres and AI; sustainable use of critical minerals; responsible and human-centred AI; fair competition, digital entrepreneurship and participation in the digital economy.
 
-| Compass indicator                                                                                                                           | What it can show                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [Global E-waste Monitor](https://www.itu.int/en/ITU-D/Environment/Pages/Publications/The-Global-E-waste-Monitor-2024.aspx) (ITU and UNITAR) | How much electronic waste countries generate and how much is collected and recycled responsibly |
-| [Global Index on Responsible AI](https://www.global-index.ai/) (Global Center on AI Governance)                                             | Whether countries have the policies, institutions and civic capacity to govern AI responsibly   |
-| [Digital Trade Integration Index](https://dti.eui.eu/) (EUI)                                                                                | How open or restrictive a country's rules are for digital trade and the digital economy         |
-
-<details class="blog-read-more">
-<summary>How does it connect to global governance commitments?</summary>
-
-- **[Global E-waste Monitor](https://www.itu.int/en/ITU-D/Environment/Pages/Publications/The-Global-E-waste-Monitor-2024.aspx) (ITU and UNITAR)**
-  - **Closest Action Lines:** [C2](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C7](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C10](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C11](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [12.4](https://unstats.un.org/sdgs/metadata/?Text=&Goal=12&Target=12.4), [12.5](https://unstats.un.org/sdgs/metadata/?Text=&Goal=12&Target=12.5), [13.2](https://unstats.un.org/sdgs/metadata/?Text=&Goal=13&Target=13.2)
-  - **Related GDC commitments:** Paras [8(e)](https://dig.watch/resource/global-digital-compact) and [11(e)](https://dig.watch/resource/global-digital-compact)
-- **[Global Index on Responsible AI](https://www.global-index.ai/) (Global Center on AI Governance)**
-  - **Closest Action Lines:** [C1](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C4](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C5](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C10](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C11](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [8.2](https://unstats.un.org/sdgs/metadata/?Text=&Goal=8&Target=8.2), [9.5](https://unstats.un.org/sdgs/metadata/?Text=&Goal=9&Target=9.5), [16.6](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.6)
-  - **Related GDC commitments:** Paras [8(i)](https://dig.watch/resource/global-digital-compact) and [50](https://dig.watch/resource/global-digital-compact) to [59](https://dig.watch/resource/global-digital-compact)
-- **[Digital Trade Integration Index](https://dti.eui.eu/) (EUI)**
-  - **Closest Action Lines:** [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C7](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C11](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [8.3](https://unstats.un.org/sdgs/metadata/?Text=&Goal=8&Target=8.3), [9.3](https://unstats.un.org/sdgs/metadata/?Text=&Goal=9&Target=9.3), [17.11](https://unstats.un.org/sdgs/metadata/?Text=&Goal=17&Target=17.11)
-  - **Related GDC commitments:** Paras [18](https://dig.watch/resource/global-digital-compact) to [21](https://dig.watch/resource/global-digital-compact) and [46](https://dig.watch/resource/global-digital-compact) to [49](https://dig.watch/resource/global-digital-compact)
-
-</details>
+${resize((width) => wsisMap(wsisData, "Responsibility and sustainability", { width }))}
 
 **Open questions:** WSIS+20 gives far more weight to the environmental cost of digitalisation than earlier texts did, and here the data lag well behind the commitments. How can we monitor the energy and water consumed by devices, data traffic, data centres and AI at the level of countries, where policy is made? How can the extraction of critical minerals for digital equipment be tracked? E-waste is measured because a global effort was made to measure it; the rest of the footprint needs the same investment. On AI, the pressing question is how to move from counting strategies and laws to observing how systems are actually deployed, what harms occur and whether people can seek redress. On the digital economy, better data are needed on who participates and who gains, and on the concentration of market power that the Global Digital Compact singles out.
 
@@ -161,29 +96,7 @@ _Can digital systems and public institutions withstand disruption, manage risk a
 
 **Related WSIS+20 priorities:** confidence and security in the use of ICTs; consumer trust in the digital economy; resilient infrastructure and services; transparent and predictable regulatory frameworks; accountable institutions and multistakeholder cooperation.
 
-| Compass indicator                                                                                                    | What it can show                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| [Global Cybersecurity Index](https://www.itu.int/en/ITU-D/Cybersecurity/pages/global-cybersecurity-index.aspx) (ITU) | The legal, technical, organisational, capacity and cooperation measures countries have put in place for cybersecurity |
-| [Internet Resilience Index](https://pulse.internetsociety.org/en/resilience/) (Internet Society Pulse)               | How well a country's internet infrastructure and market can withstand shocks and keep services running                |
-| [Accountability Index](https://www.v-dem.net/) (V-Dem)                                                               | Whether governments are held to account by voters, by other institutions and by media and civil society               |
-
-<details class="blog-read-more">
-<summary>How does it connect to global governance commitments?</summary>
-
-- **[Global Cybersecurity Index](https://www.itu.int/en/ITU-D/Cybersecurity/pages/global-cybersecurity-index.aspx) (ITU)**
-  - **Closest Action Lines:** [C4](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C5](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C11](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [9.1](https://unstats.un.org/sdgs/metadata/?Text=&Goal=9&Target=9.1), [16.6](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.6), [17.9](https://unstats.un.org/sdgs/metadata/?Text=&Goal=17&Target=17.9)
-  - **Related GDC commitments:** Paras [20](https://dig.watch/resource/global-digital-compact) and [21(j)](https://dig.watch/resource/global-digital-compact)
-- **[Internet Resilience Index](https://pulse.internetsociety.org/en/resilience/) (Internet Society Pulse)**
-  - **Closest Action Lines:** [C2](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C5](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C11](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [9.1](https://unstats.un.org/sdgs/metadata/?Text=&Goal=9&Target=9.1), [9.c](https://unstats.un.org/sdgs/metadata/?Text=&Goal=9&Target=9.c), [11.b](https://unstats.un.org/sdgs/metadata/?Text=&Goal=11&Target=11.b)
-  - **Related GDC commitments:** Paras [11(c)](https://dig.watch/resource/global-digital-compact), [15](https://dig.watch/resource/global-digital-compact), [20](https://dig.watch/resource/global-digital-compact) and [29(a) to (c)](https://dig.watch/resource/global-digital-compact)
-- **[Accountability Index](https://www.v-dem.net/) (V-Dem)**
-  - **Closest Action Lines:** [C1](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C6](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C10](https://www.itu.int/net/wsis/docs/geneva/official/poa.html), [C11](https://www.itu.int/net/wsis/docs/geneva/official/poa.html)
-  - **Related SDG targets:** [16.6](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.6), [16.7](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.7), [16.10](https://unstats.un.org/sdgs/metadata/?Text=&Goal=16&Target=16.10)
-  - **Related GDC commitments:** Paras [23(b)](https://dig.watch/resource/global-digital-compact), [25(b)](https://dig.watch/resource/global-digital-compact), [27](https://dig.watch/resource/global-digital-compact), [32(b)](https://dig.watch/resource/global-digital-compact) and [48](https://dig.watch/resource/global-digital-compact)
-
-</details>
+${resize((width) => wsisMap(wsisData, "Trust and resilience", { width }))}
 
 **Open questions:** trust is invoked throughout the WSIS+20 outcome and the Global Digital Compact, and it is one of the hardest things to measure. How much do people actually trust digital services and the institutions behind them, and how does that change after a breach, a shutdown or a disinformation campaign? How many cyber incidents occur, whom do they affect and what do they cost? Are the digital public infrastructure systems now being rolled out for identity, payments and public services safe and subject to meaningful oversight? Current indicators describe preparedness well, and the accountability measures available are general ones; the outcomes that preparedness is meant to secure, and the oversight of digital systems specifically, remain largely unmeasured.
 
