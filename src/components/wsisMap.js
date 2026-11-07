@@ -14,7 +14,7 @@ const MAX_W = 640; // same column width as the text and tables
 const FS = 12; // .chart-axistext is 12px
 const LH = 15; // line height for wrapped labels
 const STEP = 20; // spacing between dots
-const R = 5; // dot radius (hover radius is set in CSS)
+const R = 6; // dot radius (hover radius is set in CSS)
 
 function svgEl(tag, attrs = {}, parent) {
   const node = document.createElementNS(SVG_NS, tag);
@@ -41,9 +41,17 @@ function wrap(text, maxPx, k = 0.56) {
 
 // lines: [{ text, cls }]
 function drawLines(parent, lines, x, yFirst, anchor) {
-  const t = svgEl("text", { x, y: yFirst, "text-anchor": anchor, class: "chart-axistext" }, parent);
+  const t = svgEl(
+    "text",
+    { x, y: yFirst, "text-anchor": anchor, class: "chart-axistext" },
+    parent,
+  );
   lines.forEach((l, i) => {
-    const sp = svgEl("tspan", { x, dy: i === 0 ? 0 : LH, ...(l.cls ? { class: l.cls } : {}) }, t);
+    const sp = svgEl(
+      "tspan",
+      { x, dy: i === 0 ? 0 : LH, ...(l.cls ? { class: l.cls } : {}) },
+      t,
+    );
     sp.textContent = l.text;
   });
   return t;
@@ -107,7 +115,9 @@ export function wsisMap(data, pillar, { width = MAX_W } = {}) {
       ...wrap(name, left - 12, 0.6).map((text) => ({ text, cls: "wsis-name" })),
       ...wrap(first.source, left - 12).map((text) => ({ text })),
     ];
-    const dotLines = Math.max(...cells.map((c) => Math.ceil(c.length / perLine)));
+    const dotLines = Math.max(
+      ...cells.map((c) => Math.ceil(c.length / perLine)),
+    );
     const h = Math.max(labelLines.length * LH, dotLines * STEP) + 22;
     const row = { name, first, cells, labelLines, top: y, h };
     y += h;
@@ -115,7 +125,9 @@ export function wsisMap(data, pillar, { width = MAX_W } = {}) {
   });
   const noteText =
     "Hover over an indicator or a dot for details, click a dot to open the source text." +
-    (rows.some((d) => d.note === "also") ? " Hollow dots mark secondary links." : "");
+    (rows.some((d) => d.note === "also")
+      ? " Hollow dots mark secondary links."
+      : "");
   const noteLines = wrap(noteText, W).map((text) => ({ text }));
   const H = y + 14 + noteLines.length * LH + 4;
 
@@ -137,24 +149,52 @@ export function wsisMap(data, pillar, { width = MAX_W } = {}) {
   CATEGORIES.forEach((c, i) => {
     drawLines(svg, headerLines[i], left + bandW * (i + 0.5), LH - 3, "middle");
   });
-  svgEl("line", { x1: 0, x2: W, y1: headerH - 4, y2: headerH - 4, class: "wsis-rule wsis-rule--head" }, svg);
+  svgEl(
+    "line",
+    {
+      x1: 0,
+      x2: W,
+      y1: headerH - 4,
+      y2: headerH - 4,
+      class: "wsis-rule wsis-rule--head",
+    },
+    svg,
+  );
 
   for (const r of layout) {
-    svgEl("line", { x1: 0, x2: W, y1: r.top + r.h, y2: r.top + r.h, class: "wsis-rule" }, svg);
+    svgEl(
+      "line",
+      { x1: 0, x2: W, y1: r.top + r.h, y2: r.top + r.h, class: "wsis-rule" },
+      svg,
+    );
     const textTop = r.top + r.h / 2 - ((r.labelLines.length - 1) * LH) / 2 + 4;
     const nameLink = svgEl(
       "a",
-      { href: r.first.indicator_href, target: "_blank", rel: "noopener", "aria-label": `${r.name}: ${r.first.shows}` },
+      {
+        href: r.first.indicator_href,
+        target: "_blank",
+        rel: "noopener",
+        "aria-label": `${r.name}: ${r.first.shows}`,
+      },
       svg,
     );
     drawLines(nameLink, r.labelLines, 0, textTop, "start");
     const nameTip = { label: r.name, text: r.first.shows };
-    nameLink.addEventListener("pointerenter", (e) => showTooltip(tip, nameTip, e.pageX, e.pageY));
-    nameLink.addEventListener("pointermove", (e) => showTooltip(tip, nameTip, e.pageX, e.pageY));
+    nameLink.addEventListener("pointerenter", (e) =>
+      showTooltip(tip, nameTip, e.pageX, e.pageY),
+    );
+    nameLink.addEventListener("pointermove", (e) =>
+      showTooltip(tip, nameTip, e.pageX, e.pageY),
+    );
     nameLink.addEventListener("pointerleave", hide);
     nameLink.addEventListener("focus", () => {
       const b = nameLink.getBoundingClientRect();
-      showTooltip(tip, nameTip, b.left + window.scrollX, b.bottom + window.scrollY);
+      showTooltip(
+        tip,
+        nameTip,
+        b.left + window.scrollX,
+        b.bottom + window.scrollY,
+      );
     });
     nameLink.addEventListener("blur", hide);
 
@@ -165,25 +205,46 @@ export function wsisMap(data, pillar, { width = MAX_W } = {}) {
       items.forEach((d, k) => {
         const line = Math.floor(k / perLine);
         const inLine = Math.min(perLine, items.length - line * perLine);
-        const cx = bandX + bandW / 2 - ((inLine - 1) * STEP) / 2 + (k % perLine) * STEP;
+        const cx =
+          bandX + bandW / 2 - ((inLine - 1) * STEP) / 2 + (k % perLine) * STEP;
         const cy = blockTop + line * STEP;
 
         const a = svgEl(
           "a",
-          { href: d.href, target: "_blank", rel: "noopener", "aria-label": `${d.label}: ${d.text}` },
+          {
+            href: d.href,
+            target: "_blank",
+            rel: "noopener",
+            "aria-label": `${d.label}: ${d.text}`,
+          },
           svg,
         );
         const dot = svgEl(
           "circle",
-          { cx, cy, r: R, class: d.note === "also" ? "wsis-dot wsis-dot--secondary" : "wsis-dot" },
+          {
+            cx,
+            cy,
+            r: R,
+            class:
+              d.note === "also" ? "wsis-dot wsis-dot--secondary" : "wsis-dot",
+          },
           a,
         );
-        a.addEventListener("pointerenter", (e) => showTooltip(tip, d, e.pageX, e.pageY));
-        a.addEventListener("pointermove", (e) => showTooltip(tip, d, e.pageX, e.pageY));
+        a.addEventListener("pointerenter", (e) =>
+          showTooltip(tip, d, e.pageX, e.pageY),
+        );
+        a.addEventListener("pointermove", (e) =>
+          showTooltip(tip, d, e.pageX, e.pageY),
+        );
         a.addEventListener("pointerleave", hide);
         a.addEventListener("focus", () => {
           const b = dot.getBoundingClientRect();
-          showTooltip(tip, d, b.left + b.width / 2 + window.scrollX, b.top + window.scrollY);
+          showTooltip(
+            tip,
+            d,
+            b.left + b.width / 2 + window.scrollX,
+            b.top + window.scrollY,
+          );
         });
         a.addEventListener("blur", hide);
       });

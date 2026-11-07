@@ -456,8 +456,6 @@ a:focus-visible .sourcecard {
   /* color: #fff; Change span text color to #3c4099 on hover */
 }
 
-
-
 .desktop-notice {
   background-color: #4ed0bf33;
   color: var(--ui-ink);
@@ -1451,4 +1449,56 @@ a.blog-preview-tile:hover .blog-img-wrap img {
 }
 .blog-read-more > h2:first-of-type {
   margin-top: 0;
+}
+
+/* WSIS mapping dot chart (components/wsisMap.js, used on perspectives).
+   Reuses .chart-tooltip + .tt-* (tooltip) and .chart-axistext (all labels,
+   incl. the hint line). Dots use the site accent turquoise (--ui-accent).
+   Replaces the previous .wsis-* block. */
+.wsis-map {
+  max-width: 640px; /* same column as the text */
+}
+.wsis-map svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+}
+/* a[href] sets bold + teal globally; set weight explicitly, keep text ink */
+.wsis-map text {
+  fill: var(--ui-ink);
+  font-weight: 400;
+}
+.wsis-map .wsis-head,
+.wsis-map .wsis-name {
+  font-weight: 700;
+}
+.wsis-map a:hover .wsis-name {
+  fill: var(--ui-accent);
+}
+.wsis-map .wsis-rule {
+  stroke: var(--ui-border-color);
+}
+.wsis-map .wsis-rule--head {
+  stroke: var(--ui-ink-muted);
+}
+.wsis-dot {
+  fill: var(--ui-accent);
+  stroke: var(--ui-accent);
+  stroke-width: 2;
+  cursor: pointer;
+  transition: r var(--ui-transition);
+}
+.wsis-dot--secondary {
+  fill: var(
+    --ui-surface
+  ); /* hollow = secondary link, as in indicatorHistorical */
+}
+.wsis-map a:hover .wsis-dot,
+.wsis-map a:focus-visible .wsis-dot {
+  r: 7px;
+}
+.wsis-map a:focus-visible {
+  outline: var(--ui-focus);
+  outline-offset: 2px;
 }
