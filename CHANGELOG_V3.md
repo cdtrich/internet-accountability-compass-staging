@@ -1,5 +1,23 @@
 # Changelog: v3
 
+## 2026-11-07 — Polar multiples: wrap long names at every width
+
+`src/components/polarBarsD3.js`: the two-line name wrapping (previous phone-only change) now
+applies whenever a name is wider than its cell − 8px, at any width. Rows get the extra 18px only
+when some name wraps (always on phones, as before). Font size unchanged (forced 16px); the svg is
+not scaled, so the canvas measurement holds.
+
+**Verified** (countries, classic scrollbars): 1024 (cell 160px): 9 names wrap; none wider than
+its cell, none past the svg, no neighbour overlap (before: 6 too wide, 3 past the svg, 3
+overlaps). 1280 (204px): 3 wrap, all clear (before: 3 too wide, 2 past the svg). 390 and 744
+identical to before (6 and 0 wrapped). svg height +720px at 1024 and 1280 (40 rows × 18).
+
+**Not changed, reported**: `isMobile` is set once at page load (countries.md), so the grid does
+not switch between 2 and 5 columns on resize. Fresh load at 744: 2 columns; resized from 1280 to
+744: 5 columns of 134px, svg from x −16, "Democratic Republic of The Congo" still too wide.
+
+**Rollback**: `git revert` this commit.
+
 ## 2026-11-07 — Dot charts: left inset = bubble allowance
 
 `src/components/straightPlotD3.js`: desktop `margin.left` from `Math.max(40, maxBubbleRadius)` to

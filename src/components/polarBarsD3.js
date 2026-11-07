@@ -195,9 +195,30 @@ export function polarBarsD3(data, isMobile, options = {}) {
   const insetLeft = isMobile ? 32 : 0;
   const totalWidth = isMobile ? Math.max(0, width - 48) : width * 0.9;
   const cellWidth = totalWidth / cols;
-  // Mobile: one extra name line per row, for names wrapped onto two lines
   const nameLine = 18;
-  const cellHeight = cellWidth + (isMobile ? nameLine : 0);
+  // Names wider than their cell wrap onto two lines, split at the space that
+  // gives the shorter longer line. Measured at the forced 16px bold (style.css
+  // svg text rule); the svg is never scaled up or down (width <= container).
+  const measure = document.createElement("canvas").getContext("2d");
+  measure.font = `700 16px ${getComputedStyle(document.body).getPropertyValue("--sans-serif") || "sans-serif"}`;
+  const nameLines = (name) => {
+    if (measure.measureText(name).width <= cellWidth - 8) return [name];
+    const words = name.split(" ");
+    let best = [name];
+    let bestW = Infinity;
+    for (let i = 1; i < words.length; i++) {
+      const a = words.slice(0, i).join(" ");
+      const b = words.slice(i).join(" ");
+      const w = Math.max(measure.measureText(a).width, measure.measureText(b).width);
+      if (w < bestW) [best, bestW] = [[a, b], w];
+    }
+    return best;
+  };
+
+  // One extra name line per row when any name wraps (always on mobile, as
+  // before), so a two-line name clears the chart above it
+  const anyWrapped = countries.some((c) => nameLines(c).length > 1);
+  const cellHeight = cellWidth + (isMobile || anyWrapped ? nameLine : 0);
   const radius = cellWidth * 0.35;
   const totalHeight = rows * cellHeight;
 
@@ -213,25 +234,6 @@ export function polarBarsD3(data, isMobile, options = {}) {
       "style",
       `max-width: 100%; height: auto;${insetLeft ? ` margin-left: ${insetLeft}px;` : ""}`,
     );
-
-  // Mobile: names wider than their cell wrap onto two lines, split at the
-  // space that gives the shorter longer line. Measured at the forced 16px
-  // bold (style.css svg text rule); the svg is not scaled on mobile.
-  const measure = document.createElement("canvas").getContext("2d");
-  measure.font = `700 16px ${getComputedStyle(document.body).getPropertyValue("--sans-serif") || "sans-serif"}`;
-  const nameLines = (name) => {
-    if (!isMobile || measure.measureText(name).width <= cellWidth - 8) return [name];
-    const words = name.split(" ");
-    let best = [name];
-    let bestW = Infinity;
-    for (let i = 1; i < words.length; i++) {
-      const a = words.slice(0, i).join(" ");
-      const b = words.slice(i).join(" ");
-      const w = Math.max(measure.measureText(a).width, measure.measureText(b).width);
-      if (w < bestW) [best, bestW] = [[a, b], w];
-    }
-    return best;
-  };
 
   // Legend centred horizontally regardless of column count
   drawLegend(
