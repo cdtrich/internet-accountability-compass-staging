@@ -219,16 +219,16 @@ Czechia,CZE,Rights and freedoms,86,NA,Leading,2020,NA,countries/cze
 Czechia,CZE,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/cze
 Czechia,CZE,Trust and resilience,79,NA,On track,2020,NA,countries/cze
 Czechia,CZE,Total score,78,NA,On track,2020,Partial data,countries/cze
-Côte D’Ivoire,CIV,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/civ
-Côte D’Ivoire,CIV,Rights and freedoms,51,NA,Catching up,2020,NA,countries/civ
-Côte D’Ivoire,CIV,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/civ
-Côte D’Ivoire,CIV,Trust and resilience,58,NA,Catching up,2020,NA,countries/civ
-Côte D’Ivoire,CIV,Total score,61,NA,Catching up,2020,Partial data,countries/civ
-Democratic Republic of The Congo,COD,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Rights and freedoms,32,NA,Off track,2020,NA,countries/cod
-Democratic Republic of The Congo,COD,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Trust and resilience,NA,NA,NA,2020,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Total score,NA,NA,NA,2020,Partial data,countries/cod
+Côte d'Ivoire,CIV,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/civ
+Côte d'Ivoire,CIV,Rights and freedoms,51,NA,Catching up,2020,NA,countries/civ
+Côte d'Ivoire,CIV,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/civ
+Côte d'Ivoire,CIV,Trust and resilience,58,NA,Catching up,2020,NA,countries/civ
+Côte d'Ivoire,CIV,Total score,61,NA,Catching up,2020,Partial data,countries/civ
+DR Congo,COD,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/cod
+DR Congo,COD,Rights and freedoms,32,NA,Off track,2020,NA,countries/cod
+DR Congo,COD,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/cod
+DR Congo,COD,Trust and resilience,NA,NA,NA,2020,Partial data,countries/cod
+DR Congo,COD,Total score,NA,NA,NA,2020,Partial data,countries/cod
 Denmark,DNK,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/dnk
 Denmark,DNK,Rights and freedoms,94,NA,Leading,2020,NA,countries/dnk
 Denmark,DNK,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/dnk
@@ -709,11 +709,11 @@ Romania,ROU,Rights and freedoms,79,NA,On track,2020,NA,countries/rou
 Romania,ROU,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/rou
 Romania,ROU,Trust and resilience,73,NA,On track,2020,NA,countries/rou
 Romania,ROU,Total score,76,NA,On track,2020,Partial data,countries/rou
-Russian Federation,RUS,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/rus
-Russian Federation,RUS,Rights and freedoms,38,NA,Off track,2020,NA,countries/rus
-Russian Federation,RUS,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/rus
-Russian Federation,RUS,Trust and resilience,69,NA,On track,2020,NA,countries/rus
-Russian Federation,RUS,Total score,59,NA,Catching up,2020,Partial data,countries/rus
+Russia,RUS,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/rus
+Russia,RUS,Rights and freedoms,38,NA,Off track,2020,NA,countries/rus
+Russia,RUS,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/rus
+Russia,RUS,Trust and resilience,69,NA,On track,2020,NA,countries/rus
+Russia,RUS,Total score,59,NA,Catching up,2020,Partial data,countries/rus
 Rwanda,RWA,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/rwa
 Rwanda,RWA,Rights and freedoms,39,NA,Off track,2020,NA,countries/rwa
 Rwanda,RWA,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/rwa
@@ -729,11 +729,11 @@ Saint Lucia,LCA,Rights and freedoms,NA,NA,NA,2020,Partial data,countries/lca
 Saint Lucia,LCA,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/lca
 Saint Lucia,LCA,Trust and resilience,NA,NA,NA,2020,Partial data,countries/lca
 Saint Lucia,LCA,Total score,NA,NA,NA,2020,Partial data,countries/lca
-Saint Vincent and The Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Rights and freedoms,NA,NA,NA,2020,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Trust and resilience,NA,NA,NA,2020,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Total score,NA,NA,NA,2020,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Rights and freedoms,NA,NA,NA,2020,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Trust and resilience,NA,NA,NA,2020,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Total score,NA,NA,NA,2020,Partial data,countries/vct
 Samoa,WSM,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/wsm
 Samoa,WSM,Rights and freedoms,NA,NA,NA,2020,Partial data,countries/wsm
 Samoa,WSM,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/wsm
@@ -854,6 +854,11 @@ Tajikistan,TJK,Rights and freedoms,NA,NA,NA,2020,Partial data,countries/tjk
 Tajikistan,TJK,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/tjk
 Tajikistan,TJK,Trust and resilience,26,NA,Off track,2020,NA,countries/tjk
 Tajikistan,TJK,Total score,NA,NA,NA,2020,Partial data,countries/tjk
+Tanzania,TZA,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/tza
+Tanzania,TZA,Rights and freedoms,45,NA,Off track,2020,NA,countries/tza
+Tanzania,TZA,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/tza
+Tanzania,TZA,Trust and resilience,69,NA,On track,2020,NA,countries/tza
+Tanzania,TZA,Total score,52,NA,Catching up,2020,Partial data,countries/tza
 Thailand,THA,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/tha
 Thailand,THA,Rights and freedoms,44,NA,Off track,2020,NA,countries/tha
 Thailand,THA,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/tha
@@ -919,11 +924,6 @@ United Kingdom,GBR,Rights and freedoms,86,NA,Leading,2020,NA,countries/gbr
 United Kingdom,GBR,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/gbr
 United Kingdom,GBR,Trust and resilience,89,NA,Leading,2020,NA,countries/gbr
 United Kingdom,GBR,Total score,90,NA,Leading,2020,Partial data,countries/gbr
-United Republic of Tanzania,TZA,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/tza
-United Republic of Tanzania,TZA,Rights and freedoms,45,NA,Off track,2020,NA,countries/tza
-United Republic of Tanzania,TZA,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/tza
-United Republic of Tanzania,TZA,Trust and resilience,69,NA,On track,2020,NA,countries/tza
-United Republic of Tanzania,TZA,Total score,52,NA,Catching up,2020,Partial data,countries/tza
 United States,USA,Connectivity and infrastructure,NA,NA,NA,2020,Partial data,countries/usa
 United States,USA,Rights and freedoms,81,NA,Leading,2020,NA,countries/usa
 United States,USA,Responsibility and sustainability,NA,NA,NA,2020,Partial data,countries/usa
@@ -1189,16 +1189,16 @@ Czechia,CZE,Rights and freedoms,85,NA,Leading,2021,NA,countries/cze
 Czechia,CZE,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/cze
 Czechia,CZE,Trust and resilience,78,NA,On track,2021,NA,countries/cze
 Czechia,CZE,Total score,77,NA,On track,2021,Partial data,countries/cze
-Côte D’Ivoire,CIV,Connectivity and infrastructure,54,NA,Catching up,2021,NA,countries/civ
-Côte D’Ivoire,CIV,Rights and freedoms,46,NA,Off track,2021,NA,countries/civ
-Côte D’Ivoire,CIV,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/civ
-Côte D’Ivoire,CIV,Trust and resilience,57,NA,Catching up,2021,NA,countries/civ
-Côte D’Ivoire,CIV,Total score,56,NA,Catching up,2021,Partial data,countries/civ
-Democratic Republic of The Congo,COD,Connectivity and infrastructure,NA,NA,NA,2021,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Rights and freedoms,35,NA,Off track,2021,NA,countries/cod
-Democratic Republic of The Congo,COD,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Trust and resilience,NA,NA,NA,2021,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Total score,42,NA,Off track,2021,Partial data,countries/cod
+Côte d'Ivoire,CIV,Connectivity and infrastructure,54,NA,Catching up,2021,NA,countries/civ
+Côte d'Ivoire,CIV,Rights and freedoms,46,NA,Off track,2021,NA,countries/civ
+Côte d'Ivoire,CIV,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/civ
+Côte d'Ivoire,CIV,Trust and resilience,57,NA,Catching up,2021,NA,countries/civ
+Côte d'Ivoire,CIV,Total score,56,NA,Catching up,2021,Partial data,countries/civ
+DR Congo,COD,Connectivity and infrastructure,NA,NA,NA,2021,Partial data,countries/cod
+DR Congo,COD,Rights and freedoms,35,NA,Off track,2021,NA,countries/cod
+DR Congo,COD,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/cod
+DR Congo,COD,Trust and resilience,NA,NA,NA,2021,Partial data,countries/cod
+DR Congo,COD,Total score,42,NA,Off track,2021,Partial data,countries/cod
 Denmark,DNK,Connectivity and infrastructure,93,NA,Leading,2021,NA,countries/dnk
 Denmark,DNK,Rights and freedoms,94,NA,Leading,2021,NA,countries/dnk
 Denmark,DNK,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/dnk
@@ -1679,11 +1679,11 @@ Romania,ROU,Rights and freedoms,78,NA,On track,2021,NA,countries/rou
 Romania,ROU,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/rou
 Romania,ROU,Trust and resilience,73,NA,On track,2021,NA,countries/rou
 Romania,ROU,Total score,74,NA,On track,2021,Partial data,countries/rou
-Russian Federation,RUS,Connectivity and infrastructure,78,NA,On track,2021,NA,countries/rus
-Russian Federation,RUS,Rights and freedoms,37,NA,Off track,2021,NA,countries/rus
-Russian Federation,RUS,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/rus
-Russian Federation,RUS,Trust and resilience,68,NA,On track,2021,NA,countries/rus
-Russian Federation,RUS,Total score,61,NA,Catching up,2021,Partial data,countries/rus
+Russia,RUS,Connectivity and infrastructure,78,NA,On track,2021,NA,countries/rus
+Russia,RUS,Rights and freedoms,37,NA,Off track,2021,NA,countries/rus
+Russia,RUS,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/rus
+Russia,RUS,Trust and resilience,68,NA,On track,2021,NA,countries/rus
+Russia,RUS,Total score,61,NA,Catching up,2021,Partial data,countries/rus
 Rwanda,RWA,Connectivity and infrastructure,51,NA,Catching up,2021,NA,countries/rwa
 Rwanda,RWA,Rights and freedoms,39,NA,Off track,2021,NA,countries/rwa
 Rwanda,RWA,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/rwa
@@ -1699,11 +1699,11 @@ Saint Lucia,LCA,Rights and freedoms,NA,NA,NA,2021,Partial data,countries/lca
 Saint Lucia,LCA,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/lca
 Saint Lucia,LCA,Trust and resilience,NA,NA,NA,2021,Partial data,countries/lca
 Saint Lucia,LCA,Total score,NA,NA,NA,2021,Partial data,countries/lca
-Saint Vincent and The Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2021,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Rights and freedoms,NA,NA,NA,2021,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Trust and resilience,NA,NA,NA,2021,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Total score,NA,NA,NA,2021,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2021,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Rights and freedoms,NA,NA,NA,2021,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Trust and resilience,NA,NA,NA,2021,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Total score,NA,NA,NA,2021,Partial data,countries/vct
 Samoa,WSM,Connectivity and infrastructure,NA,NA,NA,2021,Partial data,countries/wsm
 Samoa,WSM,Rights and freedoms,NA,NA,NA,2021,Partial data,countries/wsm
 Samoa,WSM,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/wsm
@@ -1824,6 +1824,11 @@ Tajikistan,TJK,Rights and freedoms,NA,NA,NA,2021,Partial data,countries/tjk
 Tajikistan,TJK,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/tjk
 Tajikistan,TJK,Trust and resilience,26,NA,Off track,2021,NA,countries/tjk
 Tajikistan,TJK,Total score,38,NA,Off track,2021,Partial data,countries/tjk
+Tanzania,TZA,Connectivity and infrastructure,45,NA,Off track,2021,NA,countries/tza
+Tanzania,TZA,Rights and freedoms,42,NA,Off track,2021,NA,countries/tza
+Tanzania,TZA,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/tza
+Tanzania,TZA,Trust and resilience,66,NA,On track,2021,NA,countries/tza
+Tanzania,TZA,Total score,51,NA,Catching up,2021,Partial data,countries/tza
 Thailand,THA,Connectivity and infrastructure,71,NA,On track,2021,NA,countries/tha
 Thailand,THA,Rights and freedoms,41,NA,Off track,2021,NA,countries/tha
 Thailand,THA,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/tha
@@ -1889,11 +1894,6 @@ United Kingdom,GBR,Rights and freedoms,85,NA,Leading,2021,NA,countries/gbr
 United Kingdom,GBR,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/gbr
 United Kingdom,GBR,Trust and resilience,89,NA,Leading,2021,NA,countries/gbr
 United Kingdom,GBR,Total score,85,NA,Leading,2021,Partial data,countries/gbr
-United Republic of Tanzania,TZA,Connectivity and infrastructure,45,NA,Off track,2021,NA,countries/tza
-United Republic of Tanzania,TZA,Rights and freedoms,42,NA,Off track,2021,NA,countries/tza
-United Republic of Tanzania,TZA,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/tza
-United Republic of Tanzania,TZA,Trust and resilience,66,NA,On track,2021,NA,countries/tza
-United Republic of Tanzania,TZA,Total score,51,NA,Catching up,2021,Partial data,countries/tza
 United States,USA,Connectivity and infrastructure,90,NA,Leading,2021,NA,countries/usa
 United States,USA,Rights and freedoms,79,NA,On track,2021,NA,countries/usa
 United States,USA,Responsibility and sustainability,NA,NA,NA,2021,Partial data,countries/usa
@@ -2159,16 +2159,16 @@ Czechia,CZE,Rights and freedoms,85,NA,Leading,2022,NA,countries/cze
 Czechia,CZE,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/cze
 Czechia,CZE,Trust and resilience,78,NA,On track,2022,NA,countries/cze
 Czechia,CZE,Total score,77,NA,On track,2022,Partial data,countries/cze
-Côte D’Ivoire,CIV,Connectivity and infrastructure,56,NA,Catching up,2022,NA,countries/civ
-Côte D’Ivoire,CIV,Rights and freedoms,49,NA,Off track,2022,NA,countries/civ
-Côte D’Ivoire,CIV,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/civ
-Côte D’Ivoire,CIV,Trust and resilience,58,NA,Catching up,2022,NA,countries/civ
-Côte D’Ivoire,CIV,Total score,58,NA,Catching up,2022,Partial data,countries/civ
-Democratic Republic of The Congo,COD,Connectivity and infrastructure,NA,NA,NA,2022,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Rights and freedoms,36,NA,Off track,2022,NA,countries/cod
-Democratic Republic of The Congo,COD,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Trust and resilience,NA,NA,NA,2022,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Total score,43,NA,Off track,2022,Partial data,countries/cod
+Côte d'Ivoire,CIV,Connectivity and infrastructure,56,NA,Catching up,2022,NA,countries/civ
+Côte d'Ivoire,CIV,Rights and freedoms,49,NA,Off track,2022,NA,countries/civ
+Côte d'Ivoire,CIV,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/civ
+Côte d'Ivoire,CIV,Trust and resilience,58,NA,Catching up,2022,NA,countries/civ
+Côte d'Ivoire,CIV,Total score,58,NA,Catching up,2022,Partial data,countries/civ
+DR Congo,COD,Connectivity and infrastructure,NA,NA,NA,2022,Partial data,countries/cod
+DR Congo,COD,Rights and freedoms,36,NA,Off track,2022,NA,countries/cod
+DR Congo,COD,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/cod
+DR Congo,COD,Trust and resilience,NA,NA,NA,2022,Partial data,countries/cod
+DR Congo,COD,Total score,43,NA,Off track,2022,Partial data,countries/cod
 Denmark,DNK,Connectivity and infrastructure,92,NA,Leading,2022,NA,countries/dnk
 Denmark,DNK,Rights and freedoms,94,NA,Leading,2022,NA,countries/dnk
 Denmark,DNK,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/dnk
@@ -2649,11 +2649,11 @@ Romania,ROU,Rights and freedoms,78,NA,On track,2022,NA,countries/rou
 Romania,ROU,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/rou
 Romania,ROU,Trust and resilience,73,NA,On track,2022,NA,countries/rou
 Romania,ROU,Total score,74,NA,On track,2022,Partial data,countries/rou
-Russian Federation,RUS,Connectivity and infrastructure,75,NA,On track,2022,NA,countries/rus
-Russian Federation,RUS,Rights and freedoms,36,NA,Off track,2022,NA,countries/rus
-Russian Federation,RUS,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/rus
-Russian Federation,RUS,Trust and resilience,67,NA,On track,2022,NA,countries/rus
-Russian Federation,RUS,Total score,59,NA,Catching up,2022,Partial data,countries/rus
+Russia,RUS,Connectivity and infrastructure,75,NA,On track,2022,NA,countries/rus
+Russia,RUS,Rights and freedoms,36,NA,Off track,2022,NA,countries/rus
+Russia,RUS,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/rus
+Russia,RUS,Trust and resilience,67,NA,On track,2022,NA,countries/rus
+Russia,RUS,Total score,59,NA,Catching up,2022,Partial data,countries/rus
 Rwanda,RWA,Connectivity and infrastructure,51,NA,Catching up,2022,NA,countries/rwa
 Rwanda,RWA,Rights and freedoms,40,NA,Off track,2022,NA,countries/rwa
 Rwanda,RWA,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/rwa
@@ -2669,11 +2669,11 @@ Saint Lucia,LCA,Rights and freedoms,NA,NA,NA,2022,Partial data,countries/lca
 Saint Lucia,LCA,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/lca
 Saint Lucia,LCA,Trust and resilience,NA,NA,NA,2022,Partial data,countries/lca
 Saint Lucia,LCA,Total score,NA,NA,NA,2022,Partial data,countries/lca
-Saint Vincent and The Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2022,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Rights and freedoms,NA,NA,NA,2022,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Trust and resilience,NA,NA,NA,2022,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Total score,NA,NA,NA,2022,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2022,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Rights and freedoms,NA,NA,NA,2022,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Trust and resilience,NA,NA,NA,2022,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Total score,NA,NA,NA,2022,Partial data,countries/vct
 Samoa,WSM,Connectivity and infrastructure,NA,NA,NA,2022,Partial data,countries/wsm
 Samoa,WSM,Rights and freedoms,NA,NA,NA,2022,Partial data,countries/wsm
 Samoa,WSM,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/wsm
@@ -2794,6 +2794,11 @@ Tajikistan,TJK,Rights and freedoms,NA,NA,NA,2022,Partial data,countries/tjk
 Tajikistan,TJK,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/tjk
 Tajikistan,TJK,Trust and resilience,27,NA,Off track,2022,NA,countries/tjk
 Tajikistan,TJK,Total score,37,NA,Off track,2022,Partial data,countries/tjk
+Tanzania,TZA,Connectivity and infrastructure,50,NA,Catching up,2022,NA,countries/tza
+Tanzania,TZA,Rights and freedoms,42,NA,Off track,2022,NA,countries/tza
+Tanzania,TZA,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/tza
+Tanzania,TZA,Trust and resilience,68,NA,On track,2022,NA,countries/tza
+Tanzania,TZA,Total score,52,NA,Catching up,2022,Partial data,countries/tza
 Thailand,THA,Connectivity and infrastructure,72,NA,On track,2022,NA,countries/tha
 Thailand,THA,Rights and freedoms,40,NA,Off track,2022,NA,countries/tha
 Thailand,THA,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/tha
@@ -2859,11 +2864,6 @@ United Kingdom,GBR,Rights and freedoms,85,NA,Leading,2022,NA,countries/gbr
 United Kingdom,GBR,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/gbr
 United Kingdom,GBR,Trust and resilience,88,NA,Leading,2022,NA,countries/gbr
 United Kingdom,GBR,Total score,87,NA,Leading,2022,Partial data,countries/gbr
-United Republic of Tanzania,TZA,Connectivity and infrastructure,50,NA,Catching up,2022,NA,countries/tza
-United Republic of Tanzania,TZA,Rights and freedoms,42,NA,Off track,2022,NA,countries/tza
-United Republic of Tanzania,TZA,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/tza
-United Republic of Tanzania,TZA,Trust and resilience,68,NA,On track,2022,NA,countries/tza
-United Republic of Tanzania,TZA,Total score,52,NA,Catching up,2022,Partial data,countries/tza
 United States,USA,Connectivity and infrastructure,90,NA,Leading,2022,NA,countries/usa
 United States,USA,Rights and freedoms,80,NA,Leading,2022,NA,countries/usa
 United States,USA,Responsibility and sustainability,NA,NA,NA,2022,Partial data,countries/usa
@@ -3129,16 +3129,16 @@ Czechia,CZE,Rights and freedoms,84,NA,Leading,2023,NA,countries/cze
 Czechia,CZE,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/cze
 Czechia,CZE,Trust and resilience,78,NA,On track,2023,NA,countries/cze
 Czechia,CZE,Total score,78,NA,On track,2023,Partial data,countries/cze
-Côte D’Ivoire,CIV,Connectivity and infrastructure,66,NA,On track,2023,NA,countries/civ
-Côte D’Ivoire,CIV,Rights and freedoms,49,NA,Off track,2023,NA,countries/civ
-Côte D’Ivoire,CIV,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/civ
-Côte D’Ivoire,CIV,Trust and resilience,59,NA,Catching up,2023,NA,countries/civ
-Côte D’Ivoire,CIV,Total score,61,NA,Catching up,2023,Partial data,countries/civ
-Democratic Republic of The Congo,COD,Connectivity and infrastructure,50,NA,Catching up,2023,NA,countries/cod
-Democratic Republic of The Congo,COD,Rights and freedoms,36,NA,Off track,2023,NA,countries/cod
-Democratic Republic of The Congo,COD,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Trust and resilience,NA,NA,NA,2023,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Total score,41,NA,Off track,2023,Partial data,countries/cod
+Côte d'Ivoire,CIV,Connectivity and infrastructure,66,NA,On track,2023,NA,countries/civ
+Côte d'Ivoire,CIV,Rights and freedoms,49,NA,Off track,2023,NA,countries/civ
+Côte d'Ivoire,CIV,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/civ
+Côte d'Ivoire,CIV,Trust and resilience,59,NA,Catching up,2023,NA,countries/civ
+Côte d'Ivoire,CIV,Total score,61,NA,Catching up,2023,Partial data,countries/civ
+DR Congo,COD,Connectivity and infrastructure,50,NA,Catching up,2023,NA,countries/cod
+DR Congo,COD,Rights and freedoms,36,NA,Off track,2023,NA,countries/cod
+DR Congo,COD,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/cod
+DR Congo,COD,Trust and resilience,NA,NA,NA,2023,Partial data,countries/cod
+DR Congo,COD,Total score,41,NA,Off track,2023,Partial data,countries/cod
 Denmark,DNK,Connectivity and infrastructure,90,NA,Leading,2023,NA,countries/dnk
 Denmark,DNK,Rights and freedoms,94,NA,Leading,2023,NA,countries/dnk
 Denmark,DNK,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/dnk
@@ -3619,11 +3619,11 @@ Romania,ROU,Rights and freedoms,78,NA,On track,2023,NA,countries/rou
 Romania,ROU,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/rou
 Romania,ROU,Trust and resilience,71,NA,On track,2023,NA,countries/rou
 Romania,ROU,Total score,75,NA,On track,2023,Partial data,countries/rou
-Russian Federation,RUS,Connectivity and infrastructure,62,NA,Catching up,2023,NA,countries/rus
-Russian Federation,RUS,Rights and freedoms,31,NA,Off track,2023,NA,countries/rus
-Russian Federation,RUS,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/rus
-Russian Federation,RUS,Trust and resilience,64,NA,Catching up,2023,NA,countries/rus
-Russian Federation,RUS,Total score,54,NA,Catching up,2023,Partial data,countries/rus
+Russia,RUS,Connectivity and infrastructure,62,NA,Catching up,2023,NA,countries/rus
+Russia,RUS,Rights and freedoms,31,NA,Off track,2023,NA,countries/rus
+Russia,RUS,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/rus
+Russia,RUS,Trust and resilience,64,NA,Catching up,2023,NA,countries/rus
+Russia,RUS,Total score,54,NA,Catching up,2023,Partial data,countries/rus
 Rwanda,RWA,Connectivity and infrastructure,59,NA,Catching up,2023,NA,countries/rwa
 Rwanda,RWA,Rights and freedoms,39,NA,Off track,2023,NA,countries/rwa
 Rwanda,RWA,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/rwa
@@ -3639,11 +3639,11 @@ Saint Lucia,LCA,Rights and freedoms,NA,NA,NA,2023,Partial data,countries/lca
 Saint Lucia,LCA,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/lca
 Saint Lucia,LCA,Trust and resilience,NA,NA,NA,2023,Partial data,countries/lca
 Saint Lucia,LCA,Total score,61,NA,Catching up,2023,Partial data,countries/lca
-Saint Vincent and The Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2023,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Rights and freedoms,NA,NA,NA,2023,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Trust and resilience,NA,NA,NA,2023,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Total score,NA,NA,NA,2023,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2023,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Rights and freedoms,NA,NA,NA,2023,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Trust and resilience,NA,NA,NA,2023,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Total score,NA,NA,NA,2023,Partial data,countries/vct
 Samoa,WSM,Connectivity and infrastructure,NA,NA,NA,2023,Partial data,countries/wsm
 Samoa,WSM,Rights and freedoms,NA,NA,NA,2023,Partial data,countries/wsm
 Samoa,WSM,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/wsm
@@ -3764,6 +3764,11 @@ Tajikistan,TJK,Rights and freedoms,NA,NA,NA,2023,Partial data,countries/tjk
 Tajikistan,TJK,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/tjk
 Tajikistan,TJK,Trust and resilience,26,NA,Off track,2023,NA,countries/tjk
 Tajikistan,TJK,Total score,34,NA,Off track,2023,Partial data,countries/tjk
+Tanzania,TZA,Connectivity and infrastructure,58,NA,Catching up,2023,NA,countries/tza
+Tanzania,TZA,Rights and freedoms,43,NA,Off track,2023,NA,countries/tza
+Tanzania,TZA,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/tza
+Tanzania,TZA,Trust and resilience,69,NA,On track,2023,NA,countries/tza
+Tanzania,TZA,Total score,55,NA,Catching up,2023,Partial data,countries/tza
 Thailand,THA,Connectivity and infrastructure,82,NA,Leading,2023,NA,countries/tha
 Thailand,THA,Rights and freedoms,40,NA,Off track,2023,NA,countries/tha
 Thailand,THA,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/tha
@@ -3829,11 +3834,6 @@ United Kingdom,GBR,Rights and freedoms,85,NA,Leading,2023,NA,countries/gbr
 United Kingdom,GBR,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/gbr
 United Kingdom,GBR,Trust and resilience,87,NA,Leading,2023,NA,countries/gbr
 United Kingdom,GBR,Total score,87,NA,Leading,2023,Partial data,countries/gbr
-United Republic of Tanzania,TZA,Connectivity and infrastructure,58,NA,Catching up,2023,NA,countries/tza
-United Republic of Tanzania,TZA,Rights and freedoms,43,NA,Off track,2023,NA,countries/tza
-United Republic of Tanzania,TZA,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/tza
-United Republic of Tanzania,TZA,Trust and resilience,69,NA,On track,2023,NA,countries/tza
-United Republic of Tanzania,TZA,Total score,55,NA,Catching up,2023,Partial data,countries/tza
 United States,USA,Connectivity and infrastructure,91,NA,Leading,2023,NA,countries/usa
 United States,USA,Rights and freedoms,80,NA,Leading,2023,NA,countries/usa
 United States,USA,Responsibility and sustainability,NA,NA,NA,2023,Partial data,countries/usa
@@ -4099,16 +4099,16 @@ Czechia,CZE,Rights and freedoms,85,NA,Leading,2024,NA,countries/cze
 Czechia,CZE,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/cze
 Czechia,CZE,Trust and resilience,83,NA,Leading,2024,NA,countries/cze
 Czechia,CZE,Total score,79,NA,On track,2024,Partial data,countries/cze
-Côte D’Ivoire,CIV,Connectivity and infrastructure,69,NA,On track,2024,NA,countries/civ
-Côte D’Ivoire,CIV,Rights and freedoms,48,NA,Off track,2024,NA,countries/civ
-Côte D’Ivoire,CIV,Responsibility and sustainability,51,NA,Catching up,2024,NA,countries/civ
-Côte D’Ivoire,CIV,Trust and resilience,64,NA,Catching up,2024,NA,countries/civ
-Côte D’Ivoire,CIV,Total score,58,NA,Catching up,2024,NA,countries/civ
-Democratic Republic of The Congo,COD,Connectivity and infrastructure,51,NA,Catching up,2024,NA,countries/cod
-Democratic Republic of The Congo,COD,Rights and freedoms,37,NA,Off track,2024,NA,countries/cod
-Democratic Republic of The Congo,COD,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Trust and resilience,48,NA,Off track,2024,NA,countries/cod
-Democratic Republic of The Congo,COD,Total score,43,NA,Off track,2024,Partial data,countries/cod
+Côte d'Ivoire,CIV,Connectivity and infrastructure,69,NA,On track,2024,NA,countries/civ
+Côte d'Ivoire,CIV,Rights and freedoms,48,NA,Off track,2024,NA,countries/civ
+Côte d'Ivoire,CIV,Responsibility and sustainability,51,NA,Catching up,2024,NA,countries/civ
+Côte d'Ivoire,CIV,Trust and resilience,64,NA,Catching up,2024,NA,countries/civ
+Côte d'Ivoire,CIV,Total score,58,NA,Catching up,2024,NA,countries/civ
+DR Congo,COD,Connectivity and infrastructure,51,NA,Catching up,2024,NA,countries/cod
+DR Congo,COD,Rights and freedoms,37,NA,Off track,2024,NA,countries/cod
+DR Congo,COD,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/cod
+DR Congo,COD,Trust and resilience,48,NA,Off track,2024,NA,countries/cod
+DR Congo,COD,Total score,43,NA,Off track,2024,Partial data,countries/cod
 Denmark,DNK,Connectivity and infrastructure,90,NA,Leading,2024,NA,countries/dnk
 Denmark,DNK,Rights and freedoms,94,NA,Leading,2024,NA,countries/dnk
 Denmark,DNK,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/dnk
@@ -4589,11 +4589,11 @@ Romania,ROU,Rights and freedoms,77,NA,On track,2024,NA,countries/rou
 Romania,ROU,Responsibility and sustainability,57,NA,Catching up,2024,NA,countries/rou
 Romania,ROU,Trust and resilience,76,NA,On track,2024,NA,countries/rou
 Romania,ROU,Total score,73,NA,On track,2024,NA,countries/rou
-Russian Federation,RUS,Connectivity and infrastructure,60,NA,Catching up,2024,NA,countries/rus
-Russian Federation,RUS,Rights and freedoms,27,NA,Off track,2024,NA,countries/rus
-Russian Federation,RUS,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/rus
-Russian Federation,RUS,Trust and resilience,61,NA,Catching up,2024,NA,countries/rus
-Russian Federation,RUS,Total score,51,NA,Catching up,2024,Partial data,countries/rus
+Russia,RUS,Connectivity and infrastructure,60,NA,Catching up,2024,NA,countries/rus
+Russia,RUS,Rights and freedoms,27,NA,Off track,2024,NA,countries/rus
+Russia,RUS,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/rus
+Russia,RUS,Trust and resilience,61,NA,Catching up,2024,NA,countries/rus
+Russia,RUS,Total score,51,NA,Catching up,2024,Partial data,countries/rus
 Rwanda,RWA,Connectivity and infrastructure,63,NA,Catching up,2024,NA,countries/rwa
 Rwanda,RWA,Rights and freedoms,40,NA,Off track,2024,NA,countries/rwa
 Rwanda,RWA,Responsibility and sustainability,54,NA,Catching up,2024,NA,countries/rwa
@@ -4609,11 +4609,11 @@ Saint Lucia,LCA,Rights and freedoms,NA,NA,NA,2024,Partial data,countries/lca
 Saint Lucia,LCA,Responsibility and sustainability,37,NA,Off track,2024,NA,countries/lca
 Saint Lucia,LCA,Trust and resilience,NA,NA,NA,2024,Partial data,countries/lca
 Saint Lucia,LCA,Total score,56,NA,Catching up,2024,Partial data,countries/lca
-Saint Vincent and The Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2024,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Rights and freedoms,NA,NA,NA,2024,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Trust and resilience,NA,NA,NA,2024,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Total score,64,NA,Catching up,2024,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2024,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Rights and freedoms,NA,NA,NA,2024,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Trust and resilience,NA,NA,NA,2024,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Total score,64,NA,Catching up,2024,Partial data,countries/vct
 Samoa,WSM,Connectivity and infrastructure,NA,NA,NA,2024,Partial data,countries/wsm
 Samoa,WSM,Rights and freedoms,NA,NA,NA,2024,Partial data,countries/wsm
 Samoa,WSM,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/wsm
@@ -4734,6 +4734,11 @@ Tajikistan,TJK,Rights and freedoms,NA,NA,NA,2024,Partial data,countries/tjk
 Tajikistan,TJK,Responsibility and sustainability,NA,NA,NA,2024,Partial data,countries/tjk
 Tajikistan,TJK,Trust and resilience,28,NA,Off track,2024,NA,countries/tjk
 Tajikistan,TJK,Total score,36,NA,Off track,2024,Partial data,countries/tjk
+Tanzania,TZA,Connectivity and infrastructure,60,NA,Catching up,2024,NA,countries/tza
+Tanzania,TZA,Rights and freedoms,43,NA,Off track,2024,NA,countries/tza
+Tanzania,TZA,Responsibility and sustainability,48,NA,Off track,2024,NA,countries/tza
+Tanzania,TZA,Trust and resilience,72,NA,On track,2024,NA,countries/tza
+Tanzania,TZA,Total score,56,NA,Catching up,2024,NA,countries/tza
 Thailand,THA,Connectivity and infrastructure,82,NA,Leading,2024,NA,countries/tha
 Thailand,THA,Rights and freedoms,43,NA,Off track,2024,NA,countries/tha
 Thailand,THA,Responsibility and sustainability,57,NA,Catching up,2024,NA,countries/tha
@@ -4799,11 +4804,6 @@ United Kingdom,GBR,Rights and freedoms,84,NA,Leading,2024,NA,countries/gbr
 United Kingdom,GBR,Responsibility and sustainability,54,NA,Catching up,2024,NA,countries/gbr
 United Kingdom,GBR,Trust and resilience,87,NA,Leading,2024,NA,countries/gbr
 United Kingdom,GBR,Total score,79,NA,On track,2024,NA,countries/gbr
-United Republic of Tanzania,TZA,Connectivity and infrastructure,60,NA,Catching up,2024,NA,countries/tza
-United Republic of Tanzania,TZA,Rights and freedoms,43,NA,Off track,2024,NA,countries/tza
-United Republic of Tanzania,TZA,Responsibility and sustainability,48,NA,Off track,2024,NA,countries/tza
-United Republic of Tanzania,TZA,Trust and resilience,72,NA,On track,2024,NA,countries/tza
-United Republic of Tanzania,TZA,Total score,56,NA,Catching up,2024,NA,countries/tza
 United States,USA,Connectivity and infrastructure,92,NA,Leading,2024,NA,countries/usa
 United States,USA,Rights and freedoms,80,NA,Leading,2024,NA,countries/usa
 United States,USA,Responsibility and sustainability,55,NA,Catching up,2024,NA,countries/usa
@@ -5069,16 +5069,16 @@ Czechia,CZE,Rights and freedoms,86,NA,Leading,2025,NA,countries/cze
 Czechia,CZE,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/cze
 Czechia,CZE,Trust and resilience,83,NA,Leading,2025,NA,countries/cze
 Czechia,CZE,Total score,80,NA,Leading,2025,Partial data,countries/cze
-Côte D’Ivoire,CIV,Connectivity and infrastructure,71,NA,On track,2025,NA,countries/civ
-Côte D’Ivoire,CIV,Rights and freedoms,45,NA,Off track,2025,NA,countries/civ
-Côte D’Ivoire,CIV,Responsibility and sustainability,51,NA,Catching up,2025,NA,countries/civ
-Côte D’Ivoire,CIV,Trust and resilience,63,NA,Catching up,2025,NA,countries/civ
-Côte D’Ivoire,CIV,Total score,58,NA,Catching up,2025,NA,countries/civ
-Democratic Republic of The Congo,COD,Connectivity and infrastructure,53,NA,Catching up,2025,NA,countries/cod
-Democratic Republic of The Congo,COD,Rights and freedoms,36,NA,Off track,2025,NA,countries/cod
-Democratic Republic of The Congo,COD,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Trust and resilience,47,NA,Off track,2025,NA,countries/cod
-Democratic Republic of The Congo,COD,Total score,43,NA,Off track,2025,Partial data,countries/cod
+Côte d'Ivoire,CIV,Connectivity and infrastructure,71,NA,On track,2025,NA,countries/civ
+Côte d'Ivoire,CIV,Rights and freedoms,45,NA,Off track,2025,NA,countries/civ
+Côte d'Ivoire,CIV,Responsibility and sustainability,51,NA,Catching up,2025,NA,countries/civ
+Côte d'Ivoire,CIV,Trust and resilience,63,NA,Catching up,2025,NA,countries/civ
+Côte d'Ivoire,CIV,Total score,58,NA,Catching up,2025,NA,countries/civ
+DR Congo,COD,Connectivity and infrastructure,53,NA,Catching up,2025,NA,countries/cod
+DR Congo,COD,Rights and freedoms,36,NA,Off track,2025,NA,countries/cod
+DR Congo,COD,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/cod
+DR Congo,COD,Trust and resilience,47,NA,Off track,2025,NA,countries/cod
+DR Congo,COD,Total score,43,NA,Off track,2025,Partial data,countries/cod
 Denmark,DNK,Connectivity and infrastructure,90,NA,Leading,2025,NA,countries/dnk
 Denmark,DNK,Rights and freedoms,94,NA,Leading,2025,NA,countries/dnk
 Denmark,DNK,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/dnk
@@ -5559,11 +5559,11 @@ Romania,ROU,Rights and freedoms,74,NA,On track,2025,NA,countries/rou
 Romania,ROU,Responsibility and sustainability,58,NA,Catching up,2025,NA,countries/rou
 Romania,ROU,Trust and resilience,74,NA,On track,2025,NA,countries/rou
 Romania,ROU,Total score,72,NA,On track,2025,NA,countries/rou
-Russian Federation,RUS,Connectivity and infrastructure,57,NA,Catching up,2025,NA,countries/rus
-Russian Federation,RUS,Rights and freedoms,27,NA,Off track,2025,NA,countries/rus
-Russian Federation,RUS,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/rus
-Russian Federation,RUS,Trust and resilience,59,NA,Catching up,2025,NA,countries/rus
-Russian Federation,RUS,Total score,50,NA,Catching up,2025,Partial data,countries/rus
+Russia,RUS,Connectivity and infrastructure,57,NA,Catching up,2025,NA,countries/rus
+Russia,RUS,Rights and freedoms,27,NA,Off track,2025,NA,countries/rus
+Russia,RUS,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/rus
+Russia,RUS,Trust and resilience,59,NA,Catching up,2025,NA,countries/rus
+Russia,RUS,Total score,50,NA,Catching up,2025,Partial data,countries/rus
 Rwanda,RWA,Connectivity and infrastructure,60,NA,Catching up,2025,NA,countries/rwa
 Rwanda,RWA,Rights and freedoms,39,NA,Off track,2025,NA,countries/rwa
 Rwanda,RWA,Responsibility and sustainability,54,NA,Catching up,2025,NA,countries/rwa
@@ -5579,11 +5579,11 @@ Saint Lucia,LCA,Rights and freedoms,NA,NA,NA,2025,Partial data,countries/lca
 Saint Lucia,LCA,Responsibility and sustainability,37,NA,Off track,2025,NA,countries/lca
 Saint Lucia,LCA,Trust and resilience,NA,NA,NA,2025,Partial data,countries/lca
 Saint Lucia,LCA,Total score,57,NA,Catching up,2025,Partial data,countries/lca
-Saint Vincent and The Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2025,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Rights and freedoms,NA,NA,NA,2025,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Trust and resilience,NA,NA,NA,2025,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Total score,65,NA,On track,2025,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2025,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Rights and freedoms,NA,NA,NA,2025,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Trust and resilience,NA,NA,NA,2025,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Total score,65,NA,On track,2025,Partial data,countries/vct
 Samoa,WSM,Connectivity and infrastructure,NA,NA,NA,2025,Partial data,countries/wsm
 Samoa,WSM,Rights and freedoms,NA,NA,NA,2025,Partial data,countries/wsm
 Samoa,WSM,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/wsm
@@ -5704,6 +5704,11 @@ Tajikistan,TJK,Rights and freedoms,NA,NA,NA,2025,Partial data,countries/tjk
 Tajikistan,TJK,Responsibility and sustainability,NA,NA,NA,2025,Partial data,countries/tjk
 Tajikistan,TJK,Trust and resilience,29,NA,Off track,2025,NA,countries/tjk
 Tajikistan,TJK,Total score,36,NA,Off track,2025,Partial data,countries/tjk
+Tanzania,TZA,Connectivity and infrastructure,59,NA,Catching up,2025,NA,countries/tza
+Tanzania,TZA,Rights and freedoms,42,NA,Off track,2025,NA,countries/tza
+Tanzania,TZA,Responsibility and sustainability,48,NA,Off track,2025,NA,countries/tza
+Tanzania,TZA,Trust and resilience,73,NA,On track,2025,NA,countries/tza
+Tanzania,TZA,Total score,55,NA,Catching up,2025,NA,countries/tza
 Thailand,THA,Connectivity and infrastructure,83,NA,Leading,2025,NA,countries/tha
 Thailand,THA,Rights and freedoms,43,NA,Off track,2025,NA,countries/tha
 Thailand,THA,Responsibility and sustainability,57,NA,Catching up,2025,NA,countries/tha
@@ -5769,11 +5774,6 @@ United Kingdom,GBR,Rights and freedoms,85,NA,Leading,2025,NA,countries/gbr
 United Kingdom,GBR,Responsibility and sustainability,55,NA,Catching up,2025,NA,countries/gbr
 United Kingdom,GBR,Trust and resilience,86,NA,Leading,2025,NA,countries/gbr
 United Kingdom,GBR,Total score,79,NA,On track,2025,NA,countries/gbr
-United Republic of Tanzania,TZA,Connectivity and infrastructure,59,NA,Catching up,2025,NA,countries/tza
-United Republic of Tanzania,TZA,Rights and freedoms,42,NA,Off track,2025,NA,countries/tza
-United Republic of Tanzania,TZA,Responsibility and sustainability,48,NA,Off track,2025,NA,countries/tza
-United Republic of Tanzania,TZA,Trust and resilience,73,NA,On track,2025,NA,countries/tza
-United Republic of Tanzania,TZA,Total score,55,NA,Catching up,2025,NA,countries/tza
 United States,USA,Connectivity and infrastructure,92,NA,Leading,2025,NA,countries/usa
 United States,USA,Rights and freedoms,79,NA,On track,2025,NA,countries/usa
 United States,USA,Responsibility and sustainability,55,NA,Catching up,2025,NA,countries/usa
@@ -6039,16 +6039,16 @@ Czechia,CZE,Rights and freedoms,85,NA,Leading,2026,NA,countries/cze
 Czechia,CZE,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/cze
 Czechia,CZE,Trust and resilience,83,NA,Leading,2026,NA,countries/cze
 Czechia,CZE,Total score,80,NA,Leading,2026,Partial data,countries/cze
-Côte D’Ivoire,CIV,Connectivity and infrastructure,70,NA,On track,2026,NA,countries/civ
-Côte D’Ivoire,CIV,Rights and freedoms,43,NA,Off track,2026,NA,countries/civ
-Côte D’Ivoire,CIV,Responsibility and sustainability,62,NA,Catching up,2026,NA,countries/civ
-Côte D’Ivoire,CIV,Trust and resilience,63,NA,Catching up,2026,NA,countries/civ
-Côte D’Ivoire,CIV,Total score,60,NA,Catching up,2026,NA,countries/civ
-Democratic Republic of The Congo,COD,Connectivity and infrastructure,NA,NA,NA,2026,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Rights and freedoms,36,NA,Off track,2026,NA,countries/cod
-Democratic Republic of The Congo,COD,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/cod
-Democratic Republic of The Congo,COD,Trust and resilience,48,NA,Off track,2026,NA,countries/cod
-Democratic Republic of The Congo,COD,Total score,40,NA,Off track,2026,Partial data,countries/cod
+Côte d'Ivoire,CIV,Connectivity and infrastructure,70,NA,On track,2026,NA,countries/civ
+Côte d'Ivoire,CIV,Rights and freedoms,43,NA,Off track,2026,NA,countries/civ
+Côte d'Ivoire,CIV,Responsibility and sustainability,62,NA,Catching up,2026,NA,countries/civ
+Côte d'Ivoire,CIV,Trust and resilience,63,NA,Catching up,2026,NA,countries/civ
+Côte d'Ivoire,CIV,Total score,60,NA,Catching up,2026,NA,countries/civ
+DR Congo,COD,Connectivity and infrastructure,NA,NA,NA,2026,Partial data,countries/cod
+DR Congo,COD,Rights and freedoms,36,NA,Off track,2026,NA,countries/cod
+DR Congo,COD,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/cod
+DR Congo,COD,Trust and resilience,48,NA,Off track,2026,NA,countries/cod
+DR Congo,COD,Total score,40,NA,Off track,2026,Partial data,countries/cod
 Denmark,DNK,Connectivity and infrastructure,91,NA,Leading,2026,NA,countries/dnk
 Denmark,DNK,Rights and freedoms,94,NA,Leading,2026,NA,countries/dnk
 Denmark,DNK,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/dnk
@@ -6529,11 +6529,11 @@ Romania,ROU,Rights and freedoms,75,NA,On track,2026,NA,countries/rou
 Romania,ROU,Responsibility and sustainability,61,NA,Catching up,2026,NA,countries/rou
 Romania,ROU,Trust and resilience,76,NA,On track,2026,NA,countries/rou
 Romania,ROU,Total score,73,NA,On track,2026,NA,countries/rou
-Russian Federation,RUS,Connectivity and infrastructure,53,NA,Catching up,2026,NA,countries/rus
-Russian Federation,RUS,Rights and freedoms,25,NA,Off track,2026,NA,countries/rus
-Russian Federation,RUS,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/rus
-Russian Federation,RUS,Trust and resilience,59,NA,Catching up,2026,NA,countries/rus
-Russian Federation,RUS,Total score,48,NA,Off track,2026,Partial data,countries/rus
+Russia,RUS,Connectivity and infrastructure,53,NA,Catching up,2026,NA,countries/rus
+Russia,RUS,Rights and freedoms,25,NA,Off track,2026,NA,countries/rus
+Russia,RUS,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/rus
+Russia,RUS,Trust and resilience,59,NA,Catching up,2026,NA,countries/rus
+Russia,RUS,Total score,48,NA,Off track,2026,Partial data,countries/rus
 Rwanda,RWA,Connectivity and infrastructure,66,NA,On track,2026,NA,countries/rwa
 Rwanda,RWA,Rights and freedoms,40,NA,Off track,2026,NA,countries/rwa
 Rwanda,RWA,Responsibility and sustainability,59,NA,Catching up,2026,NA,countries/rwa
@@ -6549,11 +6549,11 @@ Saint Lucia,LCA,Rights and freedoms,NA,NA,NA,2026,Partial data,countries/lca
 Saint Lucia,LCA,Responsibility and sustainability,42,NA,Off track,2026,NA,countries/lca
 Saint Lucia,LCA,Trust and resilience,NA,NA,NA,2026,Partial data,countries/lca
 Saint Lucia,LCA,Total score,56,NA,Catching up,2026,Partial data,countries/lca
-Saint Vincent and The Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2026,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Rights and freedoms,NA,NA,NA,2026,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Trust and resilience,NA,NA,NA,2026,Partial data,countries/vct
-Saint Vincent and The Grenadines,VCT,Total score,66,NA,On track,2026,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Connectivity and infrastructure,NA,NA,NA,2026,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Rights and freedoms,NA,NA,NA,2026,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Trust and resilience,NA,NA,NA,2026,Partial data,countries/vct
+Saint Vincent and the Grenadines,VCT,Total score,66,NA,On track,2026,Partial data,countries/vct
 Samoa,WSM,Connectivity and infrastructure,NA,NA,NA,2026,Partial data,countries/wsm
 Samoa,WSM,Rights and freedoms,NA,NA,NA,2026,Partial data,countries/wsm
 Samoa,WSM,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/wsm
@@ -6674,6 +6674,11 @@ Tajikistan,TJK,Rights and freedoms,NA,NA,NA,2026,Partial data,countries/tjk
 Tajikistan,TJK,Responsibility and sustainability,NA,NA,NA,2026,Partial data,countries/tjk
 Tajikistan,TJK,Trust and resilience,30,NA,Off track,2026,NA,countries/tjk
 Tajikistan,TJK,Total score,40,NA,Off track,2026,Partial data,countries/tjk
+Tanzania,TZA,Connectivity and infrastructure,59,NA,Catching up,2026,NA,countries/tza
+Tanzania,TZA,Rights and freedoms,37,NA,Off track,2026,NA,countries/tza
+Tanzania,TZA,Responsibility and sustainability,55,NA,Catching up,2026,NA,countries/tza
+Tanzania,TZA,Trust and resilience,72,NA,On track,2026,NA,countries/tza
+Tanzania,TZA,Total score,56,NA,Catching up,2026,NA,countries/tza
 Thailand,THA,Connectivity and infrastructure,82,NA,Leading,2026,NA,countries/tha
 Thailand,THA,Rights and freedoms,43,NA,Off track,2026,NA,countries/tha
 Thailand,THA,Responsibility and sustainability,61,NA,Catching up,2026,NA,countries/tha
@@ -6739,11 +6744,6 @@ United Kingdom,GBR,Rights and freedoms,84,NA,Leading,2026,NA,countries/gbr
 United Kingdom,GBR,Responsibility and sustainability,53,NA,Catching up,2026,NA,countries/gbr
 United Kingdom,GBR,Trust and resilience,86,NA,Leading,2026,NA,countries/gbr
 United Kingdom,GBR,Total score,78,NA,On track,2026,NA,countries/gbr
-United Republic of Tanzania,TZA,Connectivity and infrastructure,59,NA,Catching up,2026,NA,countries/tza
-United Republic of Tanzania,TZA,Rights and freedoms,37,NA,Off track,2026,NA,countries/tza
-United Republic of Tanzania,TZA,Responsibility and sustainability,55,NA,Catching up,2026,NA,countries/tza
-United Republic of Tanzania,TZA,Trust and resilience,72,NA,On track,2026,NA,countries/tza
-United Republic of Tanzania,TZA,Total score,56,NA,Catching up,2026,NA,countries/tza
 United States,USA,Connectivity and infrastructure,92,NA,Leading,2026,NA,countries/usa
 United States,USA,Rights and freedoms,77,NA,On track,2026,NA,countries/usa
 United States,USA,Responsibility and sustainability,49,NA,Off track,2026,NA,countries/usa

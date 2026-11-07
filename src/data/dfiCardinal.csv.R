@@ -11,6 +11,9 @@ library(stringr)
 library(purrr)
 library(here)
 
+# site short names, keyed by ISO3 (the workbook keeps the long names)
+source(here("src", "data", "country_names.R"), encoding = "UTF-8")
+
 # CONFIG ----------------------------------------------------------------------
 
 # single source of truth: committed workbook, no network
@@ -134,7 +137,9 @@ df_rename <- df_all_years %>%
     # rename var names
     rename(
         NAME_ENGL = Countries
-    )
+    ) %>%
+    # short site names (country_names.R), before the sort below
+    mutate(NAME_ENGL = short_name(ISO3_CODE, NAME_ENGL))
 
 dfi_clean <- df_rename %>%
     # generate urls

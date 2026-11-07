@@ -86,3 +86,5 @@ builds from the committed cache. After changing a workbook in src/data/:
 1. Delete src/.observablehq/cache/data/dfiCardinal.csv and dfiFull.csv.
 2. Run npm run dev (or npm run build) once so R regenerates them.
 3. Check git status shows both CSVs modified, then commit them, then push.
+
+Site names are short forms keyed in country_names.R; the workbook keeps the long names.

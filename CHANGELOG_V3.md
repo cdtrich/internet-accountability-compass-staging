@@ -1,5 +1,51 @@
 # Changelog: v3
 
+## 2026-11-07 — Short country names (site only), sources matched by ISO3
+
+Direct on `dev` (tag `pre-country-names` = c5ed887). Two commits: loaders and caches; the
+sources ISO3 switch.
+
+**1. Names** (`src/data/country_names.R`, new): a named vector keyed by ISO3 plus
+`short_name(iso, name)` (falls back to the original). Sourced by `dfiCardinal.csv.R` and
+`dfiFull.csv.R` and applied right after `NAME_ENGL` is set, before the sorts. The workbook keeps
+the long names.
+
+| ISO3 | Workbook | Site |
+|---|---|---|
+| COD | Democratic Republic of The Congo | DR Congo |
+| TZA | United Republic of Tanzania | Tanzania |
+| RUS | Russian Federation | Russia |
+| CIV | Côte D’Ivoire | Côte d'Ivoire |
+| VCT | Saint Vincent and The Grenadines | Saint Vincent and the Grenadines |
+
+Caches regenerated per DEV_NOTES "Data refresh" (both deleted, loaders run 2026-11-07 09:27-09:28).
+Diff against the committed caches by key (ISO3 + pillar/commitment + year): same rows (6,790 /
+16,296) and columns; `NAME_ENGL` changed for exactly these 5 ISO3; row order changed (490 /
+1,176 rows moved); in dfiFull also `fx`/`fy` for 14 countries (facet ids numbered in name order;
+read only by the rollback-only polarD3.js). 194 distinct names. Country pages: no regeneration
+(the template carries only ISO3; names load at runtime).
+
+Rendered: map tooltips on home and both directions maps show the new names; countries Compass,
+Heatmap and Historical: DR Congo 46 of 194 (after Côte d'Ivoire, before Denmark), Tanzania 172
+(after Tajikistan, before Thailand; was among the U's), Russia 143, Côte d'Ivoire 45, Saint
+Vincent and the Grenadines 147; no long form left. Headings on /COD/, /TZA/, /RUS/: DR Congo,
+Tanzania, Russia.
+
+**2. Sources by ISO3** (`mapSourcesD3.js` :151, :165, :170, :173, :242; `resources.md` :129):
+the selected country is the geometry's `ISO3_CODE`, compared with the sources' `ISO3_CODE`
+(was the geometry name against the sheet name). sources.csv has an ISO3 code on all 932 rows;
+no name maps to two codes; one row disagrees: line 13 "Andorra" with DZA (an Algeria resource,
+Internet Society "Trends & governance"). 25 regional rows (GLO, ASI, AFR, EUR) and XKX have no
+map shape and stay unselectable.
+Card counts, by clicking every selectable country for each of the 4 types (124 countries, 880
+cards before): the only change is DZA Analysis 11 → 12 (the line-13 card now shows under
+Algeria; before it showed nowhere). The sheet itself is unchanged: cards and the directions
+search list show its long names ("Congo": 8 cards, Congo + Democratic Republic of The Congo;
+"Tanzania": 5). Console: only the dev server's favicon 404.
+
+**Rollback**: `git reset --hard pre-country-names` (only before any push), or `git revert`
+either commit (reverting the first needs the caches regenerated).
+
 ## 2026-11-07 — Polar multiples: wrap long names at every width
 
 `src/components/polarBarsD3.js`: the two-line name wrapping (previous phone-only change) now

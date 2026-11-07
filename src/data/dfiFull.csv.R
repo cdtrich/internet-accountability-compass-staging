@@ -11,6 +11,9 @@ library(stringr)
 library(purrr)
 library(here)
 
+# site short names, keyed by ISO3 (the workbook keeps the long names)
+source(here("src", "data", "country_names.R"), encoding = "UTF-8")
+
 # CONFIG ----------------------------------------------------------------------
 
 # single source of truth: committed workbook, no network
@@ -260,7 +263,9 @@ df_rename <- df_all_years %>%
     rename(
         NAME_ENGL = Countries,
         total = `Total Index Score`,
-    )
+    ) %>%
+    # short site names (country_names.R), before the sorts below
+    mutate(NAME_ENGL = short_name(ISO3_CODE, NAME_ENGL))
 
 # jitter is random: fix the seed so the same input gives the same CSV
 set.seed(2026)
