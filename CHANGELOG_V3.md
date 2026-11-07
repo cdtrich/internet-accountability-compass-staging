@@ -1,5 +1,18 @@
 # Changelog: v3
 
+## 2026-11-07 — Dot charts: left inset = bubble allowance
+
+`src/components/straightPlotD3.js`: desktop `margin.left` from `Math.max(40, maxBubbleRadius)` to
+`maxBubbleRadius` (25px). Right margin and mobile unchanged.
+
+**Verified** (AUS, classic scrollbars): chart title and axis start 25px right of the pillar
+intro text at 800-1920 (was 40 after the previous commit, 104-141 before it). No bubble outside
+its svg (all four charts; leftmost bubble 8.5px inside). scrollWidth unchanged; at 1280 the
+chart's right edge is 1272.5 in a 1265px client, the existing `.chart-breakout`/`.body-text`
+overflow (7.5px). 390 and 744 identical.
+
+**Rollback**: `git revert` this commit.
+
 ## 2026-11-07 — Country pages: pillar intros in the text column
 
 Direct on `dev` (tag `pre-dotchart-align` = 36f2f84). `src/style.css` only.

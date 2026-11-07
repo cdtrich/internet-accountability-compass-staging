@@ -108,7 +108,8 @@ export function straightPlotD3(data, country, pillar, options = {}) {
         top: 40,
         right: Math.max(40, horizontalGutter),
         bottom: 30,
-        left: Math.max(40, horizontalGutter),
+        // just the bubble allowance, so titles and axis start close to the text
+        left: horizontalGutter,
       };
   const rowHeight = isMobile ? 200 : 150;
   const height = commitments.length * rowHeight + margin.top + margin.bottom;
