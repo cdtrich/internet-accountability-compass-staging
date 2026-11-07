@@ -138,15 +138,22 @@ h1,
 }
 
 /* centered text for dynamically generated directions texts;
-   .chart-breakout (country-page dot charts) starts where the text does */
+   .chart-breakout (country-page dot charts) and .pillar-section-header
+   (country-page pillar intros) start where the text does */
 .body-text,
 #pillar-content,
-.chart-breakout {
+.chart-breakout,
+.pillar-section-header {
   display: flex;
   flex-direction: column;
   width: 100%;
   transform: translateX(5vw);
   margin: 0 0 1rem 0;
+}
+/* the pillar intro sits beside its sparkline card (inline style: flex, gap);
+   keep it a row on desktop (the <=768 rule stacks it) */
+.pillar-section-header {
+  flex-direction: row;
 }
 
 /* text in visuals */
@@ -944,7 +951,8 @@ a[href].observablehq-header-anchor {
 @media (min-width: 769px) and (max-width: 1200px) {
   .body-text,
   #pillar-content,
-  .chart-breakout {
+  .chart-breakout,
+  .pillar-section-header {
     transform: none;
     padding-left: calc(var(--sidebar-space) + 1rem);
     box-sizing: border-box;
@@ -1019,6 +1027,9 @@ a[href].observablehq-header-anchor {
   /* Stack pillar description + historical sparkline vertically */
   .pillar-section-header {
     flex-direction: column;
+    /* undo the desktop .body-text values it shares */
+    transform: none;
+    width: auto;
   }
   .pillar-section-header > * {
     flex: unset !important;

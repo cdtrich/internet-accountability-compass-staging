@@ -1,5 +1,28 @@
 # Changelog: v3
 
+## 2026-11-07 — Country pages: pillar intros in the text column
+
+Direct on `dev` (tag `pre-dotchart-align` = 36f2f84). `src/style.css` only.
+
+**Why**: the pillar intro (`.pillar-section-header`: pillar name and paragraph, beside the
+historical sparkline card) started at main's left edge, under the sidebar at 800-1366px (text
+left minus sidebar right: −34.7 at 800, −53.3 at 1024, −43.5 at 1280, −0.5 at 1366), while the
+dot charts below it start in the text column (104-141px further right).
+
+**Change**: `.pillar-section-header` joins the `.body-text` lists (5vw shift; 769-1200 padding
+`var(--sidebar-space) + 1rem`). That list also sets `flex-direction: column`, so one rule right
+after it keeps the header a row on desktop (its inline style sets `display: flex; gap; margin-bottom`
+but no direction). The ≤768 rule for it now also sets `transform: none; width: auto`, so phones
+compute as before. Inline `margin-bottom: 20px` still wins over the list's margin.
+
+**Verified** (AUS, classic scrollbars): header text left minus sidebar right 48 (800), 48 (1024),
+20.5 (1280), 67.8 (1366), 108.5 (1440), 372.5 (1920). Chart title minus header text: 40px at
+every width ≥769 (before 104-141). Intro and sparkline card stay side by side. 390 and 744:
+identical computed styles and positions. scrollWidth unchanged (1280: 1273 vs 1265, the existing
+`.body-text` overflow, which the header now shares).
+
+**Rollback**: `git revert` this commit.
+
 ## 2026-11-06 — Polar multiples on phones: padding and wrapped names
 
 Direct on `dev` (tag `pre-polar-pad` = 1b6ddc6). `src/components/polarBarsD3.js` only; ≤768px
