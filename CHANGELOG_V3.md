@@ -1,5 +1,35 @@
 # Changelog: v3
 
+## 2026-11-08 — Countries: heatmap and Historical table follow the viewport after a resize
+
+Direct on `dev` (tag `pre-view-resize` = fa2929a). File: `src/countries.md` only.
+
+**Problem.** Heatmap and sparkline table got the page-level `isMobile`, read once at load. It sets
+the heatmap margins (left w/5 vs w/4, right 0 vs w/4, top w/2 vs w/10) and ISO3 vs name rows,
+and the table's headers, sparkline width (60 vs 100) and ISO3 vs name links. Loaded narrow and
+widened (or the reverse), both kept the wrong mode.
+
+**Fix.** `polarResize` (fa2929a) renamed `viewResize`, unchanged otherwise, and used by all three
+views: mobile flag read at draw time, first draw immediate, then one redraw 250 ms after the
+width settles. The page-level `isMobile` is removed (no longer used). Components unchanged: their
+listeners sit on their own elements and the tooltip div is shared via join, so replacing the
+output leaks nothing.
+
+**Verify** (puppeteer, classic scrollbars, port 3123). Load at 1280, resize to 744, 390, 1280:
+- Heatmap: labels name / ISO3 / ISO3 / name; top margin 113 / 372 / 195 / 113 px; svg 108.5-1240.5
+  / -16-728 / -16-374 / 108.5-1240.5 (same as fresh loads); one svg; one redraw per step; tooltip
+  on a filled and an empty cell after each step.
+- Historical: sparkline 100 / 60 / 60 / 100 px; headers and labels switch ("Country" + names vs
+  blank + ISO3); one table, at most one svg per cell; one redraw per step; tooltip on hover.
+- Drag 1280 -> 744 in 35 steps: 1 redraw per view.
+- Fresh loads at 390 / 744 / 1024 / 1280, both views, vs fa2929a: identical markup and 0
+  differing pixels in viewport captures at three scroll positions each (24 captures).
+
+**Known, not fixed** (pre-existing, not from this change):
+- The shared `.chart-tooltip` is hidden with `visibility: hidden`, so it keeps its last position
+  in the layout. Hover a far-right cell at 1280, then narrow the window: scrollWidth 998 vs 729.
+- Historical at 1280 fresh load: scrollWidth 1273 vs clientWidth 1265 (also at fa2929a).
+
 ## 2026-11-08 — Countries: polar multiples follow the viewport after a resize
 
 Direct on `dev` (tag `pre-polar-resize` = 03f6934). File: `src/countries.md` only.

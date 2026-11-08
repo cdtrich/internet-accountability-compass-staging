@@ -39,8 +39,6 @@ const dfiCardinal = FileAttachment("./data/dfiCardinal.csv").csv({
 ```
 
 ```js
-// check if viewed on mobile
-const isMobile = window.innerWidth <= 768;
 // const colors = ["#32baa7", "#0e4876", "#643291", "#962c8c"];
 const sampleCommitments = dfiFull.filter((d) => d.NAME_ENGL === "Afghanistan");
 ```
@@ -134,11 +132,11 @@ Object.values(grouped).forEach((entries) => {
 </div>
 
 ```js
-// Polar multiples follow the viewport: like resize(), but the mobile flag is
+// The three views follow the viewport: like resize(), but the mobile flag is
 // read at draw time (not once per page load), and after the first draw it
 // redraws only once, 250 ms after the width stops changing (not per frame).
-// The old svg is replaced; its listeners go with it.
-function polarResize(render, delay = 250) {
+// The old output is replaced; its listeners go with it.
+function viewResize(render, delay = 250) {
   const div = document.createElement("div");
   div.style.position = "relative";
   let drawn, latest, timer;
@@ -162,7 +160,7 @@ const chartView =
   viewMode === "latest" && chartType === "compass"
     ? html`<div class="figure-w-full">
         <div class="card">
-          ${polarResize((width, mobile) =>
+          ${viewResize((width, mobile) =>
             polarBarsD3(
               dfiFull.filter((d) => d.year === latestYear),
               mobile,
@@ -174,10 +172,10 @@ const chartView =
     : viewMode === "latest" && chartType === "heatmap"
       ? html`<div class="figure-w-full">
           <div class="card">
-            ${resize((width) =>
+            ${viewResize((width, mobile) =>
               heatmap(
                 dfiCardinalLong.filter((d) => d.year === latestYear),
-                isMobile,
+                mobile,
                 { width },
               ),
             )}
@@ -185,8 +183,8 @@ const chartView =
         </div>`
       : html`<div class="body-text">
           <div class="card">
-            ${resize((width) =>
-              sparklineTableD3(dfiCardinal, isMobile, {
+            ${viewResize((width, mobile) =>
+              sparklineTableD3(dfiCardinal, mobile, {
                 width,
               }),
             )}
