@@ -134,14 +134,38 @@ Object.values(grouped).forEach((entries) => {
 </div>
 
 ```js
+// Polar multiples follow the viewport: like resize(), but the mobile flag is
+// read at draw time (not once per page load), and after the first draw it
+// redraws only once, 250 ms after the width stops changing (not per frame).
+// The old svg is replaced; its listeners go with it.
+function polarResize(render, delay = 250) {
+  const div = document.createElement("div");
+  div.style.position = "relative";
+  let drawn, latest, timer;
+  const draw = () => {
+    drawn = latest;
+    div.replaceChildren(render(latest, window.innerWidth <= 768));
+  };
+  const observer = new ResizeObserver(([entry]) => {
+    latest = entry.contentRect.width;
+    clearTimeout(timer);
+    if (latest <= 0 || latest === drawn) return;
+    if (drawn === undefined) draw();
+    else timer = setTimeout(draw, delay);
+  });
+  observer.observe(div);
+  invalidation.then(() => (observer.disconnect(), clearTimeout(timer)));
+  return div;
+}
+
 const chartView =
   viewMode === "latest" && chartType === "compass"
     ? html`<div class="figure-w-full">
         <div class="card">
-          ${resize((width) =>
+          ${polarResize((width, mobile) =>
             polarBarsD3(
               dfiFull.filter((d) => d.year === latestYear),
-              isMobile,
+              mobile,
               { width },
             ),
           )}

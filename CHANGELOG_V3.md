@@ -1,5 +1,34 @@
 # Changelog: v3
 
+## 2026-11-08 — Countries: polar multiples follow the viewport after a resize
+
+Direct on `dev` (tag `pre-polar-resize` = 03f6934). File: `src/countries.md` only.
+
+**Problem.** `isMobile` is set once per page load (`window.innerWidth <= 768`); only `width` was
+live (Framework `resize()`, which redraws on every width change). Loaded at 1280 and resized to
+744, the multiples kept 5 columns of 134 px, no mobile inset, svg at x -16.
+
+**Fix.** The polar cell uses a small local `polarResize()` instead of `resize()`: same container
+div and ResizeObserver, but the mobile flag is read at draw time, and after the first draw it
+redraws once, 250 ms after the width stops changing (debounce rather than "redraw on layout-key
+change": simpler, and the key would change on almost every frame anyway since the cell width
+follows the container). The old svg is replaced (`replaceChildren`), hover is delegated on the
+svg, so listeners go with it; the tooltip div is shared via join. Observer and timer are released
+on `invalidation`. Heatmap and sparkline table are unchanged.
+
+**Verify** (puppeteer, classic scrollbars, port 3123): load at 1280, resize to 744, 390, back to
+1280: 5 / 2 / 2 / 5 columns, cell 203.8 / 348 / 171 / 203.8 px, svg 108.5-1127.3 / 16-712 /
+16-358 / 108.5-1127.3 in a viewport of 1265 / 729 / 375 / 1265; no label wider than its cell or
+past the svg; scrollWidth = clientWidth; one polar svg; one redraw per step; wedge tooltip works
+after each redraw. Drag 1280 -> 744 in 35 steps over 2.8 s: 1 redraw, ~310 ms after the last step
+(250 ms debounce included), no long task (> 50 ms). Resized-744 vs fresh-744: same svg markup,
+0 differing pixels. Fresh loads at 390 / 744 / 1024 / 1280 vs 03f6934: identical svg markup and
+0 differing pixels at three scroll positions each.
+
+**Known, not fixed:** heatmap and sparkline table also get the load-time `isMobile` (margins,
+ISO3 vs name labels, sparkline width, headers), so they keep the wrong mode after a resize across
+768. Rollback: `git revert`, or the tag.
+
 ## 2026-11-07 — Short country names (site only), sources matched by ISO3
 
 Direct on `dev` (tag `pre-country-names` = c5ed887). Two commits: loaders and caches; the
