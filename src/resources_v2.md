@@ -13,10 +13,7 @@
 import { sourcesTable } from "./components/sourcesTable.js";
 import { sourcesFilters } from "./components/sourcesFilters.js";
 import { mapSourcesD3 } from "./components/mapSourcesD3_v2.js";
-import {
-  SOURCE_CONFIG,
-  SOURCE_TYPE_COLORS,
-} from "./components/sourcesLegend_v2.js";
+import { SOURCE_CONFIG } from "./components/sourcesLegend_v2.js";
 ```
 
 <!-- data -->
@@ -146,11 +143,7 @@ const rows = filters.country
 
 ```js
 // Push filter state into the map (no re-render, zoom is preserved)
-sourcesMap.update({
-  counts,
-  color: SOURCE_TYPE_COLORS[filters.type] ?? "#007162",
-  selected: filters.country,
-});
+sourcesMap.update({ counts, selected: filters.country });
 ```
 
 <!-- table -->
@@ -199,12 +192,12 @@ select.src-filter-control {
 .src-publisher { font-size: 0.85em; color: #666; }
 .src-count { font-size: 0.85em; color: #666; margin: 0 0 6px; }
 .src-tile {
-  display: inline-flex; align-items: center; gap: 0.35em; white-space: nowrap;
-  padding: 2px 10px; border-radius: 999px; font-size: 0.85em;
-  color: var(--tile-text);
+  display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.85em;
+  color: var(--tile);
   background: color-mix(in srgb, var(--tile) 15%, transparent); /* tint strength: 10–20% */
 }
-.src-tile-icon svg {
+.src-type { display: inline-flex; align-items: center; gap: 0.4em; white-space: nowrap; color: #333; }
+.src-type-icon svg {
   width: 1.1em; height: 1.1em; display: block;
   fill: none; stroke: currentColor; stroke-width: 2;
   stroke-linecap: round; stroke-linejoin: round;
