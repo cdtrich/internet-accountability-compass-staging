@@ -43,6 +43,10 @@ var coastLoad = FileAttachment("./data/COAS_RG_60M_2016_4326.json").json();
 <!-- data processing -->
 
 ```js
+console.log(sourcesData);
+console.log(Object.keys(sourcesData[0]));
+console.log(sourcesData.length);
+
 const normalised = sourcesData.map((d) => ({
   ...d,
   type: d.type.replace(/^[⌕¶⚑]\s*/, ""),
@@ -106,7 +110,11 @@ const coast = topojson.feature(
 
 ```js
 // Keep a handle on the element: the map calls filtersEl.setCountry(...)
-const filtersEl = sourcesFilters({ countries: countryOptions, directions, types });
+const filtersEl = sourcesFilters({
+  countries: countryOptions,
+  directions,
+  types,
+});
 const filters = view(filtersEl);
 ```
 
@@ -133,7 +141,11 @@ const baseRows = sourcesDataUnique.filter(
     (!filters.direction || d.pillar_txt === filters.direction) &&
     (!q || `${d.title} ${d.publisher ?? ""}`.toLowerCase().includes(q)),
 );
-const counts = d3.rollup(baseRows, (v) => v.length, (d) => d.ISO3_CODE);
+const counts = d3.rollup(
+  baseRows,
+  (v) => v.length,
+  (d) => d.ISO3_CODE,
+);
 
 // Table = base filters + selected country
 const rows = filters.country
@@ -189,7 +201,6 @@ select.src-filter-control {
 .src-table { width: 100%; border-collapse: collapse; }
 .src-table th { text-align: left; font-weight: 700; border-bottom: 2px solid #ccc; padding: 6px 10px; }
 .src-table td { vertical-align: top; padding: 8px 10px; border-bottom: 1px solid #eee; }
-.src-publisher { font-size: 0.85em; color: #666; }
 .src-count { font-size: 0.85em; color: #666; margin: 0 0 6px; }
 .src-tile {
   display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.85em;

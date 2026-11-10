@@ -82,7 +82,7 @@ export function sourcesFilters({ countries, directions, types }) {
 
   const kw = el("input");
   kw.type = "text";
-  kw.placeholder = "Search title or publisher";
+  kw.placeholder = "Search document or publisher";
   kw.autocomplete = "off";
   field("keyword", "Keyword", kw);
 

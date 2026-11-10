@@ -36,12 +36,9 @@ function directionTile(direction) {
 
 function documentCell(d) {
   const ok = d.url && String(d.url).trim() !== "NA";
-  const title = ok
+  return ok
     ? html`<a href="${d.url}" target="_blank" rel="noopener">${d.title}</a>`
     : html`<span>${d.title}</span>`;
-  return html`${title}${d.publisher
-    ? html`<div class="src-publisher">${d.publisher}</div>`
-    : ""}`;
 }
 
 export function sourcesTable(rows) {
@@ -55,6 +52,7 @@ export function sourcesTable(rows) {
           <th>Cardinal direction</th>
           <th>Type</th>
           <th>Document</th>
+          <th>Publisher</th>
         </tr>
       </thead>
       <tbody>
@@ -65,6 +63,7 @@ export function sourcesTable(rows) {
               <td>${directionTile(d.pillar_txt)}</td>
               <td>${typeLabel(d.type)}</td>
               <td>${documentCell(d)}</td>
+              <td>${d.publisher ?? ""}</td>
             </tr>`,
         )}
       </tbody>
