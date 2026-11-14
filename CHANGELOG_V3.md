@@ -1,5 +1,15 @@
 # Changelog: v3
 
+## 2026-11-14 — Sidebar "Resources" links to /resources_v2
+
+File: `nav-html.js` (ITEMS path `/resources` -> `/resources_v2`). The active state follows the
+path, so the entry highlights on /resources_v2. A grep of src/, nav-html.js and the config found no
+other link to /resources (other hits are the word "resources" in text, or external URLs).
+src/resources.md is still built at /resources (reachable by URL only).
+
+**Verify**: restart `npm run dev` (nav-html.js is read at start); the Resources entry opens
+/resources_v2 and is highlighted there.
+
 ## 2026-11-08 — Countries: heatmap and Historical table follow the viewport after a resize
 
 Direct on `dev` (tag `pre-view-resize` = fa2929a). File: `src/countries.md` only.

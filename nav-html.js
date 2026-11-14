@@ -6,7 +6,7 @@ const ITEMS = [
   { id: "map", path: "/", label: "Map" },
   { id: "countries", path: "/countries", label: "Countries" },
   { id: "directions", path: "/directions", label: "Directions" },
-  { id: "resources", path: "/resources", label: "Resources" },
+  { id: "resources", path: "/resources_v2", label: "Resources" },
   { id: "perspectives", path: "/perspectives", label: "Perspectives" },
   { id: "methodology", path: "/methodology", label: "Methodology" },
 ];
